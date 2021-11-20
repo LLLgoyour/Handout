@@ -1,0 +1,203 @@
+\documentclass{article}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb,graphicx,color,graphicx,slashed, microtype, parskip, enumitem, extarrows, needspace}
+%\usepackage[utf8x]{inputenc}
+\usepackage[top=1.5cm, bottom=1.5cm, right=6cm, left=1.5cm, heightrounded, marginparwidth=5cm, marginparsep=0.5cm]{geometry}
+
+\hbadness = 10000
+\hfuzz=100pt 
+    
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\footnotesize}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=NavyBlue, bookmarksdepth=3}
+
+\makeatletter\newcommand{\@minipagerestore}{\setlength{\parskip}{\medskipamount}}\makeatother
+
+% =============== Index ===========================
+
+\usepackage[nonewpage]{imakeidx}
+\makeindex
+
+% =============== Color Definitions ===============
+    
+\usepackage[svgnames]{xcolor}
+\colorlet{ColorTitle}{Black}
+\colorlet{ColorSectionName}{Black}
+\colorlet{ColorBoxFG}{Gray}
+\colorlet{ColorBoxText}{Black}
+\colorlet{ColorBoxBG}{White}
+
+
+% =============== Title Style ===============
+    
+\usepackage{titling} % Allows custom title configuration
+    
+\newcommand{\HorRule}{\color{ColorTitle}\rule{\linewidth}{1pt}} % Defines the gold horizontal rule around the title
+    
+\pretitle{
+    \vspace{-50pt} % Move the entire title section up
+    \HorRule\vspace{9pt} % Horizontal rule before the title
+    \fontsize{27}{36}\usefont{OT1}{phv}{b}{n}\selectfont
+    \color{ColorTitle} % Text colour for the title and author(s)
+}
+    
+\posttitle{\par\vskip 15pt} % Whitespace under the title
+    
+\preauthor{\fontsize{17}{0}\usefont{OT1}{phv}{m}{n}\selectfont\color{ColorTitle}} % Anything that will appear before \author is printed
+    
+\postauthor{\par\HorRule}
+
+\newcommand{\COURSENAME}{\href{http://phyw.people.ust.hk/teaching/PHYS2022-2015/}{\textcolor{black}{PHYS 2022}}}
+\newcommand{\YW}{\href{http://phyw.people.ust.hk/}{\textcolor{black}{Yi Wang}}}
+\newcommand{\PHYS}{\href{http://physics.ust.hk}{\textcolor{black}{Department of Physics}}}
+\newcommand{\HKUST}{\href{http://www.ust.hk/}{\textcolor{black}{HKUST}}}
+\author{\COURSENAME, \YW, \PHYS, \HKUST}
+
+\date{}
+
+% =============== Section Name Style ===============
+    
+\usepackage{titlesec}
+    
+\titleformat{\section}
+    {\fontsize{15}{20}\usefont{OT1}{phv}{b}{n}\color{ColorSectionName}}
+    {\thesection}{1em}{}
+    %[{\vspace{0.2cm}\titlerule[0.8pt]}]
+    
+\titleformat{\subsection}
+    {\fontsize{14}{20}\usefont{OT1}{phv}{m}{n}\color{ColorSectionName}}
+    {\thesubsection}{1em}{}
+    
+\titleformat{\subsubsection}
+    {\fontsize{12}{20}\usefont{OT1}{phv}{m}{n}\color{ColorSectionName}}
+    {}{0em}{}
+      
+\setcounter{secnumdepth}{4}
+        
+% =============== Box Style ===============
+    
+\usepackage[most]{tcolorbox}
+    
+\newtcolorbox{tbox}[1]{
+    colback=ColorBoxBG, colframe=ColorBoxFG, coltext=ColorBoxText,
+    sharp corners, enhanced, breakable, parbox=false,
+    before skip=1em, after skip=1em,
+    title={#1}, fonttitle=\usefont{OT1}{phv}{b}{n}, 
+    attach boxed title to top left={yshift=-0.1mm}, boxed title style={sharp corners, colback=ColorBoxFG, left=0.405cm},
+    rightrule=-1pt,toprule=-1pt, bottomrule=-1pt
+}
+
+\newtcolorbox{mtbox}[1]{
+    colback=ColorBoxBG, colframe=ColorBoxFG, coltext=ColorBoxText,
+    sharp corners, enhanced, breakable, parbox=false,
+    before skip=1em, after skip=1em,
+    title={#1}, fonttitle=\usefont{OT1}{phv}{b}{n},
+    attach boxed title to top left={yshift=-0.1mm}, boxed title style={sharp corners, colback=ColorBoxFG, left=0.15cm},
+    rightrule=-1pt,toprule=-1pt, bottomrule=-1pt, 
+    left=0.5em
+}
+
+% =============== tikz has to be loaded after xcolor
+\usepackage{tikz}
+
+\newcommand*\enumlabel[1]{\tikz[baseline=(char.base)]{
+			\node[shape=rectangle,inner sep=2pt,fill=ColorBoxFG] (char) 
+			{\fontsize{7}{20}\usefont{OT1}{phv}{b}{n}{\textcolor{ColorBoxBG}{#1}}};}}
+
+% =============== Useful shortcuts ===============
+
+\newcommand\wref[1]{{\hypersetup{linkcolor=white}\ref{#1}}}  
+
+\newcommand{\textbox}[2]{
+    \begin{tbox}{#1}
+        #2
+    \end{tbox}
+}
+
+\newcommand{\mtextbox}[2]{\marginnote{
+    \begin{mtbox}{#1}
+        #2
+    \end{mtbox}}
+}
+
+\newcommand{\mnewline}{\vspace{0.5em}\newline}
+
+\newcommand{\titem}[1]{
+    \begin{itemize}[label=\color{ColorBoxFG}$\blacktriangleright$, leftmargin=0mm, labelsep=0.27cm, topsep=0.5em
+        %, itemsep=1ex
+        ]
+        #1
+    \end{itemize}
+}
+
+\newcommand{\mtitem}[1]{
+    \begin{itemize}[label={\color{ColorBoxFG}$\blacktriangleright$}, leftmargin=0mm, labelsep=1mm, topsep=0.5em
+        %, itemsep=1ex
+        ]
+        #1
+    \end{itemize}
+}
+
+\newcommand{\itembox}[3]{
+    \begin{tbox}{#1}
+        #2
+        \titem{#3}
+    \end{tbox}
+}
+
+\newcommand{\mitembox}[3]{
+    \marginnote{
+    \begin{mtbox}{#1}
+        #2
+        \mtitem{#3}
+	\end{mtbox}
+    }
+}
+
+\newcommand{\tenum}[1]{
+    \begin{enumerate}[label=\protect\enumlabel{\arabic*}, leftmargin=0mm, labelsep=0.265cm, topsep=0.5em
+        %, itemsep=1ex
+        ]
+        #1
+    \end{enumerate}
+}
+
+\newcommand{\enumbox}[3]{
+    \begin{tbox}{#1}
+        #2
+        \tenum{#3}
+    \end{tbox}
+}
+
+\newcommand{\twocol}[5]{
+    \begin{minipage}[t][][b]
+        {#1\textwidth}
+        #4        
+    \end{minipage}
+    \hspace{#2\textwidth}
+    \begin{minipage}[t][][b]
+        {#3\textwidth}
+        #5
+    \end{minipage}
+}
+
+\newcommand{\cg}[2]{
+    \begin{center}
+        \includegraphics[width=#1\textwidth]{#2}
+    \end{center}
+}
+
+\newcommand{\tbar}{
+    ~\newline
+    {\color{ColorBoxFG}
+    \hbox to 0.15\textwidth{\leaders\hbox to 5pt{\hss  \hss}\hfil} 
+    \hbox to 0.7\textwidth{\leaders\hbox to 5pt{\hss . \hss}\hfil}}
+    \mnewline
+}
+
+% =============== Filter unwanted warnings
+\usepackage{silence}
+\WarningsOff[tcolorbox]
+\hbadness=1000000

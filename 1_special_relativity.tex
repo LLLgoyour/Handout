@@ -1,0 +1,1755 @@
+\input{structure.tex}
+\usepackage{wasysym}
+\graphicspath{{1_fig/}}
+\title{Part 1. Special Relativity}
+
+\begin{document}
+
+\maketitle
+
+Let us start our journey by a thought experiment -- Alice is in a spaceship to a star, 5 light years away from us, and will return to the earth immediately after her arrival. Bob sees her off and waits her to come back. Suppose the spaceship runs almost as fast as the speed of light $c$, say, $v=0.995c$.
+
+\cg{0.7}{spaceship5}
+
+Amazingly, at $v\sim c$, things behave dramatically different from our daily experience (Newtonian mechanics). Let's see a few surprising facts that they find:
+
+\mitembox{Understanding spacetime}{
+	We find deeper understanding of spacetime as we understand nature better. The efforts have not come to an end so far.
+	}{
+	\item Newtonian: space and time are absolute and independent ``playgrounds'' for matter.
+	\item Special relativity: space and time are unified, and depends on motion of observers (like relative orientation of an object depends on rotation of observers).
+	\item General relativity: space and time can be curved by objects.
+	\item Quantum gravity (conjectured): space and time may be emergent from holography, quantum entanglements, ...  We have not fully understood it yet, but the hints are profound.
+}
+
+\itembox{Bob's observations about Alice's journey}{}{
+	\item Bob wrote a letter to Alice, and incidentally Alice wrote a letter to Bob around the same time. Bob thinks that he wrote his letter earlier, but Alice insists that she wrote her letter earlier. They have considered that light needs time to travel. But they cannot resolve the dispute even after that.
+	\item Bob finds the spaceship much heavier -- when $v\sim c$, Alice needs increasingly greater amount of energy to accelerate the spaceship even by a little.
+	\item When Alice comes back, 10 years has passed for Bob. But for Alice, her clock, her feeling, everything about Alice indicates that only 1 year has passed.
+} 
+
+What happened? After learning this part, you will find it out, and much more -- In fact, we have to think about space and time in a totally different way from we have naively thought.
+
+\section{Principles of Special Relativity}\label{sec:principles-relativity}
+
+\subsection{Galileo's Principle of Relativity}
+
+Imagine:
+\marginnote{By ``look outside'', we mean connections by any means to the outside of the car, including using light, sound, gravitational waves, etc. We neglect rotation of the earth such that Alice and Bob are in inertial frames (constant velocity).}
+As in Fig.~\ref{fig:grel}, Alice is moving with constant velocity $\mathbf{v}$ in a closed car with respect to (wrt for short) the ground. If Alice does not look outside the car, how can Alice find out that she is moving wrt the ground?
+
+No. Whatever activities/experiments Alice tries, she finds no difference from if the car is not moving. To put it in the language of physics, the laws of nature she probes is identical to the laws of nature probed when she is not moving.
+
+In 1632, Galileo asserts that this is true for all physical laws, and for all inertial frames. This is known as Galileo's principle of relativity. It is impressive to note that this nearly 400-year-old principle still holds now to the best of our knowledge.
+ 
+\begin{figure}[htbp] 
+	\centering
+	\includegraphics[width=0.7\textwidth]{galileo_relativity}
+	\caption{\label{fig:grel} Alice has her time $t_A$ and space $x_A$; Bob has his time $x_B$ and coordinate $x_B$. Alice and Bob have relative speed $v$ (because Alice is standing on a moving big car). A small car C has speed $u_A$ wrt Alice and $u_B$ wrt Bob. For simplicity, only one space direction $x$ is shown and other space dimensions $y$ and $z$ are suppressed.}
+\end{figure} 
+
+\mtextbox{Isn't Galileo's relativity trivial?}{
+		Nowadays, $(\mathbb{R})$ looks pretty trivial. This is because you have already learned Newtonian mechanics. 
+		\mnewline
+		But at Galileo's (1564-1642) time, people had no concept of acceleration; people relied on naked eyes to do astronomy. Especially, people believe in the geocentric model more than Helio-centrism (earth moves around the sun). An argument for geocentric model is that we would have fallen out of the earth if the earth is moving fast. $(\mathbb{R})$ shows that it will not happen. 
+		\mnewline
+		Moreover, now we know that $(\mathbb{R})$ still holds in situations where Newtonian mechanics does not hold, including special relativity and beyond.
+}
+
+\textbox{Galileo's principle of relativity}{
+	Laws of nature take the same form in all inertial frames. \index{Galileo's relativity}
+	\tcblower
+	Let us refer to Galileo's principle of relativity by $(\mathbb{R})$ as we will use it many times. 
+	There are some alternative equivalent statements of $(\mathbb{R})$:
+	\titem{
+		\item Motion is relative.
+		\item There is no absolute sense of ``who moves''.
+	}
+	The change (by a relative velocity) from one inertial frame to another is called a ``boost''. Thus we can also say
+	\titem{
+		\item Laws of nature are not changed by a boost.
+	}
+}
+
+\textbox{Newtonian mechanics is consistent with Galileo's relativity}{
+	In Fig.~\ref{fig:grel}, does the Newtonian 2nd law (the law of nature) take the same form wrt Alice and Bob? To check that, note the relation between there reference frames are 
+	\begin{align}\label{eq:newtontx}
+		t_B = t_A~, \qquad
+		x_B = x_A + v t_A~.
+	\end{align}
+	The 2nd law in Alice's frame is $F = m a_A$. What about in Bob's frame? Bob picks up Alice's equation and transform it into that in Bob's form: \marginnote{We use the notation $\dot x \equiv dx/dt$, $\ddot x \equiv d^2x/dt^2$. \mnewline
+	Can you also verify Newtonian 1st and 3rd laws?}
+	\begin{align}
+		F = m a_A = m \ddot{x}_A = m \ddot{x}_B = m a_B~.
+	\end{align}
+	Thus Bob indeed has the same 2nd law in his frame.
+
+	As a reminder for later reference, the velocity addition rule in Newtonian mechanics can be derived from the same frame transformation \eqref{eq:newtontx}: 
+	\begin{align}
+		\label{eq:vel_add_newton} 
+		u_A = \dot x_A~,
+		\qquad
+		u_B = \dot x_B = u_A + v~. 	  
+	\end{align}
+}
+
+From the box above, we observe: $(\mathbb{R})$ is respected by Newtonian mechanics. However, Newtonian mechanics is not the only system that satisfies $(\mathbb{R})$. To see that, and to introduce Einstein's relativity, let us introduce another fundamental principle of nature.
+
+\subsection{The Speed of Light}
+
+\mtextbox{(Optional) Finite $c$ observed}{
+	As early as in 1676, R{\o}mer noted that the actually observed eclipses of the Jupiter moon Io and the calculated time have a difference, when the eclipses happen with earth position L, K, G and F. This is interpreted as: light needs time to travel through intervals LK and GF.
+	\newline
+	\includegraphics[width=\textwidth]{Romer_light}
+} 
+
+When you turn on the light, light ``immediately'' fills the room. In our everyday life, the speed of light is so fast that we usually ignore the propagation time needed for light. However, is the speed of light infinite, or finite?
+
+Many delicate experiments have been designed to show that, the speed of light is actually finite at $c\simeq 3\times 10^8 $m/s. One of the first observation from astronomy is outlined in the box to the right. Nowadays, the finiteness of speed of light is not only a reality, but also has great potential for future applications. See, for example, \href{https://www.youtube.com/watch?v=Y_9vd4HWlVA&feature=youtu.be}{video: seeing what's behind a wall through reflection}.
+
+\textbox{The exact value of the speed of light}{ \index{speed of light}
+	The speed of light $c$ has an exact value: $c = 299,792,458\mbox{m/s}$. 
+	
+	Are you surprised by this fact? Usually, physical constants are determined by measurements. Measurements always have errors. Then, how can $c$ have an exact value?
+	
+	\tcblower
+	
+	The modern definition of a meter (since 1983) is (distance travelled by light in 1 second)/(value of $c$). Indeed, historically (1889-1960) meter was defined by a real object known as ``International Prototype Meter''. But defining meter using a real object has many disadvantages, including
+	\titem{
+		\item One has to physically compare with the prototype (or its copies) to determine length.
+		\item The accuracy of the copies made are limited by the technology of the time.
+		\item The length of the prototype change slightly over time. And it may be damaged.
+	}
+	By defining meter with a constant of nature $c$, anyone can reproduce the meter definition. The error is only limited by his/her precision of experiments. Also, the modern definition of time and mass use the fundamental natures of quantum mechanics, through atomic frequencies and the Planck constant. 
+}
+
+Now, let's come to the key of the section, and the corner stone of Einstein's special relativity. 
+
+\marginnote{We have said that the modern speed of light is a way to define length. But from now on, let's go back to the early 1900s, and still consider the speed of light as measured by distance moved per unit time, with common sense definition of distance and time duration.}
+\textbox{What's the speed of light from a moving source?}{
+	Bob holds a candle. The speed of light from Bob's candle is $c_B = c$ wrt Bob. 
+	Alice is moving at speed $v$ wrt Bob in a closed car. She also holds a candle. For the light from Alice's candle:
+	\titem{
+		\item What is the speed $c_A$ wrt Alice?
+		\item What is the speed $c_B$ wrt Bob?
+	}
+
+	\includegraphics[width=0.6\textwidth, trim={0 3pt 3pt 0}, clip]{light}
+
+	\tcblower
+
+	We can immediately get $c_A=c$ from $(\mathbb{R})$. Because otherwise Alice would know that she is moving by noticing a different value of speed of light without interacting with the outside of the car. However, what is $c_B$ for the light from Alice's candle?  
+}
+
+Naively, we would have expected that $c_B = c_A + v = c + v$ from the Newtonian speed addition rule \eqref{eq:vel_add_newton}. And this looks natural -- in our everyday lives (speeds much slower than light): if Alice is in a car moving with $v\ll c$ (wrt Bob), and throw a ball with speed $u_A$ wrt Alice, the speed of the ball wrt Bob should be $u_B = v+u_A$.
+
+However, the light propagation should be computed by Maxwell equations. As a result of computation, one obtains $c_B = c$! The box below derives this surprising fact for you. Multi-variable calculus is used, which is beyond the prerequisite math. Thus if you cannot follow the derivation, it's okay to skip it.
+
+\mtextbox{Maxwell and relativity}{
+	In fact, hidden in Maxwell's equations, there is a symmetry, which already implies Einstein's special relativity. The invariant speed of light is just a consequence of that. The symmetry is known as Lorentz transformations, which is developed by Voigt, Lorentz, Larmor and Poincare during 1887-1905 before Einstein established special relativity. We will come to the Lorentz transformations in Section \ref{sec:lorentz} from a mechanical point of view.
+}
+
+\textbox{(Optional) Speed of light from Maxwell equations}{\index{speed of light from Maxwell equations}
+
+	Let us work in Bob's reference frame. The Maxwell's equations with vacuum permeability $\mu_0$ and permittivity $\epsilon_0$ are:
+
+	\begin{minipage}{0.4\textwidth}
+		\begin{align}
+			\label{eq:mnde} \nabla \cdot  \mathbf{E} & = \frac{\rho}{\epsilon_0} ~,
+		\end{align}
+	\end{minipage}\hspace{0.1\textwidth}
+	\begin{minipage}{0.45\textwidth}
+		\begin{align}
+			\label{eq:mndb}  \nabla \cdot  \mathbf{B} & = 0 ~,
+		\end{align}
+	\end{minipage}
+	
+	\begin{minipage}
+		{0.4\textwidth}
+		\begin{align}
+			\label{eq:mnte} \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} ~,
+		\end{align}
+	\end{minipage}\hspace{0.1\textwidth}
+	\begin{minipage}
+		{0.45\textwidth}
+		\begin{align}
+			\label{eq:mntb} \nabla \times \mathbf{B} &= \mu_0 \left [ \mathbf{J} + \epsilon_0 \frac{\partial \mathbf{E}}{\partial t} \right ]~.
+		\end{align}
+	\end{minipage}\medskip
+
+	As we study the propagation of light, the Maxwell equations are used in the vacuum environment. Thus the charge density $\rho=0$, and the current $\mathbf{J}=0$. To eliminate $\mathbf{E}$ and obtain an equation for $\mathbf{B}$ only, we use the following trick: Let us apply $\nabla\times (\cdots)$ to the LHS and RHS of \eqref{eq:mntb}, respectively:
+	\mtextbox{Velocity from phase}{
+		One can read off the (phase) velocity from the ``phase'' factor $\cos[k(x-ct)]$ in \eqref{eq:maxwell_wave}. This can be done by following one period of oscillation in the below figure and see how it moves.
+		\\
+		\includegraphics[width=\textwidth, trim={0 2pt 2pt 0}, clip]{phase_velocity}
+		\\
+		We will encounter similar wave equations in quantum mechanics later in this course, and use complex solutions $\exp[ik(x-ct)]$. Thus, make sure to understand why \eqref{eq:maxwell_wave} describes a moving wave.
+		\mnewline
+		If you think at a deeper level, using phase velocity above is in fact not the way to describe how fast information propagates. Then you need to solve the Maxwell equations more carefully, and find a regarded solution produced by accelerating source. It is beyond the scope of the current discussion.
+	}
+	\begin{align} \nonumber
+		\nabla\times\mbox{LHS} = \nabla\times(\nabla\times \mathbf{B})
+		\xlongequal{\mbox{math identity}} \nabla (\nabla\cdot \mathbf{B}) - \nabla^2 \mathbf{B} \xlongequal{\mbox{using Eq.~\eqref{eq:mndb}}}
+		- \nabla^2 \mathbf{B} ~,
+	\end{align} 
+	\begin{align} \nonumber
+		\nabla\times\mbox{RHS} =  \mu_0\epsilon_0 \frac{\partial}{\partial t} (\nabla \times \mathbf{E}) 
+		\xlongequal{\mbox{using Eq.~\eqref{eq:mnte}}} -\mu_0\epsilon_0 \frac{\partial^2}{\partial t^2} \mathbf{B} ~.
+	\end{align}
+	Thus, LHS=RHS is a wave equation:
+	\begin{align}
+		\label{eq:maxwell_wave}
+		\frac{\partial^2}{\partial t^2} \mathbf{B} 
+		- \frac{1}{\mu_0\epsilon_0} \nabla^2 \mathbf{B} = 0~. 
+	\end{align}
+	In a course of mathematical method of physics, one will study how to systematically solve this equation. Here we will not do so. Instead, we can always propose a solution and check it indeed solves Eq.~\eqref{eq:maxwell_wave} without using more math. One can check that the below E\&M wave is a solution:
+	\begin{align}
+		\label{eq:sol_maxwell_wave}	B_z = B_0 \cos [k (x - ct) ]~,
+		\qquad \mbox{where~} c \equiv \frac{1}{\sqrt{\mu_0\epsilon_0}} ~.
+	\end{align}
+	The take home message from the calculation is: once a beam of E\&M wave is emitted, it can then propagate in the vacuum without the reference of the emitter, i.e. the motion information of the emitter is ``forgotten''. The speed of light is calculated by constants of nature $\mu_0$ and $\epsilon_0$, independent on the speed of the emitter (or the observer). Thus we conclude that the answer is $c_B=c$, the same speed that Alice observes (i.e. $c_B=c_A$)! 
+}
+
+There must be something terribly wrong at this moment: The velocity addition rule \eqref{eq:vel_add_newton} is inconsistent with the observer-independent speed of light \eqref{eq:sol_maxwell_wave}. In such a situation, we need input from experiments to see who is right. The Michelson-Morley interferometer experiment (1887) shows that Maxwell is right. The Newtonian velocity addition does not apply to light!
+
+\needspace{.1\textheight}
+\mtextbox{Modern interferometers}{
+	The Michelson-Morley interferometer was designed to measure the variation of speed of light. Now that we know (at least assume) that the speed of light is truly a constant, we can turn the same interferometer into a precise measurement of the variation of length of the two arms. This has many applications (check \href{https://en.wikipedia.org/wiki/Michelson_interferometer}{Wikipedia} for example), from \href{http://courses.washington.edu/phys331/michelson/michelson.pdf}{performing Fourier transformation} to measuring the diameter of stars. Last but not least, this is also \href{https://www.youtube.com/watch?v=FlDtXIBrAYE}{how LIGO detected gravitational waves in 2015/16}. 
+}
+
+\textbox{The Michelson-Morley interferometer experiment}{\index{Michelson-Morley interferometer}
+	\begin{minipage}
+		{0.45\textwidth}
+		\includegraphics[width=\textwidth]{mm-experiment}
+	\end{minipage}\hspace{0.04\textwidth}
+	\begin{minipage}
+		{0.5\textwidth} A beam of light is emitted from the source. Via a half-silvered mirror, the beam is split into two, reflected by two mirrors respectively and re-combine on the screen. Due to different length of propagation, interference fringes develop. 
+		
+		Note that the experiment is done on the earth. The earth moves at $v\sim 30$km/s around the sun. Thus if the velocity addition rule applies, the speed of light in the Michelson-Morley interferometer should change under rotation. Then the interference fringes should shift. But the shift is not observed, indicating no velocity addition. Maxwell wins over Newton.
+	\end{minipage}
+}
+
+\mtextbox{Is Newton ``wrong''?}{
+	Now that the velocity addition (in the core of Newtonian mechanics) fails for light, is Newton wrong? Should we abandon Newtonian mechanics?
+	\mnewline
+	In modern physics, we think of most theories as ``effective'' theories -- they apply with certain approximations. When $v\ll c$, Newtonian mechanics is still useful, as it is pretty precise, and simpler and more intuitive than special relativity. 
+	\mnewline
+	Thus, by learning special relativity, we do not mean to abandon Newtonian mechanics. Rather, Newtonian mechanics is still much more widely used than special relativity in the modern era (since we do not usually move at $v\sim c$ or care about the corrections suppressed by $v/c$).
+	\mnewline
+	In fact, special relativity has a similar fate -- it is classical. When considering small enough particles, one has to consider quantum mechanics and we arrive at quantum field theory. And considering the quantum effect of gravity, quantum field theory is again not adequate...  
+}
+\textbox{Optional historical remarks: the story of aether}{\index{aether}
+	In fact, what we have introduced here is \emph{not} what researchers was thinking 100 years ago when they made the discoveries. 
+
+	At the time of Maxwell, it was believed that E\&M waves propagates in a media called aether, analogous to sound waves propagating in the air. Thus, the speed of light $c=1/\sqrt{\mu_0\epsilon_0}$ is wrt aether as well. The parameters $\mu_0$ and $\epsilon_0$ were considered the property of aether, instead of the property of the vacuum.
+	
+	Then, the velocity addition rule had no problem -- just as velocity addition of wind and sound waves propagating in the wind.
+
+	Now the question is: when the earth orbits the sun, do aether around the earth move together with the earth, or remain static?
+
+	The observation of \href{https://en.wikipedia.org/wiki/Aberration_of_light}{stellar aberration} (1600s - 1700s) showed that aether did not move together with the earth. And in the context of aether, the Michelson-Morley experiment shows that aether indeed moved together with the earth. This was the contradiction that puzzled physicists 100 years ago. And Einstein's contribution is to eliminate the need of aether with his theory of relativity.
+
+	As aether is abandoned, now when we learn E\&M waves, we do not introduce aether any more. Thus, I choose to use the way of introduction closer to modern thinking instead of historical thinking, only leaving a remark of aether within this box.
+}
+
+\subsection{Einstein's Relativity}
+
+How to resolve the contradiction between Maxwell's observer-independent $c$ and the velocity addition rule? This is one of the two biggest problems in physics at the beginning of the 20th century. 
+
+When Einstein was 16 years old, he was already deeply puzzled by light: What if I run as fast as light? Will light be at rest? 10 years later, he found out the solution.
+
+Here is how Einstein solved the problem in 1905: he took the observer-independency of $c$ as a fundamental assumption of his theory. It is assumed. So problem solved :)
+
+Seriously, an assumption is no more than an assumption. Everyone can make assumptions. But what's truly revolutionary is the implications of the assumption and how to get a consistent theory on top of that. To be clear, here we summarize the assumptions, being prepared to proceed to the profound implications.
+ 
+\mtextbox{Remarks about ($\mathbb{C}$)}{
+	\mtitem{
+		\item The speed of light is observer-independent, but not velocity. In other words, the direction of light can be observer-dependent. We will see this explicitly later when we construct a ``light clock''.
+		\item The frequency of light is observer dependent (relativistic Doppler effect). When you move towards light, the light frequency becomes higher (blue shift). When you move away from light, the light frequency becomes lower (redshift). 
+		\item In non-vacuum situations, the speed of light will depend on the motion of the media. The speed of light in the moving frame of media can be obtained using relativistic velocity addition rules to be discussed later. 
+	}
+}
+\itembox{The postulates of special relativity}{}{\index{postulates of special relativity}
+	\item ($\mathbb{R}$) The relativity principle: Laws of nature keep the same form in all inertial frames.
+	\item ($\mathbb{C}$) The vacuum speed of light is $c$ in all inertial frames. 
+} 
+
+The postulates ($\mathbb{R}$) and ($\mathbb{C}$) are the original postulates in special relativity, and often referred to as the only assumptions. But to be clear, one has also to postulate observer-independency of events to complete the theoretical basis of special relativity:
+
+\textbox{The postulate of observer-independent events}{\index{events}
+	($\mathbb{E}$) 
+	Let us define an event to be something that happened to a particular small object at a particular moment (i.e. \emph{localized} at a spacetime point). Then, the occurrence (or not) of an event is observer-independent. If one observer finds that an event E happened, all observers who saw the event must agree, no matter how they move.
+	
+	\tcblower
+	
+	This postulate looks too trivial to mention. Nevertheless, let us make things clear.
+
+	For example, the followings are events that all (honest) observers must agree:
+	\titem{
+		\item ``A beam of light is reflected by a mirror.''
+		\item ``Alice and Bob met. At the time when they met, their watches both pointed to 10am.''
+	}
+	However, the following is NOT an event:
+	\mtextbox{Not one, but two events}{In the example of 5-light-year-separated Alice and Bob, the sentence is not an event, but one can separate it into two events: When Alice looked at her watch, her watch shows 10am. And when Bob looked at his watch, his watch shows 10am. The same applies for the comparison of ruler example. It makes sense to talk about relations of events in relativity, as we will see later.}
+	\titem{
+		\item ``Alice and Bob are 5 light years away. When Alice's watch pointed to 10am, Bob's watch also pointed to 10am.''
+	}
+	This is not an event because Alice and Bob are at different locations. So it may be possible that an observer Charlie considers the above statement to be true; while his running Dog considers the above statement to be false.
+
+	Similarly, the following is NOT an event and may not be agreed by all observers:
+	\titem{
+		\item ``A moving ruler has the same length with a static ruler because the two end points coincided at a moment.''
+	}
+}
+
+\textbox{Remark: the time of events wrt a reference frame}{
+	With finite speed of light, we need a clarification about the time of events. For example, an event took place some distance away from Bob. When talking about the time of the event, it could refer to:
+	\marginnote{
+		By ``a clock at every spatial point'': the clocks are static wrt Bob, and synchronized wrt Bob's frame (the coordinate time in his coordinate system). Practical synchronization can be done by using light signals to compare clocks, and deduct the time used for light propagation.
+		\\
+		By ``record'': imagine that Bob has a helper at every point in his frame (i.e. coordinate system). Once any event happened, the helper can immediately write down Bob's time and spatial coordinate of the event. This will be denoted by the coordinate of the event $(t_B, x_B)$ wrt Bob.}
+	\titem{ 
+		\item The time in Bob's reference frame. Imagine Bob puts a clock at every spatial point in his frame, which ``records'' the time that an event happened. 
+		\item The time that Bob actually ``see'' the event. This needs to take the time of light propagation time between the event and Bob. This is trivial but messy.
+	}
+	In this course, unless otherwise emphasized, we will by default use the time in Bob's frame, instead of the time that the Bob actually see the light signal of the event reaching him, when talking about the time wrt Bob.
+}
+
+With the three postulates, we are now prepared to start the adventure of special relativity.
+
+\section{Time Dilation}\label{sec:time-dilation}
+
+At the beginning of this part, we promised to explain why the space traveler Alice is younger than Bob when she returns (if she initially has the same age as Bob before space travel). This is the goal of this section.
+
+To do this, we have to touch the most fundamental concept in physics -- time. Let us begin by recalling how Newton comment about time.
+
+\mtextbox{What can we trust?}{
+	As now we are to go beyond Newton, you may wonder, what can we trust. Of course we want to stand on Newton's shoulder and make use of some of his legacy. 
+	\tcblower
+	Almost all results for low speed motion ($v\ll c$) can be trusted (with the exception of rest energy, which we will come back to later). For high speed motion ($v\sim c$), we trust $(\mathbb R)$, $(\mathbb C)$, $(\mathbb E)$ and nothing else. 
+	\mnewline
+	For example, when discusing time: we trust that Alice's mechanical watch (static wrt Alice) defines time nicely for Alice. Because the time from mechanical watch is as a result of low speed mechanical motion. But we cannot trust Newton's conclusion about how Alice's time (as defined by the tick-tock of her mechanical watch) lapse wrt Bob, if Bob has relative motion wrt Alice with $v\sim c$. When discussing length: we trust that Alice's ruler (static wrt Alice) defines length for Alice but we cannot trust how Bob observes the length of Alice's ruler.
+}
+\textbox{Time in Newton's Principia}{\index{time (Newton)}
+	``Absolute, true and mathematical time, of itself, and from its own nature flows equably without regard to anything external, and by another name is called duration: relative, apparent and common time, is some sensible and external (whether accurate or unequable) measure of duration by the means of motion, which is commonly used instead of true time'' -- Newton,  Philosophi{\ae} Naturalis Principia Mathematica
+
+	\tcblower
+
+	Thus, Newton believed that the ``true time'' exists independent of anything else. If so, can anything access and probe the true time?
+
+	\titem{
+		\item If it cannot be accessed, then why bother to define ``true time''? Why shouldn't we shave this concept using Occam's razor?
+		\item If it can be accessed by an apparatus, then why it cannot be altered? As an extrapolation of the Newtonian's third law, when there is some action from the true time to the apparatus, why the apparatus does not back-react on the true time and alter it?
+	}
+}
+
+Fine. We are physicists. What can we do to get rid of the metaphysical thinking about time? Let us do a practical thing -- define time by actually making a simplest clock: the light clock.
+
+\textbox{Shut up and construct a light clock}{\index{light clock}
+	\begin{minipage}
+		{0.45\textwidth}
+		\includegraphics[width=\textwidth, trim={0 3pt 3pt 0}, clip]{light_clock}
+	\end{minipage}\hspace{0.04\textwidth}
+	\begin{minipage}
+		{0.51\textwidth} We define time by a tick-tock of the ``light clock''. The tick-tock time interval $\Delta t$ is the time between the emitter emits the light (at time $t_e$) and the detector detects the light (at time $t_d$). In the middle, the light is reflected by a mirror (at time $t_r$).
+		With the light clock, a ``standard time interval'' can be defined as \marginnote{The emitter and detector are put extremely close together that we can consider them to be at the same point (in the figure they are drawn separately just for illustration).}
+		\begin{align}
+			\label{eq:time_interval}
+			\Delta t \equiv t_d - t_e = \frac{2D}{c}~. 
+		\end{align}
+
+		Then time can be measured by number of ``standard time intervals'' between two events.
+	\end{minipage}
+}
+
+To see how the time of a traveler lapse wrt a static observer, let us now load the light clock on a car with Alice. 
+
+\textbox{Load the light clock into Alice's car}{
+	\begin{minipage} 
+		{0.6\textwidth}
+		\includegraphics[width=\textwidth, trim={0 3pt 3pt 0}, clip]{light_clock_car}
+	\end{minipage}\hspace{0.04\textwidth}
+	\begin{minipage}
+		{0.36\textwidth} 
+		To 
+		\marginnote{Here we assume that the light clock is close enough to Alice, such that at Alice's reference, the space coordinates of both herself and the clock are $x_A=0$.}
+		see how the time of a traveler lapse wrt a static observer, let us now load the light clock in a car with Alice. Using ($\mathbb{R}$), Alice finds that the interval of the light clock is $\Delta t_A = 2D/c$. 
+		
+		Now we have to find out $\Delta t_B$ and compare it with $\Delta t_A$.
+	\end{minipage}	
+}
+
+\needspace{.25\textheight}
+\mtextbox{Same perpendicular lengths}{
+	You may have an excellent question at this moment: when the light clock is moving, how do we know that the length of the light clock is still $D$ wrt Bob?
+	\tcblower
+	Consider a thought experiment: train on rail. When the train is at rest, its wheels has the same interval as the rail width. Now the train moves fast. Does its wheels have larger or smaller width compared to the rail? Neither. Otherwise there would be different type of accidents happening (inconsistent events) that contradicts ($\mathbb{E}$).
+}
+\textbox{Alice's time interval of the light clock measured by Bob}{
+	\begin{minipage}
+		{0.55\textwidth}
+		\includegraphics[width=\textwidth, trim={0 2pt 2pt 0}, clip]{light_clock_B}
+	\end{minipage}
+	\hspace{0.05\textwidth}
+	\begin{minipage}
+		{0.4\textwidth}
+		The left figure is Bob's view on the moving clock. Here $x_B$ and $t_B$ are the space and time wrt Bob, respectively. 
+		
+		We take three snapshots of time: the emission of the signal at $t_B = t_d^B$, the time that light is reflected by the mirror $t_B = t_r^B$, and the time that the light is received by the receiver $t_B=t_d^B$.
+
+		The position and state of the light clock is plotted on the diagram.
+	\end{minipage}
+
+	\bigskip
+
+	\begin{minipage}
+		{0.35\textwidth}
+		\includegraphics[width=\textwidth, trim={0 2pt 2pt 0}, clip]{light_clock_B1}
+	\end{minipage}
+	\hspace{0.05\textwidth}
+	\begin{minipage}
+		{0.6\textwidth}
+		In the left figure, we plot the light trajectory in the moving light clock wrt Bob. Bob must agree that the light has hit the mirror ($\mathbb{E}$). Thus the direction of light must be no longer vertical. And from ($\mathbb{C}$), the speed of light from the emitter to the mirror is still $c$.
+		
+		From the Pythagorean theorem, we have
+		\begin{align}
+			\label{eq:lcb}
+			\left ( \frac{1}{2} c \Delta t_B \right )^2 = \left ( \frac{1}{2} v \Delta t_B \right )^2 + D^2 ~,
+		\end{align}
+	\end{minipage}
+
+	\bigskip
+
+	\tcblower
+	
+	We can thus solve $\Delta t_B$ -- Alice's time interval measured by Bob:
+	\begin{align}
+		\label{eq:dtb}
+		\Delta t_B = \frac{2D}{c} \frac{1}{\sqrt{1-\frac{v^2}{c^2} }} = \gamma \Delta t_A ~,
+		\qquad
+		\gamma \equiv \frac{1}{\sqrt{1-\frac{v^2}{c^2} }} > 1~.
+	\end{align}
+	Thus in Bob's frame, Alice's light clock slows down. This is also known as the ``time dilation'' of moving clocks.
+}
+
+\textbox{Not only Alice's light clock -- but the whole Alice's frame slows down wrt Bob}{
+	At this moment, 
+	\marginnote{``I don't care about your light clock. I care about you.'' -- Bob}
+	it is not convincing enough to conclude that everything about Alice slows down wrt Bob. Because we have only shown that her light clock slows down. What about her other clocks, her phone, her heart rate, ... ?
+
+	\mtextbox{Goodbye to absolute time}{By ``moving clock slows down'', one notes that the concept of ``absolute time'' by Newton is gone with the speed. Different movers have different times; there is no absolute mover and thus there is no absolute time. 
+	\\
+	We will come back to the fundamental understanding of time later this part, and later again in general relativity.}
+
+	\tcblower
+
+	In fact, according to ($\mathbb{R}$), everything above slows down.
+
+	For example, Alice has a phone which can define the unit time interval. She puts the light clock and phone very close to each other. If the phone and the light clock have the same $\Delta t$ in a static frame, they must have the same $\Delta t_A$ wrt Alice ($\mathbb{R}$). Their agreement is an event, which Bob must agree ($\mathbb{E}$). Thus Bob must agree that the moving phone defines the same $\Delta t_B$ as the light clock.
+}
+
+\textbox{Summary and the 4-step reasoning in special relativity}{\index{time dilation}\index{4-step reasoning}
+	I hope now you have understood why the space traveler Alice is younger than Bob when she returns -- as a moving observer, she slowed down wrt Bob.
+
+	\mtextbox{Meaning of $\Delta t_B$}{Be reminded that $\Delta t_B$ is NOT the time duration of Bob's light clock. Rather, it's the time duration of Alice's light clock (i.e. moving with Alice) in Bob's frame. So wrt Bob (static observer), Alice's time duration slows down.}
+	\tcblower
+
+	The 4 key steps of reasoning is important, and we will use similar methods repeatedly. Thus let us summarize it here:
+	\tenum{
+		\item Construct an apparatus in a static frame. The apparatus should be as simple as possible so we can calculate what's actually happening inside the apparatus. Here the apparatus is the light clock with standard time interval $\Delta t = 2D/c$.
+		\item Load the apparatus into Alice's moving car. From ($\mathbb{R}$), Alice must find the apparatus work the same way as it is at rest. Here Alice finds $\Delta t_A = \Delta t$.
+		\item Calculate what Bob gets. Compare the result with what Alice gets. We have calculated that $\Delta t_B = \gamma \Delta t_A$. Thus the moving light clock slows down.
+		\item Although the result is obtained by one particular apparatus, the comparison between Bob's frame and Alice's frame applies for all possible apparatuses. This is because otherwise, one can use the difference to identify an absolute mover ($\mathbb{R}$).
+	}
+}
+
+\textbox{Frame time and what Bob actually sees}{
+	\twocol{0.85}{0}{0.65}{
+		We have mentioned the concept ``frame time'': If not otherwise stated, when we mention time, we mean time in one's frame, instead of the time that light comes to the observer's eye. Now let us make this point clearer. 
+
+		Let us put two things at each point in space (i.e. the $x$-direction):
+		\titem{
+			\item A space label. For example, imagine there is a ruler along the $x$-direction and the label of the ruler is the space label.
+			\item A clock. The clocks are synchronized (see the section about synchronization for how to synchonize clocks) at all points in space. 
+		}
+		Time dilation ($\Delta t_B$) means that, when Alice's clock (the red clock marked with a $\vec v$) is moving, at a next moment, it is compared with another clock in Bob's frame, and it slowed down in this comparison. The time dilation does not depend on if Alice's car moves towards or away from Bob.
+
+		On the other hand, what Bob actually ``sees'', denoted by $\Delta t_B^{\mbox{``see''}}$: since the speed of light is finite, there will be a delay for the light ray to travel from Alice's clock to Bob's eyes (the red wavy lines). $\Delta t_B^{\mbox{``see''}}$ depends on whether Alice is moving towards or away from Bob.
+	}{
+		\cg{0.9}{frame_meaning}
+	}	
+}
+
+Now that you have hopefully understood time dilation and why the space traveler Alice is younger. So now it is a good time to confuse you again, with the infamous ``twin paradox''.
+
+\needspace{0.4\textwidth}
+\mtextbox{Time travel?}{
+	The twin paradox is an example of time travel to the future. Take a spaceship trip and back, you will be in the future. If the spacetrip is fast enough, within 1 year round trip, you can see the earth of the next century, or even later. In general relativity you will see more ways to travel to the future such as stay close to a black hole.
+	\mnewline
+	What about time travel to the past? Later in this part you will find difficulties within the framework of special relativity to prevent time travel to the past. There are also more general problems, such as what if you travel to the past, and prevent your father and mother to meet? What if you travel to the past and meet another version of yourself? And so on. It is probably impossible to travel to the past, though no decisive conclusion can be made at this moment.
+}
+\textbox{Who is moving? Who is younger? -- The twin paradox}{\index{twin paradox}
+	We have shown: Bob find that Alice is younger (according to the clocks in his frame). However, motion is relative ($\mathbb{R}$). Thus shouldn't Alice also find Bob younger?
+
+	\tcblower
+
+	Let us answer the question in two different setups:
+	\tenum{
+		\item Alice and Bob are both inertial frames, i.e. they move wrt each other forever. Then from ($\mathbb{R}$), both of the statements are correct: ``Alice finds Bob younger'' and ``Bob finds Alice younger''.
+
+		At first sight, this contradicts with ($\mathbb{E}$). But in fact there is no contradiction. As inertial movers, Alice and Bob can meet only once. This is the time that Alice starts off with the same age as Bob. Afterwards they never meet again. Thus there is no local events to compare their ages (to compare $\Delta t_B$ and $\Delta t_A$ using \emph{events}, they have to meet at least twice). 
+
+		\item Alice first moves and later returns to meet Bob. This is the same setup as we discussed at the very beginning of this part.
+
+		Then we can only trust Bob at the moment. This is because for Alice to return, there exist a period of time when Alice is not in an inertial frame. The principle of relativity (we used a lot of times when deriving the conclusion) does not apply for non-inertial observers. Thus we can only trust Bob's statement that indeed Alice is younger.
+	}
+}
+
+\section{Physical Picture and Physical Intuition}\label{sec:phys-pict}
+
+This section is not about any detailed rule of physics. Nevertheless, considering that modern physics is so different from classical physics, it is important to pause and discuss about method of learning. This is because modern physics is very different from classical physics. We choose to put the section here instead of at Part 0 (which is logically more suitable), because before having any real experience in modern physics, the talk is empty. 
+
+\textbox{Why modern physics is different from classical physics (i.e. general physics)?}{
+	From time dilation of special relativity, you have already tasted a tinny little bite of modern physics. If you have not learned it already, I am sure that you feel it is counter-intuitive and more confusing than most parts of general physics.
+
+	And much more is coming -- you will learn more about relativity, gravity, quanta, information, complexity ... There is a whole new world in front. The common features of these subjects are not only that they were discovered in the past about 100 years, but also, they are farther away from our daily experience. This is the difference from classical physics.
+
+	Do not be scared by that! This is why we have this section.
+
+	\tcblower
+
+	Incidentally, there are similar transitions in mathematics, literature and art -- they also evolve from classical eras to modern eras. The modernization revolutions in literature, art, mathematics and physics are of course different, but share interesting similarities.
+}
+
+Let us use an exercise to talk about the methods of thinking, and the recommended way to learn modern physics.
+
+\textbox{An exercise}{
+	A ``hand grenade''
+    \marginnote{\includegraphics[width=0.3\textwidth, trim={0 2pt 2pt 0}, clip]{grenade}}
+	is a kind of bomb that explode a certain time after you trigger it. Let the time interval between trigger and explosion be $\Delta t$ when the hand grenade is at rest. Now you throw the hand grenade with speed $v$. Calculate the distance the hand grenade travels before explosion in the framework of special relativity. In the calculation, both the earth gravity and the friction from air can be neglected.
+	
+	\tcblower
+
+	Instead of solving the excise immediately, let us discuss 3 ways to ``think about'' how to solve it (\emph{not} three ways to solve it).
+
+	\titem{
+		\item \emph{Pattern matching}. Match (transform) the problem to a solved one: "Bob" $\leftrightarrow$ "you"; "Alice" $\leftrightarrow$ "grenade"; $\Delta t_A$ $\leftrightarrow$ $\Delta t$ and thus $v\Delta t_B = \gamma v \Delta t$ $\rightarrow$ $s$.
+		\item \emph{Inverse search}. The distance is asked. How to calculate distance, the speed is given, so $s=v t$. Now how to get $t$? Which equation has $t$? It is a problem about relativity so should be $\Delta t_B = \gamma \Delta t_A$ (bless you get $\gamma$ instead of $1/\gamma$, or use a bit pattern matching). Thus, $s=\gamma v \Delta t$.
+		\item \emph{Physical picture guided}. Imagine the grenade is flying a distance and then explode. You see the words but a movie is played in your mind. The time of the grenade is slowing down. So it must be running a longer time than usual, and thus a longer distance. The flight time is longer by a $\gamma$ factor, and thus the distance travelled is longer by a $\gamma$ factor: $s = \gamma v \Delta t$.
+	}
+}
+
+When preparing exams, we may have trained a lot using mainly the 1st and 2nd methods. However, the 3rd way of thinking is the major direction to go if you'd like to become an innovative physicist, or at least think as a physicist. Because:
+
+\itembox{Why physical intuition and physical picture are important}{}{
+	\item A physical picture connects what you learn to the real world. The other two methods does not. In research you need to know the possible applications of the theory, or how to do approximations to simplify the analysis. The physical picture guides you to do that. The other two do not. \href{http://v.cx/2010/04/feynman-brazil-education}{Some comments from Feynman} may be nice to read at this point.
+	\item A physical picture tells you if your answer makes sense. If you made a mistake somewhere, you have a good chance to catch it early if you have a physical picture in your mind.
+	\item Research means new problems that pattern matching does not give you good results. (But you indeed have to use pattern matching to make sure your idea is new.)
+	\item Researchers has to define problems before solving them (unlike exam problems which are already sharply defined). A clear physical picture tells you how to define the problem. Inverse search or pattern matching cannot.
+	\item As a researcher, one needs to talk to people. In most discussions (especially those without a blackboard around), you talk by physical pictures.
+	\item Computers are good at pattern matching and inverse search. The rise of AI is more likely to reduce the value of your pattern matching and inverse search works, but less likely the ones based on intuition.
+}
+
+I hope you are convinced now: Even physics becomes less intuitive in the modern era, you should try to make it as intuitive as possible by building up physical pictures. And here are some suggestions on how to achieve that.
+
+\itembox{How to build up physical picture/intuition in modern physics?}{}{
+	\item Try to ``play a movie'' in your mind about the problem. Include as many relevant physical details in the movie as possible. When you have new understandings on something, add it to the ``movie''.
+	\item When you find something not intuitive, think about it again and again. You will eventually feel happier with it. 
+	\item Pay attention to paradoxes in physics, and how they get resolved.
+	\item Think about the same problem in different ways/angles. 
+	\item Compare with our everyday life experience. Find similarities and/or key differences. 
+	\item Simplify and modularize the problem. Build up the intuition of the simplest problems as building blocks of more complicated ones.
+	\item If there are still parts which you cannot make it intuitive, use some (as little as possible) math derivation for the moment. Try to replace it by real intuition later.
+}
+
+\section{Length Contraction}\label{sec:length}
+
+We
+\marginnote{In fact, length contraction was hypothesized way before special relativity, by FitzGerald (1889) and Lorentz (1892) to explain the Michelson-Morley experiment. For this reason it is also known as Lorentz contraction. But it is special relativity that put length contraction into a solid and general context.}
+have just witnessed the revolution of the concept of time -- time duration is relative depending on the motion of observers. Now is the turn of space. Is space interval still absolute, or it is similarly relative depending on observers?
+
+In this section, we will arrive at the same conclusion of length contraction in 2 ways. You are expected to understand the first well. The other is optional but recommended as to understanding the same problem in different aspects.
+
+\textbox{The grenade revisited}{
+	Let's think about the grenade problem from a different angle. Recall wrt the ground, the grenade has flown a distance $s = \gamma v \Delta t$. Now, what the grenade ``thinks''? 
+
+	\marginnote{\includegraphics[width=0.35\textwidth]{grenade_length_contraction}}
+
+	It still has lifetime $\Delta t$ (wrt itself). Though it would think that it has flown a distance $v \Delta t = s/\gamma$. But the observer standing on the ground thinks that it has flown a longer distance (wrt a static observer). How can it be?
+
+	To make the situation clearer, let us put a ruler on the ground, and let the grenade slide over the ruler. The rest length of the ruler is $s = \gamma v \Delta t$.
+
+	Wrt the grenade, the ruler (and ground) is moving with $v$ for time $\Delta t$. Thus the ruler has length $s/\gamma$ wrt the grenade. 
+
+	\tcblower
+
+	To conclude, a moving ruler is shorter by $1/\gamma$ if placed parallel to the motion direction. Also recall that if the ruler is perpendicular to the motion direction, then the length does not change.
+}
+	
+
+We would have closed up the section here. But what happened during $\Delta t$ time in a grenade is opaque. Let us construct a light ruler to see what happens explicitly, which can also give insight on velocity addition. 
+
+\textbox{(Optional) Length contraction from the light ruler (4-step reasoning)}{\index{length contraction from moving ruler}
+	Although we have got the result, it is a good practice to derive it using another way. Let us construct a light ruler and study how it contracts. This will explicitly verify our promise: No matter how the ruler is defined, it should contract the same way. To see that, let us apply our familiar 4 steps:
+	\tenum{
+		\item In a static frame, the length of the ruler is $D = \frac{1}{2} c \Delta t$, where $\Delta t$ is the time interval between the emission and detection of light.
+
+		\item Now we load the light ruler on Alice's car. The situation and the spacetime diagram that Bob finds are in the figures below. 
+
+		\includegraphics[width=0.5\textwidth, trim={0 3pt 3pt 0}, clip]{light_ruler}
+		\hspace{0.1\textwidth}
+		\includegraphics[width=0.6\textwidth, trim={0 2pt 2pt 0}, clip]{light_ruler_2}
+
+		According to ($\mathbb{R}$), Alice consider the length of the ruler to be
+		\begin{align}
+		\label{eq:ruler_Alice}
+		D_A = \frac{1}{2} c \Delta t_A~.
+		\end{align}
+
+		\item What length shall Bob get? We first divide the time interval $\Delta t_B$ into two parts: $\Delta t_{B1}$ and $\Delta t_{B2}$ for the time interval from the emitter to the mirror and from the mirror to the detector, respectively. From the above figure (right panel),
+		\begin{align}
+		\label{eq:bobx}
+		c\Delta t_{B1} = D_B + v \Delta t_{B1}~, \qquad
+		c\Delta t_{B2} = D_B - v \Delta t_{B2}~.
+		\end{align}
+		Thus
+		\mtextbox{Meaning of $D_B$}{Be reminded that $D_B$ is NOT the length of Bob's ruler. But rather, it's the length of Alice's ruler (i.e. moving with Alice) in Bob's frame. So wrt Bob (static observer), Alice's ruler (moving ruler) contracts.}
+		\begin{align}
+		\label{eq:bobt}
+		\Delta t_B \equiv \Delta t_{B1} + \Delta t_{B2} = \frac{D_B}{c-v} + \frac{D_B}{c+v} = \frac{2}{c} \frac{D_B}{1-\frac{v^2}{c^2} }
+		= \frac{2}{c} \gamma^2 D_B~,
+		\end{align}
+		where as always, $\gamma\equiv \frac{1}{\sqrt{1-v^2/c^2}} $. Thus
+		\begin{align}
+		\label{eq:bobalice}
+		D_B = \frac{c}{2} \frac{\Delta t_B}{\gamma^2} = \frac{c}{2} \frac{\gamma \Delta t_A}{\gamma^2} 
+		= \frac{c}{2} \frac{\Delta t_A}{\gamma} = \frac{D_A}{\gamma}~.    
+		\end{align}
+		Again, we arrive at the conclusion that moving ruler contracts in the motion direction.
+
+		\item For all rulers, one should get the same conclusion as the light ruler.
+	}	
+}
+
+\mtextbox{(Optional) A speedmeter}{
+	What's the motivation to replace $c$ with $v$ in one way? We can ask what this apparatus can do when it's at rest. From $\Delta t = D/u + D/c$, as we have defined $\Delta t$ and $D$, we can solve $u$. Thus, the apparatus is a speedmeter. No wonders that a speedmeter can tell you about speed addition.
+}
+\textbox{(Optional) A first look at velocity addition}{\index{velocity addition: first look}
+	Let's slightly modify the light ruler: replace the light from emitter to mirror into a moving particle, with speed $u_A$ wrt Alice. After the ``mirror'' gets the particle, the ``mirror'' still sends back a beam of light (thus it shouldn't actually be called a mirror though). Then how the light ruler experiment get modified?
+	\titem{
+		\item Wrt Alice, for the particle forward, $u_A \Delta t_{A1} = D_A$; and for light moving back, $c \Delta t_{A2} = D_A$. Thus,
+		\begin{align}\label{eq:fl-veladd1}
+			\Delta t_A = \Delta t_{A1} + \Delta t_{A2} 
+			= D_A \left( \frac{1}{u_A} + \frac{1}{c}  \right)~.
+		\end{align}
+
+		\item Wrt Bob, he will find the particle moving at a different velocity $u_B$. For the particle moving forward, $u_B \Delta t_{B1} = D_B + v \Delta t_{B1}$; and for light moving back, $c\Delta t_{B2} = D_B - v \Delta t_{B2}$. Thus,
+		\mtextbox{(Optional) The additive rapidity}{Eq.~\eqref{eq:add-eg} looks ugly. Wouldn't nature be simpler? But who told us velocity is the best variable to describe motion? Let us define \emph{rapidity}:\label{rapidity} $\phi(v) \equiv \mathrm{arctanh} (v/c)$. Inserting this definition to Eq.~\eqref{eq:add-eg}, we simply get
+		$$ \phi(u_B) = \phi(u_A) + \phi(v)~. $$
+		Thus rapidity is the variable that is actually additive. 
+		\tcblower
+		Why hyperbolic functions arises here (they originally are functions to parameterize a hyperbolic curve $x^2-y^2=1$ with additive parameters, just as what trigonometric functions sin, cos, tan are functions to parameterize a circle $x^2+y^2=1$ with additive angles)? Do the hyperbolic functions imply a new underlying math structure? Why motion in such a formula looks not like division of space and time, but rather hyperbolic rotation of space and time? We will return to this question in section \ref{sec:geometry}.
+		}
+		\begin{align}\label{eq:fl-veladd2}
+			\Delta t_B = \Delta t_{B1} + \Delta t_{B2}
+			= D_B \left(  \frac{1}{u_B-v} + \frac{1}{c+v}  \right)~.
+		\end{align}
+		\item We already know that $\Delta t_B = \gamma \Delta t_A$ and $D_B = D_A/\gamma$. Now divide \eqref{eq:fl-veladd2} by \eqref{eq:fl-veladd1} (LHS and RHS, respectively), we get
+		\begin{align} \label{eq:add-eg}
+			u_B = \frac{u_A + v}{1+u_A v / c^2} ~. 
+		\end{align}
+	}
+	When taking $u_A\rightarrow c$ limit, we find that $u_B\rightarrow c$, consistent with $(\mathbb{C})$. In section \ref{sec:lorentz}, you will learn a more general version of the velocity addition formula.
+}
+
+% \textbox{(Optional) Length contraction from two moving rods}{
+% 	Alice and Bob carry rods and moves with relative speed $v$ towards each other. A light signal is emitted from the left end of the rods when the left ends coincide. The light signal reaches the right end of the rods when the right ends coincide.
+
+% 	\includegraphics[width=\textwidth]{contraction3}
+
+% 	For the situation of the above figure, According to Bob (left panel of the figure):
+% 	\begin{align}
+% 	\label{eq:c3bob}
+% 	\frac{L_B-L_A(v)}{v} = \frac{L_B}{c}~,  \quad\rightarrow\quad
+% 	\frac{L_A(v)}{L_B} = 1- \frac{v}{c} ~,  
+% 	\end{align} 
+% 	and according to Alice (right panel of the figure),
+% 	\begin{align}
+% 	\label{eq:c3alice}
+% 	\frac{L_B(v)-L_A}{v} = \frac{L_A}{c}~,  \quad\rightarrow\quad
+% 	\frac{L_B(v)}{L_A} = 1+ \frac{v}{c} ~.
+% 	\end{align}
+% 	Multiply the above two equations, 
+% 	\begin{align}
+% 	\label{eq:c3m}
+% 	\frac{L_A(v)}{L_A} \frac{L_B(v)}{L_B} = 1- \frac{v^2}{c^2}~.   
+% 	\end{align}
+% 	This relation holds for all lengths \marginnote{Change $L_A$, the RHS does not change, so the RHS should not depend on $L_A$. For the same reason, the RHS does not depend on $L_B$}. As a result, we must have
+% 	\begin{align}
+% 	\label{eq:c3}
+% 	\frac{L_A(v)}{L_A} = \frac{L_B(v)}{L_B} = \sqrt{1- \frac{v^2}{c^2}} = 1/\gamma~.
+% 	\end{align}
+% }
+
+We have got two results from the light clock now: time dilation; and after time dilation have become known, we rotate the light clock to get length contraction. Now that length contraction have become known, can we get something else?
+
+\section{Meaning of the ``Same Time'' (Simultaneity)} \label{sec:same-time}
+
+Moving ruler contracts. Now, is there a twin ruler paradox? If Alice and Bob each holds a ruler along their motion direction, and when they meet, they compare the length of their ruler, can they find each other's ruler shorter? How can that happen?
+
+The key observation is that, to be fair, they have to compare the two ends of the ruler at the same time. Wait, do they have the same concept of the same time?
+
+\subsection{Simultaneity Depends on Which Observer}
+
+\needspace{0.1\textwidth}
+\mtextbox{Why introducing two objects?}{Actual objects $P$, $Q$ are needed to find an observer standing at the midpoint. Because a midpoint is defined for two points in space ($P$ and $Q$), not for two events ($E_P$ and $E_Q$) in spacetime.}
+\textbox{The meaning of simultaneity wrt an observer}{\index{simultaneity}\index{same time}
+	Consider two small objects $P$ and $Q$, not moving wrt each other.
+	An observer is standing exactly at the midpoint of $PQ$, and not moving wrt $PQ$. This can be practically done with a static ruler: Let $P$ be at the 0m point, $Q$ be at the 1m point, and the observer at the 0.5m point.
+
+	\includegraphics[width=0.4\textwidth]{st_ground}
+	\mtextbox{Relating to the time of a frame}{Previously, we have introduced the time of a reference frame -- at different positions, time are synchronized using light signals, deducting the time used for light propagation. Here, the concept of simultaneity means that $E_P$ and $E_Q$ happens at the same coordinate time in this static frame.}
+
+	Introduce two events: event $E_P$ happens to object $P$; and event $E_Q$ happens to object $Q$. For example, $E_P$ and $E_Q$ are the turn-on time of light bulbs at $P$ and $Q$, respectively. Recall that each event happens at a particular moment.
+
+	Now we are ready to define whether $E_P$ and $E_Q$ happens at the same time, or one is earlier/later than the other, wrt the observer:
+	
+	If the light signal from $E_P$ and $E_Q$ reach the observer at the same time, then $E_P$ and $E_Q$ happens at the same time. Otherwise, whichever reaches the observer earlier happens earlier.
+}
+
+\mtextbox{Am I wasting your time?}{
+	Oh, it looks that I am wasting your time by explaining something you already know since kindergarten. This is true. However, one little step further will need university education -- load the device into a car.
+	\tcblower
+	Einstein said with great modesty: 
+	``How it happened that I in particular discovered the relativity theory, it seemed to lie in the following circumstance. The normal adult never bothers his head about space-time problems. Everything there is to be thought about it, in his opinion, has already been done in early childhood. I, on the contrary, developed so slowly that I only began to wonder about space and time when I was already grown up. In consequence I probed deeper into the problem than an ordinary child would have done.'' 
+}
+\textbox {A spacetime diagram of the above scenario}{
+	Let us draw the events in a ``spacetime diagram''. Spacetime diagrams will turn out to be useful tools in studying relativity. On a spacetime diagram:
+
+	\begin{minipage}
+		{0.58\textwidth}
+		\titem{
+			\item An event is a point.
+			\item Light travel $45^\circ$ lines.
+			\item An object (or observer, except light) is a line (called world line) with $|$slope$| > 45^\circ$ everywhere.
+			\item An inertial observer is a straight line.
+			\item A static object is a line parallel to the $ct$ axis.
+			\item Events at the same time are parallel to the $x$ axis.
+		}
+	\end{minipage}
+	\hspace{0.02\textwidth}
+	\begin{minipage}
+		{0.4\textwidth}
+		\includegraphics[width=\textwidth]{st_diag_ground}
+	\end{minipage}
+
+	If the light rays connecting $E_P$ and $E_Q$ reaches the world line of the observer at the same point, they happen at the same time wrt the observer. On the contrary, $\widetilde{E}_Q$ is considered earlier than $E_P$ wrt the observer as the light ray from $\widetilde{E}_Q$ arrives earlier at the observer.
+}
+
+\textbox{Simultaneity is a relative concept (4-step reasoning)}{\index{simultaneity is relative}
+	\tenum{
+		\item We have defined simultaneity for a static observer with the above $P$-observer-$Q$ system.
+		\item Let us load the system into a car and let the moving observer be Alice. Let us study the events $E_P$ and $E_Q$, which happen at the same time wrt Alice. In our example, that corresponds to the light bulbs turning on at the same time at $P$ and $Q$ wrt Alice. See left panel of the below figure.
+
+		\begin{minipage}
+			{0.55\textwidth}
+			\includegraphics[width=\textwidth]{st_car}
+		\end{minipage}\hspace{0.1\textwidth}
+		\begin{minipage}
+			{0.35\textwidth}
+			\includegraphics[width=\textwidth]{st_diag_car}
+		\end{minipage}
+
+		\mtextbox{Bob's spacetime diagram}{
+			\mtitem{
+				\item Draw Bob's axes and world lines $A$, $P$, $Q$.
+				\item Draw the event that two beams of light meet Alice.
+				\item Draw the history of these two beams of light as $45^\circ$ lines.
+				\item The intersection of light and $P$, $Q$ are events $E_P$, $E_Q$.
+				\item Compare the time of $E_P$ and $E_Q$ in Bob's frame.
+				\item Draw the spacetime axes of Alice's frame in Bob's frame.
+			}
+		}
+		\item Wrt Bob, do $E_P$ and $E_Q$ happen at the same time? In other words, do $E_P$ and $E_Q$ have the same time coordinates in Bob's frame? Making use of a spacetime diagram in Bob's frame (right panel of the above figure), we immediately find that $E_P$ is earlier than $E_Q$ wrt Bob. On the contrary, an event $\widetilde{E}_Q$ considered to be at the same time with $E_P$ wrt Bob, is considered earlier than $E_P$ wrt Alice.
+		
+		\item The relativity of simultaneity is not only true for the $P$-observer-$Q$ system, but for all consistent definitions of simultaneity ($\mathbb{R}$).
+	}
+}
+Now you should be able to resolve the puzzle of ``who wrote the letter first''.
+
+\textbox{Recap: equal time slices}{
+	\begin{minipage}
+		{0.55\textwidth}
+		To condense the above analysis into one figure: When Alice is moving wrt Bob, the coordinate system of Alice drawn in Bob's coordinate system is as the figure to the right. It is similar to rotation, but both space and time axes oddly fold inwards. We will discuss this transformation (Lorentz transformation) in more details later. You should pay special attention on the equal time lines wrt Alice on this figure -- different from that wrt Bob.
+	\end{minipage}
+	\hspace{0.1\textwidth}
+	\begin{minipage}
+		{0.35\textwidth}
+		\includegraphics[width=\textwidth]{equal_time_simplified}
+	\end{minipage}
+}
+
+\mtextbox{Can SR describe acceleration?}{There is a common misconception saying ``special relativity cannot describe the experience of an accelerating observer''. This is \emph{wrong}. The laws of special relativity (time dilation, length contraction, and more later) are expressed in inertial frames (just because the laws are mathematically simpler in inertial frames). Thus, we need to \emph{use an inertial frame} to apply these laws to our question. However, we can \emph{calculate in this inertial frame} what an accelerating observer sees (how light reach her eyes, for example). In this way, the experience of an accelerating observer is described \emph{with the help of an auxiliary inertial frame}.}
+\textbox{Twin paradox revisited}{\index{twin paradox: revisited}
+	\begin{minipage}
+		{0.6\textwidth}
+		In our twin paradox, Alice is not in an inertial observer at the turn around time. Thus she cannot use special relativity of an inertial observer to \emph{directly} explain her experience. However, Bob can help her to figure out what happens at the turn-around:
+
+		Before and after the turn-around, Alice is in two \emph{different} inertial frames. Bob's age ``jumps'' when Alice switches from the before-turn-around frame to the after-turn-around frame. Thus in Alice's frames, there is a sudden change in Bob's age.
+
+		As mentioned, to describe what Alice sees (light arrives in her eyes), light propagation time needs to be added. I will leave the details for your exercise.
+	\end{minipage}
+	\hspace{0.01\textwidth}
+	\begin{minipage}
+		{0.3\textwidth}
+		\includegraphics[width=\textwidth]{same_time_twin}
+	\end{minipage}
+}
+
+\subsection{Causality and Types of Separations}
+
+Now we have understood: the concept of simultaneity is relative to observers. For example, Alice and Bob may consider differently on who wrote the letter first. In other words, time orders of some events (here two events: Alice writes her letter; Bob writes his letter) are reversible. 
+
+A natural question then is: Are all time orders between events reversible?
+
+\textbox{Time order associated with cause and effect}{\index{causality}
+	Consider an example: Lightning strikes on a tree, and then the tree dies. There are two events here:
+	\marginnote{\includegraphics[width=0.15\textwidth]{thunder}}
+	\tenum{
+		\item Event E(strike): Lightning strikes on the tree.
+		\item Event E(die): The tree dies. This is an \emph{effect}, \emph{caused} by E(strike).
+	}
+	May a moving observer Ms.~Bright observe that E(die) happens earlier than E(strike)?
+
+	\mtextbox{Correlation}{Cause-effect is a special case of correlation (conditional probability). If events E1 and E2 have nontrivial correlation, maybe
+	\mtitem{
+		\item E1 causes E2
+		\item E2 causes E1
+		\item Both E1 and E2 are caused by something else
+	}}
+	\tcblower
+	The cause-effect relation (known as causality) is at the heart of physics. Physics is about prediction of how an initial state evolves with time. In other words, the cause-effect relation is how questions get explained in physics -- ``Why (effect)? Because (cause).'' 
+}
+
+As causality is so important, we hope that it is preserved in special relativity. Happily, special relativity is indeed \emph{consistent} with causality. Having that said, causality is an independent postulate added to special relativity. In other words, special relativity itself does not \emph{derive} causality. Let us now see how causality and relativity work together.
+
+\mtextbox{No superluminal lightning either}{
+	For causal order to be respected, not only Ms. Bright is not supposed to travel faster-than-light; but also no lightning (or any information causing the death of the tree) can be superluminal either. Otherwise causality is violated even with subluminal Ms. Bright.
+}
+\textbox{Special relativity without superluminal motion is consistent with causality}{\index{causality and relativity}
+	\begin{minipage}
+		{0.5\textwidth}
+		Spacetime diagram of subluminal Ms. Bright and superluminal Ms.~Bright. For any subluminal observer, the world line of the tree has slope greater than $45^\circ$. Then, as long as Ms.~Bright moves no faster than the speed of light, she cannot flip the order of E(strike) and E(die).
+	\end{minipage}
+	\hspace{0.05\textwidth}
+	\begin{minipage}
+		{0.4\textwidth}
+		\includegraphics[width=\textwidth]{sr_consistent_causality}
+	\end{minipage}
+
+	\mtextbox{Buller's poem (1923)}{
+	There was a young lady named Bright;\newline
+	Whose speed was far faster than light;\newline
+	She set out one day;
+	In a relative way;\newline
+	And returned on the previous night.	\mnewline
+	We hope this to be forbidden. Otherwise, what if Ms.~Bright returned to the previous night, and locked herself in the room, how can her superluminal trip happen at all? \mnewline
+	So far, the most convincing explanation is that, superluminal trip should be forbidden. Having that said, the possibility of a time machine is an open question for modern physics.
+	}
+	\tcblower
+
+	Thus, if superluminal movers are forbidden, then the cause-effect order is preserved. In this course, we will assume that superluminal motion is indeed forbidden in special relativity. This is consistent with all known experiments.
+
+	More generally, no information can be sent faster than the speed of light. Because information must be sent by matter after all. And from the consistency of the theory, information can bring causal connection between events. Thus if information can be sent faster than light, then the same problems of superluminal motion can arise. 
+
+	You may have an excellent question at this point: What if we push Ms.~Bright so she accelerates from subluminal to superluminal? It is in fact impossible. We will come back to this point later.
+
+	In general relativity, you may hear that things can go superluminal, for example, for cosmic expansion. This is right or wrong. One has to first define velocity precisely. We will come back this point at the end of this course, in the cosmology section.
+}
+
+
+\textbox{Causal structure of spacetime: past and future light cones\index{light cone}}{
+	From separation of events, given a spacetime point (say, you at the present time), the spacetime is divided into three different regions according to the causal connection to the 
+	\marginnote{\cg{0.3}{lightcones}}
+	observer.
+
+	\titem{
+		\item Past light cone. This region contains all the causes of you up to now. You have not yet seen anything beyond this region.
+		\item Future light cone. This region contains all the effects by you from now on. You can no longer change anything beyond this region.
+		\item Outside both past and future light cones: there is no cause-effect relations between the present version of you and any point there. 
+	}
+}
+\textbox{No perfectly rigid body in relativity}{\index{rigid body (non-existing)}
+	Let's consider a thought experiment: Alice and Bob are separated by 5 light years. And they hold a 5-light-year-long rod, which is a perfect rigid body. Then can Alice and Bob send information faster than light by pushing the rod?
+
+	\includegraphics[width=0.8\textwidth]{ABrod}
+
+	\tcblower
+
+	The answer is a simple straight no. Because no information can be faster than light, perfectly rigid body does not exist in special relativity. 
+
+	If this answer is too brute, we can also see dynamically what happens. The rod is (usually) made of atoms and the force propagating between atoms need at least speed of light to react a push. 
+}
+
+The speed of light limit classifies the intervals between two events into 3 classes.
+
+\textbox{Space-like, null and time-like intervals}{\index{space-like}\index{time-like}\index{null}
+	There
+	\marginnote{\includegraphics[width=0.35\textwidth]{space_time_null_like}}
+	are three types of intervals between events.
+	\titem{
+		\item Space-like: with slope $<45^\circ$. There exists observer wrt whom two space-like separated events happen at the same time. The events are thus pure space separated wrt this observer. The time order of the events can be flipped for different observers.
+		\item Time-like: with slope $>45^\circ$. There exists observer wrt whom two time-like events happen at the same position. The events are thus separated only in time wrt this observer. The time order of the events is absolute and has to be agreed on for all observers.
+		\item Light-like (or called null): the boundary separating space-like and time-like intervals, with slope $45^\circ$. Light travels with light-like lines.
+	}
+}
+
+\section{Example: The Ladder Paradox}\label{sec:ladder}
+
+Let's apply what we have learned to get confused (or hopefully not).
+
+\textbox{The ladder and the garage}{\index{ladder paradox: open garage}
+	Consider a 15m long ladder (the ends are labeled P and Q). Alice holds it and moves it towards a garage, with speed 0.87c, i.e. $\gamma=2$. The garage is 10m long, and the front door and back door are labeled F and B, respectively. Bob sits static with the garage. 
+
+	\cg{0.7}{ladder}
+
+	\marginnote{\hfill \includegraphics[width=0.25\textwidth]{ladderA}\hspace{0.02\textwidth}}
+	
+	What does Alice find? Alice finds that the garage moves, and thus the length of the garage is $10\mathrm{m}/2=5\mathrm{m}$. Thus the ladder does not fit in the garage. 
+
+	What does Bob find? Bob finds that the ladder moves, and thus the length of the ladder is $15\mathrm{m}/2=7.5\mathrm{m}$. Thus the ladder fits in the garage.
+
+	\marginnote{\hfill \includegraphics[width=0.2\textwidth]{ladderB}\hspace{0.02\textwidth}}
+
+	Who is right?
+
+	\tcblower
+
+	\twocol{0.5}{0.01}{0.75}{
+		Both are right. 
+		
+		Note that ``ladder fit in garage'' is not an event which localized at a spacetime point. Especially, there are two important events:
+
+		\tenum{
+			\item P enters front door F.
+			\item Q exits back door B.
+		}
+
+		If \enumlabel{1} is earlier than \enumlabel{2}, then the ladder fits in the garage. If \enumlabel{2} is earlier than \enumlabel{1}, then the ladder does not fit in the garage.
+
+		Wrt Alice, \enumlabel{2} is earlier than \enumlabel{1} (does not fit); Wrt Bob, \enumlabel{1} is earlier than \enumlabel{2} (fits). 
+	}{
+		\includegraphics[width=\textwidth]{garage_st}
+	}
+}
+
+\textbox{The ladder and the garage with doors}{\index{ladder paradox: closed garage}
+\marginnote{Here we assume that Alice is still in an internal frame, no matter any part of the ladder may stop or not. }
+Let's add a local event to sharpen what happens. Let the back door of the garage always be closed. Bob closes the front door once he finds the ladder moves in the garage.
+
+	\cg{0.7}{garage_door}
+
+	Now even Alice has to agree that the ladder is completely in the garage because the doors are closed. So the ``paradox'' becomes sharper: Alice thinks that the ladder is longer than the garage; but it is now completely in the garage!
+
+	Resolution: Remember that in relativity, there is no perfectly rigid body. 
+
+	Assuming that the door is relatively stronger and does not break, then the ladder must fall into parts. Wrt Alice: when Q stopped moving, the ``stop'' information has to be passed to P and it takes at least time $15\mathrm{m}/c$. During this time, the front door moved about $13$m. Thus $P$ is well inside $F$ by this time. Of course, it fits into the $5$m garage very well.
+
+	On the other hand, if the ladder is relatively stronger and does not break, then the back door is broken and there is no difference from no back door.
+}
+
+\textbox{Replacing the garage by a trap}{\index{ladder paradox: trap}
+	Let us further replace the binary doors by boundary of a trap.
+	
+	\cg{0.7}{trap}
+
+	Bob' considers that Alice with the ladder start to fall in when the ladder is entirely in the trap. Thus Alice falls in. However, Alice considers herself still not yet fall-in before the Q point escapes. Who's right?
+	\tcblower
+	This really depends on how Alice holds the ladder. If Alice holds the ladder perfectly parallel to the ground and sliding on the ground, then Alice falls in. Because there is no perfect body. When $Q$ falls into the trap, $Q$ inevitably falls downwards. However, if Alice holds the ladder in the way a bit upwards, such that Q does not need ground support from the beginning, then Alice can escape.
+}
+
+\textbox{Replacing the garage by a circuit}{\index{ladder paradox: circuit}
+	Let us stop destroying things and go electronic. Consider the situation below.
+
+	\includegraphics[width=0.6\textwidth]{light_paradox}
+
+	Alice holds two moving conducting wires (they are isolated wrt each other). Both can close the circuit. Wrt Bob, there exists a time when neither of Alice's wires closes the circuit so the bulb shuts off for a moment. Wrt Alice, at least one wire touches the circuit all the time. So shall the bulb shut off?
+	\tcblower
+	The key to resolve the problem is that, electricity needs time to conduct. The speed of electricity is comparable to $c$, but still less than $c$. Thus wrt Alice, to keep the bulb on without a off-time gap, the electric current has to reach F before Q passes F. So there is an off-time wrt Alice, too.
+}
+
+
+\section{The Lorentz Transformation} \label{sec:lorentz}
+
+\textbox{Alice and Bob need a rule for their coordinate transformations}{
+
+	\twocol{0.55}{0.1}{0.3}{
+		An event $P$ happened. Both the moving Alice and the standing Bob agree on the existence of the event. However, the same event has different coordinates in Alice's and Bob's frames.
+
+		Given the coordinate of P: $(t_B, x_B)$ in Bob's frame, how to get the coordinate $(t_A, x_A)$ for the same event in Alice's frame?
+	}{
+		\includegraphics[width=\textwidth]{st_trans}
+	}
+
+	Recall that the transformation between inertial frames is called a boost. Thus the question can also be asked as: how does coordinates transform under a boost?
+
+	\tcblower
+
+	Before solving this problem, let us draw similarity between boost and rotation. 
+
+	\twocol{0.5}{0.05}{0.45}{
+		The case of rotation: Alice and Bob are not moving wrt each other, but facing different directions. Given Bob's coordinate of an object $(x_B, y_B)$, how to get Alice's coordinate for the same object $(x_A, y_A)$? Following relations of Euclidean geometry, we get: \index{rotation}
+		\begin{equation}
+			\label{eq:ss-rotation}
+			\left\{
+			\begin{aligned}
+				x_A & = x_B \cos\theta + y_B \sin\theta \\
+				y_A & = -x_B \sin\theta + y_B \cos\theta
+			\end{aligned}
+			\right.
+		  \end{equation}
+	}{
+		  \includegraphics[width=\textwidth]{ss_trans}
+	}
+	I hope you get a better idea about the question by this analogue. Also, in the next section we will find a surprising similarity between these space-time and space-space transformations.
+}
+
+\mtextbox{Velocity in a general direction}{
+	Be reminded that the relative velocity $v$ between frames is only along the $x$ direction (and positive for Bob). If you are dealing with velocities in a general direction $\mathbf{v} = (v_x, v_y, v_z)$, you can first do a rotation to rotate it to the $x$ direction before applying the transformation.
+}
+\textbox{Space transformation of a boost}{\index{Lorentz transformation: space}
+	\twocol{0.55}{0.1}{0.35}{
+		Given Bob's coordinate $(t_B, x_B)$, now we would like to solve $x_A$. How to do that? An equivalent question is that, how to physically describe $x_A$? Note that $x_A$ is Alice's spatial coordinate. Thus, if Alice carries a ruler (static wrt Alice) with length $x_A$, Alice holds one end, then the other end has coordinte $x_A$.
+	}{
+		\includegraphics[width=\textwidth]{rr1_reduced}
+	}
+
+	\twocol{0.6}{0.05}{0.35}{
+		For simplicity, we choose the same origin of coordinate for Bob and Alice. Given Bob's coordinate of P: $(t_B, x_B)$, how can we find the relation $x_A(t_B, x_B)$?
+		
+		Wrt Bob, the moving ruler has length $x_A/\gamma$. Thus at Bob's time $t_B=0$, the point P has $x_B=x_A / \gamma$. However, at $t_B\neq 0$, the end point P has also moved a distance $v t_B$. Thus for general $t_B$, $x_B = x_A/\gamma + v t_B$. In other words, we get $x_A(t_B, x_B)$ (i.e. $x_A$ as a function of $t_B$ and $x_B$) as
+		\begin{align}
+			\label{eq:st_space}
+			x_A = \gamma \left ( x_B - v t_B \right )~.
+		\end{align}
+	}{
+		\includegraphics[width=\textwidth]{st_space_trans}
+	}
+	
+	\tcblower
+
+	How to get $t_B (t_A, x_A)$? We can flip Alice's and Bob's role and do the calculation again. But in fact we do not have to do it. Simply following $(\mathbb{R})$, we get
+	\begin{align}
+		\label{eq:st_space_r}
+		x_B = \gamma \left ( x_A + v t_A \right )~.
+	\end{align}
+}
+
+\mtextbox{Lorentz vs Einstein}{
+	The Lorentz transformation is named after Lorentz for his work during 1892-1904. In other words, the Lorentz transformation is known before Einstein's special relativity (1905). It was discovered as mathematical symmetries behind the Maxwell equations and an phenomenological approach to explain the Michelson-Morley experiment. But it was Einstein who first understood the physics of such transformations.
+}
+\textbox{Time transformation of a boost}{\index{Lorentz transformation: time}
+	The remaining question is: How to get $t_A(t_B, x_B)$ and $t_B(t_A, x_A)$? We do not have to do more thought experiments since we can solve them from equations \eqref{eq:st_space} and \eqref{eq:st_space_r}.
+
+	Inserting \eqref{eq:st_space} into \eqref{eq:st_space_r} to eliminate $x_A$, 
+	\begin{align}
+	  \label{eq:stta}
+	  x_B = \gamma \left [ \gamma \left ( x_B - v t_B \right ) + v t_A \right ]~.
+	  \quad \rightarrow \quad
+	  t_A = \gamma \left ( t_B - \frac{v}{c^2} x_B  \right )~.	  
+	\end{align}
+	Similarly, or simply using the principle of relativity, we get
+	\begin{align}
+	  \label{eq:stta_r}
+	  t_B = \gamma \left ( t_A + \frac{v}{c^2} x_A  \right )~.  
+	\end{align}
+}
+
+\mtextbox{The Lorentz symmetry}{
+	Under the appearance of a transformation, a more physical name to refer to the equations \eqref{eq:ss-Lorentz} is the Lorentz symmetry: Alice and Bob are symmetric, in that though they use different coordinates to describe events, they observe the same laws of nature (for example, equations of motion for particles). Symmetry is now considered the first principle in fundamental physics. We will come back to the concept of symmetries in the part of action principle.
+}
+\textbox{Summary: the Lorentz transformation}{\index{Lorentz transformation}
+	Let's summarize the transformation we have got, and add back the trivial $y$ and $z$ directions. These rules to transform between inertial frames is known as the Lorentz transformation. Here $\beta \equiv v/c$.
+	\begin{equation}
+		\label{eq:ss-Lorentz}
+		\left\{
+		\begin{aligned}
+			c t_A & = \gamma ( c t_B - \beta x_B) \\
+			x_A   & = \gamma ( x_B - \beta c t_B) \\
+			y_A   & = y_B \\
+			z_A   & = z_B
+		\end{aligned}
+		\right.
+		\qquad\qquad\qquad
+		\left\{
+		\begin{aligned}
+			c t_B & = \gamma ( c t_A + \beta x_A) \\
+			x_B   & = \gamma ( x_A + \beta c t_A) \\
+			y_B   & = y_A \\
+			z_B   & = z_A
+		\end{aligned}
+		\right.
+	\end{equation}
+}
+
+The Lorentz transformation describes the mathematical structure of special relativity. Thus our known results can be directly read-off from the formulas \eqref{eq:ss-Lorentz}.
+
+\needspace{0.3\textheight}
+\mtextbox{Why don't you tell us earlier?}{You may feel furious here: 
+\mnewline
+``I have spent great efforts in understanding time dilation, length contraction and simultaneity. But now they follow so simple equations. Why don't you start from telling us the Lorentz transformation and derive everything from there? That would have saved a lot of my time.''
+\tcblower
+I am in fact pretty careful in choosing the point to introduce Lorentz transformation. 
+\mnewline
+If I introduce it earlier, these effects will be just cold math formulas in your mind instead of living characters (i.e. with a physical picture). 
+\mnewline
+On the other hand, I can teach velocity addition, energy and momentum first and put the Lorentz transformation to the very end. But then the physical scenarios become too complicated to be helpful. I thus choose here to be the point to introduce this powerful tool.
+}
+\textbox{Time dilation, length contraction and simultaneity revisited}{
+	\titem{
+		\item Simultaneity: Consider two events $E_1$ and $E_2$, happened at the same time wrt Alice, i.e. $t^{E_1}_A=t^{E_2}_A$. Eq.~\eqref{eq:ss-Lorentz} gives $0=c(t^{E_1}_A-t^{E_2}_A) = \gamma [c (t^{E_1}_B-t^{E_2}_B)-\beta (x^{E_1}_B-x^{E_2}_B)]$. Clearly, if the two events happens at different locations and if $\beta\neq 0$, then the two events are not at the same time wrt Bob.
+
+		\item Time dilation: A clock is moving wrt Alice with coordinate $(t_A, 0)$. Note that $x_A=0$ here since Alice carries the clock thus the clock is always located at the origin wrt Alice. From the first equation to the right panel of \eqref{eq:ss-Lorentz}, we get $t_B = \gamma t_A$.
+
+		\item Length contraction: A ruler is moving together with Alice. How is Bob supposed to measure its length? Bob should measure his coordinates of both ends of the ruler \emph{at the same time}. The left end of the ruler is at $x_B=0$ when $t_B=0$. Thus the coordinate of the ruler at $t_B=0$ is the length of the ruler. From the second equation to the left panel of \eqref{eq:ss-Lorentz}, we get $x_B = x_A / \gamma$.
+	}
+}
+
+Now we are ready to solve a problem: What's wrong with the Newtonian velocity addition rule $\mathbf{v}_B = \mathbf{v} + \mathbf{v}_A$ when $v_A\sim c$? In the optional material of the length contraction section, we studied a special case. Here we will derive general formulas.
+
+\textbox{Addition of velocity}{\index{velocity addition}
+	For simplicity, let us take the relative velocity $\mathbf{v}$ to be $(v, 0, 0)$, along the $x$-direction, as we have always assumed.
+
+	Now Alice throw a ball with velocity
+\begin{align}
+  \label{eq:va}
+  \mathbf{v}_A = (v_{Ax}, v_{Ay}, v_{Az}) 
+  = \left( \frac{dx_A}{dt_A} , \frac{dy_A}{dt_A} , \frac{dz_A}{dt_A} \right)~.
+\end{align}
+and Bob finds
+\begin{align}
+  \mathbf{v}_B = (v_{Bx}, v_{By}, v_{Bz}) 
+  = \left( \frac{dx_B}{dt_B} , \frac{dy_B}{dt_B} , \frac{dz_B}{dt_B} \right)~.
+\end{align}
+Now use the rule of Lorentz transformation, one can calculate
+\begin{align}
+  \label{eq:vbx}
+  v_{Bx} = \frac{dx_B}{dt_B} 
+  = \frac{\gamma d(x_A+v t_A)}{\gamma d\left(t_A + \frac{x_A v}{c^2} \right)}
+  = \frac{dx_A+v dt_A}{dt_A + \frac{v}{c^2} dx_A} 
+  = \frac{v_{Ax}+v}{1+\frac{v_{Ax}v}{c^2} }~.   
+\end{align}
+\begin{align}
+  \label{eq:vby}
+    v_{By} = \frac{dy_B}{dt_B} 
+    = \frac{dy_A}{\gamma d \left ( t_A+\frac{v}{c^2} x_A \right )}
+    = \frac{v_{Ay}}{\gamma \left(1+ \frac{v_{Ax} v}{c^2} \right)}~.  
+\end{align}
+Similarly,
+\begin{align}
+  \label{eq:vbz}
+  v_{Bz} = \frac{v_{Az}}{\gamma \left(1+ \frac{v_{Ax} v}{c^2} \right)}~. 
+\end{align}
+}
+
+\textbox{Example: velocity addition in perpendicular directions}{
+	When $\mathbf{v}_A = (0, u, 0)$, perpendicular to the relative motion direction, we get
+	\begin{align}
+	  \label{eq:vex}
+	  \mathbf{v}_B = \left ( v, u/\gamma, 0 \right )~.
+	\end{align}
+	Note that Alice and Bob measures different velocity even in the perpendicular direction, because their time intervals are different (while the length intervals are the same).
+}
+
+\section{The Geometry of Spacetime} \label{sec:geometry}
+
+\textbox{Pythagoras theorem and modern geometry}{
+	Since Gauss and Riemann, mathematicians realize that different types of geometry can be classified by how the Pythagoras theorem appears on those geometries. For example, on flat, spherical and hyperbolic surfaces, the Pythagoras theorem appears differently.
+	\cg{0.7}{surf_geo}
+	More careful studies on how the spherical and hyperbolic surfaces are curved, one can make the above expressions more precise and differentiate the relation twice to define spatial curvature.
+	\tcblower
+	Here we are not following this path to study pure spatial geometries in depth. Rather, we would like to ask the following question: Now that space and time are ``unified'' by Lorentz transformation, what does the spacetime geometry look like? Or what does the Pythagoras theorem look like for spacetime?
+}
+
+\marginnote{\includegraphics[width=0.3\textwidth]{st_geometry}}
+\textbox{Our spacetime is NOT Euclidean}{
+	Let us reconsider time dilation. Alice carries a clock and both Alice and Bob measure the tick-tock interval. 
+
+	Wrt Bob, $\Delta t_B = \gamma \Delta t_A$. What does this imply on the spacetime diagram?
+
+	Naively, from the geometry, we would have expected $c\Delta t_A > c\Delta t_B$, because $c\Delta t_A$ is the hypotenuse of the right triangle. However, from $\gamma>1$, we see  $c\Delta t_A < c\Delta t_B$. How is this possible?
+
+	As we have discussed, we cannot take the Euclidean geometry for granted. 
+	\marginnote{\includegraphics[width=0.1\textwidth]{st_right_tri}} 
+	Especially, in the right figure, where $a$ and $c$ are time directions (of Alice or Bob), the Pythagorean theorem $a^2+b^2=c^2$ no longer holds. Instead, for time dilation,
+	\begin{align}
+	\label{eq:min_geo_tri}
+	-a^2 + b^2 = -c^2 ~.
+	\end{align}
+	Extra minus sign emerges in front of the square of time, but not space. \marginnote{Note that minus sign in time squared indicates an extra factor of $i$ in front of time to match the Pythagoras theorem of flat space.} 
+
+	Is it a coincidence, or is it in general a new type of geometry?
+}
+
+\mtextbox{Hyperbolic functions}{\index{hyperbolic functions}
+	$\cosh x \equiv \frac{e^x+e^{-x}}{2}$ \mnewline
+	$\sinh x \equiv \frac{e^x-e^{-x}}{2}$ \mnewline
+	$\tanh x \equiv \sinh x / \cosh x$ \mnewline
+	$\cosh^2 x - \sinh^2 x = 1$ \mnewline
+	$\cosh(i\theta) = \cos\theta$ \mnewline
+	$\sinh(i\theta) = i \sin\theta$
+}
+\textbox{Our spacetime is ALMOST Euclidean}{\index{Lorentz transformation and rotation}
+	To see what has happened in another way, let us rewrite the Lorentz transformation using rapidity $\phi = \mathrm{arctanh}\beta$. Note that $\cosh \phi = \gamma$, and $\sinh \phi = \beta \gamma$. The Lorentz transformation is then
+	\begin{equation}
+		\left\{
+		\begin{aligned}
+			ct_B & =  ct_A \cosh\phi + x_A \sinh\phi \\
+			x_B  & =  ct_A \sinh\phi + x_A \cosh\phi
+		\end{aligned}
+		\right.
+	  \end{equation}
+	Do you find it a bit similar to rotation?
+
+	\tcblower
+
+	Now let's apply a mathematical trick. Define
+	\begin{align}
+		\label{eq:theta}
+		\phi \equiv i \theta ~, \qquad ct \equiv i w~.
+	\end{align}
+	We then get
+	\marginnote{Do not ask me the ``physical meaning'' of the imaginarized time $w$ at the moment. Just consider it as a trick in math. In fact, there are profound implications of imaginary time in quantum field theory (zero temperature and finite temperature). But we are far not ready to introduce them here.}
+	\begin{equation}
+	\label{eq:ss-Lorentz-Euclidean}
+	\left\{
+	\begin{aligned}
+		iw_B & = (iw_A)\cos\theta + x_A(i\sin\theta) \\
+		x_B  & = (iw_A)(i\sin\theta) + x_A \cos\theta
+	\end{aligned}
+	\right.
+	\quad\Rightarrow\quad
+	\left\{
+	\begin{aligned}
+		w_B & = w_A\cos\theta + x_A\sin\theta \\
+		x_B  & = -w_A\sin\theta + x_A \cos\theta
+	\end{aligned}
+	\right.
+	\end{equation}
+	This is \emph{exactly} a rotation of the $w$-$x$ plane, with $w$ considered as an extra spatial dimension!
+
+	To summarize: A mathematical trick of redefining variables makes Lorentz transformation identical to rotation. 
+}
+
+\textbox{The symmetry of spacetime with imaginary time}{
+	According to Pythagoras (570BC-495BC), sphere is the most beautiful and perfect object -- it is symmetric under 3 dimensional rotations.
+
+	In this respect, our spacetime is even more beautiful than the most beautiful object. 
+	\marginnote{We are not saying that spacetime is a sphere. Rather sphere is curved and our spacetime is flat in special relativity. However, its symmetry includes that of a sphere, and more (there are 4 additional spacetime translations).}
+	This is because, now $w, x, y, z$ directions are no different from each other -- they are all related by rotation. Our spacetime is symmetric (i.e. laws of nature have the same form) under rotations in planes $w$-$x$, $w$-$y$, $w$-$z$, $x$-$y$, $x$-$z$, $y$-$z$, and all kinds of combinations of them. It is indeed more symmetric than a sphere because a sphere is only invariant under rotations in $x$-$y$, $x$-$z$, $y$-$z$ planes and their combinations.
+
+	This further confirms that the difference between space and time is imaginary -- once you use imaginary time, time becomes no different from just another spatial direction, and the 3 boost along $x$, $y$ and $z$ directions just become three additional rotations.
+}
+
+\textbox{Natural units -- the units of nature}{
+	In physics, some units are more natural than the others, because they use the same unit for the same things (or apparently different things, but with the same physical origin). 
+	
+	\marginnote{\includegraphics[width=0.3\textwidth]{natural_unit_rot}}
+	Let's consider an example of a not-so-natural unit. In ancient China, sometimes people use a different unit for height of mountains. At that time, height seems different from other directions because of gravity. But now we see that the difference is due to the presence of the earth, which spontaneously break the symmetry of empty space. Fundamentally, height has no difference from the other two directions, and they can be related by rotation. Thus, we had better to use the same unit to measure height and the rest of the spatial dimensions.
+
+	\mtextbox{Natural vs convenient}{
+		The laws of nature are shorter in natural unit as unnecessary conversion of units are avoided. However, whether it is a convenient choice of unit depends on the physical context that we study. If we study explicit dynamics of systems with $v\ll c$, then we had better to keep $c$ explicit because otherwise we will deal with large/small numbers everywhere. For example, for $v=10^{-8}c \simeq 3$m/s, in natural unit the object only moves $10^{-8}$ unit of space in one unit of time.
+	}
+
+	\tcblower
+
+	Now that we have seen space and time are not that different and can be related by Lorentz transformation, why we still give space and time different units? We don't have to.
+
+	To use the same unit for space and time, we can just set $c=1$ and then speed is dimensionless. 
+
+	This is known as the natural unit (together with $\hbar=k_B=1$). Natural unit is widely used in theoretical high energy physics.
+
+	We shall not use natural units in this class and will always keep $c$ explicit.
+}
+
+\textbox{The invariant interval}{\index{invariant interval}\index{4-vector}\index{Minkowski space}
+
+	In Euclidean space, 
+	\begin{align}
+	\label{eq:dse}
+	ds^2 = dw^2 + dx^2 + dy^2 + dz^2~.
+	\end{align}
+	Recall that $w=-ict$. To bring us back to real time, we thus have
+	\marginnote{In some books, the interval is defined as $ds^2 = d(ct)^2 - dx^2 - dy^2 - dz^2$. This is just a different convention without physical difference (corresponding to replacing all $ds^2$ here into $-ds^2$).}
+	\begin{align}
+	\label{eq:dsl}
+	ds^2 = - d(ct)^2 + dx^2 + dy^2 + dz^2~.
+	\end{align} 
+	The importance of $ds^2$ is that, it is an invariant quantity under Lorentz transformation. To see that, one may first use $\{w, x, y, z\}$ and note that rotation keeps radius invariant. Or one can use the Lorentz transformation matrix to verify it explicitly. Just as $(\omega, x, y, z)$ forms a vector in 4d Euclidean space, $x^\mu = (ct, x, y, z)$ ($\mu=0,1,2,3$) also form a 4 dimensional vector (4-vector for short), which lives in the so called \emph{Minkowski space} -- which is just the mathematical name of our spacetime. \marginnote{In fact, our spacetime is more complicated than the Minkowski space -- in general relativity, you will see that our spacetime is curved instead of totally flat. This is considered to be more general spacetime but still with some Minkowski signature.}
+
+	\tcblower 
+
+	In fact, ``relativity'' is not a good name to the theory. By its name, it appears to emphasize that things are relative -- no longer as invariant as we thought. 
+	
+	But in fact, the essence of relativity is the other way round: Despite of being viewed from different perspectives (wrt different observers in different inertial frames), the events and their intrinsic relations are invariant.
+
+	\marginnote{
+		Recall the principles $(\mathbb{R})$, $(\mathbb{C})$ and $(\mathbb{E})$. Every each principle tell you a piece of invariance, instead of relativity.
+		\mnewline\includegraphics[width=0.42\textwidth]{touch_elephant}}
+	Relativity is just the technology of study. But the spirit of the theory is the underlying invariance. 
+
+	This is just like how you prove a theorem in Euclidean geometry -- it is not important if the figure is placed vertically or horizontally (i.e. wrt observers with different viewing angles). What's important is the intrinsic relation between the geometrical objects.  
+	
+	Another analogue is the story of blind men and an elephant. The goal of physics is to understand the elephant, instead of how different men feel differently by not being able to feel the whole thing.
+}
+
+\textbox{Time-like, space-like and null from the interval}{
+	The sign of $ds^2$ corresponds to different types of separations of events:
+	\begin{align}
+		\label{eq:tsn}
+		ds^2 < 0 &\quad\Leftrightarrow\quad \mbox{time-like} \nonumber\\
+		ds^2 > 0 &\quad\Leftrightarrow\quad \mbox{space-like} \nonumber\\
+		ds^2 = 0 &\quad\Leftrightarrow\quad \mbox{light-like, null}~.  
+	\end{align}
+	\tcblower
+	And now you know why null is called null -- it is indeed null.  
+}
+
+\mtextbox{(Optional) Inner product of 4-vectors}{
+	The invariant internal $ds^2$ can be considered as the inner product of 4-vector $dx^\mu$ with itself. In general, we can use the metric to measure the inner product to measure the inner product of any 4-vectors. For two 4-vectors $p^\mu$ and $k^\nu$, their inner product $\sum_{\mu\nu}g_{\mu\nu}p^\mu k^\nu$ is Lorentz invariant (i.e. invariant under Lorentz transformation).
+}
+\textbox{(Optional) A metric of spacetime}{\index{metric}
+	A metric is a ``standard'' to measure coordinate distance. For our spacetime in special relativity, the metric $g_{\mu\nu}$ (as a symmetric $4\times 4$ matrix), infinitesimal coordinate distances and the invariant interval can be related as
+	\begin{align}
+		\label{eq:dsg}
+		ds^2 = \sum_{\mu,\nu=0}^3 g_{\mu\nu} dx^\mu dx^\nu~,	  
+	\end{align}
+	where
+	\begin{align}
+	\label{eq:defg}
+	x^\mu=\{ct, x, y, z\}~, \qquad g_{\mu\nu} = 
+	\left( \begin{array}{cccc}
+		-1 & 0 & 0 & 0 \\
+		0 & 1 & 0 & 0 \\
+		0 & 0 & 1 & 0 \\
+		0 & 0 & 0 & 1
+	\end{array} \right)~.
+	\end{align}
+	This seems to be a trivial rewriting of what we have obtained. However, here we have separated two different things:
+	\begin{itemize}
+		\item Coordinates $x^\mu$: What are the directions of spacetime?
+		\item Geometry: What kind of geometry does spacetime satisfy?
+	\end{itemize}
+
+	Even if we use a different coordinate system, 
+	\marginnote{\includegraphics[width=0.3\textwidth]{polarbear}}
+	for example, spherical coordinate for the spatial part, we can still choose a metric to keep $ds^2$ invariant:
+	\begin{align}
+		x^\mu=\{ct, r, \theta, \phi\}~, \qquad g_{\mu\nu} = 
+		\left( \begin{array}{cccc}
+			-1 & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			0 & 0 & r^2 & 0 \\
+			0 & 0 & 0 & r^2 \sin^2\theta
+		\end{array} \right)~.
+	\end{align}
+	
+	\tcblower
+
+	In fact, the advantage brought about by a metric is not only the freedom to choose coordinates. Rather, it can describe the intrinsic curvature of spacetime which is not characterized by a different coordinate system. But this is beyond the scope of special relativity. You will see later that in general relativity, the metric $g_{\mu\nu}$ is the most important object to study. It can get curved by matter, and can guide matter how to move.
+}
+
+\section{Relativistic Momentum and Energy}\label{sec:momentum-energy}
+
+Before
+\mtextbox{Transforming Slimes}{
+	Consider the following quiz: 
+	\mnewline
+	Suppose there are slimes of 3 shapes: $\triangle$, $\square$ and $\ocircle$. When slimes of differt shapes meet, they transform into the third shape. For example:
+	$$
+	\triangle + \square \rightarrow \ocircle \times 2 ~.
+	$$
+	Now that we have $\triangle\times 5$, $\square \times 7$ and $\ocircle \times 9$. Can you let them meet and transform them into $\triangle\times 6$, $\square \times 7$ and $\ocircle \times 9$ ?
+	\mnewline
+	Obviously not. Since the total number of slimes is conserved when they meet.
+	\mnewline
+	Fine. So, what about we have $\triangle\times 5$, $\square \times 7$ and $\ocircle \times 9$. Can you transform them into $\triangle\times 6$, $\square \times 9$ and $\ocircle \times 6$ ? 
+	\mnewline
+	Not either. Note that $(\#\triangle - \#\square) ~ \mathrm{mod} ~ 3$ is also conserved (where $\#$ denotes ``number of''). Which is violated.
+	\tcblower
+	Hope you get some feeling here that conserved quantities are helpful.
+}
+discussing energy and momentum in relativity, let us first recall why we need them at all. In Newtonian mechanics, it is nice to have energy and momentum because they are conserved. (See the below box for why conservation laws are good after all.) Thus in relativity, we should check if the Newtonian definition of energy and momentum are still conserved; and if not, how to generalize the definition of energy and momentum, to make them still conserved.
+
+\textbox{What's good about conservation laws?}{\index{conservation laws: importance}
+	\titem{
+		\item Physically, conservation laws are the magic that we do not need to care what's happening in the middle. Given the initial state, we can immediately make a number of predictions (no greater than the number of conservation laws in the system).
+
+		\item Mathematically, the equations of motion (like a set of $m \ddot x + V'=0$) are second order ordinary differential equations (ODEs) in $x$ which could be difficult. The conservation laws turns some of these into 1 or 0 order ODEs in $x$ which are much simpler (e.g. $\frac{1}{2} m\dot x^2 + V = E$, or charge conservation).
+
+		\item Practically, in modern physics, the objects being studied are often extremely fast ($v\sim c$), small ($\Delta x\times \Delta p \sim \hbar$), heavy ($GM/(rc^2) \sim 1$), early (less than a second after the big bang), etc. It is often hard to directly build experiments to directly monitor exactly what is happening. Instead, one often needs conserved quantities to make useful observations. For examples, on modern colliders such as the Large Hadron Collider, the trajectories of particles (they are both small and fast in the above sense) are studied at a much later time compared to the time where interaction happened. If charge, energy or momentum were not conserved, it becomes much harder to study such particle physics processes (in fact, it will become not clear how to define observables even in principle without the help of energy and momentum conservation).
+	}
+	\tcblower
+	That's cool. But why are we still lucky to have energy and momentum conservation in special relativity? In a later part ``From Action to Laws of Nature'', we will show you a positive answer -- the existence of these conservation laws are not a result of luck, but a result of the fact that no time moment or spatial location is special. This applies in special relativity as well as the Newtonian mechanics. Wait for that part if you are curious about the origin of these conservation laws.
+}
+
+\subsection{Relativistic Momentum}
+
+\textbox{Can we still use Newtonian momentum conservation?}{\index{momentum: why not Newtonian}
+	First, let us recall how the Newtonian momentum conservation are consistent with $(\mathbb{R})$ within Newtonian mechanics -- forget relativity for a moment here and assume $v\ll c$.
+
+	For example, for Alice's momentum conservation for two particles:
+	\begin{align}\label{eq:momentum_conservation}
+		m_1 \mathbf{v}_1^A + m_2 \mathbf{v}_2^A = m_1 \mathbf{v}_1'{}^A + m_2 \mathbf{v}_2'{}^A~.
+	\end{align}
+	What will Bob find? In Newtonian mechanics, mass of the particles do not change. And velocity simply adds. Thus for Bob with a relative velocity $\mathbf{v}$, $\mathbf{v}_1^B = \mathbf{v}_1^A +\mathbf{v}$, etc. Thus, equation \eqref{eq:momentum_conservation} can be consistently written into the same form in Bob's frame:
+	\begin{align}
+		m_1 \mathbf{v}_1^B + m_2 \mathbf{v}_2^B = m_1 \mathbf{v}_1'{}^B + m_2 \mathbf{v}_2'{}^B~.
+	\end{align}
+	Happily, all the terms with $\mathbf{v}$ cancel in the above equation. So it takes the same form as \eqref{eq:momentum_conservation}. Thus, ($\mathbb{R}$) is indeed satisfied.
+	  
+	\tcblower
+
+	Now, let us take relativity into account. For simplicity, let us assert that the mass of the particles still does not change with velocity. \emph{Assuming} that Alice still has the momentum conservation equation \eqref{eq:momentum_conservation}, then what will Bob find?
+
+	\mtextbox{What if mass depends on velocity}{Indeed, we can assume that mass depends on velocity. We will get essentially the same relativistic momentum, just with a different definition of mass, the so called ``relativistic mass'': $m_{\mathrm{rel}} = \gamma m$. We will not use this notation.}
+
+	Following the velocity addition rule, Bob finds (we only write the term for the first particle explicitly to emphasize the key points). Let the relative velocity between Alice and Bob be along the $x$ direction as usual. Then in the $x$ direction, we have:
+	\begin{align}\label{eq:mom-wrong1}
+		m_1 \frac{(v_{1Ax}+v)}{{\color{red}  (1 + \frac{v_{1Ax}v}{c^2} )}}  + \cdots
+		=
+		m_1 \frac{(v'_{1Ax}+v)}{{\color{red} (1 + \frac{v'_{1Ax}v}{c^2} )}} + \cdots ~.
+	\end{align}
+	In the $y$ direction (and $z$ direction has a similar equation), we have:
+	\begin{align}\label{eq:mom-wrong2}
+		m_1 \frac{v_{1Ay}}{{\color{red}\gamma (1+ \frac{v_{1Ax}v}{c^2} )}} + \cdots 
+		= 
+		m_1 \frac{v'_{1Ay}}{{\color{red}\gamma (1+ \frac{v'_{1Ax}v}{c^2} )}} + \cdots ~.
+	\end{align}
+	Unhappily, 
+	\marginnote{The same argument applies to the Newtonian energy.}
+	these equations \emph{do not} take the same form as \eqref{eq:momentum_conservation}, because of the red-colored factors. Thus, \eqref{eq:momentum_conservation} takes different form wrt Alice and Bob. It cannot be a piece of law of nature in special relativity.
+}
+
+\marginnote{In fact, we only need the energy and momentum \emph{differences} to return to Newtonian mechanics when $v\ll c$. You will find a surprise about energy in this respect soon.}
+Now that we have seen the Newtonian energy and momentum are not conserved quantities (and the unexplained belief that there are still conserved energy and momentum after all), the best we can do is to search for new quantities in special relativity, where in the $v\ll c$ limit the quantity returns to energy and momentum in the Newtonian mechanics. 
+
+\needspace{0.3\textwidth}
+\mtextbox{Physical meaning of proper time}{
+	Why a time variable can be defined \emph{independently of} an observer? Haven't we said that there is no absolute time? 
+	\tcblower
+	Because there exists a moving object (it moves, therefore it is). The moving object defines its own frame and thus defines its own time. In the own frame of the moving object, $d \mathbf{x}=0$. Thus indeed $d\tau = dt$. This verifies that the proper time is the time measured by the moving object itself. Imagine a clock moving together with the object. The proper time is the interval read from this clock.
+}
+\textbox{Using a proper time to fix momentum conservation}{\index{momentum}\index{proper time}
+	How to fix the inconsistency of \eqref{eq:mom-wrong1} and \eqref{eq:mom-wrong2} with ($\mathbb{R}$)?
+
+	If we can remove the red factor, we should be able to get a equation satisfying ($\mathbb{R}$). How? We recall that the red factor arises because
+	\begin{align}
+		dt_B = d \left[ \gamma \left( t_A + \frac{x_A v}{c^2} \right) \right] = \gamma (1+ \frac{v_{1Ax}v}{c^2} ) dt_A~.
+	\end{align}
+	
+	In other words, every observer has their own time. Measuring motion with individual observer's own time ($d(\cdots) / dt_A$ and $d(\cdots)/dt_B$) is the root of evil.
+
+	How can we get rid of the observer's own time in defining momentum? Or, is there an observer-independent way to measure a time-like interval?
+	
+	As I am trying to rephrase the question to approach the answer, now you should be able to figure it out: we have learned an observer-independent way to measure intervals using $ds^2$. To make a real number with correct time dimension, we define the \emph{proper time}:
+	\begin{align}
+		d\tau \equiv \sqrt{ - ds^2 /c^2} = \sqrt{dt^2 - \frac{dx^2}{c^2} } = \frac{dt}{\gamma}~. 
+	\end{align}
+	This is the time variable that we need. Thus, the momentum which gives a relativistic generalization of momentum conservation is
+	\begin{align}
+		\label{eq:ptau}
+		\mathbf{p} = m \frac{d \mathbf{x}}{d\tau} 
+		= \gamma m \mathbf{v}~. 	  
+	\end{align}
+	\tcblower
+	From the first equal sign of equation \eqref{eq:ptau}, one observes that $\mathbf{p}$ transforms in the same way as $\mathbf{x}$ under Lorentz transformation. This is as promised that momentum conservation takes the same form in different frames. 
+	
+	However, this is confusing from another aspect: we know that space ($\mathbf{x}$) and time ($ct$) has combined into spacetime $(ct, \mathbf{x})$ in relativity as one entity. Now that momentum transform the same as space, is there a counterpart comes together which transform the same as time ($ct$)? What do we get if we naively replace $\mathbf{x}$ with $ct$ in \eqref{eq:ptau}? We get
+	\begin{align}
+		\label{eq:p0tau}
+		\mbox{(the naive time-like counterpart of }\mathbf{p})
+		= m \frac{d(ct)}{d\tau} = \gamma m c~. 
+	\end{align}
+	What's this? The nature should not leave it unexplained! We will return to this question in the next subsection.
+}
+
+Caution: Here we have only showed that the definition \eqref{eq:ptau} is consistent with $(\mathbb{R})$. We have not proved for you the actual conservation. In Newtonian mechanics, momentum conservation is derived from the 3rd law (which is an independent assumption from the Newtonian 1st and 2nd laws). Here we did not impose a 3rd law (although we can do so) and thus we do not have the right tool to derive momentum conservation. In fact, given an action, the relativistic momentum conservation can be derived from an action principle. We will not expand this point here.
+
+\textbox{The relativistic force}{\index{force}
+	Now that there is momentum, it is straightforward\marginnote{Here we use $dt$ instead of $d\tau$. This definition is convenient, because it is intuitive to think of force as one static observer pushes an object and see its acceleration -- how much additional efforts the static observer has to consume to push the rocket further.} to define force:
+	\begin{align}
+	\label{eq:force}
+	\mathbf{F} \equiv \frac{d \mathbf{p}}{dt} = \frac{d (\gamma m \mathbf{v})}{dt} = \gamma m \dot{\mathbf{v}} + \gamma^3 m \mathbf{v} (\mathbf{v} \cdot \dot {\mathbf{v}}) / c^2~. 
+	\end{align}
+
+	Note that when $v\rightarrow c$, it takes $F\rightarrow \infty$ to change $v$. As a result, one can never accelerate a subluminal object to speed of light (or beyond). Thus $c$ is indeed the speed limit.
+	\mtextbox{Chasing the light?}{When Einstein was 16 years old, he started to dream what would happen if he can run as fast as light. Would light stop oscillating and would that contradict Maxwell's theory of E\&M?
+	\tcblower
+	Now his dream has came to an end. No one can be accelerated to the speed of light and thus this seemingly contraditive thought experiment would never happen.}
+}
+
+\subsection{Relativistic Energy}
+
+\textbox{The relativistic kinetic energy}{
+	The relativistic force implies work to accelerate objects, and thus the kinetic energy. Consider an object initially at rest at location $x=0$, and is accelerated by a force in the $x$-direction, into a state with position $x$ and speed $v$. The work that the force has done turns into the kinetic energy of the object:
+	\begin{align} \label{eq:ek}
+		K = \int_0^x F ~ dx = \int_0^x \frac{d(\gamma m v)}{dt} ~ dx = \int_0^v v ~ d(\gamma m v) = (\gamma-1)mc^2~.
+	\end{align}  
+	In the second-to-last step we have converted the integration variable to $v$, and at the final step, we have performed integration by parts. The detail is left as an exercise.
+	\tcblower
+	A few comments in order before to proceed:
+	\titem{
+		\item When $v\ll c$ (so that we can do a Taylor expansion around $v\rightarrow 0$), the relativistic kinetic energy returns to our familiar Newtonian form as expected: $K\rightarrow \frac{1}{2} mv^2$.
+		\item We have discussed kinetic energy following an acceleration process in the $x$-direction from rest. Is it general enough? Since kinetic energy is a label of a state, it should not care how it is obtained in the history of the object. Thus the kinetic energy is general enough no matter the force is not in the $x$-direction, or the object has an initial velocity.
+	}
+
+
+}
+
+Now that we have the kinetic energy, what's the total energy? Before that, let us first study mass. In Newtonian mechanics (and chemistry), mass is conserved --  the total mass before and after a reaction is the same. What about in relativity?
+
+\needspace{0.2\textheight}
+\mtextbox{Does $v_y$ change?}{	
+	No. Because we can view the event in another frame with $v_y=0$ at the beginning. Then in this frame $v_y=0$ at the end. Now switch to a frame with a small $v_y\ll c$. Using the velocity addition rule, $v_y$ does not change. (And the in $x$ direction $v_x$ only get a small correction of order $1/\sqrt{1-v_y^2/c^2}-1 = \mathcal{O}(v_y^2/c^2)$.)
+}
+\textbox{Mass is no longer conserved}{\index{mass: not conserved}
+	We study a system split into two objects. Consider two objects connected by a spring. The spring is compressed and stores some potential energy. Initially the objects are at rest. The initial mass of the whole system is $M$. After releasing the spring, the two objects move apart, each has mass $m$ and moving apart with speed $v$.
+
+	\cg{0.5}{e-split} 
+	
+	In Newtonian mechanics, 
+	there is no doubt that $M=2m$. But is it true when $v\sim c$?
+
+	\tcblower
+
+	To study the property of the system, 
+	we add a small probe velocity in the $y$ direction $v_y \ll v$ (One can comfortably take $v_y$ to be infinitesimal). Then interestingly, momentum conservation in the $y$ direction can calculate $M$ for us.
+
+	\titem{
+		\item Before the split: $p_y = M v_y$.
+		\item After the split: $p_y = 2\gamma m v_y$ for the same $p_y$ (momentum conservation), where $\gamma = 1/\sqrt{1-v^2/c^2}$ accounts not only velocity in the $y$ direction, but the the total velocity.
+	}
+
+	Thus, $M=2\gamma m > 2m$! The good old mass conservation breaks down.
+}
+
+\textbox{The relativistic rest energy}{
+	Consider the above $M\rightarrow 2m$ split process. Let's consider the limit $\gamma \gg 1$, i.e. the final objects are flying very close to the speed of light. In this limit, the kinetic energy of the final objects are $K\simeq 2\gamma m c^2$. 
+	\marginnote{The two final objects also has their rest energies, $mc^2$ each. In our $\gamma\gg 1$ limit, these rest energies can be neglected. In fact, initially Einstein used light to derive the relativistic energy, corresponding to no rest mass. But the derivation needs more understanding of E\&M than assumed in this course. We thus follow another route here.}
+	
+	From energy conservation, the kinetic energy of the final objects is contained in the initial object. Thus, the energy of the initial object is
+	\begin{align} 
+		E = 2\gamma m c^2 = M c^2. 
+	\end{align}
+	Recall that the initial object is at rest. Thus, the energy here is the rest energy of an object.
+	\tcblower
+	\index{rest energy}
+	\mtextbox{Daily energy usage of Hong Kong}{To see the huge rest energy of matter, for example, the daily energy consumption of Hong Kong is of order $10^{15}$J. That corresponds to about $10$ grams of matter -- about the weight of one AAA battery. To compare, the chemical energy that an AAA battery can provide is a few thousand joules.}
+	The rest energy
+	\begin{align} \label{eq:e0}
+		E_\mathrm{rest} = mc^2	
+	\end{align}
+	is the part of energy that an object has, even if it is not moving at all. This energy is huge in our daily standard since $c$ is a huge number in our daily life (and we have $c\times c$). 
+	
+	In Newtonian mechanics, due to mass conservation, this energy is not noticed in energy conservation. However, in relativistic situations this energy can be released. For example,
+
+	\mtextbox{Why do stars shine?}{Before relativity was understood, there was a big mystery that how stars can shine for longer than the human history, if the stars are powered by chemical energy. Instead, the nuclear fusion in the star can power the stars for billions of years.}
+	\titem{
+		\item We have already encountered a non-trivial case of rest energy above -- the two final objects after the split having $E=M c^2 > 2mc^2$. 
+		\item In more realistic situations, the usage of nuclear energy makes use of the rest energy of matter. In nuclear fissions and fusions, a much greater amount of energy can be released compared to usual chemical or mechanical reactions. 
+		\item In labs, one can collide particles and anti-particles. The particles disappear after they meet and the rest energy can be completely released in the form of light. 
+		 
+	}	
+}
+
+\mtextbox{The zero-point of rest energy}{The particle-anti-particle annihilation phenomenon is a very important check about the concept of rest energy. Because the zero point of energy makes no physical sense unless all the energy can be released.}
+\textbox{The relativistic energy}{\index{energy}
+	In general, for an object with mass $m$ and speed $v$, combining the kinetic energy \eqref{eq:ek} and the rest energy \eqref{eq:e0}, the total energy of the object is
+	\begin{align} \label{eq:relei}
+		E = \gamma m c^2 ~.
+	\end{align}
+	\tcblower
+	This sounds a bit different from what you heard: $E=mc^2$. This more famous formula (famous because without having to explain $\gamma$ in popular science) may stand for one of the two meanings:
+	\titem{
+		\item The rest energy of an object.
+		\item The total energy of an object, with the mass defined as the velocity-dependent ``relativistic mass'' $m_\mathrm{rel} \equiv \gamma m$ and thus $E=m_\mathrm{rel} c^2$. Nowadays we understand mass as a Lorentz invariant label of a particle; the convention of $m_\mathrm{rel}$ is seldomly used and thus we will not use $m_\mathrm{rel}$ further here.
+	}
+}
+
+\needspace{0.2\textheight}
+\mtextbox{Light is light}{
+	Applying \eqref{eq:mep} to light, we have $v=c$. Thus, $m=0$. In other words, if we view light as particles (see the quantum mechanics part for more information), their mass has to vanish.
+	\tcblower
+	The 4-vector of the momentum of light has the form $p^\mu = (E/c, \mathbf{p})$, where the energy of light $E = c |\mathbf{p}|$. This 4-vector has vanishing Lorentz norm. In the notation of the metric (optional material), we have $\sum_{\mu, \nu} g_{\mu\nu}p^\mu p^\nu=0$.
+}
+\textbox{The 4-dimensional momentum vector}{\index{4-momentum}\index{invariant mass}
+	Remember the question we asked at \eqref{eq:p0tau}? Happily, up to a factor of $c$ (which is nothing more than a conversion of unit as we have explained natural unit), the energy we have got in \eqref{eq:relei} is exactly the missing ``naive time-like counterpart of momentum'' in \eqref{eq:p0tau}. The 4 dimensional momentum is then $p^\mu = (E/c, \mathbf{p}) = (\gamma mc, \gamma m\mathbf{v}) = \gamma m \dot x^\mu$.
+
+	Recall that for the spacetime coordinate 4-vector, we have an invariant quantity $c^2 \Delta t^2 - \Delta x^2$. Is there a counterpart for the momentum 4-vector? Yes. Squaring equation~\eqref{eq:relei}, we get
+	\begin{align}\label{eq:mep}
+		m^2 c^4 = E^2 - \frac{v^2}{c^2} E^2	= 
+		\xlongequal{\mbox{using ratio of \eqref{eq:relei} and \eqref{eq:ptau}}}
+		E^2 - p^2 c^2~.
+	\end{align}
+	Thus, though $E$ and $\mathbf{p}$ are dependent on observers, the combination on the RHS is independent of observers, but is just the invariant mass squared of the particle. This is not surprising. Because the momentum and coordinate 4-vectors lives in the same space and is measured by the same metric. (Just as it is not surprising that both the magnitude of 3d coordinate vector and 3d momentum are rotational invariant.)
+}
+
+\textbox{(Optional) The relativistic Doppler effect of light}{
+	Alice is moving with 3-velocity $\mathbf{v}$ wrt Bob. If Bob observes that the energy of light is $E_B$, what's the corresponding energy $E_A$ of the same beam of light in Alice's frame?
+
+	We can solve this problem by the Lorentz invariance of inner products of 4-vectors. The inner product $\sum_{\mu\nu}g_{\mu\nu}k^\mu p^\nu$ is invariant under Lorentz transformations, where $k^\mu$ and $p^\nu$ are the 4-vector of Alice's momentum and the momentum of the beam of light.
+
+	In Bob's frame: $k^\mu = (\gamma m c, \gamma m \mathbf{v})$, $p^\nu = (E_B/c, \mathbf{p})$. The Lorentz invariant inner product is $\sum_{\mu\nu}g_{\mu\nu}k^\mu p^\nu = -\gamma m (E_B-\mathbf{v}\cdot\mathbf{p})=-\gamma m E_B (1 - (v/c) \cos\theta)$, where $\theta$ is the angle between $\mathbf{v}$ and $\mathbf{p}$ in Bob's frame.
+
+	In Alice's frame: $k^\mu = (mc, \mathbf{0})$, $p^\nu = (E_A/c, \mathbf{p'})$. The Lorentz invariant inner product is $\sum_{\mu\nu}g_{\mu\nu}k^\mu p^\nu = - m E_A$. It must be equal to the Lorentz invariant in Bob's frame. Thus, $E_A = \gamma E_B (1 - (v/c) \cos\theta)$. 
+	\tcblower
+	From 
+	\marginnote{Here the purpose of this optional box is not only to tell you the formula of the relativistic Doppler effect, but also to show the power of Lorentz invariance for the inner product. The Doppler effect can also be derived just by considering the effect of time dilation and space contraction. But the calculation is much more complicated for a general direction $\theta$.}
+	either classical E\&M or quantum mechanics, we will find that the frequency of light is $\omega \propto E$. Thus the frequency of light wrt Alice and Bob has a similar relation $\omega_A = \gamma \omega_B (1 - (u/c) \cos\theta)$.
+}
+
+\section{Epilogue: Summary and What's Next}
+
+The below diagram is a recap of what we have learned. The green color denote external contents (you may ignore) and the blue denote alternative logic.
+
+\includegraphics[width=1.3\textwidth]{summary_relativity}
+
+\textbox{Further reading about the content}{
+	\titem{
+		\item If you are interested to explore more about the geometry of spacetime and formulate special relativity with geometrical emphasize, read \href{https://www.amazon.com/Spacetime-Physics-Edwin-F-Taylor/dp/0716723271}{``Spacetime Physics''} by Taylor and Wheeler (and the a few general relativity books below).
+		\item If you are not happy about our guess of relativistic energy and momentum, but rather want to derive them, wait and we will do it in the part ``From Action to Laws of Nature''. See also \href{
+			http://theoreticalminimum.com/}{``Theoretical Minimum'' (Video Lectures)} by Susskind.
+		\item If you consider the math used this text too sloppy, read \href{https://www.amazon.com/Relativity-Special-Cosmological-Wolfgang-Rindler/dp/0198567324}{``Relativity: Special, General, and Cosmological''} by Rindler.
+		\item If you like to learn more about the relation between electrodynamics and relativity before getting to the full details of electrodynamics, read \href{
+			http://www.damtp.cam.ac.uk/user/db275/concepts/Concepts.pdf}{Lecture Notes on Modern Physics} by Baumann.
+		\item Many good books on general relativity also starts with a dense and high-level introduction of special relativity, for example \href{https://www.amazon.com/Gravity-Introduction-Einsteins-General-Relativity/dp/0805386629}{Gravity: An Introduction to Einstein's General Relativity} by Hartle, \href{https://www.amazon.com/Gravitation-Charles-Misner/dp/0691177791}{Gravitation} by Misner, Thorne and Wheeler and \href{https://www.amazon.com/Gravitation-Cosmology-Principles-Applications-Relativity/dp/8126517557}{Gravitation And Cosmology} by Weinberg.
+	}
+}
+
+\textbox{What happens next in a university physics program?}{
+	\titem{
+		\item Electrodynamics as a deeper study of E\&M.
+		
+		When Einstein was young, he was deeply puzzled by two observations. Both has roots in E\&M. One is light cheasing, which you have understood by now. The other was the magnet-conductor paradox, as he emphasized in the first paragraph of his 1905 paper. The paradox is shown in the below figure:
+
+		\cg{1}{magnet-conductor-paradox}
+		
+		Before special relativity, the Coulomb law and the Lorentz law are considered as two independent fundamental laws of nature. However, by a change of frame, in the moving-magnet frame, the induct current is explained using the Coulomb law and in the moving-conductor frame the induced current is explained using the Lorentz law. This indicates that one should not consider them both fundamental -- one same thing shouldn't be explained by two fundamental principles in physics! If the Coulomb law is more fundamental (at least it is more familiar), we should be able to derive the Lorentz law from it.
+
+		How relativity helps? Roughly speaking, 3-dimensional vectors such as $\mathbf{E}$ and $\mathbf{B}$ should be extended into 4-dimension vectors. Thus, the Coulomb and Lorentz laws, depending only on $\mathbf{E}$ and $\mathbf{B}$, respectively, should be combined into one law using the form of 4-velocity and 4-electric-magnetic vector.
+
+		Without getting into the math, let us use a thought experiment to intuitively understand how to ``derive'' Lorentz force from Coulomb force by a change of frame. 
+
+		Consider a wire conducing electric current, and a charge. The wire and the charge has relative motion between each other. 
+		
+		\cg{1}{e_and_m}
+
+		Here the Lorentz force is derived by the different amount of length contraction effect of moving charges. 
+		
+		In electrodynamics, you will explore the full connection between E\&M and relativity.
+
+		\item You may learn how special relativity works with gravity in ``general relativity''. We will also have a part to mention it briefly.
+		\item Symmetry, transformation and group. Einstein's postulates (to be more precise, the Lorentz transformation) has the mathematical structures of a group (Lorentz group). ``Group theory'' is widely used in physics, including relativity, particle physics and solid state physics. And they are of their own importance in math as well. 
+		\item You may learn how special relativity works with quantum mechanics in ``quantum field theory''. 
+	}
+}
+
+\section{Exercises}
+
+% Sec 1
+
+\textbox{E\wref{sec:principles-relativity}.1 Plain waves}{
+	Consider ``plain wave'' $e^{ik(x-ct)}$. Interpret the real part of $e^{ik(x-ct)}$ as the amplitude of the wave. 
+	\tenum{
+		\item For fixed $t$, show the plain wave indeed looks like a wave.
+		\item Figure out the moving direction and speed of the wave.
+	}
+}
+
+% Sec 2
+
+\needspace{0.2\textwidth}
+\marginnote{\includegraphics[width=0.25\textwidth, trim={0 0 200pt 0}, clip]{E1.pdf}}
+\textbox{E\wref{sec:time-dilation}.1 Light travel and time dilation}{
+	Consider Alice and Bob have relative motion against each other, with velocity $v$. Alice carries a candle, which emits light (speed of light is $c$) perpendicular to the motion direction (wrt Alice). 
+	\tenum{
+		\item What's the speed of this light ray wrt Bob? 
+		\item What's the travel direction of this light ray wrt Bob? 
+		\item Wrt Bob, the time of Alice slows down. Why doesn't the speed of this light ray slow down? Explain the relation between slower time and speed of light.
+	}
+}
+
+% Sec 5
+
+\marginnote{\includegraphics[width=0.25\textwidth, trim={0 2pt 2pt 0}, clip]{earth-sun}} 
+\textbox{E\wref{sec:same-time}.1 Spacetime diagram of the sun-earth system}{
+	Use the frame that the sun is static, draw a spacetime diagram of the sun's and the earth's motion in $x$-direction (a direction in the earth's orbit plane). Show on this diagram how the sunlight (emitted in the $x$-direction) reaches the earth. The vertical axis is $ct$.
+}
+
+\textbox{E\wref{sec:same-time}.2 Spacetime diagram with constant proper acceleration}{
+	Alice is moving with constant ``proper acceleration'' in the $x$-direction: $x^2 - t^2=$constant (to simplify the discussion, let's work in one spatial dimension only). Not all light towards the observer can reach Alice. The region where light cannot reach Alice is called the ``Rindler horizon''. Draw a spacetime diagram of Alice's motion and find where the Rindler horizon is.
+}
+
+\textbox{E\wref{sec:same-time}.3 What the twin actually sees}{
+	Draw the spacetime diagram of the twin paradox and show what the static twin actually sees (i.e. in the order that light reaches his eyes) about the aging of the moving twin (when she was moving outwards and when she was moving back).
+}
+
+\textbox{E\wref{sec:same-time}.4 Distance between spaceships.}{
+	An observer A is considered at rest in the whole setup of this question. Two spaceships B and C are equidistant to A and are initially also at rest, and the distance between them is $L$. Now A sends a light signal. After receiving the light signal, B and C immediately start to move at a velocity $v$ in the same direction (neglect the period of acceleration). What is the distance between B and C after they are moving? Give your answer wrt A and wrt B, respectively. Hint: draw a spacetime diagram to find out what happened.
+}
+
+% Sec 6
+
+\textbox{E\wref{sec:lorentz}.1 Use Lorentz transformation in calculations}{
+	Use Lorentz transformation to calculate:
+	\tenum{
+		\item Time dilation.
+		\item Rule contraction.
+		\item For two events which happened at the same time wrt Alice, calculate the time difference wrt Bob, given Bob's speed $v$, and the distance between the two events being $L$ wrt Alice. % Lv/c^2
+	}
+}
+
+\textbox{E\wref{sec:lorentz}.2 Examples of velocity addition}{
+	Alice is moving away from Bob with velocity $\vec v =(v,0,0)$, and sending out light rays.
+	\tenum{
+		\item If the light ray is along $x_A$ direction ($x$ direction wrt Alice), calculate the velocity of the light ray $\vec v_B = (v_{Bx},v_{By},v_{Bz}) $ wrt Bob.
+		\item If the light ray is along $y_A$ direction ($y$ direction wrt Alice), calculate the velocity of the light ray $\vec v_B = (v_{Bx},v_{By},v_{Bz}) $ wrt Bob.
+	}
+}
+
+\textbox{E\wref{sec:lorentz}.3 Speed of light in the media}{
+	Consider the speed of light in static air (refractive index $n=1.0003$). How does the speed of light in the air change wrt moving observers moving with speed $v$? How does the speed of light in the air change when there is a wind with speed $v$?
+}
+
+% Sec 7
+
+\textbox{E\wref{sec:geometry}.1 The spacetime interval is Lorentz invariant}{
+	Show that under Lorentz transformation, the spacetime interval $ds^2$ is unchanged (although $t$ and $x$ change). For simplicity, work in two dimensions $t$ and $x$ only (i.e. no motion or rotation in $y$ and $z$ directions).
+}
+
+\textbox{E\wref{sec:geometry}.2 Our motion in spacetime}{
+	Show that using proper time, everyone is moving in spacetime (not space) with the same 4-speed (i.e. the size of the 4-velocity $dx^\mu / d\tau$).
+}
+
+\textbox{E\wref{sec:momentum-energy}.1 Integrate momentum to get energy}{
+	Let us use the relativistic momentum $p=\gamma mv$ to derive the expression of the kinetic energy, in a different way from what we did in class. 
+
+	Consider a ball at rest at $x=0$ with mass m, and act a constant force $F$ on this ball toward the $x$ direction. The ball then accelerates because of the force.
+
+	Note that $F=dp/dt$, and the kinetic energy can be calculated from the work done by the force: 
+	\begin{align}
+	K= \int_0^{x_1}F~dx= \int_0^{x_1} \left(\frac{dp}{dt}\right)dx=\int_0^{p_1}v~dp=\int_0^{v_1}v~d(\gamma mv)~,
+	\end{align}
+	where $x_1$, $p_1$ and $v_1$ are the distance, momentum and velocity at a later time $t_1$.
+
+	Continue the calculation and derive the kinetic energy of the ball at time $t_1$.	
+}
+
+\textbox{Read Einstein's original papers on relativity}{
+	Nowadays Einstein's original papers can be easily found online. For example, \href{https://www.fourmilab.ch/etexts/einstein/specrel/www/}{his first paper}. You will find most parts the paper accessible except that in electrodynamics he used different notations from modern convention. 
+}
+
+\printindex
+
+\end{document}

@@ -1,0 +1,187 @@
+\input{structure.tex}
+\graphicspath{{10_fig/}}
+\title{Part 10. Complexity}
+
+\begin{document}
+
+\maketitle
+
+There are great complexities in the science of complexity, since our world contains all kinds of complexities. In this part, we take a glance of the complexity world by a few examples.
+
+\textbox{Complexities in simple functions}{
+    Do you understand a complex function $f(z)=z^2+C$? 
+    Do you understand a real function $g(x)=R(x-x^2)$?
+    If you think you do, take a look at the following images:
+
+    \marginnote{\cg{0.382}{BPlt}}
+    \cg{1.0}{MBPlt}
+
+    The 4 figures in the left are results of iteratively apply $f(z)$ (at various zoom levels) and the figure in the right is the result of iteratively apply $g(x)$. Did you realize the complexities contained in these functions?
+
+    In these figures, there is a hidden number $4.669201609\cdots$. Can you find it out?
+}
+
+\marginnote{\cg{0.37}{Britain-fractal-coastline-combined}
+Image from Wikipedia, CC BY-SA 3.0}
+\textbox{How to measure the length of a coastline?}{
+    Let's measure the coastline of Britain by a straight and rigid ruler. 
+
+    The length is indicated by the first image to the left.
+
+    Let's use a shorter ruler to do the measurement again. Oh, I got a result longer than before. Even shorter ruler? Even longer results. Thanks to the fact that the world is made of atoms, which gives us a short distance cutoff. Otherwise, with infinitely short rulers, I would have measured the coastline of Britain with infinite length!
+
+    The Britain has a coastline with infinite length classically? Are you serious?
+}
+
+\textbox{Four dimensional human beings}{
+    From scientific fictions, you may have heard of beings living in 4 dimensional space (excluding time). They are said to appear and disappear suddenly in our view as 3 dimensional beings.
+
+    Do you admire them? What if I tell you that we are actually 4 dimensional beings? Can you imagine in which sense this may be real?
+}
+
+ 
+\section{Iteration: from Population of Rabbits to Chaos}
+
+\textbox{The logistic map $R(x-x^2)$ as generations of rabbits}{
+    Let's consider models about the population of rabbits on an island after generations of self-reproduction. 
+    
+    In the simplest model, the rabbits has a constant self-reproduction rate $R$, i.e. after a generation, the number of rabbits becomes $n_{k+1} = R n_k$. The number of rabbits then increase or decrease exponentially by $n_1 = R n_0, ~ n_2 = R^2 n_0, $ etc.
+
+    This model is too simple. It did not take into account that if there are too many rabbits, the lack of resource on the island will course massive death of the rabbits and thus the population would decrease. To take this into account in a simple toy model, we let
+    \begin{align}
+        n_{k+1} = R (n_k - \frac{n_k^2}{S} )~,
+    \end{align}
+    where $S$ is a constant. Now the iteration equation appears to have two parameters $R$ and $S$. An equation with two parameters introduce additional complexity to study. However, without lose of generality, one can redefine $x_k \equiv n_k/S$. Then the iteration equation for $x_k$ is
+    \begin{align}
+        x_{k+1} = R (x_k - x_k^2)~.
+    \end{align}
+    This stands for iteratively apply a function $g(x) = R(x-x^2)$, and calculate $g(g(g(\ldots g(x_0)\ldots )))$ with an initial value $x_0$. This function is known as the logistic map.
+}
+
+\marginnote{\cg{0.37}{logisticXk} Plots of $x_k$ for different values of $R$. The black solid curve is for $x_0=0.2$ and the red dashed curve is for $x_0 = 0.205$. The difference is minor for small $R$ but is huge for the chaotic case, indicating a sensitive initial condition dependence.}
+\textbox{Behavior of $R(x-x^2)$ with different values of $R$}{
+    How do iterations of $x_{n+1}=R(x_n-x_n^2)$ behave at large $n$ for different $R$? One can easily write a computer program to test that. And the result for $n\rightarrow \infty$ is as follows:
+    \begin{itemize}
+        \item For $0<R<1$: $x_\infty =0$. Because the birth rate is too low to compensate the death.
+        \item For $1<R<3$: $x_\infty = (R-1)/R$. This value is known as an attractor since it can be obtained from any $0<x_0<1$. To get it, assuming there is a stationary limit, and solve the equation $x_\infty = R( x_\infty - x_\infty^2 )$.
+        \item For $3<R<3.44949$: there is no unique limit $x_\infty$. Instead, at large $k$, $x_k$ oscillates with two possible values. This can be understood as: for one generation, there are too many rabbits thus many died. The next year, there are more resources and then can support more rabbits.
+        \item For $3.44949 < R < 3.54409$: $x_k$ oscillates with 4 possible values. This is hard to understand, but can be tested easily numerically. Further, for $3.54409 < R < 3.56407$: $x_k$ oscillates with 8 possible values; For $3.56407<R<3.56876$: $x_k$ oscillates with 16 possible values; ... When one increases $R$ a bit, the period doubles. 
+        \item For $R>3.56995$, one can no longer find oscillatory behavior. The behavior of $x_k$ at large $k$ looks random, and is exponentially sensitive to small variation in initial condition $x_0$. This behavior is known as \emph{chaos}.
+    \end{itemize}
+}
+
+\textbox{The Bifurcation Plot}{
+    The plot of the logistic map is best known in the form of the below bifurcation plot. Here one clearly note the doubling of periods and eventually the emergence of chaos as $R$ increases.
+    \marginnote{If you zoom in the bifurcation plot, you will find some self-similarities in its substructures.}
+    \cg{0.8}{BPltFramed}
+}
+
+\needspace{0.2\textwidth}
+\mtextbox{The Mandelbrot Set}{
+    For the complex function $f(z)=z^2+C$, the Mondelbrot set is a plot about how fast the sequence $f(0), f(f(0)), \cdots$ diverges or converge. The complexities in this iteration in the complex plane of $C$ is plotted at the beginning of this part. Along the real axis, the plot has self-similarity and the period is determined by the Feigenbaum constant. The relation to the logistic map is plotted in the below figure.
+    % Image: Wikipedia released to the public domain
+    \cg{0.7}{Verhulst-Mandelbrot-Bifurcation-Wikipedia-public-domain}
+    To study the Mandelbrot set in more details, you will find that at different parts of the Mandelbrot set, iterations converge to different number of points. This is very similar to the logistic map. Also note the self similarities in the Mandelbrot set. We will come back to self similarities later. 
+    \mnewline
+    You can find on the site \href{https://sites.google.com/site/logicedges/}{logicedges} the zoom of the above connection and more videos about complexity.
+}
+% 恒纪元
+\textbox{The orderly era: period doubling and the Feigenbaum constant}{
+    From the above observations, we note that the oscillation has $2^n$ possible values for a range of $R$: $R_n < R < R_{n+1}$. At large $n$:
+    \begin{align}
+        \delta \equiv \lim_{n\rightarrow \infty} \frac{R_{n+1}-R_n}{R_{n+2}-R_{n+1}} = 4.669201609\cdots ~.
+    \end{align}
+    This number $\delta$ is known as the Feigenbaum constant. Interestingly, the Feigenbaum constant is not only the ratio for rabbit birth rate, but rather it is a universal constant of nature. The periodicity of a broad class of non-linear behaviors has the same limiting behavior. 
+}
+
+% 乱纪元
+\textbox{The chaotic era: the classical loss of determinism}{
+    In the framework of classical mechanics, Laplace proposed that if a smart demon knows the initial position and velocity of all particles in the universe, the demon can predict the future. It is known as the Laplace's demon.
+
+    Now we know that determinism is (at least apparently) lost in quantum mechanics. Thus, Laplace's proposal does not work. However, even in the framework of classical mechanics, due to chaos, Laplace's proposal does not practically work either. This is because a tiny small error in the knowledge of the initial condition will be amplified exponentially fast in a chaotic system. As a result, it is exponentially hard to predict the future even in the classical sense.
+
+    \tcblower
+
+    In the 1890s, Poincare studied the 3-body problem and noted that the solutions are exponentially sensitive to initial conditions. This is the starting point of the study of chaos. But for decades, his work was largely forgotten.
+
+    In 1961, Lorenz tried to use 12 nonlinear PDEs to model the change of weather. One day, he wanted to re-run a previous simulation from the middle using data printouts. However, he found that his previous calculation is not reproducible. He struggled and eventually found the reason: the result is exponentially sensitive to the initial condition. This re-discovery is the modern start for chaos study and is later known as the ``butterfly effect'': ``Hurricane formed because a butterfly flapped her wings several weeks earlier''.
+}
+
+\section{Fractals: Dimensions Reloaded}
+
+To understand how coastlines would have infinite classical length, let us consider a toy model, known as the Koch's snowflake. 
+
+\marginnote{\cg{0.35}{koch_edit}}
+\textbox{Koch's snowflake}{
+    Starting from a straight line, shrink it by $1/3$ and fold it 4 times, as the figure to the right. Do it \emph{infinitely many times}. Then you get the Koch's snowflake. We observe a few features of the Koch's snowflake:
+    \titem{
+        \item The snowflake is self-similar. Take a part and zoom in, you find the same image as the original whole image. This non-trivial self-similarity is known as a fractal structure. Though coastlines do not have exact fractal structure, they have fractal-like structures that the part ``looks like'' the whole after zooming in. You can try to see this feature yourself by zooming in Google Map.
+        \item What's the length of lines in the snowflake? Let's take the initial straight line to have length $L$. Then the first iteration of shinking-folding procedure gives a length $(4/3)L$, the second iteration gives $(4/3)^2L$, ... and the $n$-th iteration gives $(4/3)^nL$. As $n \rightarrow \infty $, the length diverges. Thus, the Koch's snowflake fits an line with infinite length into a finite width (and height).
+        \item Due to the folding (roughness), the snowflake appears to have a bit of ``thickness'' if you look from far away. Thus, the snowflake appears in some sense like a two-dimensional object instead of a one-dimensional line. However, if you look infinitely close, the snowflake looks one dimensional again. What's the dimension of the slowflake?
+    }
+}
+To study the dimension of the Koch's snowflake, let us generalize our definition of spatial dimensions.
+\textbox{The dimension of the snowflake: Hausdorff dimension}{
+    How to formally define spatial dimensions? There are many ways. Among which one is by the scaling behavior of objects. Take a square for example, it has trivial self-similarity. Cut its length of edges by $1/2$, you get 4 self-similar squares.
+    
+    \mtextbox{Sierpinski triangle}{
+        As another example of fractals, the below image is the Sierpinski triangle.
+        \cg{0.8}{sierpinski}
+        When you cut edges by 1/2, you get 3 self-similar pieces. Thus $D_H = \log 3 / \log 2$.    
+    }
+    \cg{0.5}{square-similar}
+    In general, if you cut its length of edges in $1/M$ intervals, and you get $N$ self-similar squares. What's the relation between $M$ and $N$? Of course, $N = M^2$, and thus
+    \begin{align}
+        \frac{\log N}{\log M} = 2~.
+    \end{align}
+    Recall that the square is a two-dimensional object. Is this $2$ appearing at the right hand side a coincidence? You can try a 3-dimensional box, or higher dimensional objects. Soon you can be convinced that it's not a coincidence. And in general you have:
+    \begin{align}
+        D_H \equiv \mbox{(dimension)} = \frac{\log \mbox{(number of self-similar pieces)}}{\log \mbox{(number of subdivision of edges)}}~.
+    \end{align}
+    Space dimension defined in this way is known as the Hausdorff dimension.
+    \tcblower
+    What's the Hausdorff dimension for Koch's snowflake? Cutting the length by 1/3 and we get 4 self-similar pieces. Thus $D_H = \log 4 / \log 3 \simeq 1.26$. It's an object somewhere between dimension 1 and 2. This is a mathematical way of the above argument that roughness turns into line width.
+
+    You can find a list of beautiful fractals and their Hausdorff dimensions \href{https://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension}{on Wikipedia}.
+}
+
+\marginnote{\cg{0.2}{boxDim}}
+\textbox{Coastlines and other fractal-like objects}{
+    For coastlines, there is no precise self-similarity but at best statistical self-similarity. Nevertheless, one can still count the fractal dimension by scaling properties: Draw grid lines on the map. Count how many boxes cross the coastline. And study how the number of boxes scales when we shrink the intervals between grid lines. One finds that the UK coastline has a box counting dimension of 1.25. The dimension of coastlines of Norway, Australia and South Africa are 1.52, 1.13 and 1.05, respectively. The smaller dimension, the smoother the coastlines.
+    \tcblower
+    \twocol{0.7}{0.1}{0.18}{Fractal-like structures are abundant in nature. For example, the fractal dimension of cauliflowers is measured to be about 2.8. This is intuitive since a cauliflower is a 3-dimensional object and has holes in it arising from fractal structures.}{\cg{1}{cauliflowers}}
+}
+
+\textbox{The Kleiber's Law: Metabolic rate for organisms}{
+    Let's change topic to a bit of biology. Guess what's the relation between metabolic rate and mass for organisms? Are they linearly proportional?
+
+    \cg{0.7}{metabolic1}
+
+    \marginnote{\cg{0.35}{WBE} Image from West, Brown, Enquist, Science 276, 122 (1997). See also their paper on Science 284, 1677 (1999).}
+
+    Here is a plot by Hemmingsen on Reports of the Steno Memorial Hospital (1960). Interestingly, the metabolic rate scale as $M^{3/4}$. This strange power is known as the Kleiber's law. The factor 3 in $3/4$ is intuitive -- this is how mass scales with length. However, where does the factor of 4 come from? Researchers further found that the heart rate and growth rate scales as $-1/4$, and the blood circulation time and life span scales as $1/4$ of animal mass, respectively. Again, the mysterious factor of $4$ arises.
+    \tcblower
+    In the 1990s, West, Brown and Enquist noted that fractal-like structure (such as blood vessels) is more efficient in deliver materials in the body of animals. The fractal-like structure in 3-dimension corresponds to 4 dimensions if no fractal-like structure is used. Thus, in the fractal sense, we effectively live in 4 spatial dimensions!
+}
+
+\section{Epilogue: Summary and What's Next}
+
+\textbox{Further reading about the content}{
+    \titem{
+        \item There is an excellent online course \href{https://www.complexityexplorer.org/courses}{``Introduction to Complexity''} by Melanie Mitchell. She also has a book \href{https://www.amazon.com/Complexity-Guided-Tour-Melanie-Mitchell/dp/0199798109}{Complexity: A Guided Tour}.
+        \item For more formal textbooks, see, for example, \href{https://www.amazon.com/Fractal-Geometry-Mathematical-Foundations-Applications/dp/0470848626/ref=pd_cp_b_3}{Fractal Geometry: Mathematical Foundations and Applications} by Falconer.
+        \item Many models here can be simulated in a modeling language \href{https://ccl.northwestern.edu/netlogo/}{``NetLogo''}. The model source code is simple and fun to read thanks to the language features provided by NetLogo.
+    }
+}
+
+\textbox{What's next?}{
+    You may like to learn about information, emergent behaviors, networks, genetic algorithms and cellular automata in the world of complexity from the suggested further readings.
+
+    Complexity is an interdisciplinary science. You may find your next steps in how to route computer networks, how to recommend goods to customers, how brain works in life science, how birds fly in groups, how to reach a person using your social connections, how to plan the expansion of a city, how to design a algorithm for a robot, how to make more precise weather forecast, and even how a black hole absorbs matter.
+}
+
+
+
+\printindex
+
+\end{document}
