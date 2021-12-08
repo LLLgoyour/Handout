@@ -1,91 +1,93 @@
 \input{structure.tex}
 \usepackage{wasysym}
 \graphicspath{{1_fig/}}
-\title{Part 1. Special Relativity}
+\title{第一章\ 狭义相对论}
+
+\usepackage{ctex}
+
 
 \begin{document}
 
 \maketitle
 
-Let us start our journey by a thought experiment -- Alice is in a spaceship to a star, 5 light years away from us, and will return to the earth immediately after her arrival. Bob sees her off and waits her to come back. Suppose the spaceship runs almost as fast as the speed of light $c$, say, $v=0.995c$.
-
+让我们从一个思想实验开始我们探索物理的奇妙旅程——王二乘坐宇宙飞船前往距离我们5光年远的一颗恒星，他到达后将立即返回地球。王三送他走并等他回来。假设宇宙飞船的运行速度几乎与光速 $c$ 一样快，例如 $v=0.995c$
 \cg{0.7}{spaceship5}
 
-Amazingly, at $v\sim c$, things behave dramatically different from our daily experience (Newtonian mechanics). Let's see a few surprising facts that they find:
+令人惊讶的是，在 $v\sim c$ 处，事物的行为与我们的日常经验（也就是牛顿力学）截然不同。让我们看看他们发现的一些神奇的事实：
 
-\mitembox{Understanding spacetime}{
-	We find deeper understanding of spacetime as we understand nature better. The efforts have not come to an end so far.
+\mitembox{对于时空的理解}{
+	随着我们对自然更好的了解，我们对时空也有了更深入的理解。到目前为止，科学家们依然在努力的探索。
 	}{
-	\item Newtonian: space and time are absolute and independent ``playgrounds'' for matter.
-	\item Special relativity: space and time are unified, and depends on motion of observers (like relative orientation of an object depends on rotation of observers).
-	\item General relativity: space and time can be curved by objects.
-	\item Quantum gravity (conjectured): space and time may be emergent from holography, quantum entanglements, ...  We have not fully understood it yet, but the hints are profound.
+	\item 牛顿力学: 空间和时间对于物质来说是绝对独立的。
+	\item 狭义相对论:空间和时间是统一的，并且取决于观察者的运动（就像物体的相对方向会随着观察者的转动而改变）。
+	\item 广义相对论: 空间和时间可以被物体弯曲。
+	\item 量子引力（推测）：空间和时间可能是从全息和量子纠缠中演生出来的。我们还没有完全理解它，但是我们从中得到的这些线索是深刻的。
+
 }
 
-\itembox{Bob's observations about Alice's journey}{}{
-	\item Bob wrote a letter to Alice, and incidentally Alice wrote a letter to Bob around the same time. Bob thinks that he wrote his letter earlier, but Alice insists that she wrote her letter earlier. They have considered that light needs time to travel. But they cannot resolve the dispute even after that.
-	\item Bob finds the spaceship much heavier -- when $v\sim c$, Alice needs increasingly greater amount of energy to accelerate the spaceship even by a little.
-	\item When Alice comes back, 10 years has passed for Bob. But for Alice, her clock, her feeling, everything about Alice indicates that only 1 year has passed.
+\itembox{王三对王二旅行的观察}{}{
+	\item 王三给王二写了一封信，王二大约在同一时间也给王三写了一封信。王三认为他的信写的更早，同时王二也坚持认为他自己的信写得更早。他们考虑到了光需要时间才能传播，但即使如此，他们也无法解决这个纷争。
+
+	\item 王三发现当 $v\sim c$ 时，飞船变得更重了，王二需要越来越多的能量来使飞船加速。
+	\item 当王二回来时，王三已经过去了 10 年。但对于王二来说，他的时钟，他的感觉，关于他的一切都表明，仅仅过去了一年。
 } 
 
-What happened? After learning this part, you will find it out, and much more -- In fact, we have to think about space and time in a totally different way from we have naively thought.
+这里发生了什么？学完这部分内容，你就会发现，还有更多神奇的事情。事实上，我们必须以一种与我们天真的想法截然不同的方式来思考空间和时间。
 
-\section{Principles of Special Relativity}\label{sec:principles-relativity}
+\section{相对性原理}\label{sec:principles-relativity}
 
-\subsection{Galileo's Principle of Relativity}
+\subsection{伽利略变换}
 
-Imagine:
-\marginnote{By ``look outside'', we mean connections by any means to the outside of the car, including using light, sound, gravitational waves, etc. We neglect rotation of the earth such that Alice and Bob are in inertial frames (constant velocity).}
-As in Fig.~\ref{fig:grel}, Alice is moving with constant velocity $\mathbf{v}$ in a closed car with respect to (wrt for short) the ground. If Alice does not look outside the car, how can Alice find out that she is moving wrt the ground?
+想象一下:
+\marginnote{“向外看”指的是通过任何方式与汽车外部的连接，比如使用光、声、引力波等。我们忽略地球的自转，从而我们可以认为王二和王三处于惯性坐标系（也就是他们的运动是匀速的）。
+}
+在图~\ref{fig:grel}中,王二在一辆封闭的汽车中以恒定速度 $\mathbf{v}$ 相对于地面移动。如果王二不看车外，他怎么会发现他在地面上移动呢？
 
-No. Whatever activities/experiments Alice tries, she finds no difference from if the car is not moving. To put it in the language of physics, the laws of nature she probes is identical to the laws of nature probed when she is not moving.
 
-In 1632, Galileo asserts that this is true for all physical laws, and for all inertial frames. This is known as Galileo's principle of relativity. It is impressive to note that this nearly 400-year-old principle still holds now to the best of our knowledge.
+答案是如果王二不看车外，无论他尝试什么活动/实验，他都发现与汽车没有移动时没有区别。用物理学的语言来说，他这时探索到的自然界的定律与他不动时探索到的定律是完全相同的。
+
+在1632年，伽利略说这对所有物理定律和所有惯性系都是正确的。这被称为伽利略相对性原理。令人惊叹的是，据我们所知，这一拥有近 400 年历史的原理在现在仍然适用。
  
 \begin{figure}[htbp] 
 	\centering
 	\includegraphics[width=0.7\textwidth]{galileo_relativity}
-	\caption{\label{fig:grel} Alice has her time $t_A$ and space $x_A$; Bob has his time $x_B$ and coordinate $x_B$. Alice and Bob have relative speed $v$ (because Alice is standing on a moving big car). A small car C has speed $u_A$ wrt Alice and $u_B$ wrt Bob. For simplicity, only one space direction $x$ is shown and other space dimensions $y$ and $z$ are suppressed.}
+	\caption{\label{fig:grel} 王二有他的时间 $t_A$ 和空间 $x_A$；王三也有他的时间 $t_B$ 和空间坐标$x_B$。 王三和王二的相对速度为 $v$（因为王二站在一辆移动的大车上）。一辆小型汽车 C 的速度相对于王二为 $u_A$ ，相比于王三为 $u_B$。为简单起见，我们只展示$x$方向上的运动，而不考虑其他空间维度 $y$ 和 $z$ 的运动。}
 \end{figure} 
 
-\mtextbox{Isn't Galileo's relativity trivial?}{
-		Nowadays, $(\mathbb{R})$ looks pretty trivial. This is because you have already learned Newtonian mechanics. 
+\mtextbox{伽利略的理论是简单而微不足道的吗？}{
+		现在$(\mathbb{R})$看起来很简单。 这是因为我们已经学习了牛顿力学。 
 		\mnewline
-		But at Galileo's (1564-1642) time, people had no concept of acceleration; people relied on naked eyes to do astronomy. Especially, people believe in the geocentric model more than Helio-centrism (earth moves around the sun). An argument for geocentric model is that we would have fallen out of the earth if the earth is moving fast. $(\mathbb{R})$ shows that it will not happen. 
+	但在伽利略（1564-1642）时代，人们还没有加速度的概念，他靠肉眼来进行天文学的探索。当时的人们更相信地心模型而不是日心说（地球围绕太阳运动）。 地心模型的一个论点是，如果地球移动得很快，我们就会从地球上掉下来，而 $(\mathbb{R})$ 表明它不会发生。
 		\mnewline
-		Moreover, now we know that $(\mathbb{R})$ still holds in situations where Newtonian mechanics does not hold, including special relativity and beyond.
-}
-
-\textbox{Galileo's principle of relativity}{
-	Laws of nature take the same form in all inertial frames. \index{Galileo's relativity}
+此外，现在我们还知道 $(\mathbb{R})$在牛顿力学不成立的情况下仍然成立，包括在狭义相对论成立的时候以及其他的一些情况。}
+\textbox{伽利略的相对性原理}{
+	物理定律在所有惯性系中都是相同的 \index{伽利略的相对性原理}
 	\tcblower
-	Let us refer to Galileo's principle of relativity by $(\mathbb{R})$ as we will use it many times. 
-	There are some alternative equivalent statements of $(\mathbb{R})$:
+因为会多次提到伽利略的相对性原理，所以在此让我们把伽利略的相对性原理简写为 $(\mathbb{R})$ 。这里有一些和$(\mathbb{R})$等效的语句:
 	\titem{
-		\item Motion is relative.
-		\item There is no absolute sense of ``who moves''.
+		\item 运动是相对的。
+		\item 没有绝对意义上的“运动”。
 	}
-	The change (by a relative velocity) from one inertial frame to another is called a ``boost''. Thus we can also say
-	\titem{
-		\item Laws of nature are not changed by a boost.
+我们把从一个惯性系到另一个惯性系通过相对运动的变化，称为“推动”变换。因此我们也可以说
+\titem{
+		\item 定律不会因“推动”变换，即惯性系的不同而改变。
 	}
 }
 
-\textbox{Newtonian mechanics is consistent with Galileo's relativity}{
-	In Fig.~\ref{fig:grel}, does the Newtonian 2nd law (the law of nature) take the same form wrt Alice and Bob? To check that, note the relation between there reference frames are 
-	\begin{align}\label{eq:newtontx}
+\textbox{牛顿力学和伽利略相对论的一致性}{
+在 图~\ref{fig:grel} 中，牛顿第二定律（物理定律）对于王三和王二是否是相同的？ 要证明这一点，请注意参考系之间的关系是	\begin{align}\label{eq:newtontx}
 		t_B = t_A~, \qquad
 		x_B = x_A + v t_A~.
 	\end{align}
-	The 2nd law in Alice's frame is $F = m a_A$. What about in Bob's frame? Bob picks up Alice's equation and transform it into that in Bob's form: \marginnote{We use the notation $\dot x \equiv dx/dt$, $\ddot x \equiv d^2x/dt^2$. \mnewline
-	Can you also verify Newtonian 1st and 3rd laws?}
+	王二参考系中的牛二定律是 $F = m a_A$。 那么在王三的参考系中呢？王三选取王二 的方程并将其转换为用王三参考系中的物理量表示：\marginnote{符号表示： $\dot x \equiv dx/dt$, $\ddot x \equiv d^2x/dt^2$. 
+	\mnewline
+你能尝试验证牛顿第一定律和第三定律吗？}
 	\begin{align}
 		F = m a_A = m \ddot{x}_A = m \ddot{x}_B = m a_B~.
 	\end{align}
-	Thus Bob indeed has the same 2nd law in his frame.
+因此，王二在他的坐标系中确实具有相同的牛二定律。
 
-	As a reminder for later reference, the velocity addition rule in Newtonian mechanics can be derived from the same frame transformation \eqref{eq:newtontx}: 
-	\begin{align}
+以便以后的使用，我们总结出牛顿力学中的速度相加规则可以从同一个坐标系变换 \eqref{eq:newtontx} 导出：	\begin{align}
 		\label{eq:vel_add_newton} 
 		u_A = \dot x_A~,
 		\qquad
@@ -93,65 +95,60 @@ In 1632, Galileo asserts that this is true for all physical laws, and for all in
 	\end{align}
 }
 
-From the box above, we observe: $(\mathbb{R})$ is respected by Newtonian mechanics. However, Newtonian mechanics is not the only system that satisfies $(\mathbb{R})$. To see that, and to introduce Einstein's relativity, let us introduce another fundamental principle of nature.
+从上文中，我们发现： $(\mathbb{R})$ 和牛顿力学可以得出相同的结果。 然而，牛顿力学并不是唯一满足 $(\mathbb{R})$ 的体系。 为了更好的说明这一点，并引出爱因斯坦的相对论，让我们先来介绍另一个基本的物理现象。
 
-\subsection{The Speed of Light}
+\subsection{光的速度}
 
-\mtextbox{(Optional) Finite $c$ observed}{
-	As early as in 1676, R{\o}mer noted that the actually observed eclipses of the Jupiter moon Io and the calculated time have a difference, when the eclipses happen with earth position L, K, G and F. This is interpreted as: light needs time to travel through intervals LK and GF.
+\mtextbox{(拓展内容) 对于光速有限的观测}{
+	早在 1676 年，R{\o}mer 就注意到实际观测到的木星卫星 Io 的日食在发生在地球L、K、G 和 F 位置时与计算的时间存在差异。这被解释为 : 光需要时间穿过 LK 和 GF 区间。
 	\newline
 	\includegraphics[width=\textwidth]{Romer_light}
 } 
 
-When you turn on the light, light ``immediately'' fills the room. In our everyday life, the speed of light is so fast that we usually ignore the propagation time needed for light. However, is the speed of light infinite, or finite?
+当我们打开灯时，光线“立即”充满了整个房间。在我们的日常生活中，光速是如此之快，以至于我们通常会忽略光所需的传播时间。 然而，光速是究竟是无限的，还是有限的呢？
 
-Many delicate experiments have been designed to show that, the speed of light is actually finite at $c\simeq 3\times 10^8 $m/s. One of the first observation from astronomy is outlined in the box to the right. Nowadays, the finiteness of speed of light is not only a reality, but also has great potential for future applications. See, for example, \href{https://www.youtube.com/watch?v=Y_9vd4HWlVA&feature=youtu.be}{video: seeing what's behind a wall through reflection}.
+科学家们设计了很多精细的实验来证明光速实际上是有限的，光的速度大约是 $c\simeq 3\times 10^8 $m/s。 右侧方框概述了天文学的第一个观察结果。 如今，光速的有限性不仅成为了现代物理的事实，而且在未来的应用中也有着巨大的前景。
 
-\textbox{The exact value of the speed of light}{ \index{speed of light}
-	The speed of light $c$ has an exact value: $c = 299,792,458\mbox{m/s}$. 
+\textbox{光速的精确值}{ \index{speed of light}
+	光速 $c$ 有一个精确的值: $c = 299,792,458\mbox{m/s}$. 
 	
-	Are you surprised by this fact? Usually, physical constants are determined by measurements. Measurements always have errors. Then, how can $c$ have an exact value?
-	
+这个事实是不是让你感到了惊讶？ 通常，物理常数是通过测量确定的。 测量总是有误差的。 那么，$c$ 怎么会有一个准确的值呢？	
 	\tcblower
 	
-	The modern definition of a meter (since 1983) is (distance travelled by light in 1 second)/(value of $c$). Indeed, historically (1889-1960) meter was defined by a real object known as ``International Prototype Meter''. But defining meter using a real object has many disadvantages, including
-	\titem{
-		\item One has to physically compare with the prototype (or its copies) to determine length.
-		\item The accuracy of the copies made are limited by the technology of the time.
-		\item The length of the prototype change slightly over time. And it may be damaged.
+米的现代定义（自 1983 年以来）是光在 1 秒内传播的距离（也就是$c$ 的值）。 事实上，在历史上（1889-1960）米是由一个被称为“国际原型米”的真实物体定义的。 但是使用真实物体定义仪表有很多缺点，包括	\titem{
+		\item 人们必须与原型（或它的副本）进行比较以确定长度。
+		\item 副本的准确性受到当时技术的限制。
+		\item 原型的长度随时间略有变化。 甚至它可能会损坏。
 	}
-	By defining meter with a constant of nature $c$, anyone can reproduce the meter definition. The error is only limited by his/her precision of experiments. Also, the modern definition of time and mass use the fundamental natures of quantum mechanics, through atomic frequencies and the Planck constant. 
-}
+通过使用自然常数 $c$ 来定义米的概念，所有人都可以得到一米的长度。 误差仅受他/她实验精度的限制。 此外，时间和质量的现代定义也使用了量子力学的基本性质，它们是通过原子频率和普朗克常数定义的。}
 
-Now, let's come to the key of the section, and the corner stone of Einstein's special relativity. 
+现在，让我们来到这一节的重点，也就是爱因斯坦狭义相对论的基石。
 
-\marginnote{We have said that the modern speed of light is a way to define length. But from now on, let's go back to the early 1900s, and still consider the speed of light as measured by distance moved per unit time, with common sense definition of distance and time duration.}
-\textbox{What's the speed of light from a moving source?}{
-	Bob holds a candle. The speed of light from Bob's candle is $c_B = c$ wrt Bob. 
-	Alice is moving at speed $v$ wrt Bob in a closed car. She also holds a candle. For the light from Alice's candle:
+\marginnote{我们已经说过光速是在现代定义长度的一种方式。 但是现在，让我们先回到 1900 年代初期，人们仍然考虑以单位时间内移动的距离来衡量的光速，以及距离和时间符合常识的定义。}
+\textbox{来自移动光源的光的速度是多少？}{
+	王三拿着蜡烛。 王三蜡烛发出的光相对于王三的速度是 $c_3 = c$ 。 
+	王二在一辆车里以相对于王三 $v$ 的速度运动。 王二也拿着一个蜡烛，我们来思考:
 	\titem{
-		\item What is the speed $c_A$ wrt Alice?
-		\item What is the speed $c_B$ wrt Bob?
+		\item 王二蜡烛发出的光相对于王二的速度$c_2$ 是多少?
+		\item 王二蜡烛发出的光相对于王三的速度$c_3$ 是多少?（注：此处 $c_3$ 与上文 $c_3$ 代表的是不同光源相对于王三的速度）
 	}
 
 	\includegraphics[width=0.6\textwidth, trim={0 3pt 3pt 0}, clip]{light}
 
 	\tcblower
 
-	We can immediately get $c_A=c$ from $(\mathbb{R})$. Because otherwise Alice would know that she is moving by noticing a different value of speed of light without interacting with the outside of the car. However, what is $c_B$ for the light from Alice's candle?  
-}
+我们可以立即从 $(\mathbb{R})$ 得到 $c_A=c$。 否则王二就会通过测量到不同的光速值且不与汽车外部互动来知道他正在移动。 那么 $c_B$ 相对于王二的速度又是多少呢？}
 
-Naively, we would have expected that $c_B = c_A + v = c + v$ from the Newtonian speed addition rule \eqref{eq:vel_add_newton}. And this looks natural -- in our everyday lives (speeds much slower than light): if Alice is in a car moving with $v\ll c$ (wrt Bob), and throw a ball with speed $u_A$ wrt Alice, the speed of the ball wrt Bob should be $u_B = v+u_A$.
+我们可能会天真地得到 $c_B = c_A + v = c + v$ 通过牛顿力学中计算相对速度的原理。 \eqref{eq:vel_add_newton}. 而且这些看起来非常的正常 -- 在我们的日常生活中 (速度远小于光速): 如果王二在一辆相对于王三以速度 $v\ll c$ 运动的车里, 并相对王二自己以速度 $u_A$ 扔了一个球, 那么球相对于王三的速度就是 $u_B = v+u_A$.
 
-However, the light propagation should be computed by Maxwell equations. As a result of computation, one obtains $c_B = c$! The box below derives this surprising fact for you. Multi-variable calculus is used, which is beyond the prerequisite math. Thus if you cannot follow the derivation, it's okay to skip it.
+然而，光传播的速度是由麦克斯韦方程推导出来的。 经过计算得到$c_B = c$! 下面的方框为您推导出了这个令人惊讶的事实。 推导需要使用多变量微积分，需要一些数学基础，因此，如果读者看不懂这些推导，您完全可以选择跳过它。
 
-\mtextbox{Maxwell and relativity}{
-	In fact, hidden in Maxwell's equations, there is a symmetry, which already implies Einstein's special relativity. The invariant speed of light is just a consequence of that. The symmetry is known as Lorentz transformations, which is developed by Voigt, Lorentz, Larmor and Poincare during 1887-1905 before Einstein established special relativity. We will come to the Lorentz transformations in Section \ref{sec:lorentz} from a mechanical point of view.
-}
+\mtextbox{麦克斯韦和相对论}{
+事实上，隐藏在麦克斯韦方程组中的对称性已经暗示了爱因斯坦的狭义相对论。 光速不变只是其结果。 这种对称性被称为洛伦兹变换，是在爱因斯坦建立狭义相对论之前的 1887-1905 年间由 Voigt、Lorentz、Larmor 和 Poincare 提出的。 我们将在 \ref{sec:lorentz} 部分从机械的角度来讨论洛伦兹变换。}
 
-\textbox{(Optional) Speed of light from Maxwell equations}{\index{speed of light from Maxwell equations}
+\textbox{(拓展内容)由麦克斯韦方程组得出光速}{\index{speed of light from Maxwell equations}
 
-	Let us work in Bob's reference frame. The Maxwell's equations with vacuum permeability $\mu_0$ and permittivity $\epsilon_0$ are:
+	让我们来看王三的参考系。具有真空磁导率 $\mu_0$ 和介电常数 $\epsilon_0$ 的麦克斯韦方程为:
 
 	\begin{minipage}{0.4\textwidth}
 		\begin{align}
@@ -177,16 +174,8 @@ However, the light propagation should be computed by Maxwell equations. As a res
 		\end{align}
 	\end{minipage}\medskip
 
-	As we study the propagation of light, the Maxwell equations are used in the vacuum environment. Thus the charge density $\rho=0$, and the current $\mathbf{J}=0$. To eliminate $\mathbf{E}$ and obtain an equation for $\mathbf{B}$ only, we use the following trick: Let us apply $\nabla\times (\cdots)$ to the LHS and RHS of \eqref{eq:mntb}, respectively:
-	\mtextbox{Velocity from phase}{
-		One can read off the (phase) velocity from the ``phase'' factor $\cos[k(x-ct)]$ in \eqref{eq:maxwell_wave}. This can be done by following one period of oscillation in the below figure and see how it moves.
-		\\
-		\includegraphics[width=\textwidth, trim={0 2pt 2pt 0}, clip]{phase_velocity}
-		\\
-		We will encounter similar wave equations in quantum mechanics later in this course, and use complex solutions $\exp[ik(x-ct)]$. Thus, make sure to understand why \eqref{eq:maxwell_wave} describes a moving wave.
-		\mnewline
-		If you think at a deeper level, using phase velocity above is in fact not the way to describe how fast information propagates. Then you need to solve the Maxwell equations more carefully, and find a regarded solution produced by accelerating source. It is beyond the scope of the current discussion.
-	}
+当我们研究光的传播时，我们考虑真空环境下的麦克斯韦方程。 因此电荷密度$\rho=0$，电流$\mathbf{J}=0$。 为了消除 $\mathbf{E}$ 并仅获得 $\mathbf{B}$ 的方程，我们使用以下技巧：让我们将\eqref{eq:mntb}的左边和右边同时进行$\nabla\times (\cdots)$ 的运算 ，得到：
+
 	\begin{align} \nonumber
 		\nabla\times\mbox{LHS} = \nabla\times(\nabla\times \mathbf{B})
 		\xlongequal{\mbox{math identity}} \nabla (\nabla\cdot \mathbf{B}) - \nabla^2 \mathbf{B} \xlongequal{\mbox{using Eq.~\eqref{eq:mndb}}}
@@ -196,117 +185,126 @@ However, the light propagation should be computed by Maxwell equations. As a res
 		\nabla\times\mbox{RHS} =  \mu_0\epsilon_0 \frac{\partial}{\partial t} (\nabla \times \mathbf{E}) 
 		\xlongequal{\mbox{using Eq.~\eqref{eq:mnte}}} -\mu_0\epsilon_0 \frac{\partial^2}{\partial t^2} \mathbf{B} ~.
 	\end{align}
-	Thus, LHS=RHS is a wave equation:
+	\mtextbox{相速度}{相速度可以从 \eqref{eq:maxwell_wave} 中的相位因子 $\cos[k(x-ct)]$ 得到。 这可以通过分析下图中的一个振荡周期来完成，我们来看看它是如何进行的。
+		\\
+		\includegraphics[width=\textwidth, trim={0 2pt 2pt 0}, clip]{phase_velocity}
+		\\
+	我们将在本课程后面的量子力学中遇到类似的波动方程，并使用复数解 $\exp[ik(x-ct)]$。 因此，一定要明白为什么 \eqref{eq:maxwell_wave} 描述的是一个移动的波。
+		\mnewline
+如果从更深层次思考，上述相速度实际上并不是描述信息传播速度的方式。 然后我们需要更谨慎地求解麦克斯韦方程组，并找到一个由加速源产生的解，然而这超出了当前讨论的范围。}
+	因此, 左边=右边是一个波动方程:
 	\begin{align}
 		\label{eq:maxwell_wave}
 		\frac{\partial^2}{\partial t^2} \mathbf{B} 
 		- \frac{1}{\mu_0\epsilon_0} \nabla^2 \mathbf{B} = 0~. 
 	\end{align}
-	In a course of mathematical method of physics, one will study how to systematically solve this equation. Here we will not do so. Instead, we can always propose a solution and check it indeed solves Eq.~\eqref{eq:maxwell_wave} without using more math. One can check that the below E\&M wave is a solution:
+	
+	
+	在数学物理方法的课程中, 我们会研究如何系统地求解这个方程。 但在这里我们不会这样做，相反的，我们可以给出一个解并检查它是否确实满足了 Eq.~\eqref{eq:maxwell_wave} 而无需运用更多数学知识。 我们可以检查一下以下的电磁 波是否是方程的解：
 	\begin{align}
 		\label{eq:sol_maxwell_wave}	B_z = B_0 \cos [k (x - ct) ]~,
 		\qquad \mbox{where~} c \equiv \frac{1}{\sqrt{\mu_0\epsilon_0}} ~.
 	\end{align}
-	The take home message from the calculation is: once a beam of E\&M wave is emitted, it can then propagate in the vacuum without the reference of the emitter, i.e. the motion information of the emitter is ``forgotten''. The speed of light is calculated by constants of nature $\mu_0$ and $\epsilon_0$, independent on the speed of the emitter (or the observer). Thus we conclude that the answer is $c_B=c$, the same speed that Alice observes (i.e. $c_B=c_A$)! 
-}
+计算得出的结论是：一旦发射一束电磁波，它就可以在真空中传播而无需发射器的参考，即发射器的运动信息被“遗忘”。 光速由自然常数 $\mu_0$ 和 $\epsilon_0$ 计算，与发射器（或观察者）的速度无关。 因此我们得出结论，答案是 $c_3=c$，与王二观察到的速度相同（即 $c_3=c_2$）！}
 
-There must be something terribly wrong at this moment: The velocity addition rule \eqref{eq:vel_add_newton} is inconsistent with the observer-independent speed of light \eqref{eq:sol_maxwell_wave}. In such a situation, we need input from experiments to see who is right. The Michelson-Morley interferometer experiment (1887) shows that Maxwell is right. The Newtonian velocity addition does not apply to light!
-
+此刻一定有什么大错特错了：速度相加规则\eqref{eq:vel_add_newton}与独立于观察者的光速\eqref{eq:sol_maxwell_wave}不一致。 在这种情况下，我们需要通过实验来判断谁是对的。 迈克尔逊-莫雷干涉仪实验（1887 年）表明麦克斯韦是正确的。 牛顿力学的速度相加法则不适用于光！
 \needspace{.1\textheight}
-\mtextbox{Modern interferometers}{
-	The Michelson-Morley interferometer was designed to measure the variation of speed of light. Now that we know (at least assume) that the speed of light is truly a constant, we can turn the same interferometer into a precise measurement of the variation of length of the two arms. This has many applications (check \href{https://en.wikipedia.org/wiki/Michelson_interferometer}{Wikipedia} for example), from \href{http://courses.washington.edu/phys331/michelson/michelson.pdf}{performing Fourier transformation} to measuring the diameter of stars. Last but not least, this is also \href{https://www.youtube.com/watch?v=FlDtXIBrAYE}{how LIGO detected gravitational waves in 2015/16}. 
-}
+\mtextbox{近代的干涉仪}{
+迈克尔逊-莫雷干涉仪旨在测量光速的变化。现在我们知道（至少可以假设）光速确实是一个常数，一个干涉仪可以通过调节干涉臂长度来实现精确测量。它在近代物理和近代计量技术中都有着重要的应用。}
 
-\textbox{The Michelson-Morley interferometer experiment}{\index{Michelson-Morley interferometer}
+\textbox{迈克尔逊-莫雷实验}{\index{Michelson-Morley interferometer}
 	\begin{minipage}
 		{0.45\textwidth}
 		\includegraphics[width=\textwidth]{mm-experiment}
 	\end{minipage}\hspace{0.04\textwidth}
 	\begin{minipage}
-		{0.5\textwidth} A beam of light is emitted from the source. Via a half-silvered mirror, the beam is split into two, reflected by two mirrors respectively and re-combine on the screen. Due to different length of propagation, interference fringes develop. 
+		{0.5\textwidth} 一束光从光源发出，通过半镀银镜（分光镜），光束被分成两束，分别被两个镜子反射到屏幕上。由于光程不同，会产生干涉条纹。
 		
-		Note that the experiment is done on the earth. The earth moves at $v\sim 30$km/s around the sun. Thus if the velocity addition rule applies, the speed of light in the Michelson-Morley interferometer should change under rotation. Then the interference fringes should shift. But the shift is not observed, indicating no velocity addition. Maxwell wins over Newton.
-	\end{minipage}
+请注意，该实验是在地球上进行的。 地球以 $v\sim 30 $km/s 的速度围绕太阳运动。 因此，如果牛顿力学的速度相加规则适用，迈克尔逊-莫雷干涉仪中的光速应该随着旋转而变化，然后干涉条纹应该移动。 但是没有观察到这种变换，因此速度没有增加。 因此麦克斯韦的理论战胜了牛顿的理论。	\end{minipage}
 }
 
-\mtextbox{Is Newton ``wrong''?}{
-	Now that the velocity addition (in the core of Newtonian mechanics) fails for light, is Newton wrong? Should we abandon Newtonian mechanics?
-	\mnewline
-	In modern physics, we think of most theories as ``effective'' theories -- they apply with certain approximations. When $v\ll c$, Newtonian mechanics is still useful, as it is pretty precise, and simpler and more intuitive than special relativity. 
-	\mnewline
-	Thus, by learning special relativity, we do not mean to abandon Newtonian mechanics. Rather, Newtonian mechanics is still much more widely used than special relativity in the modern era (since we do not usually move at $v\sim c$ or care about the corrections suppressed by $v/c$).
-	\mnewline
-	In fact, special relativity has a similar fate -- it is classical. When considering small enough particles, one has to consider quantum mechanics and we arrive at quantum field theory. And considering the quantum effect of gravity, quantum field theory is again not adequate...  
-}
-\textbox{Optional historical remarks: the story of aether}{\index{aether}
-	In fact, what we have introduced here is \emph{not} what researchers was thinking 100 years ago when they made the discoveries. 
+\mtextbox{是牛顿错了吗?}{
+既然速度加法（在牛顿力学的核心）对光无效，牛顿错了吗？ 我们应该放弃牛顿力学吗？	\mnewline
+在现代物理学中，我们认为大多数理论都是“有效的”理论——它们适用于某些近似值。 当 $v\ll c$ 时，牛顿力学仍然有用，因为它非常精确，而且比狭义相对论更简单、更直观。	\mnewline
+因此，学习狭义相对论并不是要我们要放弃牛顿力学。 相反，在现代，牛顿力学仍然比狭义相对论使用的更广泛（因为我们通常不以 $v\sim c$ 移动或考虑受 $v/c$ 影响的修正）。
+\mnewline
+事实上，狭义相对论也有类似的命运——它是经典的。 当考虑非常小的粒子时，必须考虑量子力学，我们得出了量子场论。 而考虑到引力的量子效应，量子场论又是远远不够的……}
+\textbox{选读的历史内容: 以太的故事}{\index{aether}
+	事实上，我们在这里介绍的不是研究人员在 100 年前做出这些发现时的想法。
 
-	At the time of Maxwell, it was believed that E\&M waves propagates in a media called aether, analogous to sound waves propagating in the air. Thus, the speed of light $c=1/\sqrt{\mu_0\epsilon_0}$ is wrt aether as well. The parameters $\mu_0$ and $\epsilon_0$ were considered the property of aether, instead of the property of the vacuum.
-	
-	Then, the velocity addition rule had no problem -- just as velocity addition of wind and sound waves propagating in the wind.
+在麦克斯韦时代，人们认为电磁波在称为以太的介质中传播，类似于在空气中传播的声波。 因此，光速 $c=1/\sqrt{\mu_0\epsilon_0}$ 也是相对于以太而言。 参数 $\mu_0$ 和 $\epsilon_0$ 被认为是以太的属性，而不是真空的属性。	
+既然如此，速度相加规则就没有问题了——就像风的速度和声波在风中传播的速度相加一样。
+现在的问题是：当地球绕太阳公转时，地球周围的以太是与地球一起运动的，还是保持静止的？
+对恒星畸变（1600s - 1700s）的观察表明，以太不与地球一起运动。 在以太的背景下，迈克尔逊-莫雷实验表明以太确实与地球一起移动。 这是100年前困扰物理学家的问题。 而爱因斯坦的贡献是用他的相对论消除了对以太的需要。
+由于以太的理论被废弃，现在我们学习电磁波时，我们不再介绍以太，我们选择用更接近现代思维的介绍方式，而不是历史思维，因此我们只在这个这里留下一个关于以太的评论。}
 
-	Now the question is: when the earth orbits the sun, do aether around the earth move together with the earth, or remain static?
+\subsection{爱因斯坦的相对论}
 
-	The observation of \href{https://en.wikipedia.org/wiki/Aberration_of_light}{stellar aberration} (1600s - 1700s) showed that aether did not move together with the earth. And in the context of aether, the Michelson-Morley experiment shows that aether indeed moved together with the earth. This was the contradiction that puzzled physicists 100 years ago. And Einstein's contribution is to eliminate the need of aether with his theory of relativity.
+我们如何化解麦克斯韦独立于观察者的$c$与速度加法规则之间的矛盾呢？ 这是20世纪初物理学的两大难题之一。 
 
-	As aether is abandoned, now when we learn E\&M waves, we do not introduce aether any more. Thus, I choose to use the way of introduction closer to modern thinking instead of historical thinking, only leaving a remark of aether within this box.
-}
+爱因斯坦 16 岁时，就已经对光产生了深深的困惑：如果我跑得像光一样快怎么办？ 光会静止吗？ 10年后，他找到了解决办法。
 
-\subsection{Einstein's Relativity}
+以下是爱因斯坦在 1905 年解决这个问题的方法：他将 $c$ 相对于观察者的独立性作为他理论的基本假设。于是问题解决了：
+)
 
-How to resolve the contradiction between Maxwell's observer-independent $c$ and the velocity addition rule? This is one of the two biggest problems in physics at the beginning of the 20th century. 
-
-When Einstein was 16 years old, he was already deeply puzzled by light: What if I run as fast as light? Will light be at rest? 10 years later, he found out the solution.
-
-Here is how Einstein solved the problem in 1905: he took the observer-independency of $c$ as a fundamental assumption of his theory. It is assumed. So problem solved :)
-
-Seriously, an assumption is no more than an assumption. Everyone can make assumptions. But what's truly revolutionary is the implications of the assumption and how to get a consistent theory on top of that. To be clear, here we summarize the assumptions, being prepared to proceed to the profound implications.
+每个人都可以做出假设，但真正具有革命性的是假设的含义以及如何在此基础上获得统一的理论。为了更清晰的理解爱因斯坦的理论，我们在这里总结了假设，并进行更深入的研究。
  
 \mtextbox{Remarks about ($\mathbb{C}$)}{
 	\mtitem{
-		\item The speed of light is observer-independent, but not velocity. In other words, the direction of light can be observer-dependent. We will see this explicitly later when we construct a ``light clock''.
-		\item The frequency of light is observer dependent (relativistic Doppler effect). When you move towards light, the light frequency becomes higher (blue shift). When you move away from light, the light frequency becomes lower (redshift). 
-		\item In non-vacuum situations, the speed of light will depend on the motion of the media. The speed of light in the moving frame of media can be obtained using relativistic velocity addition rules to be discussed later. 
+		\item 光的速率与观察者无关，但并不是说与速度无关。换句话说，光的方向可以取决于观察者。稍后我们将在讲到“光钟”时清楚地看到这一点。
+
+		\item 光的频率取决于观察者（相对论多普勒效应）。当你向光移动时，光频率会变高（蓝移）。当你远离光时，光频率变低（红移）。
+
+		\item 在非真空情况下，光速将取决于介质的运动。稍后可以使用相对论速度相加规则来获得介质中移动坐标系的光速。
+ 
 	}
 }
-\itembox{The postulates of special relativity}{}{\index{postulates of special relativity}
-	\item ($\mathbb{R}$) The relativity principle: Laws of nature keep the same form in all inertial frames.
-	\item ($\mathbb{C}$) The vacuum speed of light is $c$ in all inertial frames. 
+\itembox{狭义相对论的假设}{}{\index{postulates of special relativity}
+	\item ($\mathbb{R}$) 相对性原理：物理定律在所有惯性系中都是相同的。
+
+	\item ($\mathbb{C}$) 在在所有惯性系中，真空光速为 $c$。
+
 } 
 
-The postulates ($\mathbb{R}$) and ($\mathbb{C}$) are the original postulates in special relativity, and often referred to as the only assumptions. But to be clear, one has also to postulate observer-independency of events to complete the theoretical basis of special relativity:
+ ($\mathbb{R}$) 和 ($\mathbb{C}$)是狭义相对论中的基本假设。但要明确的是，还必须假设事件观察者的独立性才能满足狭义相对论理论的基本要求：
 
-\textbox{The postulate of observer-independent events}{\index{events}
+
+\textbox{独立于观察者的事件假设}{\index{events}
 	($\mathbb{E}$) 
-	Let us define an event to be something that happened to a particular small object at a particular moment (i.e. \emph{localized} at a spacetime point). Then, the occurrence (or not) of an event is observer-independent. If one observer finds that an event E happened, all observers who saw the event must agree, no matter how they move.
+	让我们考虑一个在特定时刻发生在一个特定小物体上的事件 (在时空坐标中确定的一点)，事件发生（或不发生）与观察者无关。如果一个观察者发现事件 E 发生了，那么所有看到该事件的观察者都必须观察到（同意）此事件发生了，无论他们是如何移动的。
+
 	
 	\tcblower
 	
-	This postulate looks too trivial to mention. Nevertheless, let us make things clear.
+	尽管这个假设看起来非常的微不足道，但还是让我们把事情说清楚。
 
-	For example, the followings are events that all (honest) observers must agree:
-	\titem{
-		\item ``A beam of light is reflected by a mirror.''
-		\item ``Alice and Bob met. At the time when they met, their watches both pointed to 10am.''
-	}
-	However, the following is NOT an event:
-	\mtextbox{Not one, but two events}{In the example of 5-light-year-separated Alice and Bob, the sentence is not an event, but one can separate it into two events: When Alice looked at her watch, her watch shows 10am. And when Bob looked at his watch, his watch shows 10am. The same applies for the comparison of ruler example. It makes sense to talk about relations of events in relativity, as we will see later.}
-	\titem{
-		\item ``Alice and Bob are 5 light years away. When Alice's watch pointed to 10am, Bob's watch also pointed to 10am.''
-	}
-	This is not an event because Alice and Bob are at different locations. So it may be possible that an observer Charlie considers the above statement to be true; while his running Dog considers the above statement to be false.
+例如，以下是所有（诚实的）观察者必须同意的事件：
 
-	Similarly, the following is NOT an event and may not be agreed by all observers:
 	\titem{
-		\item ``A moving ruler has the same length with a static ruler because the two end points coincided at a moment.''
+		\item ``一束光被镜子反射''
+		\item ``王一和王二见面了。见面的时候，他们的手表都指向了上午10点。''
+	}
+以下这些就不是事件：
+	\mtextbox{不是一个事件，而是两个事件的情况}{在王二和王三相隔5光年的例子中，这句话不是一个事件，但可以把它分成两个事件：当王二看她的手表时，她的手表显示上午10点。当王三看他的手表时，他的手表显示的是上午10点。这同样适用于标尺示例的比较。讨论相对论中事件的关系是有道理的，我们将在后面看到。}
+	\titem{
+		\item ``王二和王三相距5 光年。当王二的手表指向上午 10 点时，王三的手表也指向了上午 10 点。''
+	}
+这不是事件，因为 Alice 和 Bob 在不同的位置。因此，观察者查理可能会认为上述陈述是正确的；而另一个运动的观察者却认为上述说法是错误的。
+
+同样，以下内容也不是事件，或许所有的观察者都不认可这种陈述：
+	\titem{
+		\item ``移动的尺子与静态的尺子具有相同的长度，因为两个端点同时重合。''
 	}
 }
 
-\textbox{Remark: the time of events wrt a reference frame}{
-	With finite speed of light, we need a clarification about the time of events. For example, an event took place some distance away from Bob. When talking about the time of the event, it could refer to:
+\textbox{注：事件相对于某个参考系发生的时间}{
+由于光速有限，我们需要讲清楚事件发生的时间。例如，事件发生在距离鲍勃一定距离的地方。在谈到事件的时间时，它可以指：
+
 	\marginnote{
-		By ``a clock at every spatial point'': the clocks are static wrt Bob, and synchronized wrt Bob's frame (the coordinate time in his coordinate system). Practical synchronization can be done by using light signals to compare clocks, and deduct the time used for light propagation.
+		我们说在每一个空间点上的钟指的是： 钟相对于bob静止并且和bob的坐标系是完全同步的, (他坐标系中的时间）. 同步时钟可以通过比较光信号, 并减去用于光传播的时间来完成。
 		\\
+		假设 Bob在他的参考系中的每个点都有一个助手。一旦发生任何事件，助手可以立即记下 Bob 的时间和事件的空间坐标。这将由事件 $(t_B, x_B)$相对于Bob的坐标表示。
+
 		By ``record'': imagine that Bob has a helper at every point in his frame (i.e. coordinate system). Once any event happened, the helper can immediately write down Bob's time and spatial coordinate of the event. This will be denoted by the coordinate of the event $(t_B, x_B)$ wrt Bob.}
 	\titem{ 
 		\item The time in Bob's reference frame. Imagine Bob puts a clock at every spatial point in his frame, which ``records'' the time that an event happened. 
