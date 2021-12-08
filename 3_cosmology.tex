@@ -1,168 +1,166 @@
 \input{structure.tex}
 \graphicspath{{3_fig/}}
-\title{Part 3. Cosmology}
+\title{第三章\ 宇宙学}
 
+\usepackage{ctex}
 \begin{document}
 
 \maketitle
 
-\textbox{The comprehensible universe}{
-    The universe is the most complicated object in our universe, since it contains all complexities of all objects in our universe. However, amazingly, Einstein says: 
+\textbox{可理解的宇宙}{
+    宇宙最复杂的东西就是其本身， 因为它包含了宇宙内一切事物的复杂性。 但是神奇的是爱因斯坦说过：
 
-    ``The most incomprehensible thing about the world is that it is comprehensible.''
+    “这个世界的最不可理解之处就这于它是可以理解的。”
 
-    Here let us try to understand the following questions:
+    让我们试着来理解以下问题：
 
     \tenum{
-        \item Before understanding everything in the universe, how can we understand anything about the universe, since it is the most complicated?
-        \item Why 
-        \mtextbox{Other ways to Olbers paradox}{
-            The Olbers paradox can also be understood in other equivalent ways, less obvious but may be more insightful:
+        \item 在我们理解宇宙万物之前, 我们要如何理解最复杂的宇宙?
+        \item 为什么夜空是黑色的?
+        \mtextbox{奥伯斯佯谬的其他理解}{
+            奥伯斯佯谬也有其他等效且深刻的理解方式：
             \mtitem{
-                \item Within an infinitesimal solid angle cone along your line of sight, a star is as bright as the sun. The sun is overall brighter because it spans more solid angle. If the universe is infinite, sooner or later the cone along your line of sight will reach a surface of a star. Thus you will see the sky everywhere as bright as the sun. 
-                \item If the universe is static and has infinite duration, we will reach equilibrium with the stars thus the earth is as hot as the star surface. 
+                \item 在沿着视线无限小的圆锥体内, 存在一颗与太阳一样亮的星星。太阳整体最亮因为它占据了更大的视角。如果宇宙是无限的，我们的视线迟早会碰到一颗星星的表面。因此天空永远都和太阳一样亮。 
+                \item 如果宇宙是静止且无限持续的，那么地球会达到与恒星的平衡，所以地球会与恒星表面一样热。
             }
         }
-        is the night sky dark? 
+         
         
-        This question looks stupid, as we are not under sunshine at night. However, what about stars? Why doesn't the night sky appear as bright as daytime under the shining of the stars? 
+        这个问题的答案听上去很显然：因为夜晚没有阳光照射地球。但是其它恒星呢？为什么在其它恒星照射下，夜空不会跟白昼一样亮? 
 
-        You may answer: they are far away. Thus their apparent luminosity decays as $1/r^2$. So they are not as bright as the sun.
+        你可能会想: 它们离地球太远了。它们的光度会以$1/r^2$衰减，所以它们不会跟太阳一样亮。
 
-        Correct. However, how many stars are there at distance $r$? If our universe is homogeneous and infinite in space and time, statistically, the number of stars at distance $r$ should scale as $r^2$. So why doesn't their light sum up and being as bright as the sun?
+        回答正确。但是在$r$处有多少恒星? 如果我们的宇宙在空间和时间上是同质且无限的，统计上来说，在$r$处的恒星数量会以$r^2$增长。所以为什么它们的光不会累计到像太阳一样亮？
 
-        This question is known as the Olbers' paradox (Digges 1576, Olbers 1823).
+        这个问题被称为奥伯斯佯谬。（迪格斯 1576, 奥伯斯 1823）。
     }
 }
 
-\section{The dynamics of the universe} \label{sec:dynamics-universe}
+\section{宇宙动力学} 
+\label{sec:dynamics-universe}
 
-\textbox{The cosmological principle}{
-    To make the universe simpler, let's assume:
+\textbox{宇宙学原理}{
+    为了简化宇宙，设:
 
-    Our universe is approximately homogeneous and isotropic on large scales. 
+    宇宙总体来说是几乎同质且各向同性的。
 
-    This is known as the cosmological principle. 
+    这就是宇宙学原理。
 }
 
-The cosmological principle had already appeared in Newton's \textit{Principia} (1687). However, the study of cosmology in Newtonian mechanics is full of paradoxes. The framework of modern cosmology is setup based on Einstein's general relativity.
+这个宇宙学原理已经出现过在牛顿的《自然哲学的数学原理》（1687）。然而，牛顿力学对宇宙学的研究充满了悖论。现代宇宙学的框架是建立在爱因斯坦广义相对论的基础上的。
 
-In this section, we will still use Newtonian mechanics to set up the theory of our universe with special care. The subtleties in the discussion can be checked in general relativity.
+在本节中，我们将继续用牛顿力学来谨慎地建立我们的宇宙理论。我们可以用广义相对论来验证探究的细节。
 
-\textbox{Distant galaxies are leaving us}{
-    In the 1920s, Hubble (see also Lemaitre and other astronomers' contribution) measured the spectrum of light from other galaxies. As we know the spectrum at emission (recall the characteristic spectrum by atoms), by measuring the observed spectrum, one can find out the velocity of these galaxies along the line of sight direction via Doppler-like effects.
+\textbox{遥远的星系全都在远离我们而去}{
+    1920年代, 哈勃 （见勒梅特与其他天文学家的贡献） 从其他星系测量了光谱。已知发射光谱（回想原子的特征光谱）， 通过测量已知光谱，运用红移现象可知这些星系沿视线的速率。
 
-    The result shows that the distant galaxies are leaving us. 
+    结论显示遥远的星系全都在远离我们而去。 
 }
 
-\mtextbox{Faster than light?}{
-    Is the expansion of the universe faster than light? To be more precise, for distant enough object can they leave us at a rate faster than light?
+\mtextbox{比光还快？}{
+    宇宙膨胀的速度是不是比光速快？更精确地来说，足够遥远的物体能以比光速还快的速度离开我们吗？
     \tcblower
-    Yes or no. That depends on how to define speed in general relativity. 
+    是与否取决于我们如何来定义广义相对论的速度。 
     \mnewline
-    If you define speed as $dR(t)/dt$, then for distant enough objects, they are indeed leaving us at a speed faster than light. This is not due to the objects themselves moving fast, but instead the emerging space between objectss. This is not contradictory with special relativity, since the speed between two near-by objects (where special relativity applies) cannot be faster than light. 
+    定义速度为$dR(t)/dt$, 那么足够遥远的物体的确以比光速还快的速度离开我们。这个不是因为物体本身移动得快，而是因为物体之间出现了空间。这与狭义相对论并不相悖，因为两个邻近物体的速度（狭义相对论适用的地方）不会快于光速。
     \mnewline
-    If you define speed as the speed of the moving object (pecular velocity), excluding the expansion of space, then the speed of distant objects are still bounded by the speed of light.
+    如果定义速度为移动物体的速度（本动速度），不考虑空间的膨胀，那么遥远物体的速度还是被光速所束缚。
 }
-\textbox{From the Copernicus principle to the expanding universe}{
-    Since Copernicus, human start to realize that the universe does not have a center. However, if all the distant galaxies are moving away from us, does that mean we are at the center of the universe? 
+\textbox{从哥白尼原理到膨胀的宇宙}{
+    从哥白尼开始，人类开始意识到宇宙没有中心。但是，如果遥远星系都在离开我们，这是否意味着我们就在宇宙的中心？ 
 
-    Not necessarily. Imagine an expanding membrane, or balloon. Wherever you are on the membrane or balloon, you find your neighbor points leaving you. Thus, we can interpret the observation as that the universe is expanding.
+    不一定。想象一个膨胀的膜或者气球。无论你处在膜上或者气球上的任何一点，你都会发现邻近的点在离你而去。因此我们可以理解这个现象为宇宙正在膨胀。
 
-    Now that the universe is expanding, how is the expansion rate determined?
+    既然宇宙在膨胀，要如何来求扩张率呢？
     \tcblower
-    Let's imagine a universe filled with pressureless dust.    
-    The dust particles expand together with the universe expansion, without additional motion by themselves (i.e. comoving, i.e. without peculiar motion).
+    想象一个充满无压力尘埃的宇宙。这些尘埃粒子在自己不运动的情况下 （既共动、本动），与宇宙一起膨胀。
 
     \cg{0.35}{cosmo_sphere}
 
-    To quantify the expansion rate of the universe in the framework of Newtonian mechanics, define two set of distances: comoving distance and physical distance.    
+    我们定义两套距离：共动距离和物理距离。从而在牛顿力学的框架内，量化宇宙的膨胀率。
     \titem{
-        \item The physical distance $R(t)$ is the real distance between two objects, corresponding to actual physical measurements.
-        \item The comoving distance $r$ is measured by an expanding coordinate system, such that the comoving dust particles have fixed (i.e. time-independent) coordinate value in the comoving coordinates.
+        \item 物理距离$R(t)$是与实际物理测量相对应的两个物体之间实际距离。
+        \item 共动距离$r$是以共动坐标系测量的。从而使共同运动的尘埃粒子在共动坐标系中具有固定的（即与时间无关的）坐标值。
     }
-    The comoving coordinate is related to the physical coordinate by
+    共动坐标与物理坐标的关系式为
     $
         R(t) = a(t) r,
     $
-    where $a(t)$ is known as the \emph{scale factor}, quantifying the time dependence of the universe. The expansion rate of the universe is quantified by the Hubble parameter:
+    $a(t)$叫做\textbf{比例因子}，用来量化时间对宇宙的相关性。 宇宙的膨胀率以哈勃参数量化：
     \begin{align}
-        H(t) \equiv \frac{\dot a}{a} ~.
+        H(t) \equiv \frac{\dot a}{a} ~
     \end{align}
 }
 
 \needspace{0.2\textheight}
-\mtextbox{Dust and radiation}{
-    As examples, we note that 
+\mtextbox{尘埃与辐射}{
+    例子：
     \mtitem{
-        \item Pressureless dust: $p=0$. Solving \eqref{eq:continuous}, we get $\rho \propto a^{-3}$. The particle density is diluted as $a^{-3}$, and the energy per particle is a constant.
-        \item Radiation: The photon density $\propto a^{-3}$. However, the wavelength of each photon is stretched as $\lambda \propto a$. Thus the energy per photon is proportional to $1/a$ (quantization condition). As a result, $\rho \propto a^{-4}$. This corresponds to $p=\rho/3$. 
+        \item 无压力的尘埃：
+        $p=0$。解\eqref{eq:continuous}可得$\rho \propto a^{-3}$。粒子密度稀释为$a^{-3}$，且每个粒子的能量为常数。
+        \item 辐射：光子的密度$\propto a^{-3}$。但是每个光子的波长以$\lambda \propto a$拉伸。因此每个光子的能量与$1/a$成正比（量化的条件）。所以$\rho \propto a^{-4}$。这相当于$p=\rho/3$。
     }
-    As radiation gets diluted faster than dust, our universe transited from radiation domination to dust domination during its expansion.
+    因为辐射比尘埃更快地被稀释，所以宇宙在膨胀的过程中由辐射主导转变为尘埃主导。 
 }
-\textbox{The universe tells matter how to get diluted}{
-    Consider a component in the universe (for example, radiation or dust particles) with energy density $\rho$ and pressure $p$. How does $\rho$ evolve with time?
+\textbox{宇宙告诉我们物质是怎么被稀释的}{
+    想象一个能量密度为$\rho$、压力为$p$的宇宙的组成部分（例如辐射、尘埃粒子）。$\rho$如何随时间演变?
     
-    The first law of thermodynamics is $dE = TdS - pdV$. The expansion of the universe is adiabatic since heat will not be conducted in a homogeneous universe. Thus $dS=0$. We have, during the expansion of the universe, $dE/dt = p dV/dt$. Here $V$ is a physical volume $V\propto a^3$. Thus,
-    \begin{align}\label{eq:continuous}
+    热学第一定律为$dE = TdS - pdV$。因为在同质的宇宙中不会传导热量，所以宇宙的膨胀是绝热的。因此$dS=0$。所以在宇宙的膨胀过程中，$dE/dt = p dV/dt$。此处的$V$是一个物理体积$V\propto a^3$。所以，    \begin{align}\label{eq:continuous}
         \frac{d(a^3\rho)}{dt}  = p \frac{da^3}{dt}
         \qquad\Rightarrow\qquad
-        \dot \rho + 3H (\rho +p) = 0~.
+        \dot \rho + 3H (\rho +p) = 0~
     \end{align}
-    This is known as the continuity equation in cosmology, telling that how matter gets diluted during the cosmic expansion.
+    这被称为宇宙学的连续性方程，它告诉我们物质在宇宙的膨胀过程中是怎么被稀释的。
 }
 
-\textbox{What's the matter in the universe?}{
-    We know only 5\% of our universe (weighted by their energy composition). Below is a figure indicating what we know and what we don't know.
+\textbox{宇宙里有什么物质？}{
+    人类只知道宇宙组成的5\%（由能量组成来计算）。下图显示了人类已知和未知的物质。
     \cg{0.8}{components}
-    \mtextbox{Einstein's ``biggest mistake''}{
-        When Einstein first used general relativity to study our universe, he found that the universe will either expand or contract. He did not like the situation. To keep the universe static as he likes, he added a cosmological constant to his equations (1917). After Hubble discovered the expansion of the universe in the 1920s, Einstein regreted that he had missed the chance to predict an expanding universe, and considered the introduction of the cosmological constant the biggest mistake in his life (1931). However, in 1998, dark energy is discovered, and by far the simplest candidate is the cosmological constant (with a different value, which does not make the universe static but make it expanding with positive acceleration).
+    \mtextbox{爱因斯坦的“大错误”}{
+        爱因斯坦第一次用广义相对论来研究宇宙的时候，他发现宇宙要么膨胀要么收缩。他对这个状态并不满意，所以他在他的等式上加了一个宇宙学常数使宇宙如他所愿静止下来（1917）。 当哈勃在1920年代发现了宇宙的膨胀之后，爱因斯坦后悔他错过了发现宇宙膨胀的机会，所以他认为引入宇宙常数是他一生中最大的错误（1931）。可是在1998年，暗能量被发现，最简单的解释就是宇宙学常数（不一样的数值使宇宙以正加速度膨胀而不是静止）。
     }                     
     \titem{
-        \item The matter that we know: Matter made by nucleus and electrons (either in the phase of atoms or plasmas) takes 5\% of the energy burget of our universe. Most of these atoms and plasmas are in the form of free Hydrogen and free Helium. A small part forms stars. Among the matter that we know, the weight of light also takes a tinny part (0.005\%).
-        \item The matter that we don't know: observations indicate that there are dark matter (takes about 25\%) and dark energy (takes about 70\%) in the universe. We don't know what are they. But from observations, we know approximately their nature: the dominate part of dark matter is almost pressureless with $p\sim 0$, similar to that of atomic matter now, and contribute attractive gravitational force. However, dark energy has negative pressure $p\sim -\rho$, which effectively provide repulsive gravitational force and is driving an accelerated expansion phase of our universe.
-    }
-}
-
-\textbox{Matter tells the universe how to expand}{
-    To determine the dynamics of $a(t)$, we consider a dust particle with mass $m$, located at comoving distance $r$ (and thus physical distance $R(t)=a(t)r$). The energy conservation equation for this particle is
-    \begin{align}\label{eq:pre-friedmann-1}
-        \frac{m}{2} \left ( \frac{dR}{dt}  \right)^2 - \frac{GMm}{R} = E = \mathrm{constant}~.
-    \end{align}
-    The constant $E$ is determined by the initial condition of the universe. Observations tell that $E\simeq 0$ thus we will ignore it (but do not ignore the question why $E\simeq 0$).
-
-    Here $M$ is the mass
-    \mtextbox{What about the mass outside?}{
-        One can argue that the mass outside the sphere has no force on our particle $m$, since the force cancel for each spherical cell. In fact, the statement depends on the boundary condition of the universe. This is the limitation of the Newtonian cosmology. One needs general relativity to remove this boundary condition dependence.
+        \item 已知物质：由核子与电子组成的物质（原子或者等离子）占据宇宙总能量的5\%。大部分原子和等离子以自由氢和自由氦的形式存在，小部分组成恒星。在我们已知的物质中，光的重量也占了极小的一部分（0.005\%）。
+        \item 未知物质：观察显示宇宙里存在有暗物质（占大约25\%）和暗能量（占大约70\%）。我们并不知道它们到底是什么。但是从观察来看，我们知道它们大概的特性：暗物质的主要组成是几乎无压力的既$p\sim 0$，就跟原子物质一样，而且使吸引力变大。然而，暗能量的压力为$p\sim -\rho$。它有效提供了排斥引力，并且推动宇宙的加速膨胀阶段。
         }
-    inside the sphere:
+}
+
+\textbox{物质告诉我们宇宙是怎么膨胀的}{
+    为了求$a(t)$的特性，想象一个质量为$m$、位于共动距离$r$（物理距离为$R(t)=a(t)r$）的尘埃粒子。它的能量守恒等式为
+    \begin{align}\label{eq:pre-friedmann-1}
+        \frac{m}{2} \left ( \frac{dR}{dt}  \right)^2 - \frac{GMm}{R} = E = \mathrm{constant}~
+    \end{align}
+    常数$E$由宇宙的初始状态决定。观察显示$E\simeq 0$，因此我们可以忽略它（不忽略为什么$E\simeq 0$）。
+
+    这里的$M$为球体里面的质量：
+    \mtextbox{球体外面的质量呢？}{
+        因为每个球体的作用力都被抵消掉了，你可以说球体外面的力并不作用于我们的粒子$m$。实际上，这个陈述取决于宇宙边界的情况。这就是牛顿宇宙学的局限性。我们需要运用广义相对论从而使它不取决于边界的情况。
+        }
     \begin{align}\label{eq:pre-friedmann-2}
-        Mc^2 = \frac{4\pi R^3}{3} \rho~.
+        Mc^2 = \frac{4\pi R^3}{3} \rho~
     \end{align}
-    Inserting \eqref{eq:pre-friedmann-2} into \eqref{eq:pre-friedmann-1}, we get the Friedmann equation telling the universe how to expand:
+    将\eqref{eq:pre-friedmann-2}代入 \eqref{eq:pre-friedmann-1}，可以得到弗里德曼方程（告诉我们宇宙是如何膨胀的）：
     \begin{align}\label{eq:friedmann}
-        H^2 = \frac{8\pi G \rho}{3c^2}~.  
+        H^2 = \frac{8\pi G \rho}{3c^2}~  
     \end{align}
-    In Newtonian cosmology, we cannot deal with $p\neq 0$. This is because Newtonian gravity does not define how pressure contribute to gravity. Thus in the above derivation, we used a dust-filled universe. In general relativity, one can verify that \eqref{eq:friedmann} actually also holds for $p\neq 0$, for example a radiation filled universe.
-    
-    As solutions of \eqref{eq:friedmann}, for a dust-dominated universe, $a(t)\propto t^{2/3}$ and for a radiation-dominated universe, $a(t)\propto t^{1/2}$. We will leave the details to an exercise.
+    在牛顿宇宙学中，$p\neq 0$是无法求解的。这是因为牛顿重力没有定义压力是怎么影响引力的。因此在上述推导中，我们运用了一个充满尘埃的宇宙。运用广义相对论，我们可以证实\eqref{eq:friedmann}在$p\neq 0$时（例如一个充满辐射的宇宙）同样成立。
+    作为\eqref{eq:friedmann}的解，对于尘埃为主的宇宙，$a(t)\propto t^{2/3}$；对于辐射为主的宇宙，$a(t)\propto t^{1/2}$。这些细节会在练习题里解释。
 }
 
-\textbox{The age of the universe}{
-    We observe that for dust and radiation dominated universes, at $t\rightarrow 0$, the scale factor approaches zero and thus the energy density diverges. 
-    \marginnote{For recent estimates of the universe, in 2012 the WMAP experiment estimated that the universe is 13.77 billion years old; and in 2018, the Planck experiment estimated that the universe is 13.8 billion years old. }
-    We thus consider $t=0$ as the start of the universe. More detailed study of the very early universe changes this starting point a bit but not very much.
+\textbox{宇宙的年龄}{
+    通过观察尘埃与辐射为主的宇宙，当$t\rightarrow 0$时，比例因子趋于零，所以能量密度发散。
+    \marginnote{对于最近对宇宙的估计，2012年WMAP实验估计宇宙的年龄为137.7亿年；在2018年，普朗克卫星实验估计宇宙的年龄为138亿年。}
+    我们设$t=0$为宇宙的开始。对于早期宇宙的更详细的研究会小幅度更改这个开始点。
 
-    For a matter dominated universe, from the definition of the Hubble parameter, we have $t=2/(3H)$. To include the observed dark energy (a component with $p=-\rho$), the age of the universe is corrected to approximately $t\simeq 1/H$. Thus, the age of the universe is closely related to the Hubble parameter -- the expansion rate of the universe.
+    对于物质为主的宇宙，从哈勃参数的定义中，可知$t=2/(3H)$。为了包括观察到的暗能量（具有$p=-\rho$ 的分量），宇宙年龄被修正为大约$t\simeq 1/H$。因此宇宙的年龄与哈勃参数（宇宙的膨胀率）紧密相关。
 }
 
-\section{The early universe}
+\section{早期宇宙}
 
-When
-you are looking deep into the night sky, you are looking through the history, since the star lights may take years, or tens of thousands of years. Modern telescopes can extend this record greatly, to billions of years. What does the early universe look like?
+当你凝视夜空，你在看历史，因为星光需要上千甚至上万年才能到达地球。现代望远镜可以将这一记录大大延长至数十亿年。早期宇宙是什么样的？
 
-\mtextbox{Is energy conserved in cosmology?}{
-    This is a very tricky question. We can answer it in a few aspects:
+\mtextbox{宇宙学中能量守恒吗？}{
+    这是一个非常This is a very tricky question. We can answer it in a few aspects:
     \mtitem{
         \item In cosmology, there is no time translation symmetry, since $a(t)$ depends on time. Thus energy will not arise as a conserved quantity following the Noether theorem.
         \item We still have approximate local energy conservation if restricted to very small space volume and time duration: $\sum_\mu\nabla_\mu T^{\mu\nu}=0$.
@@ -216,8 +214,8 @@ you are looking deep into the night sky, you are looking through the history, si
     For $p=0$ (dust), $p=\rho/3$ (radiation), $p=-\rho$ (dark energy), solve the Friedmann equation to get $a(t)$. Based on your solution, estimate the age of the universe given the value of $H$.
 }
 
-\textbox{E\wref{sec:dynamics-universe}-2 The age of our universe}{
-    For the energy composition given in the pie diagram of the main text, estimate the age of the universe. You may first have an analytical estimate and then numerically solve the equations to test your estimate.
+\textbox{E\wref{sec:dynamics-universe}-2 我们宇宙的年龄}{
+    通过主文饼形图里给的能量分布，估算我们宇宙的年龄。你可以先有一个分析出来的估算然后再运用等式来数学上验证你的估算。
 }
 
 \printindex
