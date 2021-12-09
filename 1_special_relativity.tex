@@ -303,33 +303,36 @@
 	\marginnote{
 		我们说在每一个空间点上的钟指的是： 钟相对于bob静止并且和bob的坐标系是完全同步的, (他坐标系中的时间）. 同步时钟可以通过比较光信号, 并减去用于光传播的时间来完成。
 		\\
-		假设 Bob在他的参考系中的每个点都有一个助手。一旦发生任何事件，助手可以立即记下 Bob 的时间和事件的空间坐标。这将由事件 $(t_B, x_B)$相对于Bob的坐标表示。
-
-		By ``record'': imagine that Bob has a helper at every point in his frame (i.e. coordinate system). Once any event happened, the helper can immediately write down Bob's time and spatial coordinate of the event. This will be denoted by the coordinate of the event $(t_B, x_B)$ wrt Bob.}
+		“观察”或者“记录”的意思是假设 Bob在他的参考系中的每个点都有一个助手。一旦发生任何事件，助手可以立即记下 Bob 的时间和事件的空间坐标。这将由事件 $(t_B, x_B)$相对于Bob的坐标表示。}
 	\titem{ 
-		\item The time in Bob's reference frame. Imagine Bob puts a clock at every spatial point in his frame, which ``records'' the time that an event happened. 
-		\item The time that Bob actually ``see'' the event. This needs to take the time of light propagation time between the event and Bob. This is trivial but messy.
+		\item Bob 参考系中的时间。想象一下，鲍勃在他的框架中的每个空间点都放了一个时钟，它“观察”到了事件发生的时间。
+
+		\item Bob 实际“看到”事件的时间。这需要占用事件和 Bob 之间的光传播时间。
 	}
-	In this course, unless otherwise emphasized, we will by default use the time in Bob's frame, instead of the time that the Bob actually see the light signal of the event reaching him, when talking about the time wrt Bob.
+	在本课程中，当谈论 Bob 的时间时，除非另外强调，否则我们将默认使用 Bob 参考系中的时间，而不是 Bob 实际看到到达他的事件的光信号的时间。
+
 }
 
-With the three postulates, we are now prepared to start the adventure of special relativity.
+有了这三个假设，我们现在准备开始狭义相对论的旅程。
 
-\section{Time Dilation}\label{sec:time-dilation}
 
-At the beginning of this part, we promised to explain why the space traveler Alice is younger than Bob when she returns (if she initially has the same age as Bob before space travel). This is the goal of this section.
+\section{时间膨胀（钟慢效应）}\label{sec:time-dilation}
 
-To do this, we have to touch the most fundamental concept in physics -- time. Let us begin by recalling how Newton comment about time.
+在这部分的开头，我们承诺了读者会在后文解释为什么太空旅行者爱丽丝回来时比鲍勃年轻（如果她在太空旅行前最初与鲍勃年龄相同）。探寻清楚这个问题这就是本节的目标。
 
-\mtextbox{What can we trust?}{
-	As now we are to go beyond Newton, you may wonder, what can we trust. Of course we want to stand on Newton's shoulder and make use of some of his legacy. 
+为此，我们必须提及到物理学中最基本的概念——时间。首先，让我们回顾一下牛顿是如何评论时间的。
+
+\mtextbox{我们可以相信的什么？}{
+现在我们要超越牛顿，你可能想知道，我们能相信牛顿理论的什么。我们当然想站在牛顿的肩膀上把他的一些遗产物尽其用。
 	\tcblower
-	Almost all results for low speed motion ($v\ll c$) can be trusted (with the exception of rest energy, which we will come back to later). For high speed motion ($v\sim c$), we trust $(\mathbb R)$, $(\mathbb C)$, $(\mathbb E)$ and nothing else. 
+几乎所有低速运动（$v\ll c$），牛顿力学的结果都是可信的（除了静止能量，我们将在后面讨论）。对于高速运动 ($v\sim c$)，我们只相信 $(\mathbb R)$、$(\mathbb C)$、$(\mathbb E)$ 。
+
 	\mnewline
-	For example, when discusing time: we trust that Alice's mechanical watch (static wrt Alice) defines time nicely for Alice. Because the time from mechanical watch is as a result of low speed mechanical motion. But we cannot trust Newton's conclusion about how Alice's time (as defined by the tick-tock of her mechanical watch) lapse wrt Bob, if Bob has relative motion wrt Alice with $v\sim c$. When discussing length: we trust that Alice's ruler (static wrt Alice) defines length for Alice but we cannot trust how Bob observes the length of Alice's ruler.
+例如，在讨论时间时：我们相信爱丽丝的机械表（静态的爱丽丝）很好地定义了爱丽丝的时间，因为机械表的时间是低速机械运动的结果。但是我们不能相信牛顿理论中关于爱丽丝的时间（由她的机械表的转动来定义）如何在鲍勃身上流逝的结论，如果鲍勃相对于爱丽丝有 $v\sim c$ 的相对运动。在讨论长度时：我们相信爱丽丝的尺子（静态的爱丽丝）定义了爱丽丝的长度，但我们不能相信鲍勃如何观察爱丽丝的尺子的长度。
 }
-\textbox{Time in Newton's Principia}{\index{time (Newton)}
-	``Absolute, true and mathematical time, of itself, and from its own nature flows equably without regard to anything external, and by another name is called duration: relative, apparent and common time, is some sensible and external (whether accurate or unequable) measure of duration by the means of motion, which is commonly used instead of true time'' -- Newton,  Philosophi{\ae} Naturalis Principia Mathematica
+\textbox{牛顿理论中的时间}{\index{time (Newton)}
+	``绝对的、真实的和数学的时间，它本身，从它的本性出发，平等地流动，不考虑任何外部的东西，另外一个名字叫做持续时间：相对的、明显的和普通的时间，是一些合理的和外部的（无论是准确的还是不公平的） ) 通过运动来测量持续时间，通常用于代替真实时间'' -- Newton, Philosophi{\ae} Naturalis Principia Mathematica
+ -- Newton,  Philosophi{\ae} Naturalis Principia Mathematica
 
 	\tcblower
 

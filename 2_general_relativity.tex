@@ -1,6 +1,9 @@
 \input{structure.tex}
 \graphicspath{{2_fig/}}
+\usepackage{wasysym}
 \title{第二章\ 广义相对论}
+
+\usepackage{ctex}
 
 \begin{document}
 
@@ -41,7 +44,7 @@
             \item 牛顿万有引力定律: $F=mg$.
         }    
     }{  
-        $$ \Rightarrow \quad a=g \mbox{ for all materials.} $$
+        $$ \Rightarrow \mbox{对于所有物质，} \quad a=g  $$
     }
     \tcblower
     但是牛顿并不觉得这很微不足道。 在 \textit{自然哲学的数学原理}中, 他写道:\marginnote{钟摆实验是一个测试物体如何坠落的更聪明的方法，因为它速度较慢且具有周期性。}
@@ -66,7 +69,7 @@
     }
 }
 
-爱因斯坦\footnote{Albert Einstein（1879－1955），犹太裔理论物理学家。——译者注。}回答了这些问题。猜猜他是怎么回答他们的？ 1907年，爱因斯坦一生中“最幸福的思想”到来了——``如果一个人自由下落，他就不会感觉到自己的重量。''让我们来探索一下这个想法的力量。
+爱因斯坦\footnote{Albert Einstein（1879－1955），犹太裔理论物理学家。——译者注。}回答了这些问题。猜猜他是怎么回答他们的？ 1907年，爱因斯坦一生中``最幸福的思想''到来了——``如果一个人自由下落，他就不会感觉到自己的重量。''让我们来探索一下这个想法的力量。
 
 \textbox{爱因斯坦的等效原理}{\index{等效原理}
     1907 年，爱因斯坦断言，对于均匀引力场：
@@ -75,7 +78,7 @@
 
     ``我们$\ldots$ \textit{假定}（均匀）引力场和参考系的相应加速度的完全物理等效性。 ''
 
-    例如，如果王二在电梯里，没有看外面。然后他发现以下情况没有变化：
+    例如，如果王二在电梯里，没有看外面。然后她发现以下情况没有变化：
 
     \includegraphics[width=1\textwidth]{ep}
 
@@ -84,7 +87,7 @@
         \item 电梯没有移动，而是放置在引力场 $g=-a$ 中。
     }
     \tcblower
-    我们在爱因斯坦的话中添加了“统一”以使其更加精确。如果引力场不均匀，我们总是可以研究空间中足够小的空间元素，其中引力场是均匀的。 （如何将这些小元素“拼凑”在一起很重要；这会导致时空弯曲。）
+    我们在爱因斯坦的话中添加了``统一''以使其更加精确。如果引力场不均匀，我们总是可以研究空间中足够小的空间元素，其中引力场是均匀的。 （如何将这些小元素``拼凑''在一起很重要，因为这些元素可以导致时空弯曲。）
     \mtextbox{为什么作出这个假设}{每个人都可以做出假设。为什么这个是特别的？这个假设有着双重意义：
     \mtitem{
         \item 狭义相对论限制了我们对惯性系的关注。加速框架拓宽了相对论的范围。
@@ -109,7 +112,7 @@
     也可以另一种方式观察光线弯曲效果：物体像镜头一样聚焦光线。这种效应被称为 \textit{引力透镜}\index{引力透镜}。引力透镜被很好地观察到，并已成为了解我们宇宙物质分布的有力工具。
 }
 \textbox{光在均匀重力下弯曲\index{光的弯曲}}{
-    光在均匀引力场中如何运动？这个问题在牛顿力学中可能被认为是没有明确定义的，因为光的质量为零（在相对论中，只有零质量的物体才能以有限的能量以光速运动）。但是根据等效原理，我们立即知道光的弯曲方式与加速环境中的弯曲方式相同。这解释了本部分开头的事例\ref{item:person-short} 。
+    光在均匀引力场中如何运动？这个问题在牛顿力学中可能被认为是没有明确定义的，因为光的质量为零（在相对论中，只有零质量的物体才能以有限的能量以光速运动）。但是根据等效原理，我们立即知道光的弯曲方式与加速环境中的弯曲方式相同。这解释了本部分开头的一个事例\ref{item:person-short} 。
 }
 
 \section{均匀重力时间}
@@ -140,7 +143,7 @@
     \end{align}
     因此，王三发现王二更快。王二越高越快。如果在$t=0$ 王二 和王三的年龄相同，之后王二会发现王三更年轻，王三会发现王二更老。
 
-    这解释了本部分开头的事例 \ref{item:high-fast}。
+    这解释了本部分开头的一个事例 \ref{item:high-fast}。
 }
 
 \mtextbox{再次出现孪生悖论}{现在我们可以使用旅行双胞胎的框架来解释双胞胎悖论。旅行中的双胞胎需要在返回前加速。如果我们将加速度建模为匀加速，那么由于等效原理，对应于引力势。然后静态双胞胎在这种引力势中就突然变老了。}
@@ -153,9 +156,9 @@
 
 
 \textbox{球形恒星的度量}{\index{引力时间膨胀}
-    Consider a spherical star with mass $M$. Let 王三 be at $r\rightarrow \infty$, i.e. far away from the star. Then 王三 does not experience gravity from the star, and has $\phi_B=0$. We can thus regard 王三's time as standard time without the star gravity: $t_B = t$.考虑质量为 $M$ 的球形恒星。令王三在 $r\rightarrow \infty$，即远离恒星。那么王三没有受到来自恒星的引力，并且有$\phi_B=0$。因此我们可以将王三的时间视为没有恒星引力的标准时间：$t_B = t$。
+    考虑质量为 $M$ 的球形恒星。令王三在 $r\rightarrow \infty$，即令她远离恒星。那么王三不会受到来自恒星的引力，并且有$\phi_B=0$。因此我们可以将王三的时间视为没有恒星引力的标准时间：$t_B = t$。
     
-    While 王二 has gravitational potential $\phi_A=-GM/r$. Using Eq.~\eqref{eq:gr-phi}, we get\marginnote{Note that the gravitational field by the star is not uniform. But fortunately Eq.~\eqref{eq:gr-phi} can still be used here. And this even holds when gravity is very strong. The explanation (solving Einstein equations for the star) is beyond the scope of this short introduction.}而王二具有引力势$\phi_A=-GM/r$。使用方程~\eqref{eq:gr-phi}，我们得到\marginnote{注意，恒星的引力场是不均匀的。不过好在 Eq.~\eqref{eq:gr-phi} 在这里还是可以用的。这甚至在重力非常强的情况下也成立。解释（解出恒星的爱因斯坦方程）超出了这个简短介绍的范围。}
+    而王二具有引力势$\phi_A=-GM/r$。使用方程~\eqref{eq:gr-phi}，我们得到\marginnote{注意，恒星的引力场是不均匀的。不过好在 Eq.~\eqref{eq:gr-phi} 在这里还是可以用的。这甚至在重力非常强的情况下也成立。这个说明（解出恒星的爱因斯坦方程）超出了这个简短介绍的范围。}
     \begin{align}
         dt_A = \left ( 1 + \frac{\phi_A}{c^2}  \right ) dt~.
     \end{align}
@@ -168,81 +171,83 @@
       \mtextbox{Acceleration and spatial curvature}{
           Einstein noted that to reconcile accelerated frame and special relativity, the concept of curved 3d space has to be introduced. For example, consider 王二 experiencing uniform circular motion, and 王三 standing still at the center of the circle. 王二 and 王三 agrees on the radius of the circle, but not the circumference. Thus, 王二's space should be curved.爱因斯坦指出，为了协调加速坐标系和狭义相对论，必须引入弯曲 3d 空间的概念。例如，王二在做匀速圆周运动，王三站在圆心。王二和王三在圆的半径上一致，但在圆周上不一致。因此，王二的空间应该是弯曲的。
           \tcblower
-          In curved space, say, a sphere, you can draw a draw a triangle and measure the sum of the inner angles. What do you get? That explains item \ref{item:inner-angle} at the beginning of this part.
+          In curved space, say, a sphere, you can draw a draw a triangle and measure the sum of the inner angles. What do you get? That explains item \ref{item:inner-angle} at the beginning of this part. 在弯曲的空间中，比如在一个球体内，你可以画一个三角形并测量内角的总和。你得到了什么？这解释了本部分开头的一个事例\ref{item:inner-angle} 。
       }
-      In general, the coefficient in front of $d \mathbf{x}^2$ (i.e. the spatial part of the metric) is also modified. We will only give the result here: \index{Schwarzschild metric}
+      In general, the coefficient in front of $d \mathbf{x}^2$ (i.e. the spatial part of the metric) is also modified. We will only give the result here: \index{史瓦西度规}
       \begin{align}
         \label{eq:schwarzschild}
         ds^2 = - \left ( 1 - \frac{r_s}{r}  \right ) c^2 dt^2
         + \left ( 1 - \frac{r_s}{r}  \right )^{-1} dr^2
         + r^2 \left ( d\theta^2 + \sin^2\theta d\phi^2 \right )~,
       \end{align}
-      This is known as the Schwarzschild metric, describing the spacetime geometry outside a spherical symmetric star. The 这被称为 Schwarzschild 度量，描述了球对称恒星外部的时空几何。它的半径
+      这被称为史瓦西度规，描述了球对称恒星外部的时空几何。它的半径
       \begin{align}
         \label{eq:rs}
         r_s \equiv \frac{2GM}{c^2} 
       \end{align}
-      is called the Schwarzschild radius.被称为史瓦西半径。
+      被称为史瓦西半径。
 }
 
 \textbox{Example: The sun}{
-    To put in numbers for Eq.~\eqref{eq:rs}, if $M$ is the solar mass, then $r_s = 3$km. What does this 3km distance mean to the sun?为公式~\eqref{eq:rs} 代入数字，如果$M$ 是太阳质量，则$r_s = 3$km。这 3 公里的距离对太阳意味着什么？
+    为公式~\eqref{eq:rs} 代入数字，如果$M$ 是太阳质量，则$r_s = 3$km。这 3 公里的距离对太阳意味着什么？
 
     \tcblower
 
-    It does not mean anything. Because the solar radius is $r_\odot = 7\times 10^5$km. The Schwarzschild metric \eqref{eq:schwarzschild} only applies outside the star, since inside the star, the form of gravitational potential takes a different form.
+    这并不意味着什么。因为太阳半径是$r_\odot = 7\times 10^5$km。 史瓦西度规\eqref{eq:schwarzschild} 仅适用于恒星外部，因为在恒星内部，引力势的形式采用不同的形式。
 
-    However, what if an object is so dense, that its radius is smaller than $r_s$? For example, what if an object has the same mass of the sun, but with a radius smaller than 3km?
+    然而，如果一个物体如此密集，以至于它的半径小于 $r_s$呢？例如，如果一个物体的质量与太阳相同，但半径小于 3 公里怎么办？
+
 }
 
 \section{黑洞}
 
-Now imagine an object being so dense that its size is smaller than its Schwarzschild radius $r_s = 2GM/c^2$. What happens?
+现在想象一个物体非常密集，以至于它的大小小于其史瓦西半径 $r_s = 2GM/c^2$。然后会发生什么？
 
-In fact, this is not a question living in imagination. Such dense objects -- black holes -- are real. They are detected from many observational methods, from the analysis of celestial motion to imaging its shape, to the observation of gravitational waves.
+事实上，这不是一个只存在在想象中的问题。如此密集的物体——黑洞——是真实存在的。从天体运动的分析到对它的形状进行成像，再到引力波的观测，许多观测方法都可以检测到它们。
 
-\textbox{What happens near $r=r_s$?}{
-    When $r\simeq r_s$, in Eq.~\eqref{eq:schwarzschild} the time part vanishes and the spatial part blows up. What's happening there?
+\textbox{$r=r_s$ 附近会发生什么？}{
+    When $r\simeq r_s$, in Eq.~\eqref{eq:schwarzschild} the time part vanishes and the spatial part blows up. What's happening there?当 $r\simeq r_s$ 时，在 Eq.~\eqref{eq:schwarzschild} 中，时间部分消失，空间部分爆炸。那里发生了什么事？
 
-    Imagine 
-    \mtextbox{Duality and holography}{Similar to the twin paradox, now 王二 and 王三 has a disagreement. 王二 sees herself falling across $r_s$ but 王三 sees 王二 frozen at $r_s$. We will explain that they do not have a chance to meet (up to quantum subtleties which remain open questions in research) and thus nothing goes wrong.
+    想象
+    \mtextbox{二元性和全息}{Similar to the twin paradox, now 王二 and 王三 has a disagreement. 王二 sees herself falling across $r_s$ but 王三 sees 王二 frozen at $r_s$. We will explain that they do not have a chance to meet (up to quantum subtleties which remain open questions in research) and thus nothing goes wrong.类似于孪生悖论，现在王二和王三有分歧。王二看到自己跌倒在 $r_s$ 上，但王二看到王二被冻结在 $r_s$ 处。我们将解释他们没有机会见面（直到在研究中仍然悬而未决的量子微妙之处），因此没有任何问题。
     \mnewline
-    王三 sees and describes 王二 on the 2-dimensional surface $r=r_s$, while 王二 sees and describes herself in a 3-dimensional volume $r<r_s$. The two descriptions \textit{may} be equivalent to each other. This conjecture is known as holography in theoretical physics as the dual descriptions are between a surface and a volume.
+    王三 sees and describes 王二 on the 2-dimensional surface $r=r_s$, while 王二 sees and describes herself in a 3-dimensional volume $r<r_s$. The two descriptions \textit{may} be equivalent to each other. This conjecture is known as holography in theoretical physics as the dual descriptions are between a surface and a volume.王三在二维表面 $r=r_s$ 上看到并描述了王二，而王二在三维体积 $r<r_s$ 上看到并描述了自己。这两个描述 \textit{可能} 彼此等效。这个猜想在理论物理学中被称为全息，因为双重描述是在表面和体积之间。
     }
-    that 王二 is staying at a distance $r$ very slightly greater than $r_s$. Gravity pulls her to fall but imagine that she is in a powerful rocket to keep her staying at a fixed $r$. And 王三 locates at $r\rightarrow \infty$. For any finite interval $\Delta t_A$ according to 王二, wrt 王三:
+    that 王二 is staying at a distance $r$ very slightly greater than $r_s$. Gravity pulls her to fall but imagine that she is in a powerful rocket to keep her staying at a fixed $r$. And 王三 locates at $r\rightarrow \infty$. For any finite interval $\Delta t_A$ according to 王二, wrt 王三:王二与$r_s$保持的距离$r$略大。重力将她拉下，但想象她在强大的火箭中，以保持她保持在固定的 $r$。而王三位于 $r\rightarrow \infty$。对于根据王二的任何有限区间 $\Delta t_A$，对于王三：
     \begin{align}
         \Delta t_B = \Delta t_A \times \left ( 1 - \frac{r_s}{r}  \right )^{- \frac{1}{2} } \rightarrow \infty~.
     \end{align}
-    Thus, 王三 finds 王二 frozen on the $r=r_s$ surface. In general, at $r \rightarrow r_s$, the gravitational dilation effect is so significant that time looks frozen wrt an outside observer. In this respect, if you travel close to $r\rightarrow r_s$ and then back, it's a time machine that brings you to the future.
+    Thus, 王三 finds 王二 frozen on the $r=r_s$ surface. In general, at $r \rightarrow r_s$, the gravitational dilation effect is so significant that time looks frozen wrt an outside observer. In this respect, if you travel close to $r\rightarrow r_s$ and then back, it's a time machine that brings you to the future.因此，王三发现王二冻结在 $r=r_s$ 表面上。一般而言，在 $r \rightarrow r_s$ 处，引力膨胀效应非常显着，以至于对于外部观察者来说，时间看起来都冻结了。在这方面，如果你旅行接近 $r\rightarrow r_s$ 然后返回，它是一个带你到未来的时间机器。
     \tcblower
-    The above is what 王三 finds. But wrt 王二, she does not find $r=r_s$ very special. As at any moment, assuming that she is much smaller than $r_s$, equivalence principle tells that her acceleration cancels her gravity and she just crosses $r=r_s$ from outside to inside with finite time.
+    The above is what 王三 finds. But wrt 王二, she does not find $r=r_s$ very special. As at any moment, assuming that she is much smaller than $r_s$, equivalence principle tells that her acceleration cancels her gravity and she just crosses $r=r_s$ from outside to inside with finite time.以上是王三的发现。但是对于王二，她并不觉得$r=r_s$很特别。在任何时刻，假设她比 $r_s$ 小得多，等价原理告诉她，她的加速度抵消了她的重力，她只是在有限的时间内从外到内穿过 $r=r_s$。
 }
 
-\textbox{An ``event horizon'' and a ``black hole''}{
-    What will 王三 see for the events with $r<r_s$? For example, after 王二 crosses $r_s$ to reach $r<r_s$, what can 王三 see about 王二?
+\textbox{``事件视界''和``黑洞''}{
+    对于 $r<r_s$ 的事件，王三会看到什么？例如，王二穿过$r_s$到达$r<r_s$后，王二能看到什么？
 
-    Nothing. 
-    \mtextbox{Are black holes really black?}{
-        No.
+    看不到任何东西。
+    \mtextbox{黑洞真的是黑色的吗？}{
+        不是。
         \tcblower
         \mtitem{
-            \item Theoretically, Hawking radiations from quantum gravity can come out of black holes. They are usually too dim to see.
-            \item Practically, some black holes are the brightest objects in our universe -- seriously. Matter falling into the black hole (infinitely deep gravitational potential) interact with each other and emit bright radiations -- up to $40\%$ of matter energy can be converted to light. Due to the emission of infalling matter, images of black holes have been taken by arrays of radio telescopes in 2019.
+            \item Theoretically, Hawking radiations from quantum gravity can come out of black holes. They are usually too dim to see.理论上，来自量子引力的霍金辐射可以来自黑洞。它们通常太暗而看不见。
+            \item Practically, some black holes are the brightest objects in our universe -- seriously. Matter falling into the black hole (infinitely deep gravitational potential) interact with each other and emit bright radiations -- up to $40\%$ of matter energy can be converted to light. Due to the emission of infalling matter, images of black holes have been taken by arrays of radio telescopes in 2019.实际上，有些黑洞是我们宇宙中最亮的天体——说真的。落入黑洞的物质（无限深的引力势）相互作用并发出明亮的辐射——高达 40 美元的物质能量可以转化为光。由于下落物质的发射，2019年的射电望远镜阵列拍摄了黑洞的图像。
         }
     }
-    Due to the extreme time dilation, the light emitted at $r_s$ need infinite time to reach 王三. 王三 does not have more than infinite time to wait and thus cannot see anything happening at $r<r_s$.
+    Due to the extreme time dilation, the light emitted at $r_s$ need infinite time to reach 王三. 王三 does not have more than infinite time to wait and thus cannot see anything happening at $r<r_s$.由于极端的时间膨胀，在 $r_s$ 发出的光需要无限的时间才能到达王三。王三没有超过无限的等待时间，因此在 $r<r_s$ 处看不到任何事情。
 
-    As a result, $r=r_s$ is a surface to limit the events that 王三 can see. Thus, $r=r_s$ is known as an \textit{event horizon}\index{event horizon}. The dense object hides inside this event horizon and thus is invisible. No light from this object can reach to outside. Thus, the object is known as a \textit{black hole}\index{black hole}. This explains item \ref{item:black-horizon} at the beginning of this part.
+    As a result, $r=r_s$ is a surface to limit the events that 王三 can see. Thus, $r=r_s$ is known as an \textit{event horizon}\index{event horizon}. The dense object hides inside this event horizon and thus is invisible. No light from this object can reach to outside. Thus, the object is known as a \textit{black hole}\index{black hole}. This explains item \ref{item:black-horizon} at the beginning of this part.因此，$r=r_s$ 是限制王三可以看到的事件的表面。因此，$r=r_s$ 被称为\textit{事件视界}\index{事件视界}。密集的物体隐藏在这个事件视界内，因此是不可见的。来自该物体的光无法到达外部。因此，该物体被称为 \textit{blackhole}\index{blackhole}。这解释了本部分开头的 item \ref{item:black-horizo​​n}。
 }
  
-\textbox{``Inside'' the horizon: the future is doomed at a singularity}{
-    What happens after 王二 falls inside a black hole (cross the $r=r_s$ horizon)?王二掉进黑洞（穿过$r=r_s$视界）后会发生什么？
+\textbox{``Inside'' the horizon: 未来在奇点处消失}{
+    王二掉进黑洞（穿过$r=r_s$视界）后会发生什么？
 
-    Wrt 王三, he cannot expect to see 王二 coming out again. Since when she crosses the horizon, it already corresponds to $t_B\rightarrow \infty$. 王三 can see nothing happening later than infinity.
+    Wrt 王三, he cannot expect to see 王二 coming out again. Since when she crosses the horizon, it already corresponds to $t_B\rightarrow \infty$. 王三 can see nothing happening later than infinity.对于王三，他不能指望王二再次出现。因为当她穿过地平线时，它已经对应于 $t_B\rightarrow \infty$。王三在无穷之后什么也看不到。
 
-    But wrt 王二 herself, why cannot she decide to power her rocket to escape the horizon?
+    但是对于王二自己，她为什么不能决定用她的火箭来逃离地平线呢？
     \tcblower
-    To answer this question, let us take a look at the Schwarzschild metric \eqref{eq:schwarzschild}. At $r<r_s$, the metric can be rewritten as
+    为了回答这个问题，让我们来看看史瓦西度量
+    \eqref{eq:schwarzschild}. At $r<r_s$, the metric can be rewritten as
     \begin{align}
         \label{eq:schwarzschildIn}
         ds^2 = 
@@ -262,12 +267,12 @@ In fact, this is not a question living in imagination. Such dense objects -- bla
 
 \section{引力波}\index{gravitational waves}
 
-Gravitational waves are consequences of the full theory of general relativity. Deriving them rigorously is beyond the scope here. We nevertheless build some intuitive understandings.引力波是广义相对论完整理论的产物。严格地推导它们超出了这里的范围。尽管如此，我们还是建立了一些直观的理解。
+Gravitational waves are consequences of the full theory of general relativity. Deriving them rigorously is beyond the scope here. We nevertheless build some intuitive understandings.引力波是广义相对论完整理论的产物。如果要严格地推导它们会超出将要讲的范围。尽管如此，我们还是建立了一些直观的理解。
 
 \textbox{Special relativity and Newtonian gravity are inconsistent}{
     What's wrong with the good old Newtonian gravity $F = G_N Mm / r^2$?
 
-    Suppose 王二 is a light year away from 王三 and she waves her hand. As the position $r$ of her hands change, 王三 can in principle measure a slightly different gravitational attraction from 王二 \emph{immediately} -- because force needs no time to propagate in Newtonian gravity. 王二 can thus encode information in how her hands move, and the information is sent to 王三 immediately, which is faster than light.假设王二距离王三一光年，她挥手。随着她手的位置 $r$ 的变化，原则上王三可以测量出与王二 \emph {immediately} 略有不同的引力——因为力不需要时间在牛顿引力中传播。王二因此可以将信息编码在她的手如何移动中，并立即将信息发送给王三，这比光还快。
+    假设王二距离王三一光年，她挥手。随着她手的位置 $r$ 的变化，原则上王三可以测量出与王二 \emph {immediately} 略有不同的引力——因为力不需要时间在牛顿引力中传播。王二因此可以将信息编码在她的手如何移动中，并立即将信息发送给王三，这比光还快。
 
     From special relativity, no information can travel faster than light. Thus, Newtonian gravity is not consistent with special relativity.从狭义相对论来看，没有任何信息可以比光速传播得更快。因此，牛顿引力不符合狭义相对论。
 
@@ -283,27 +288,27 @@ Gravitational waves are consequences of the full theory of general relativity. D
     If we only have the Coulomb force formula and nothing else, we would have the same superluminal problem for E\&M. However, the magnetic field comes to rescue here. Once the source electric charge accelerates (you cannot encode information by inertial motion without acceleration), the time variation of the electric field produces magnetic field, and the time variation of the magnetic field produces electric field. This process happens over and over again and E\&M wave is emitted at exactly the speed of light. Also, in this way, the E\&M field can propagate by itself without the need of matter (after produced by a source) as new ``degrees of freedom''.
 
     The lesson: we hope that new ``degrees of freedom'' can come to rescue in gravity, similar to what magnetic field does for E\&M. Where to find those degrees of freedom?
-    % Internal note: The details: gravitoelectromagnetism. See for example:
+    % 内部注释：细节：重力电磁学。见例如：
     % https://arxiv.org/pdf/gr-qc/0003115.pdf
     % https://arxiv.org/pdf/gr-qc/9912027.pdf
 }
 
 \needspace{.22\textheight}
-\mtextbox{Are gravitational waves physical?引力波是具有物质属性的吗？}{
-     The concern is that space deforms, so does rulers. So can we actually measure gravitational waves? The debate lasted for 40 years. In 1957, Feynamn (under a pseudonym of ``Mr. Smith'') argued that when gravitational waves pass, a waterdrop on a rod will move wrt the rod and thus generate heat by friction. Thus gravitational waves are physical. The observational efforts start shortly afterwards. In 2016, after decades' trail and failure, gravitatioanl waves are finally detected by the Laser Interferometer Gravitational-Wave Observatory (LIGO) using an interferometer similar to the michelson morley experiment.令人担忧的是空间会变形，尺子也会变形。那么我们真的可以测量引力波吗？这场争论持续了 40 年。 1957 年，费南（化名“史密斯先生”）认为，当引力波通过时，棒上的水滴会相对于棒移动，从而通过摩擦产生热量。因此引力波具有物质属性的。观测工作随即开始。 2016 年，经过数十年的追踪和失败，引力波终于被激光干涉引力波天文台 (LIGO) 使用类似于迈克尔逊莫雷实验的干涉仪探测到。
+\mtextbox{引力波是具有物质属性的吗？}{
+     令人担忧的是空间会变形，尺子也会变形。那么我们真的可以测量引力波吗？这场争论持续了 40 年。 1957 年，费南（化名``史密斯先生''）认为，当引力波通过时，棒上的水滴会相对于棒移动，从而通过摩擦产生热量。因此引力波具有物质属性的。观测工作随即开始。 2016 年，经过数十年的追踪和失败，引力波终于被激光干涉引力波天文台 (LIGO) 使用类似于迈克尔逊莫雷实验的干涉仪探测到。
 }
-\textbox{Optional: The dynamical metric and the gravitational waves可选（选读）：动力学度量和引力波}{
+\textbox{选读：动力学度量和引力波}{
     We have shown that a static gravitational field can be described by a non-trivial metric, for example \eqref{eq:schwarzschild}. There are other components in the metric as well. The metric can be viewed as a $4\times 4$ symmetric matrix with 10 components (free functions to choose). 8 of them are already used:
     \titem{
-        \item 4 to describe the response to energy and momentum of matter. The energy part is the Newtonian gravity and the momentum part is its relativistic generalization. Technically they are called the Hamiltonian (energy) and momentum constraints.
-        \item 4 represents the freedom to choose coordinates. When choosing any new coordinate system $\tilde x^\mu (x)$, we expect that the physical interval should not change and thus the metric should transform accordingly.
+        \item 4 to describe the response to energy and momentum of matter. The energy part is the Newtonian gravity and the momentum part is its relativistic generalization. Technically they are called the Hamiltonian (energy) and momentum constraints.4 描述对物质能量和动量的反应。能量部分是牛顿引力，动量部分是它的相对论概括。从技术上讲，它们被称为哈密顿量（能量）和动量约束。
+        \item 4 represents the freedom to choose coordinates. When choosing any new coordinate system $\tilde x^\mu (x)$, we expect that the physical interval should not change and thus the metric should transform accordingly.4代表自由选择坐标。在选择任何新坐标系$\tilde x ^\mu（x$时，我们希望物理间隔不应改变，因此度量标准应相应地转换。
     }
-    What are the remaining 2 degrees of freedom? Happily they correspond to propagating waves of gravity, to solve the problem of Newtonian gravity. And the gravitational waves propagate at the speed of light.
+    What are the remaining 2 degrees of freedom? Happily they correspond to propagating waves of gravity, to solve the problem of Newtonian gravity. And the gravitational waves propagate at the speed of light.剩下的 2 个自由度是多少？令人高兴的是，它们对应于传播的引力波，以解决牛顿引力问题。并且引力波以光速传播。
 }
 
 \marginnote{\includegraphics[width=0.35\textwidth]{gwpol}}
-\textbox{What do gravitational waves look like?引力波是什么样子的？}{
-    As we have argued, the gravitational waves are the fluctuations of spacetime, characterized by the metric. Thus, their impacts should be the distortion of distances. They travel at the speed of light and they are transverse waves (polarized perpendicular to the propagation direction). The two independent polarization modes deforms spacetime in the pattern sketched in the figure to the right.
+\textbox{引力波是什么样子的？}{
+    As we have argued, the gravitational waves are the fluctuations of spacetime, characterized by the metric. Thus, their impacts should be the distortion of distances. They travel at the speed of light and they are transverse waves (polarized perpendicular to the propagation direction). The two independent polarization modes deforms spacetime in the pattern sketched in the figure to the right.正如我们所讨论的，引力波是时空的波动，以度量为特征。因此，它们的影响应该是距离的扭曲。它们以光速传播，并且它们是横波（偏振垂直于传播方向）。两个独立的偏振模式使时空变形，如右图所示。
 }
 
 \section{结语：总结和下一步}
@@ -311,27 +316,28 @@ Gravitational waves are consequences of the full theory of general relativity. D
 \textbox{科学中罕见的例子}{
     广义相对论是现代科学史上一个非常罕见的例子，一个全新的科学框架。它（几乎）完全是由逻辑推理和哲学信仰建立的。
 
-    Starts from the equivalence principle, we have shown you how time becomes relative in a uniform gravitational field. Then we argued that there is a similar effect for spherical stars. And if the star is dense enough, black holes form. The black hole has an event horizon where matter (classically, without the quantum mechanical considerations) can enter but not return. From the similarity between gravity and E\&M, we have argued that gravitational waves exist as deformations of spacetime. All these can be put into precise and elegant forms with the mathematical framework of differential geometry.从等效原理开始，我们向您展示了时间如何在均匀引力场中变得相对。然后我们认为球形恒星也有类似的效果。如果恒星足够密集，就会形成黑洞。黑洞有一个事件视界，物质（经典的，没有量子力学考虑）可以进入但不能返回。从引力和 E\&M 之间的相似性来看，我们认为引力波是作为时空变形而存在的。所有这些都可以用微分几何的数学框架精确而优雅地表达出来。
+    Starts from the equivalence principle, we have shown you how time becomes relative in a uniform gravitational field. Then we argued that there is a similar effect for spherical stars. And if the star is dense enough, black holes form. The black hole has an event horizon where matter (classically, without the quantum mechanical considerations) can enter but not return. From the similarity between gravity and E\&M, we have argued that gravitational waves exist as deformations of spacetime. All these can be put into precise and elegant forms with the mathematical framework of differential geometry.从等效原理开始，我们向你展示了时间如何在均匀引力场中变得相对。然后我们认为球形恒星也有类似的效果。如果恒星足够密集，就会形成黑洞。黑洞有一个事件视界，物质（经典的，没有量子力学考虑）可以进入但不能返回。从引力和 E\&M 之间的相似性来看，我们认为引力波是作为时空变形而存在的。所有这些都可以用微分几何的数学框架精确而优雅地表达出来。
 }
 
 等效原理是广义相对论中的第一个观察结果，但这还不是最精彩的。虽然超出了课程的范围，但让我们提一下广义相对论中的两个关键概念：
 
 \textbox{空间是如何弯曲的？}{
-    How a geometry such as \eqref{eq:schwarzschild} is determined? In Newtonian gravity, we know that gravity is determined by matter distribution. Now that gravity is interpreted as geometry, geometry should be determined by matter distribution as well, at least in the Newtonian limit. The rule to determine geometry from matter distribution is the Einstein's equation. It looks like $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ \index{Einstein's equations} and is the master equation of general relativity. I cannot explain it to you within the scope of this course, except mentioning that the LHS is determined by the metric $g_{\mu\nu}$ and its derivatives; and the RHS is determined by matter distribution. This is dubbed ``matter tells space how to curve.'' 如何确定诸如 \eqref{eq:schwarzschild} 之类的几何？在牛顿引力中，我们知道引力是由物质分布决定的。既然引力被解释为几何学，几何学也应该由物质分布决定，至少在牛顿极限内。从物质分布确定几何的规则是爱因斯坦方程。它看起来像 $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ \index{爱因斯坦方程}，是广义相对论的主要方程。我无法在本课程的范围内向您解释它，除非提到方程左侧由度量 $g_{\mu\nu}$ 及其衍生物决定；而方程右侧是由物质分布决定的。这被称为``物质告诉空间如何弯曲''。
+    How a geometry such as \eqref{eq:schwarzschild} is determined? In Newtonian gravity, we know that gravity is determined by matter distribution. Now that gravity is interpreted as geometry, geometry should be determined by matter distribution as well, at least in the Newtonian limit. The rule to determine geometry from matter distribution is the Einstein's equation. It looks like $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ \index{Einstein's equations} and is the master equation of general relativity. I cannot explain it to you within the scope of this course, except mentioning that the LHS is determined by the metric $g_{\mu\nu}$ and its derivatives; and the RHS is determined by matter distribution. This is dubbed ``matter tells space how to curve.'' 如何确定诸如 \eqref{eq:schwarzschild} 之类的几何？在牛顿引力中，我们知道引力是由物质分布决定的。既然引力被解释为几何学，几何学也应该由物质分布决定，至少在牛顿极限内。从物质分布确定几何的规则是爱因斯坦方程。它看起来像 $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ \index{爱因斯坦方程}，是广义相对论的主要方程。我无法在本课程的范围内向你解释它，除非提到方程左侧由度量 $g_{\mu\nu}$ 及其衍生物决定；而方程右侧是由物质分布决定的。这被称为``物质告诉空间如何弯曲''。
 }
 
 \textbox{How matter moves?物质是如何运动的？}{
-    How matter moves in curved space? Matter follows the geometry of spacetime. This is dubbed ``space tells matter how to move.'' Given a spacetime geometry, the motion of free-falling matter is determined by a generalized version of the twin paradox. Recall that in the twin paradox, the free observer without external force exerted has the longest proper time. We assert that, free-fall observers in general relativity still have extrema (usually longest but there are exceptions that the proper time is only longest for a selection of variations) proper times. Such extremal paths are known as geodesics. A geodesic can be interpreted in a semi-Newtonian manner as follows: the equation of a geodesic is物质如何在弯曲空间中运动？物质遵循时空的几何学。这被称为“空间告诉物质如何运动”。给定一个时空几何，自由落体物质的运动是由孪生悖论的广义版本决定的。回想一下，在孪生悖论中，没有施加外力的自由观察者的适当时间最长。我们断言，广义相对论中的自由落体观察者仍然具有极值（通常最长，但也有例外，正确时间仅对于选择的变体才是最长的）正确时间。这种极值路径称为测地线。测地线可以用半牛顿的方式解释如下：测地线的方程是 \index{geodesic equation} $a^\mu = - \sum_{\alpha,\beta=0}^3 \Gamma^\mu_{\alpha\beta} u^\alpha u^\beta$. Here $a_\mu$ is the 4-acceleration and $u^\alpha$ is the 4-velocity. $\Gamma^\mu_{\alpha\beta}$ is a generalization of the concept of gravitational force, made from the metric and its derivatives. You may have recognized that this looks like the Newton's second law. It is at your well whether to interpret the RHS as a gravitational force, or a term in geometry to tell matter how to move. They are equivalent as implied by the equivalence principle.$a^\mu = - \sum_{\alpha,\beta=0}^3 \Gamma^\mu_{\alpha\beta} u^\alpha u^\beta$。这里 $a_\mu$ 是 4-加速度，$u^\alpha$ 是 4-速度。 $\Gamma^\mu_{\alpha\beta}$ 是引力概念的推广，由度量及其导数构成。您可能已经认识到这看起来像牛顿第二定律。是否将RHS解释为重力，或几何学中的术语来说明物质如何运动，这完全取决于你。正如等价原则所暗示的那样，它们是等价的。
+    How matter moves in curved space? Matter follows the geometry of spacetime. This is dubbed ``space tells matter how to move.'' Given a spacetime geometry, the motion of free-falling matter is determined by a generalized version of the twin paradox. Recall that in the twin paradox, the free observer without external force exerted has the longest proper time. We assert that, free-fall observers in general relativity still have extrema (usually longest but there are exceptions that the proper time is only longest for a selection of variations) proper times. Such extremal paths are known as geodesics. A geodesic can be interpreted in a semi-Newtonian manner as follows: the equation of a geodesic is物质如何在弯曲空间中运动？物质遵循时空的几何学。这被称为``间告诉物质如何运动''。给定一个时空几何，自由落体物质的运动是由孪生悖论的广义版本决定的。回想一下，在孪生悖论中，没有施加外力的自由观察者的适当时间最长。我们断言，广义相对论中的自由落体观察者仍然具有极值（通常最长，但也有例外，正确时间仅对于选择的变体才是最长的）正确时间。这种极值路径称为测地线。测地线可以用半牛顿的方式解释如下：测地线的方程是 \index{geodesic equation} $a^\mu = - \sum_{\alpha,\beta=0}^3 \Gamma^\mu_{\alpha\beta} u^\alpha u^\beta$. Here $a_\mu$ is the 4-acceleration and $u^\alpha$ is the 4-velocity. $\Gamma^\mu_{\alpha\beta}$ is a generalization of the concept of gravitational force, made from the metric and its derivatives. You may have recognized that this looks like the Newton's second law. It is at your well whether to interpret the RHS as a gravitational force, or a term in geometry to tell matter how to move. They are equivalent as implied by the equivalence principle.$a^\mu = - \sum_{\alpha,\beta=0}^3 \Gamma^\mu_{\alpha\beta} u^\alpha u^\beta$。这里 $a_\mu$ 是 4-加速度，$u^\alpha$ 是 4-速度。 $\Gamma^\mu_{\alpha\beta}$ 是引力概念的推广，由度量及其导数构成。你可能已经认识到这看起来像牛顿第二定律。是否将RHS解释为重力，或几何学中的术语来说明物质如何运动，这完全取决于你。正如等价原则所暗示的那样，它们是等价的。
 }
 
-\textbox{Is general relativity general?广义相对论是广义的吗？}{
-    The above two principles are the key to general relativity, which applies to all known scales where gravity can be studied, including millimeter scales for very precise gravity experiments in the lab, to the size of the whole universe.以上两个原理是广义相对论的关键，广义相对论适用于所有已知的可以研究重力的尺度，包括实验室非常精确的重力实验的毫米尺度，到整个宇宙的大小。
+\textbox{广义相对论是普遍适用的吗？}{
+    以上两个原理是广义相对论的关键，广义相对论适用于所有已知的可以研究重力的尺度，包括实验室非常精确的重力实验的毫米尺度，到整个宇宙的大小。
 
-    Having that said, so far, we still do not understand how general relativity can be built within the framework of quantum mechanics. The efforts in searching for such a unified theory is known as ``quantum gravity''尽管如此，到目前为止，我们仍然不明白如何在量子力学的框架内建立广义相对论。寻找这样一个统一理论的努力被称为``量子引力''\index{quantum gravity}。Experiments have not been precise enough to probe quantum effects of gravity. But theoretical consistence between general relativity and quantum mechanics is also a well motived question, and is surprisingly hard. The current leading candidate of quantum gravity is string theory实验还不够精确，无法探测引力的量子效应。但是广义相对论和量子力学之间的理论一致性也是一个动机很好的问题，而且出奇地难。当前量子引力的主要候选者是弦论\index{string theory}，它首先假设基本粒子实际上是一维空间而不是零维的弦（零对应于点粒子）。
+    尽管如此，到目前为止，我们仍然不明白如何在量子力学的框架内建立广义相对论。寻找这样一个统一理论的努力被称为``量子引力''\index{量子引力}。实验还不够精确，无法探测引力的量子效应。但是广义相对论和量子力学之间的理论一致性也是一个动机很好而且出奇的难的问题。当前量子引力的主要候选者是弦论\index{
+   弦论}，它首先假设基本粒子实际上是一维空间而不是零维的弦（零对应于点粒子）。
 } 
 
 \textbox{扩展阅读}{
-    有很多关于广义相对论的好书可以读。一些适合初学者的易读书籍有由Hartle\footnote{James B. Hartle（1939－），美国物理学家。——译者注。} 编写的 \href{https://www.amazon.com/dp/0805386629/?tag=stackoverfl08-20}{Gravity: An Introduction to Einstein’s General Relativity} 和 \href{https://www.amazon.com/First-Course-General-Relativity/dp/0521887054}{A First Course in General Relativity} by Schutz.
+    有很多关于广义相对论的好书可以读。一些适合初学者的易读书籍有由哈妥\footnote{James B. Hartle（1939－），美国物理学家。——译者注。} 编写的 \href{https://www.amazon.com/dp/0805386629/?tag=stackoverfl08-20}{Gravity: An Introduction to Einstein’s General Relativity} 和舒茨\footnote{Bernard F. Schutz（1946－），美国物理学家。——译者注。}编写的 \href{https://www.amazon.com/First-Course-General-Relativity/dp/0521887054}{A First Course in General Relativity}
 }
 
 
