@@ -2,62 +2,65 @@
 \graphicspath{{4_fig/}}
 \title{第四章\ 量子力学}
 
+\usepackage{ctex}
 \begin{document}
 
 \maketitle
 
-\textbox{Alice's adventures in a quantum wonderland}{
-    Alice \marginnote{I don't know how to talk about a person as small as an atom consistently, but let us imagine that she is now just an atom, but somehow she can still record and tell her experiences. }
-    drinks a bottle of ``drink me'' and becomes as small as an atom. She finds the world totally unfamiliar, compared to the familiar classical world when she was of normal size.
+\textbox{王二梦游量子仙境}{
+    王二 \marginnote{我不知道如何像谈论一个正常人一样谈论一个像原子一样小的人，但让我们想象她现在只是一个原子，但不知何故她仍然可以记录和讲述她的经历。 }
+    喝下了一瓶表面写着``喝我''的药水，然后变得和原子一样小。与正常体型时熟悉的原始世界相比，她觉得这个世界完全陌生。
     \tenum{
-        \item When she knows where she is, she doesn't know how fast she is walking; When she knows how fast she is walking, she doesn't know where she is. \label{item:uncertainty}
-        \item Walking in the brightness helps her to know better where she is. \label{item:measure}
-        \item Walking in the brightness, Alice finds the apparently continuous beams of light hits her as bullets: one shot after another in a discrete way. And she feels hurt more by the ``bullet'' of blue light than the ``bullet'' of red light. \label{item:bullet}
-        \item She no longer has to enter a room through a door. She has a small chance to cross the wall and enter the room directly (although more likely she gets bounced back). \label{item:cross-wall}
-        \item With fine-tuned speed, she can greatly enlarge the wall-crossing chance by using the front and back wall of the room together. \label{item:resonant-tunneling}
-        \item If she still prefers to walk through doors, she can walk through two doors at the same time. She is then likely to appear in the room somewhere, but never somewhere else. \label{item:double-door-interference}
-        \item She met an electron and made friend with him. However, soon, Alice was unable to find this electron friend out from other electrons no matter how hard she tries. \label{item:identical}
+        \item 当她知道自己在哪里时，她不知道自己走得有多快；当她知道自己走得有多快时，她不知道自己在哪里。 \label{item:uncertainty}
+        \item 在光明中行走有助于她更好地了解自己的位置。 \label{item:measure}
+        \item Walking in the brightness, 王二 finds the apparently continuous beams of light hits her as bullets: one shot after another in a discrete way. And she feels hurt more by the ``bullet'' of blue light than the ``bullet'' of red light.走在有光亮的地方中，王二发现看似连续的光束像子弹一样打在她身上，一个接一个，离散地射中她。而她被蓝光的``子弹''比红光的``子弹''更伤人。 \label{item:bullet}
+        \item 她不再需要通过门进入房间。她有很小的机会穿过墙壁直接进入房间（尽管她更有可能被弹回）。 \label{item:cross-wall}
+        \item 以微调的速度，她可以将房间的前墙和后墙一起使用，极大地扩大穿墙机会。 \label{item:resonant-tunneling}
+        \item 如果她仍然偏好通过穿过门进入房间，她可以同时穿过两扇门。然后她很可能会出现在房间的某个地方，但永远不会出现在其他地方。 \label{item:double-door-interference}
+        \item 她遇到了一个电子并与他成为了朋友。然而很快，王二无论怎么努力，都无法从其他电子堆中找到这个电子朋友。 \label{item:identical}
     }
 }
 
-In this part, let us find out what happens in the microscopic world, where the laws of nature is quantum mechanics. Let me tell that the learning experience of quantum mechanics will be very different from special relativity. Knowing it in advance helps for your learning. 
+In this part, let us find out what happens in the microscopic world, where the laws of nature is quantum mechanics. Let me tell that the learning experience of quantum mechanics will be very different from special relativity. Knowing it in advance helps for your learning.在这一部分，让我们看看在微观世界会发生什么。在这里，自然法则是量子力学。这个篇章会告诉你量子力学的学习经历会和狭义相对论有很大的不同。提前了解它有助于你的学习。 
 
-\textbox{Quantum mechanics and special relativity are of different ``feeling''}{
+\textbox{量子力学和狭义相对论会``感觉''不同}{
     \titem{
-        \item Special relativity is based on 2$\sim$3 simple postulates -- everyone knowing general physics knows what they mean physically. The logical sequence of these postulates may be counter intuitive. But after thinking, you can know what these consequences mean physically and that provides you a unique way to model them explicitly in your mind.
-        \item Quantum mechanics is based on about 5 fundamental postulates\marginnote{The exact number of postulates of quantum mechanics depends how you formulate it. You will see 4, 5, 6 in different books.}. Each postulate looks mathematical. You may scroll to the summary of this part to get a quick feeling, not to be scared by their appearances. They tell you how to compute things. But they do not give you a physical idea in your mind (known as interpretations of quantum mechanics) to think about what's really happening.\marginnote{The interpretations of quantum mechanics is still an open question. There are a few possible interpretations in the market now. But we don't know which is correct (and we don't know even if it's possible to figure out the correct one).}
+        \item Special relativity is based on 2$\sim$3 simple postulates -- everyone knowing general physics knows what they mean physically. The logical sequence of these postulates may be counter intuitive. But after thinking, you can know what these consequences mean physically and that provides you a unique way to model them explicitly in your mind.狭义相对论基于 2$\sim$3 可以简单假设；每个了解一般物理学的人都知道它们的物理意义。这些假设的逻辑顺序可能与直觉相反。但是在深度思考后，你会知道这些结果有着什么物理意义，这给你提供了一种独特的在脑海中建模的方式。
+        \item 量子力学基于大约5个基本假设\marginnote{量子力学假设的确切数量取决于您如何制定它。你会在不同的书中看到4、5、6个基本假设。}. Each postulate looks mathematical. You may scroll to the summary of this part to get a quick feeling, not to be scared by their appearances. They tell you how to compute things. But they do not give you a physical idea in your mind (known as interpretations of quantum mechanics) to think about what's really happening. 每个假设看起来都是
+       基于数学的。你可以滚动到本部分的摘要快速感受，不要被他们的外表吓到。这些数学性的假设告诉你如何计算物理事物。但是它们并不会在你的脑海中塑造物理概念（例如对量子力学的解释）来思考真正发生的事情。\marginnote{量子力学的解释仍然是一个值得商榷的问题。现在学界中有几种可能的解释。但是我们不知道哪个是正确的（我们也不知道是否有可能找出正确的）。}
     }
     \tcblower
-    Due to the differences, in this part we will not start from throwing the postulates to your face. Instead, we will spend a longer time to explain why we are forced to impose these ``exotic'' postulates. Afterwards we will happily test what we can do with these postulates as usual.
+    由于基本假设的差异，本部分不会给出一堆假设让你囫囵吞枣。相反，我们将花更长的时间来解释为什么我们被迫强加理解这些``异类''的假设。然后我们将像之前一样愉快地发现我们可以用这些假设做什么。
 }
 
-\section{The Nature of Light}\label{sec:photon}
+\section{光的本质}\label{sec:photon}
 
-\subsection{Is Light Particle or Wave?} \label{sec:light-particle-wave}
+\subsection{光到底是粒子还是波？} \label{sec:light-particle-wave}
 
-The nature of light was studied and debated for thousands of years. In the classical era (until 1900s), the key debate about light can be summarized as: Is light particle or wave? To be clear, let us summarize what particles and waves are. I encourage you to tap a basin of water or throw stones into a lake, to watch the nature of classical waves if you haven't done so before.
+The nature of light was studied and debated for thousands of years. In the classical era (until 1900s), the key debate about light can be summarized as: Is light particle or wave? To be clear, let us summarize what particles and waves are. I encourage you to tap a basin of water or throw stones into a lake, to watch the nature of classical waves if you haven't done so before.数千年来，人们一直在研究和争论光的性质。在古代（直到19世纪），关于光的关键争论可以概括为：光是粒子还是波？为了清楚起见，让我们总结一下粒子和波是什么。如果你以前没有这样做过的话，我鼓励你打一盆水或将石头扔进湖里，观察经典波浪的性质。
+
 
 \twocol{0.6}{0.01}{0.7}{
-    \textbox{Nature of classical particles\index{classical particles}}{
+    \textbox{经典粒子的性质\index{经典粒子}}{
         \tenum{
-            \item Can be counted and labeled as $1,2,3,\ldots$.
-            \item Have definite locations (or mass centers).
-            \item Have energy \& momentum with $E=p^2/(2m) + V$.
-            \item When two particles meet, they collide.
+            \item 可以计算并标记为 $1,2,3,\ldots$。
+            \item 有明确的位置（或质心）。
+            \item 有能量 \& 动量 $E=p^2/(2m) + V$。
+            \item 当两个粒子相遇时，它们会发生碰撞。
         }
     }
 }{
-    \textbox{Nature of classical waves\index{classical waves}}{
+    \textbox{经典波的性质\index{经典波}}{
         \tenum{
-            \item Is oscillation with continuously variable amplitude.
-            \item Extended objects without definite locations.
-            \item Have frequencies $\nu$ and wavelength $\lambda$.
-            \item When two waves meet, they overlap on top of each other.
+            \item 是振幅连续变化的振荡。
+            \item 没有明确了位置的扩展对象。
+            \item 具有频率 $\nu$ 和波长 $\lambda$。
+            \item 当两波相遇时，它们会重叠在一起。
         }
     }
 }
 
-Now that you know very well what classical particles and waves mean, let us explore the nature of light.
+现在你已经非常清楚经典粒子和波的含义，现在我们来探索光的性质。
 
 \mtextbox{The double-slit experiment\index{double-slit experiment}}{
     The double-slit experiment is an important turning point in the history for the wave theory of light. Let us review it here. As in the figure below, two beams of light travel through two slits and meets on the screen. The experiment needs to be explained by the wave theory of light. 
@@ -163,7 +166,7 @@ Honestly, when I learned this I did not feel surprised though the textbook told 
     \end{align}
     where $h=6.6\times 10^{-34}\mbox{ m}^2\mbox{ kg s}^{-1}$ is the Planck constant, and $\hbar = h/(2\pi) = 1.1 \times 10^{-34}\mbox{ m}^2\mbox{ kg s}^{-1}$ is the reduced Planck constant. 
     
-    This explains the photoelectric effect (and Alice's experience \ref{item:bullet} in her wonderland). Because an electron is likely to be hit by one photon instead of multiple photons together (if a person is hit by car, it is almost impossible that the person is hit by two cars at the same time). Thus whether the electron is knocked out of the metal is determined by the energy of the photon $E$, and thus its frequency $\nu$,  
+    This explains the photoelectric effect (and 王二's experience \ref{item:bullet} in her wonderland). Because an electron is likely to be hit by one photon instead of multiple photons together (if a person is hit by car, it is almost impossible that the person is hit by two cars at the same time). Thus whether the electron is knocked out of the metal is determined by the energy of the photon $E$, and thus its frequency $\nu$,  
     \mtextbox{Photon, quanta and quantization\index{photon}\index{quanta}\index{quantization}}{
         \mtitem{
             \item The ``tiny'' particle as building block of light is called photon.
@@ -444,7 +447,7 @@ As we discussed, all matter has wave properties. How to describe wave? We are fa
     \end{align}
     The first two terms correspond to adding up probabilities. But there are two additional interference terms $\psi_1^*\psi_2 + \psi_2^*\psi_1$. They are not positive definite and can cancel the whole thing.
 }
-I hope this relates the single-quanta double-slit experiment to the wave function of a quanta, and explains Alice's observation \ref{item:double-door-interference} at the beginning of this part.
+I hope this relates the single-quanta double-slit experiment to the wave function of a quanta, and explains 王二's observation \ref{item:double-door-interference} at the beginning of this part.
 
 \textbox{Plane waves as building blocks of wave functions in free space}{
     In math, linearity allows us to expand the wave function with a complete set of basis. Physically, the importance of basis is that we can first understand these simple states, and then consider a general state as a weighted average of these simple states.
@@ -588,7 +591,7 @@ For the eigenstates, the outcome of measurement is simple: we get the correspond
 \mtextbox{``Collapse'' of wave function?\index{collapse of wave function}}{
     What does ``collapse'' of a wave function after a measurement mean? We mean the wave function becomes the corresponding eigenstate as indicated by the meaning of the word collapse. However, currently there is no unique understanding about dynamically why and how the collapse happen. This question is related to the interpretation of quantum mechanics. We will address it briefly in the epilogue section.
     \tcblower
-    At the beginning of this part, when Alice is walking in the brightness, her position keeps being measured. Thus she knows better where she is. This explains \ref{item:measure}.
+    At the beginning of this part, when 王二 is walking in the brightness, her position keeps being measured. Thus she knows better where she is. This explains \ref{item:measure}.
 }
 \textbox{Measurement outcome for a general state}{
     For superpositions when measuring $\hat O$, we decompose the general state in eigenstates.
@@ -723,7 +726,7 @@ We are trying to pack all the difficulties into math. \marginnote{And going thro
     Although we don't know the final state of the machine $|M_1\rangle$, $|M_2\rangle$ and $|M_*\rangle$, the above \ref{enum:clone1} and \ref{enum:clone2} cannot be consistent. Because \ref{enum:clone1} contains $\alpha\beta|1\rangle|2\rangle$ which is not part of \ref{enum:clone2}. We thus conclude that a quantum cloning machine is impossible. Linearity is the key to prove the non-cloning theorem.
 }
 
-A joke says when Heisenberg knows where he is, he doesn't know how fast he is walking. So does Alice for item \ref{item:uncertainty} at the beginning of this part.
+A joke says when Heisenberg knows where he is, he doesn't know how fast he is walking. So does 王二 for item \ref{item:uncertainty} at the beginning of this part.
 
 
 \section{The Schr{\"o}dinger Equation} \label{sec:schro-all}
@@ -937,7 +940,7 @@ Now we modify the step potential further: Let's join two steps to make a potenti
 \textbox{The quantum tunneling effect\index{tunneling}}{
     In the case $E<V_2$, classically the particle can never go from $A$ to $E$ because there is a barrier to block it. 
 
-    However, \marginnote{\includegraphics[width=0.35\textwidth]{tunneling_quantum}\newline This is why at the beginning of this part, the quantum Alice observe that she can sometimes walk into a wall to enter a room in item \ref{item:cross-wall}.}
+    However, \marginnote{\includegraphics[width=0.35\textwidth]{tunneling_quantum}\newline This is why at the beginning of this part, the quantum 王二 observe that she can sometimes walk into a wall to enter a room in item \ref{item:cross-wall}.}
     in quantum mechanics, no matter how high the barrier is (in the real world the barrier is always finite), there is an exponentially small part which goes into the barrier and escapes out to $E$. This is a key feature of quantum mechanics.
 }
 
@@ -1045,7 +1048,7 @@ What about to connect the two steps differently, to form a potential well?
 
     However, if we fine-tune the incoming energy to coincide with a bound state energy, then the gray dashed line is not a correct boundary condition for a bound state (for a bound state, both sides should exponentially decay) thus cannot be right. Rather, there is no exponential suppression factor for such tunneling. This situation is known as resonant tunneling. 
     \tcblower
-    This explains Alice's enhanced tunneling rate (item \ref{item:resonant-tunneling} at the beginning of this part) if we consider the front and back wall as two potential barriers and Alice's incoming energy coincides with a bound state in the room.
+    This explains 王二's enhanced tunneling rate (item \ref{item:resonant-tunneling} at the beginning of this part) if we consider the front and back wall as two potential barriers and 王二's incoming energy coincides with a bound state in the room.
 }
 
 
@@ -1077,7 +1080,7 @@ What about to connect the two steps differently, to form a potential well?
 
 \section{Identical Particles}
 
-At the beginning of this part, item \ref{item:identical} of Alice's adventure is that she fails to distinguish an electron from another. In the classical world, we can distinguish persons. Why this fails to work in Alice's quantum adventure?
+At the beginning of this part, item \ref{item:identical} of 王二's adventure is that she fails to distinguish an electron from another. In the classical world, we can distinguish persons. Why this fails to work in 王二's quantum adventure?
 
 \textbox{The classical ways of distinguishing particles all fail\index{identical particles}}{
     Classically, how we distinguish two persons?
@@ -1087,7 +1090,7 @@ At the beginning of this part, item \ref{item:identical} of Alice's adventure is
             \item Elementary particles: We have only discovered finite types of elementary particles (labeled by mass, spin and charge). Two particles of the same type have the same intrinsic features. For examples, you cannot find any difference between two electrons.
             \item Composite particles (such as atoms): They are bound states. Bound state energies are discrete. For example, if two hydrogen atoms are both in their ground states, or first excited states, we cannot find any difference between the two atoms.
         }
-        \item Extrinsic identification: Classically, two persons are separate. We can follow their trajectories to distinguish them. If Bob is in Beijing, and Charlie is in New York, it's easy to figure out whom is whom even if they look alike. 
+        \item Extrinsic identification: Classically, two persons are separate. We can follow their trajectories to distinguish them. 如果王三在，周十一 is in New York, it's easy to figure out whom is whom even if they look alike. 
 
         However, quantum particles can never be in totally different positions. Fundamentally, what separate quantum particles are potential wells. Quantum tunneling tells that the wave function of two particles, say electrons, will always overlap, though the amount may be extremely small. Two electrons are never completely separated.
     }
