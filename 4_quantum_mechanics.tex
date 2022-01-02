@@ -1,4 +1,4 @@
-x\input{structure.tex}
+\input{structure.tex}
 \graphicspath{{4_fig/}}
 \title{第四章\ 量子力学}
 
@@ -13,7 +13,7 @@ x\input{structure.tex}
     \tenum{
         \item 当她知道自己在哪里时，她不知道自己走得有多快；当她知道自己走得有多快时，她不知道自己在哪里。 \label{item:uncertainty}
         \item 在光明中行走有助于她更好地了解自己的位置。 \label{item:measure}
-        \item Walking in the brightness, 王二 finds the apparently continuous beams of light hits her as bullets: one shot after another in a discrete way. And she feels hurt more by the ``bullet'' of blue light than the ``bullet'' of red light.走在有光亮的地方中，王二发现看似连续的光束像子弹一样打在她身上，一个接一个，离散地射中她。而她被蓝光的``子弹''比红光的``子弹''更伤人。 \label{item:bullet}
+        \item Walking in the brightness, 王二 finds the apparently continuous beams of light hits her as bullets: one shot after another in a discrete way. And she feels hurt more by the ``bullet'' of blue light than the ``bullet'' of red light.在有光亮的地方行走，王二发现看似连续的光束像子弹一样打在她身上，一个接一个，离散地射中她。而她被蓝光的``子弹''比红光的``子弹''更伤人。 \label{item:bullet}
         \item 她不再需要通过门进入房间。她有很小的机会穿过墙壁直接进入房间（尽管她更有可能被弹回）。 \label{item:cross-wall}
         \item 以微调的速度，她可以将房间的前墙和后墙一起使用，极大地扩大穿墙机会。 \label{item:resonant-tunneling}
         \item 如果她仍然偏好通过穿过门进入房间，她可以同时穿过两扇门。然后她很可能会出现在房间的某个地方，但永远不会出现在其他地方。 \label{item:double-door-interference}
@@ -62,29 +62,29 @@ The nature of light was studied and debated for thousands of years. In the class
 
 现在你已经非常清楚经典粒子和波的含义，现在我们来探索光的性质。
 
-\mtextbox{The double-slit experiment\index{double-slit experiment}}{
-    The double-slit experiment is an important turning point in the history for the wave theory of light. Let us review it here. As in the figure below, two beams of light travel through two slits and meets on the screen. The experiment needs to be explained by the wave theory of light. 
+\mtextbox{双缝实验\index{双缝实验}}{
+    The double-slit experiment is an important turning point in the history for the wave theory of light. Let us review it here. As in the figure below, two beams of light travel through two slits and meets on the screen. The experiment needs to be explained by the wave theory of light. 双缝实验是光波理论历史上的一个重要转折点，让我们回顾一下。如下图，两束光穿过两个狭缝，在屏幕上相遇。这个实验需要用光的波动理论来解释。
     \newline
     \includegraphics[width=\textwidth]{double_slit_1s}
     \newline
-    On the screen, the pattern looks
+    在屏幕上，图案看起来像是这样
     \newline
     \includegraphics[width=\textwidth]{double_slit_2}
     \newline
-    The position of the bright and dark bands on the screen can be computed by comparing distances $s_1$ and $s_2$ on the figure.
+    可以通过比较图中的$s_1$和$s_2$距离来计算屏幕上明亮条纹和暗淡条纹的位置。
     % $$s_1 = \sqrt{L^2 + (d+\delta)^2} \simeq s \left ( 1 + \frac{\delta d}{s^2}  \right )$$
     % $$s_2 = \sqrt{L^2 + (d-\delta)^2} \simeq s \left ( 1 - \frac{\delta d}{s^2}  \right )$$
     % $$s_1 - s_2 \simeq \frac{2\delta d}{s}~. $$ 
     \mtitem{
-        \item  If $s_1-s_2 = 0, \lambda, 2\lambda, \ldots$, then light from both trajectories oscillate towards the same direction (constructive interference), and they leave bright bands on the screen.
-        \item If $s_1-s_2 = \lambda/2, 3\lambda/2, \ldots$, then light from both trajectories oscillate towards different directions (destructive interference), and they leave dark bands on the screen.
+        \item  如果$s_1-s_2 = 0, \lambda, 2\lambda, \ldots$，那么来自两个轨迹的光朝同一方向振荡（相长干涉），并在屏幕上留下明亮条纹
+        \item 如果$s_1-s_2 = \lambda/2, 3\lambda/2, \ldots$，然后来自两个轨迹的光向不同方向振荡（相消干涉），并在屏幕上留下暗淡条纹。
     }
     \tcblower
-    For the double-slit experiment to work, the light wave must at the same time go through two slits. If we block one slit, the originally dark spots will become bright again.
+    要进行双缝实验，光波必须同时通过两条缝。如果我们挡住一个狭缝，原来的黑点就会变亮。
 }
-\textbox{Is light particle or wave? The debate in the history}{
+\textbox{光是粒子还是波：一个历史上的争论}{
     \titem{
-        \item As early as 400BC, Democritus asserted that all things are made of atoms (tinny particles) including light.
+        \item 早在公元前 400 年，德谟克利特\footnote{英语：Democritus，希腊语：Δημόκριτο（前460年—前370年或前356年），古希腊自然派哲学家。——译者注。}就断言万物都是由原子（微小粒子）构成的，包括光。
         \item In the early 17th century, optics was developing very fast led by microscopes, telescopes and so on. In 1630s, Descartes considered light as wave. In 1660, Grimaldi discovered diffraction of light, which behaves like water wave. 
         \item Newton discovered the dispersion of light (1666). He considered light as particles and dispersion is interpreted as mixing and separation of different particles (1672).
         \item Hooke and company strongly criticized Newton's particle theory of light and supported the wave theory.
