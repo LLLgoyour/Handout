@@ -126,11 +126,11 @@
 
 \marginnote{我们已经说过光速是在现代定义长度的一种方式。 但是现在，让我们先回到 1900 年代初期，人们仍然考虑以单位时间内移动的距离来衡量的光速，以及距离和时间符合常识的定义。}
 \textbox{来自移动光源的光的速度是多少？}{
-	王三拿着蜡烛。 王三蜡烛发出的光相对于王三的速度是 $c_3 = c$ 。 
+	王三拿着蜡烛。 王三的蜡烛发出的光相对于王三的速度是 $c_3 = c$ 。 
 	王二在一辆车里以相对于王三 $v$ 的速度运动。 王二也拿着一个蜡烛，我们来思考:
 	\titem{
-		\item 王二蜡烛发出的光相对于王二的速度$c_2$ 是多少?
-		\item 王二蜡烛发出的光相对于王三的速度$c_3$ 是多少?（注：此处 $c_3$ 与上文 $c_3$ 代表的是不同光源相对于王三的速度）
+		\item 王二的蜡烛发出的光相对于王二的速度$c_2$ 是多少?
+		\item 王二的蜡烛发出的光相对于王三的速度$c_3$ 是多少?（注：此处 $c_3$ 与上文 $c_3$ 代表的是不同光源相对于王三的速度）
 	}
 
 	\includegraphics[width=0.6\textwidth, trim={0 3pt 3pt 0}, clip]{light}
@@ -568,179 +568,180 @@
 \item 如果仍有部分无法使其直观，请暂时使用一些（尽可能少的）数学推导。稍后尝试用真实的直觉替换它。
 }
 
-\section{Length Contraction}\label{sec:length}
+\section{尺缩效应}\label{sec:length}
 
-We
-\marginnote{In fact, length contraction was hypothesized way before special relativity, by FitzGerald (1889) and Lorentz (1892) to explain the Michelson-Morley experiment. For this reason it is also known as Lorentz contraction. But it is special relativity that put length contraction into a solid and general context.}
-have just witnessed the revolution of the concept of time -- time duration is relative depending on the motion of observers. Now is the turn of space. Is space interval still absolute, or it is similarly relative depending on observers?
+我们刚刚见证了时间概念的革命——持续时间是相对的，取决于观察者的运动。 那么空间呢？ 它仍然是绝对的，还是像时间一样是相对的、取决于观察者的呢？
+在本节中，我们将通过 2 种方式得出相同的长度收缩结论。 第一种方式是必须要理解的，而第二种方式则不是必须理解的。但从不同的角度理解相同问题是值得推荐的做法。
+\marginnote{事实上，在狭义相对论之前，长度收缩是由斐兹杰惹 (1889) 和 洛伦兹 (1892) 假设的，以解释迈克尔逊-莫雷实验。 因此，它也被称为洛伦兹收缩。 但狭义相对论把尺缩效应通过严谨的方式放到了理论物理的背景中。}
 
-In this section, we will arrive at the same conclusion of length contraction in 2 ways. You are expected to understand the first well. The other is optional but recommended as to understanding the same problem in different aspects.
-
-\textbox{The grenade revisited}{
-	Let's think about the grenade problem from a different angle. Recall wrt the ground, the grenade has flown a distance $s = \gamma v \Delta t$. Now, what the grenade ``thinks''? 
-
+\textbox{回顾手榴弹问题}{
+让我们从不同的角度考虑手榴弹问题。 回想一下，相对于地面手榴弹已经飞了一段距离 $s = \gamma v \Delta t$。 现在，手榴弹“想”的是什么呢？
 	\marginnote{\includegraphics[width=0.35\textwidth]{grenade_length_contraction}}
 
-	It still has lifetime $\Delta t$ (wrt itself). Though it would think that it has flown a distance $v \Delta t = s/\gamma$. But the observer standing on the ground thinks that it has flown a longer distance (wrt a static observer). How can it be?
+它仍然有生命周期 $\Delta t$ (相对于它本身)。 虽然它会认为它已经飞了一段距离$v \Delta t = s/\gamma$。 但是站在地面上的观察者认为它已经飞了更长的距离（相对于静态观察者而言）。 怎么会这样呢？
 
-	To make the situation clearer, let us put a ruler on the ground, and let the grenade slide over the ruler. The rest length of the ruler is $s = \gamma v \Delta t$.
+为了让情况更清楚，让我们在地上放一把尺子，让手榴弹滑过尺子。 标尺的剩余长度为 $s = \gamma v \Delta t$。
 
-	Wrt the grenade, the ruler (and ground) is moving with $v$ for time $\Delta t$. Thus the ruler has length $s/\gamma$ wrt the grenade. 
-
+相对于手榴弹，尺子（和地面）以 $v$ 移动 $\Delta t$长的时间。 因此，尺子相对于手榴弹的长度为 $s/\gamma$。
 	\tcblower
 
-	To conclude, a moving ruler is shorter by $1/\gamma$ if placed parallel to the motion direction. Also recall that if the ruler is perpendicular to the motion direction, then the length does not change.
+总而言之，如果平行于运动方向放置，移动标尺会缩短 $1/\gamma$。 同时回想一下，如果标尺垂直于运动方向，长度不会改变。
 }
 	
 
-We would have closed up the section here. But what happened during $\Delta t$ time in a grenade is opaque. Let us construct a light ruler to see what happens explicitly, which can also give insight on velocity addition. 
+我们会在这里结束该部分的内容。 但是在 $\Delta t$ 时间内手榴弹中发生的事情我们是不知道的。 让我们构建一个光尺来看看究竟发生了什么，这也可以提供有关速度加法的想法。
 
-\textbox{(Optional) Length contraction from the light ruler (4-step reasoning)}{\index{length contraction from moving ruler}
-	Although we have got the result, it is a good practice to derive it using another way. Let us construct a light ruler and study how it contracts. This will explicitly verify our promise: No matter how the ruler is defined, it should contract the same way. To see that, let us apply our familiar 4 steps:
-	\tenum{
-		\item In a static frame, the length of the ruler is $D = \frac{1}{2} c \Delta t$, where $\Delta t$ is the time interval between the emission and detection of light.
+\textbox{(选读) 光尺的尺缩效应（4步推理）}{\index{运动尺子的}
+虽然我们已经得到了结果，但使用另一种方式推导出它是一个很好的做法。 让我们构建一个光尺并研究它是如何收缩的。 这将明确验证我们的承诺：无论标尺如何定义，它都应该以相同的方式收缩。 为了看到这一点，让我们应用我们熟悉的 4 个步骤：
+\tenum{
+		\item 在静止参考系中，标尺的长度为$D = \frac{1}{2} c \Delta t$，其中$\Delta t$ 是光发射和检测之间的时间间隔。
 
-		\item Now we load the light ruler on Alice's car. The situation and the spacetime diagram that Bob finds are in the figures below. 
+		\item 现在我们将光尺放到 Alice 的车上。 Bob观察到的情况和时空图如下图所示。
 
 		\includegraphics[width=0.5\textwidth, trim={0 3pt 3pt 0}, clip]{light_ruler}
 		\hspace{0.1\textwidth}
 		\includegraphics[width=0.6\textwidth, trim={0 2pt 2pt 0}, clip]{light_ruler_2}
 
-		According to ($\mathbb{R}$), Alice consider the length of the ruler to be
+		根据 ($\mathbb{R}$)，Alice 认为尺子的长度为
 		\begin{align}
 		\label{eq:ruler_Alice}
 		D_A = \frac{1}{2} c \Delta t_A~.
 		\end{align}
 
-		\item What length shall Bob get? We first divide the time interval $\Delta t_B$ into two parts: $\Delta t_{B1}$ and $\Delta t_{B2}$ for the time interval from the emitter to the mirror and from the mirror to the detector, respectively. From the above figure (right panel),
+		\item Bob 应该测量到的长度是多少？ 我们首先将时间间隔 $\Delta t_B$ 分为两部分：$\Delta t_{B1}$ 和 $\Delta t_{B2}$ 分别为从发射器到镜子和从镜子到检测器的时间间隔。 从上图（右）可知，
 		\begin{align}
 		\label{eq:bobx}
 		c\Delta t_{B1} = D_B + v \Delta t_{B1}~, \qquad
 		c\Delta t_{B2} = D_B - v \Delta t_{B2}~.
 		\end{align}
-		Thus
-		\mtextbox{Meaning of $D_B$}{Be reminded that $D_B$ is NOT the length of Bob's ruler. But rather, it's the length of Alice's ruler (i.e. moving with Alice) in Bob's frame. So wrt Bob (static observer), Alice's ruler (moving ruler) contracts.}
+		因此
+		\mtextbox{$D_B$ 的含义}{请注意$D_B$ 不是鲍勃尺子的长度。 更确切地说，它是 Bob 参考系中 Alice 的尺子（即与 Alice 一起移动的）的长度。 所以相对于鲍勃（静态观察者），爱丽丝的尺子（移动的尺子）缩短了。}
 		\begin{align}
 		\label{eq:bobt}
 		\Delta t_B \equiv \Delta t_{B1} + \Delta t_{B2} = \frac{D_B}{c-v} + \frac{D_B}{c+v} = \frac{2}{c} \frac{D_B}{1-\frac{v^2}{c^2} }
 		= \frac{2}{c} \gamma^2 D_B~,
 		\end{align}
-		where as always, $\gamma\equiv \frac{1}{\sqrt{1-v^2/c^2}} $. Thus
+		一如既往的， $\gamma\equiv \frac{1}{\sqrt{1-v^2/c^2}} $. Thus
 		\begin{align}
 		\label{eq:bobalice}
 		D_B = \frac{c}{2} \frac{\Delta t_B}{\gamma^2} = \frac{c}{2} \frac{\gamma \Delta t_A}{\gamma^2} 
 		= \frac{c}{2} \frac{\Delta t_A}{\gamma} = \frac{D_A}{\gamma}~.    
 		\end{align}
-		Again, we arrive at the conclusion that moving ruler contracts in the motion direction.
+		同样，我们得出结论，移动的尺子在运动方向上收缩。
 
-		\item For all rulers, one should get the same conclusion as the light ruler.
+		\item 对于所有的尺子，我们都会得到与光尺一样的结论。
 	}	
 }
 
-\mtextbox{(Optional) A speedmeter}{
-	What's the motivation to replace $c$ with $v$ in one way? We can ask what this apparatus can do when it's at rest. From $\Delta t = D/u + D/c$, as we have defined $\Delta t$ and $D$, we can solve $u$. Thus, the apparatus is a speedmeter. No wonders that a speedmeter can tell you about speed addition.
+\mtextbox{(选读) 一个速度表}{
+	以一种方式将 $c$ 替换为 $v$ 的动机是什么？ 我们可以问这个装置在静止时能做什么。 通过$\Delta t = D/u + D/c$，和我们定义的$\Delta t$ 和$D$，我们可以解出$u$。 因此，这个装置是一个速度计。作为一个速度计，也就不难解释为什么它可以告诉我们有关速度加法的信息。
 }
-\textbox{(Optional) A first look at velocity addition}{\index{velocity addition: first look}
-	Let's slightly modify the light ruler: replace the light from emitter to mirror into a moving particle, with speed $u_A$ wrt Alice. After the ``mirror'' gets the particle, the ``mirror'' still sends back a beam of light (thus it shouldn't actually be called a mirror though). Then how the light ruler experiment get modified?
+\textbox{(选读) 关于速度加法的简单介绍}{\index{速度加法简介}
+	让我们稍微修改一下光尺：将来自发射器的光替换为镜像到一个移动的粒子，相对于Alice的速度为 $u_A$  。 在“镜子”接收到粒子之后，“镜子”仍然会发回一束光（因此实际上它不应该被称为镜子）。 那么光尺实验是怎么修改的呢？
 	\titem{
-		\item Wrt Alice, for the particle forward, $u_A \Delta t_{A1} = D_A$; and for light moving back, $c \Delta t_{A2} = D_A$. Thus,
+		\item 相对于Alice，向前的粒子，$u_A \Delta t_{A1} = D_A$; 对于向后移动的光，$c \Delta t_{A2} = D_A$。 因此，
 		\begin{align}\label{eq:fl-veladd1}
 			\Delta t_A = \Delta t_{A1} + \Delta t_{A2} 
 			= D_A \left( \frac{1}{u_A} + \frac{1}{c}  \right)~.
 		\end{align}
 
-		\item Wrt Bob, he will find the particle moving at a different velocity $u_B$. For the particle moving forward, $u_B \Delta t_{B1} = D_B + v \Delta t_{B1}$; and for light moving back, $c\Delta t_{B2} = D_B - v \Delta t_{B2}$. Thus,
-		\mtextbox{(Optional) The additive rapidity}{Eq.~\eqref{eq:add-eg} looks ugly. Wouldn't nature be simpler? But who told us velocity is the best variable to describe motion? Let us define \emph{rapidity}:\label{rapidity} $\phi(v) \equiv \mathrm{arctanh} (v/c)$. Inserting this definition to Eq.~\eqref{eq:add-eg}, we simply get
-		$$ \phi(u_B) = \phi(u_A) + \phi(v)~. $$
-		Thus rapidity is the variable that is actually additive. 
-		\tcblower
-		Why hyperbolic functions arises here (they originally are functions to parameterize a hyperbolic curve $x^2-y^2=1$ with additive parameters, just as what trigonometric functions sin, cos, tan are functions to parameterize a circle $x^2+y^2=1$ with additive angles)? Do the hyperbolic functions imply a new underlying math structure? Why motion in such a formula looks not like division of space and time, but rather hyperbolic rotation of space and time? We will return to this question in section \ref{sec:geometry}.
-		}
+		\item 对于 Bob，他会发现粒子以一个不同的速度 $u_B$ 移动。 对于向前运动的粒子，$u_B \Delta t_{B1} = D_B + v \Delta t_{B1}$; 对于向后移动的光，$c\Delta t_{B2} = D_B - v \Delta t_{B2}$。 因此，
+		
+
 		\begin{align}\label{eq:fl-veladd2}
 			\Delta t_B = \Delta t_{B1} + \Delta t_{B2}
 			= D_B \left(  \frac{1}{u_B-v} + \frac{1}{c+v}  \right)~.
 		\end{align}
-		\item We already know that $\Delta t_B = \gamma \Delta t_A$ and $D_B = D_A/\gamma$. Now divide \eqref{eq:fl-veladd2} by \eqref{eq:fl-veladd1} (LHS and RHS, respectively), we get
+		\mtextbox{(选读) 具有加性的快度}{Eq.~\eqref{eq:add-eg} 看起来很丑。 自然不是更简单吗？ 但是谁告诉我们速度是描述运动的最佳变量？ 让我们定义 \emph{rapidity}:\label{rapidity} $\phi(v) \equiv \mathrm{arctanh} (v/c)$. 将此定义放到 Eq.~\eqref{eq:add-eg} 中，我们简单地得到
+		
+		$$ \phi(u_B) = \phi(u_A) + \phi(v)~. $$
+		因此快度才是真正具有加性的变量。
+		\tcblower
+		为什么这里出现双曲函数（它们最初是用加性参数参数化双曲曲线 $x^2-y^2=1$ 的函数，就像三角函数 sin、cos、tan 是参数化圆 $x^2 的函数一样 +y^2=1$ 加角）？ 双曲函数是否暗示了一个新的基础数学结构？ 为什么这样一个公式中的运动看起来不像是时空的划分，而是时空的双曲线旋转？ 我们将在 \ref{sec:geometry} 部分回到这个问题。
+		}
+		\item 我们已经知道了 $\Delta t_B = \gamma \Delta t_A$ 和 $D_B = D_A/\gamma$. 现在用 \eqref{eq:fl-veladd1} 除以\eqref{eq:fl-veladd2} (LHS and RHS, respectively), 我们得到
 		\begin{align} \label{eq:add-eg}
 			u_B = \frac{u_A + v}{1+u_A v / c^2} ~. 
 		\end{align}
 	}
-	When taking $u_A\rightarrow c$ limit, we find that $u_B\rightarrow c$, consistent with $(\mathbb{C})$. In section \ref{sec:lorentz}, you will learn a more general version of the velocity addition formula.
+	在我们取 $u_A\rightarrow c$ 的极限的时候, 我们会发现 $u_B\rightarrow c$ 和 $(\mathbb{C})$是一致的。 在 \ref{sec:lorentz}这部分,你会学到速度加法公式更通用的版本。
 }
 
-% \textbox{(Optional) Length contraction from two moving rods}{
-% 	Alice and Bob carry rods and moves with relative speed $v$ towards each other. A light signal is emitted from the left end of the rods when the left ends coincide. The light signal reaches the right end of the rods when the right ends coincide.
+  \textbox{(选读) 两个移动杆的尺缩效应}{
+  	爱丽丝和鲍勃分别带着杆并以相对速度 $v$ 朝向彼此移动。 当两杆左端重合时，从杆的左端发出光信号。 当两杆右端重合时，光信号到达棒的右端。
 
-% 	\includegraphics[width=\textwidth]{contraction3}
+  	\includegraphics[width=\textwidth]{contraction3}
 
-% 	For the situation of the above figure, According to Bob (left panel of the figure):
-% 	\begin{align}
-% 	\label{eq:c3bob}
-% 	\frac{L_B-L_A(v)}{v} = \frac{L_B}{c}~,  \quad\rightarrow\quad
-% 	\frac{L_A(v)}{L_B} = 1- \frac{v}{c} ~,  
-% 	\end{align} 
-% 	and according to Alice (right panel of the figure),
-% 	\begin{align}
-% 	\label{eq:c3alice}
-% 	\frac{L_B(v)-L_A}{v} = \frac{L_A}{c}~,  \quad\rightarrow\quad
-% 	\frac{L_B(v)}{L_A} = 1+ \frac{v}{c} ~.
-% 	\end{align}
-% 	Multiply the above two equations, 
-% 	\begin{align}
-% 	\label{eq:c3m}
-% 	\frac{L_A(v)}{L_A} \frac{L_B(v)}{L_B} = 1- \frac{v^2}{c^2}~.   
-% 	\end{align}
-% 	This relation holds for all lengths \marginnote{Change $L_A$, the RHS does not change, so the RHS should not depend on $L_A$. For the same reason, the RHS does not depend on $L_B$}. As a result, we must have
-% 	\begin{align}
-% 	\label{eq:c3}
-% 	\frac{L_A(v)}{L_A} = \frac{L_B(v)}{L_B} = \sqrt{1- \frac{v^2}{c^2}} = 1/\gamma~.
-% 	\end{align}
-% }
+  	对于上图的情况，根据 Bob（左图）：
+  	\begin{align}
+  	\label{eq:c3bob}
+  	\frac{L_B-L_A(v)}{v} = \frac{L_B}{c}~,  \quad\rightarrow\quad
+  	\frac{L_A(v)}{L_B} = 1- \frac{v}{c} ~,  
+  	\end{align} 
+  	根据Alice (右图),
+  	\begin{align}
+  	\label{eq:c3alice}
+  	\frac{L_B(v)-L_A}{v} = \frac{L_A}{c}~,  \quad\rightarrow\quad
+  	\frac{L_B(v)}{L_A} = 1+ \frac{v}{c} ~.
+  	\end{align}
+  	把上述两图相乘，
+  	\begin{align}
+  	\label{eq:c3m}
+  	\frac{L_A(v)}{L_A} \frac{L_B(v)}{L_B} = 1- \frac{v^2}{c^2}~.   
+  	\end{align}
+  	这种关系适用于所有长度 \marginnote{更改 $L_A$，方程右边的式子不会改变，因此右式不应该依赖于 $L_A$。 出于同样的原因，右式不依赖于 $L_B$}。 结果，我们必须有
+  	\begin{align}
+  	\label{eq:c3}
+  	\frac{L_A(v)}{L_A} = \frac{L_B(v)}{L_B} = \sqrt{1- \frac{v^2}{c^2}} = 1/\gamma~.
+  	\end{align}
+  }
 
-We have got two results from the light clock now: time dilation; and after time dilation have become known, we rotate the light clock to get length contraction. Now that length contraction have become known, can we get something else?
+我们现在从光钟得到了两个结果，第一个是时间膨胀（钟慢）。在已知时间膨胀之后，我们旋转光钟得到长度收缩（尺缩）。在知道了知道长度收缩之后，我们还能得到别的东西吗？
 
-\section{Meaning of the ``Same Time'' (Simultaneity)} \label{sec:same-time}
+\section{“同一时间”（同时性）的含义} \label{sec:same-time}
 
-Moving ruler contracts. Now, is there a twin ruler paradox? If Alice and Bob each holds a ruler along their motion direction, and when they meet, they compare the length of their ruler, can they find each other's ruler shorter? How can that happen?
+我们知道动尺变短。 现在，我们比较两个标尺是否会产生悖论？ 如果 Alice 和 Bob 各自拿着一把尺子沿着他们的运动方向，当他们相遇时，他们比较了他们的尺子的长度，他们会发现对方的尺子更短吗？ 为什么会这样呢？
 
-The key observation is that, to be fair, they have to compare the two ends of the ruler at the same time. Wait, do they have the same concept of the same time?
+关键的问题是是，想要公平，他们必须同时比较标尺的两端。 但是等等，他们有相同的时间概念吗？
 
-\subsection{Simultaneity Depends on Which Observer}
+\subsection{同时性取决于观察者是谁}
 
 \needspace{0.1\textwidth}
-\mtextbox{Why introducing two objects?}{Actual objects $P$, $Q$ are needed to find an observer standing at the midpoint. Because a midpoint is defined for two points in space ($P$ and $Q$), not for two events ($E_P$ and $E_Q$) in spacetime.}
-\textbox{The meaning of simultaneity wrt an observer}{\index{simultaneity}\index{same time}
-	Consider two small objects $P$ and $Q$, not moving wrt each other.
-	An observer is standing exactly at the midpoint of $PQ$, and not moving wrt $PQ$. This can be practically done with a static ruler: Let $P$ be at the 0m point, $Q$ be at the 1m point, and the observer at the 0.5m point.
+\mtextbox{为什么要引入两个物体？}{需要实际对象 $P$、$Q$ 才能找到站在中点的观察者。 因为中点是为空间中的两个点（$P$ 和 $Q$）定义的，而不是为时空中的两个事件（$E_P$ 和 $E_Q$）定义的。}
+\textbox{相对于观察者同时性的含义}{\index{同时性}\index{相同时间}
+	考虑两个小物体 $P$ 和 $Q$，它们之间没有相对运动。
+观察者正好站在 $PQ$ 的中点，并且没有相对于 $PQ$ 移动。这实际上可以使用静态标尺完成：让 $P$ 在 0m 处，$Q$ 在 1m 处，观察者在 0.5m 处。
 
-	\includegraphics[width=0.4\textwidth]{st_ground}
-	\mtextbox{Relating to the time of a frame}{Previously, we have introduced the time of a reference frame -- at different positions, time are synchronized using light signals, deducting the time used for light propagation. Here, the concept of simultaneity means that $E_P$ and $E_Q$ happens at the same coordinate time in this static frame.}
+\includegraphics[width=0.4\textwidth]{st_ground}
+\mtextbox{关于参考系的时间}{之前我们介绍过参考系的时间——在不同的位置，时间是用光信号同步的，减去光传播所用的时间。这里，同时性的概念意味着$E_P$ 和$E_Q$ 在这个静态框架中发生在相同的坐标时间。}
 
-	Introduce two events: event $E_P$ happens to object $P$; and event $E_Q$ happens to object $Q$. For example, $E_P$ and $E_Q$ are the turn-on time of light bulbs at $P$ and $Q$, respectively. Recall that each event happens at a particular moment.
+引入两个事件：事件$E_P$发生在对象$P$上；并且事件 $E_Q$ 发生在对象 $Q$ 上。例如，$E_P$ 和 $E_Q$ 分别是灯泡在 $P$ 和 $Q$ 处的打开时间。回想一下，每个事件都发生在特定的时刻。
 
-	Now we are ready to define whether $E_P$ and $E_Q$ happens at the same time, or one is earlier/later than the other, wrt the observer:
-	
-	If the light signal from $E_P$ and $E_Q$ reach the observer at the same time, then $E_P$ and $E_Q$ happens at the same time. Otherwise, whichever reaches the observer earlier happens earlier.
+现在我们准备好定义 $E_P$ 和 $E_Q$ 是否同时发生，或者一个比另一个早/晚，相对于观察者来说：
+
+如果来自 $E_P$ 和 $E_Q$ 的光信号同时到达观察者，则 $E_P$ 和 $E_Q$ 同时发生。否则，无论哪个更早到达观察者，哪个就更早发生。
 }
 
-\mtextbox{Am I wasting your time?}{
-	Oh, it looks that I am wasting your time by explaining something you already know since kindergarten. This is true. However, one little step further will need university education -- load the device into a car.
-	\tcblower
-	Einstein said with great modesty: 
-	``How it happened that I in particular discovered the relativity theory, it seemed to lie in the following circumstance. The normal adult never bothers his head about space-time problems. Everything there is to be thought about it, in his opinion, has already been done in early childhood. I, on the contrary, developed so slowly that I only began to wonder about space and time when I was already grown up. In consequence I probed deeper into the problem than an ordinary child would have done.'' 
+\mtextbox{我是在浪费你的时间吗？}{
+这看来像是在浪费你的时间来解释一些你从幼儿园就已经知道的事情。这没错。然而，在下一步中，我们就会需要高等教育。
+\tcblower
+爱因斯坦非常谦虚地说：
+``我似乎是在以下情况发现了相对论，。正常的成年人从不为时空问题烦恼。在他看来，所有需要考虑的事情在他的童年早期就已经完成了。而我发展得如此缓慢，以至于我长大后才开始怀疑空间和时间。因此，我比普通孩子更深入地探究了这个问题。
 }
-\textbox {A spacetime diagram of the above scenario}{
-	Let us draw the events in a ``spacetime diagram''. Spacetime diagrams will turn out to be useful tools in studying relativity. On a spacetime diagram:
+
+
+\textbox {上述场景的时空图}{
+	让我们在“时空图”中画出这些事件。时空图将成为研究相对论的有用工具。在时空图上：
 
 	\begin{minipage}
 		{0.58\textwidth}
 		\titem{
-			\item An event is a point.
-			\item Light travel $45^\circ$ lines.
-			\item An object (or observer, except light) is a line (called world line) with $|$slope$| > 45^\circ$ everywhere.
-			\item An inertial observer is a straight line.
-			\item A static object is a line parallel to the $ct$ axis.
-			\item Events at the same time are parallel to the $x$ axis.
+			\item 一个事件是一个点
+			\item 光以 $45^\circ$ 角的方向传播
+			\item 一个物体（或观察者，除了光）是一条线（称为世界线），$|$斜率$| > 45^\circ$ 
+			\item 惯性观察者是一条直线。
+            \item 静止的物体是一条平行于 $ct$ 轴的线。
+            \item 同时事件平行于 $x$ 轴。
 		}
 	\end{minipage}
 	\hspace{0.02\textwidth}
@@ -749,13 +750,13 @@ The key observation is that, to be fair, they have to compare the two ends of th
 		\includegraphics[width=\textwidth]{st_diag_ground}
 	\end{minipage}
 
-	If the light rays connecting $E_P$ and $E_Q$ reaches the world line of the observer at the same point, they happen at the same time wrt the observer. On the contrary, $\widetilde{E}_Q$ is considered earlier than $E_P$ wrt the observer as the light ray from $\widetilde{E}_Q$ arrives earlier at the observer.
+	如果连接 $E_P$ 和 $E_Q$ 的光线在同一点到达观察者的世界线，则它们相对于观察者同时发生。相反，$\widetilde{E}_Q$ 被认为比观察者的 $E_P$ 更早，因为来自 $\widetilde{E}_Q$ 的光线更早到达观察者。
 }
 
-\textbox{Simultaneity is a relative concept (4-step reasoning)}{\index{simultaneity is relative}
+\textbox{同时性是一个相对概念（四步推理）}{\index{同时性是一个相对概念}
 	\tenum{
-		\item We have defined simultaneity for a static observer with the above $P$-observer-$Q$ system.
-		\item Let us load the system into a car and let the moving observer be Alice. Let us study the events $E_P$ and $E_Q$, which happen at the same time wrt Alice. In our example, that corresponds to the light bulbs turning on at the same time at $P$ and $Q$ wrt Alice. See left panel of the below figure.
+		\item 我们已经用上面的 $P$-observer-$Q$ 系统为静态观察者定义了同时性。
+		\item 让我们将这个系统放到汽车中，让移动的观察者是 Alice。 让我们研究一下事件 $E_P$ 和 $E_Q$，它们同时发生在 Alice 身上。 在我们的示例中，这对应于在 Alice 的 $P$ 和 $Q$ 处同时打开的灯泡。 见下图左面板。
 
 		\begin{minipage}
 			{0.55\textwidth}
@@ -766,27 +767,27 @@ The key observation is that, to be fair, they have to compare the two ends of th
 			\includegraphics[width=\textwidth]{st_diag_car}
 		\end{minipage}
 
-		\mtextbox{Bob's spacetime diagram}{
+		\mtextbox{Bob的时空图}{
 			\mtitem{
-				\item Draw Bob's axes and world lines $A$, $P$, $Q$.
-				\item Draw the event that two beams of light meet Alice.
-				\item Draw the history of these two beams of light as $45^\circ$ lines.
-				\item The intersection of light and $P$, $Q$ are events $E_P$, $E_Q$.
-				\item Compare the time of $E_P$ and $E_Q$ in Bob's frame.
-				\item Draw the spacetime axes of Alice's frame in Bob's frame.
+				\item 画出Bob的时空轴和世界线 $A$, $P$, $Q$.
+				\item 画出两束光线同时到达Alice
+				\item 将这两束光的历史画成 $45^\circ$ 线
+				\item 光与$P$、$Q$的交点是事件$E_P$、$E_Q$。
+				\item 比较在Bob参考系中 $E_P$ 和 $E_Q$ 的时间
+				\item 在 Bob 的参考系中画出 Alice 参考系的时空轴。
 			}
 		}
-		\item Wrt Bob, do $E_P$ and $E_Q$ happen at the same time? In other words, do $E_P$ and $E_Q$ have the same time coordinates in Bob's frame? Making use of a spacetime diagram in Bob's frame (right panel of the above figure), we immediately find that $E_P$ is earlier than $E_Q$ wrt Bob. On the contrary, an event $\widetilde{E}_Q$ considered to be at the same time with $E_P$ wrt Bob, is considered earlier than $E_P$ wrt Alice.
+		\item 相对于Bob，$E_P$ 和 $E_Q$ 是否同时发生？ 换句话说，$E_P$ 和 $E_Q$ 在 Bob 的坐标系中是否具有相同的时间坐标？ 利用 Bob 框架中的时空图（上图右图），我们立即发现 $E_P$ 比 Bob 早于 $E_Q$。 相反，一个事件 $\widetilde{E}_Q$ 被认为与鲍勃的 $E_P$ 同时发生，被认为早于爱丽丝的 $E_P$。
 		
-		\item The relativity of simultaneity is not only true for the $P$-observer-$Q$ system, but for all consistent definitions of simultaneity ($\mathbb{R}$).
+		\item 同时性的相对性不仅适用于 $P$-observer-$Q$ 系统，而且适用于所有一致的同时性定义 ($\mathbb{R}$)。
 	}
 }
-Now you should be able to resolve the puzzle of ``who wrote the letter first''.
+现在你应该可以解决“谁先写这封信”的难题了。
 
-\textbox{Recap: equal time slices}{
+\textbox{回顾: 相等的时间片段}{
 	\begin{minipage}
 		{0.55\textwidth}
-		To condense the above analysis into one figure: When Alice is moving wrt Bob, the coordinate system of Alice drawn in Bob's coordinate system is as the figure to the right. It is similar to rotation, but both space and time axes oddly fold inwards. We will discuss this transformation (Lorentz transformation) in more details later. You should pay special attention on the equal time lines wrt Alice on this figure -- different from that wrt Bob.
+		把上面的分析浓缩成一张图：当爱丽丝向鲍勃移动时，爱丽丝在鲍勃坐标系中绘制的坐标系如右图所示。 它类似于旋转，但空间和时间轴都奇怪地向内折叠。 稍后我们将更详细地讨论这种变换（洛伦兹变换）。 你应该特别注意这张图上相对于爱丽丝的相等时间线——与相对于鲍勃的不同。
 	\end{minipage}
 	\hspace{0.1\textwidth}
 	\begin{minipage}
@@ -795,15 +796,16 @@ Now you should be able to resolve the puzzle of ``who wrote the letter first''.
 	\end{minipage}
 }
 
-\mtextbox{Can SR describe acceleration?}{There is a common misconception saying ``special relativity cannot describe the experience of an accelerating observer''. This is \emph{wrong}. The laws of special relativity (time dilation, length contraction, and more later) are expressed in inertial frames (just because the laws are mathematically simpler in inertial frames). Thus, we need to \emph{use an inertial frame} to apply these laws to our question. However, we can \emph{calculate in this inertial frame} what an accelerating observer sees (how light reach her eyes, for example). In this way, the experience of an accelerating observer is described \emph{with the help of an auxiliary inertial frame}.}
-\textbox{Twin paradox revisited}{\index{twin paradox: revisited}
+\mtextbox{狭义相对论可以描述加速度吗？}{有一个常见的误解是“狭义相对论不能描述加速观察者”. 这是 \emph{错误的}。 狭义相对论的定律（时间膨胀、长度收缩等）用惯性坐标系表示（只是因为惯性坐标系中的定律在数学上更简单）。  因此，我们需要 \emph{使用惯性参考系} 将这些定律应用于我们的问题。 然而，我们可以\emph{在这个惯性参考系中计算}加速观察者看到的东西（例如，光线如何到达她的眼睛）。 这样，加速观察者的经验被描述为\emph{在辅助惯性系的帮助下}}
+\textbox{再谈双生子佯谬}{\index{再谈双生子佯谬}
 	\begin{minipage}
 		{0.6\textwidth}
-		In our twin paradox, Alice is not in an inertial observer at the turn around time. Thus she cannot use special relativity of an inertial observer to \emph{directly} explain her experience. However, Bob can help her to figure out what happens at the turn-around:
+		在我们的双生子佯谬中，爱丽丝在转弯时并不是惯性观察者。 因此她不能用惯性观察者的狭义相对论来\emph{直接}解释她的经历。 然而，鲍勃可以帮助她弄清楚在她调头时会发生什么：
 
-		Before and after the turn-around, Alice is in two \emph{different} inertial frames. Bob's age ``jumps'' when Alice switches from the before-turn-around frame to the after-turn-around frame. Thus in Alice's frames, there is a sudden change in Bob's age.
+		在转弯前后，Alice 处于两个 \emph{不同的} 惯性坐标系中。 当爱丽丝从转身前的参考系切换到转身后的参考系时，鲍勃的年龄“突变”了。 因此，在 Alice 的框架中，Bob 的年龄突然发生了变化。
 
-		As mentioned, to describe what Alice sees (light arrives in her eyes), light propagation time needs to be added. I will leave the details for your exercise.
+		如前所述，为了描述 Alice 看到的东西（考虑光到达她的眼睛），需要加上光传播时间。 
+		
 	\end{minipage}
 	\hspace{0.01\textwidth}
 	\begin{minipage}
@@ -812,22 +814,22 @@ Now you should be able to resolve the puzzle of ``who wrote the letter first''.
 	\end{minipage}
 }
 
-\subsection{Causality and Types of Separations}
+\subsection{因果关系和分离类型}
 
-Now we have understood: the concept of simultaneity is relative to observers. For example, Alice and Bob may consider differently on who wrote the letter first. In other words, time orders of some events (here two events: Alice writes her letter; Bob writes his letter) are reversible. 
+现在我们明白了：同时性的概念是相对于观察者而言的。例如，爱丽丝和鲍勃可能会以不同的方式考虑谁先写了这封信。换句话说，一些事件（这里有两个事件：Alice 写她的信和Bob 写他的信）的时间顺序是可逆的。
 
-A natural question then is: Are all time orders between events reversible?
+那么一个自然的问题是：事件之间的所有时间顺序都是可逆的吗？
 
-\textbox{Time order associated with cause and effect}{\index{causality}
-	Consider an example: Lightning strikes on a tree, and then the tree dies. There are two events here:
+\textbox{与因果相关的时间顺序}{\index{因果关系}
+	考虑一个例子：闪电击中一棵树，然后树就死了。这里有两个事件：
 	\marginnote{\includegraphics[width=0.15\textwidth]{thunder}}
 	\tenum{
-		\item Event E(strike): Lightning strikes on the tree.
-		\item Event E(die): The tree dies. This is an \emph{effect}, \emph{caused} by E(strike).
+		\item 事件E(击中): 闪电击中了树
+		\item 事件E(树死了): 树死了 \emph{事件}, \emph{因为} 事件E（击中）
 	}
-	May a moving observer Ms.~Bright observe that E(die) happens earlier than E(strike)?
+	一个移动的观察者有可能观察到树死了比闪电击中树更早发生吗？
 
-	\mtextbox{Correlation}{Cause-effect is a special case of correlation (conditional probability). If events E1 and E2 have nontrivial correlation, maybe
+	\mtextbox{相关性}{因果关系 is a special case of correlation (conditional probability). If events E1 and E2 have nontrivial correlation, maybe
 	\mtitem{
 		\item E1 causes E2
 		\item E2 causes E1

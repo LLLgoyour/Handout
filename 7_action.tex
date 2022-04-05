@@ -1,5 +1,6 @@
 \input{structure.tex}
 \graphicspath{{7_fig/}}
+\usepackage{ctex}
 \title{第七章\ 从行为到 \\
 自然法则}
 
@@ -7,75 +8,72 @@
 
 \maketitle
 
-\mtextbox{The equation of motion}{
-    The equation to determine the particle's trajectory is known as the equation of motion\index{equation of motion}, which is usually a second order differential equation (or a set of such equations) with time. For example, the motion of a particle in a potential $V(q)$ can be described by an equation of motion $\ddot q + dV/dq = 0$. To solve a realistic problem, the equation of motion is also packed with initial conditions: at an initial time $t_0$, the values of $q(t_0)$ and $\dot q(t_0)$. To solve an equation of motion with such initial conditions is called a Cauchy problem\index{Cauchy problem}.
+\mtextbox{运动方程}{
+    用来推算粒子运动路径的一个关于时间的二次微分方程（或方程组）叫做运动方程。\index{运动方程}比如说，粒子在势 $V(q)$ 中的运动可以用运动方程$\ddot q + dV/dq = 0$来描述。解实际问题的时候，运动方程还包含了初始条件：初始时间$t_0$以及$q(t_0)$与$\dot q(t_0)$的值。求解具有这种初始条件的运动方程称为柯西问题。\index{柯西问题}.
 }
-\textbox{A new way of thinking about physics}{
-    We are used to Newton's way to think about physics -- for a particle, by knowing the initial position and velocity, we calculate the trajectory of the particle as time evolves. This way of thinking is generalized to gravity, E\&M fields, and so on. 
+\textbox{一种新的物理思维方式}{
+    我们习惯用牛顿的方式思考物理--对于粒子来说，如果我们知道初始位置和速率，我们可以计算该粒子一段时间的路径。这种思维方式可以推广到重力、电磁场、及其他概念上。
 
-    These are all good. But if we really want to ask fundamental questions -- can these equations of motion be the ultimate codes of nature -- there are still a few unpleasant aspects:
-
+    但是如果我们真的想要思考基础的问题--这些运动方程能否成为自然的终极密码——仍然有一些不完美的方面：
+    
      \tenum{
-        \item Equations of motion are not invariant objects in special relativity. Because an equation of motion is time evolution. And in relativity time and space appears with almost equal rights. For different observers, equations of motion are covariant (transforms consistently with Lorentz transformation), but not invariant. Is the ultimate code of nature really so subjective? In the movie ``Matrix'', the world is a program. Has the programer choose a preferred frame in this movie to write down equations of motion and code the world?
-        \item Where do conservation laws come from? We are aware of energy, momentum, angular momentum, charge conservation laws. They can be proved given a particular framework of the theory. For example, given Newtonian mechanics we can prove energy and momentum conservations by smart tricks. But is there a universal way to figure out the origin of conservation laws for a general system? 
-        \item Motion with constraints. For example, think about a pendulum (if it's too simple, think about double pendulum).
-        In an ideal theory, constrained motion means that we are reducing possibilities and thus the situation should be simpler. But in the Newtonian way, the more constraints, the more analysis of forces and the more annoying math. Is there a way to make constrained systems simpler to compute?
-        \item The quantum world is so different from its classical counter part. We haven't introduced to you quantum mechanics yet but later we will address this concern as well.
-        \item The equations of motion are too ``cold blooded'' to describe how nature ``would like to'' behave. Can you use one sentence to conclude the nature of Nature, which applies to every known piece of fundamental physics? For example, ``Nature prefers to $\cdots$''? Saying Nature prefers to satisfy its equation of motion does not seem pleasant enough.       
+        \item 运动方程在狭义相对论中不是不变的对象，因为运动方程是时间演化的。在相对论中，时间和空间有几乎相同的权力。对于不同的观测者，运动方程是（以洛伦兹变换）协变，而非不变。自然的终极密码真的那么主观吗？在电影黑客帝国中，整个世界都是一个程序。那些程序员是否在这部电影中只选择了一个喜欢的帧来写下运动方程并对世界进行编码？
+        \item 那些守恒定律是从哪里来的？我们知道能量、动量、角动量、电荷守恒定律。在特定的理论框架下，我们可以证明它们。比如说，在牛顿力学的框架下，我们可以运用聪明的技巧来证明能量和动量守恒。但是是否存在一个通用方法来找出所有系统的守恒定律的起源？
+        \item 受限运动。比如说，想象一个钟摆（如果太简单，想象两个）。
+        理想理论下，受限运动意味着我们减少了运动的可能性，从而使情况更简单。但是在牛顿物理中，越多限制意味着越多力的分析与更复杂的数学。有没有一种方法可以让受限系统更方便计算呢？
+        \item 量子世界与与之对应的经典世界有很大的不同。我们还没有介绍量子力学，但是之后我们会解决这个问题。
+        \item 这些运动方程对于解释自然的“习性”来说太“冷血”了。你可以用一句话概括自然法则（适用于所有已知基础物理）吗？比如说，“自然一般会$\cdots$”？仅仅说自然一般会满足运动方程似乎不足够信服别人。 
     }
     \tcblower
-    A short sentence by Maupertuis (1698-1759) addresses all the above issues:
+    莫佩尔蒂（1698-1759）说的一个短句很好地解决了以上问题：
 
-    ``Nature is thrifty in all its actions.'' \index{action principle}
+    “自然的一切行为都是最简洁的。” \index{最小作用量原理}
 
-    We will see how this simple sentence work.
+    我们将看到这个简单的句子是如何工作的。
 }
 
-\section{Fermat's Principle of Light}\label{sec:fermat}
+\section{费马原理}\label{sec:fermat}
 
-Before addressing the action principle, let us first use the Fermat's principle\index{Fermat's principle} to study the propagation of light. This is not the real action principle yet, but the physical concept and math method are very similar. At the same time it is more intuitive. So let's first do this warm up exercise here.
+在解决最小作用量原理之前，我们先用费马原理\index{费马原理}来研究光的传播。这还不是真正的最小作用量原理，但是它的物理概念和数学方法是极其相似的。它也是非常直观的，所以我们先做一个热身练习。
 
-\mtextbox{Pierre de Fermat}{
-    Pierre de Fermat (1601(or 1607) - 1665) is a French lawyer. Nobody remembers what case he has defended. But we do remember many things about him, including his conjecture that there is no positive integer solution for $x^n+y^n=z^n$ for $n>2$. After 300 years, this was finally proven in 1994.
+\mtextbox{皮埃尔·德·费马}{
+    皮埃尔·德·费马（1601或1607 - 1665）是一个法国律师。不过没人记得他为什么案子辩护过。我们只记得他的一些其他事情，例如他对于$n>2$，$x^n+y^n=z^n$ 没有正整数解的猜想。直到300年后，这个猜想才在1994年被证明。
 }
-\textbox{Fermat's principle}{
+\textbox{费马原理}{
     \twocol{0.3}{0.05}{0.65}{
-        Consider a class of light propagation problems: Given two fixed
-    points $P$ and $Q$, how does light propagate between those points?
+        考虑一类光传播的问题：已知两个定点$P$和$Q$，光是如何在两点之间传播的？
     
-    Some examples are given in the figures to the right, including propagation in free space, reflection and refraction.
+    右图给了可用空间的传播、反射、折射的例子。
     }{
         \includegraphics[width=\textwidth]{fermat}   
     }
 
     \tcblower
 
-    Fermat proposed a general solution for this type of problems: Light travels between two given points along the path of extremal time.
+    费马提出了一个对这种问题的通用答案：光沿着极值时间的路径在两个已知点之间传播。
 }
 
-\textbox{How travel time depends on path? Functionals}{
-    You are familiar to the problems of extremal problem in calculus: A function $f(x)$ takes extremal value when $df/dx=0$. Here our situation is similar, but with a different mathematical object..
+\textbox{行动时间如何取决于路径？泛函}{
+    我们在微积分中熟知了极限问题：一个函数$f(x)$在$df/dx=0$时取极限值。我们这里的情况很相似，只不过使用不同的数学对象..
 
-    \marginnote{Of course not all paths can be parametrized by $y=y(x)$, for example $x=$constant. But here let's restrict our attention to paths which can be described by $y=y(x)$, which provides us enough background to proceed to the action principle.}
-    We are talking about the space (in math sense) of ``path''. How to parameterize a path in math? A path can be described as a function. For example, a curve $y=y(x)$. 
+    \marginnote{当然并不是所有路径都可以被$y=y(x)$参数化，比如说x为常数。这里我们只关注可以被$y=y(x)$参数化的路径，因为它们可以提供足够的背景来推导最小作用量原理。}
+    我们说的是空间（数学意义）的“路径”。怎么在数学中参数化一个路径呢？一个路径可以被看成一个函数。比如说，一个曲线$y=y(x)$。
 
-    Suppose we know the speed of light ($c$ in vacuum, $c/n$ in media with reflection index $n$). Given a path, we know the light propagation time $T$. Here $T$ depends on the whole function $y$ (i.e. not only the value of $y(x)$ at a particular $x$). We then say that $T$ is a \emph{functional} of $y$, denoted as $T[y]$ with square brackets. 
+    假设我们知道光速（真空中为$c$，在折射率$n$ 的介质中为$c/n$）。已知一个路径，我们可得光的传播时间$T$。这里的$T$取决于整个函数$y$（而不是$y(x)$在不同$x$时候的值）。我们可以说$T$是一个$y$的\emph{泛函}，写做$T[y]$。
     
-    In short, a functional is a ``function of function.''\index{functional} A comparison of functions and functionals are sketched below.
+    长话短说，泛函是一个“函数的函数”。\index{泛函} 下图显示了函数和泛函的对比。
 
-    \mtextbox{Functional programming}{In programming language there is a
-    paradigm known as functional programming. The very basic requirement
-    is that you can pass a function as an argument of another function. It is the same functional (function of function) there.}
+    \mtextbox{函数式编程}{在编程语言中，有个典范叫函数编程。它最基本的要求是你可以将函数作为另一个函数的参数传递。它与泛函一样（都是函数的函数）。}
 
     \includegraphics[width=0.8\textwidth]{functional}
 }
 
 \needspace{0.15\textheight}
 \marginnote{\includegraphics[width=0.3\textwidth]{variationyx}}
-\textbox{Which path has extremal time? Functional variation\index{functional variation}}{
-    To find extremal time between $(x_P, y_P)$ and $(x_Q, y_Q)$, we first draw a (general) path $y(x)$ satisfying $y(x_P)=y_P$ and $y(x_Q)=y_Q$. Then we find the condition that a extremal path must satisfy with the following procedure:
+\textbox{哪个路径有极限时间？变分法\index{变分法}}{
+    为了求$(x_P, y_P)$与$(x_Q, y_Q)$的极限时间，我们先画一个（通用）满足$y(x_P)=y_P$和$y(x_Q)=y_Q$的路径$y(x)$。然后我们找一些极限路径必须满足的条件。运用以下步骤：
     
-    We vary the path by $y(x) \rightarrow y(x)+\delta y(x)$, where $\delta y$ is an \emph{arbitrary} infinitesimal function (i.e. we ignore $(\delta y)^2$) satisfying $\delta y(x_P)=0$ and $\delta y(x_Q)=0$. These ``boundary conditions'' are needed because we have fixed these two boundary points by the definition of the problem.
+    我们通过$y(x) \rightarrow y(x)+\delta y(x)$改变路径。$\delta y$为\emph{任意}无穷小函数（即我们可以忽略$(\delta y)^2$） 且满足$\delta y(x_P)=0$和$\delta y(x_Q)=0$。这些“边界条件”需要被满足，因为根据问题的定义，我们已经确定了这两个边界点。
 
     We can now write the time of the new path as $T[y+\delta y]$, and thus the functional variation
     \begin{align}
