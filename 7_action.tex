@@ -75,32 +75,32 @@
     
     我们通过$y(x) \rightarrow y(x)+\delta y(x)$改变路径。$\delta y$为\emph{任意}无穷小函数（即我们可以忽略$(\delta y)^2$） 且满足$\delta y(x_P)=0$和$\delta y(x_Q)=0$。这些“边界条件”需要被满足，因为根据问题的定义，我们已经确定了这两个边界点。
 
-    We can now write the time of the new path as $T[y+\delta y]$, and thus the functional variation
+    那么现在新路径的时间为$T[y+\delta y]$，泛函为
     \begin{align}
         \delta T \equiv T[y+\delta y] - T[y]~.
     \end{align}
-    \mtextbox{Why $\delta T=0$ means extremal?}{The reason is similar to why an extremal point of a function $y(x)$ has $dy/dx=0$ in calculus. Let's say if the extremal is a local minimal. Let's consider the change of $y(x)$ within $(x, x+dx)$, keeping $y(x)$ outside this region fixed (this is one allowed form of $\delta y$). Then the change will be $\delta T = (\cdots) \delta y dx$ if $\delta T\neq 0$ within $(x, x+dx)$. If $(\cdots)$ is negative, the change $\delta y$ makes $T$ smaller and thus $T$ is not minimal. If $(\cdots)$ is positive, the change $-\delta y$ makes $T$ smaller and thus $T$ is not minimal. Thus, for minimal $T$, $\delta T$ vanishes within $(x, x+dx)$. Since $(x, x+dx)$ is a general interval, $\delta T$ should vanish everywhere. The same argument applies for local extrema.}
-    A path with extremal time must have $\delta T = 0$ for all the possible variations $\delta y(x)$.
+    \mtextbox{为什么$\delta T=0$代表了极值？}{原因与在微积分里为什么函数$y(x)$在 $dy/dx=0$的时候有极值很相似。假设这个极值是一个局部最小值。考虑$y(x)$在$(x, x+dx)$之间的变化，保持在这个区域外的固定（这是 $\delta y$一种允许的形式）。那么如果$\delta T\neq 0$在$(x, x+dx)$之间，变化$\delta T = (\cdots) \delta y dx$。如果$(\cdots)$是负数，变化$\delta y$让$T$更小。那么$T$就不是最小值。如果$(\cdots)$是正数，那么变化$-\delta y$让$T$更小。那么$T$仍然不是最小值。因此，对于最小的 $T$，$\delta T$ 在 $(x, x+dx)$ 内消失。由于 $(x, x+dx)$ 是一个区间，$\delta T$ 应该在任何地方都消失。 局部最大值的证明同理。}
+    对于所有可能的变化$\delta y(x)$，极值时间的路径一定满足$\delta T = 0$。
 }
 
-The above seems dry and empty. Let's consider an example.
+以上可能看着很枯燥和空洞。那么我们来看一个例子。
 
-\textbox{Light propagation in the vacuum}{
-    We study light freely propagating in the vacuum between $(x_P, y_P)$ and $(x_Q, y_Q)$. Suppose we only know the Fermat principle, and that the speed of light is $c$. For simplicity, we suppress the $z$ direction and only study $x,y$ spatial dimensions. The propagation time $T$ between this two points can be written as
+\textbox{真空中光的传播}{
+    我们研究的光在$(x_P, y_P)$与$(x_Q, y_Q)$之间自由传播。假设我们只知道费马定理和光速为$c$。为了简单来说，我们抑制了$z$方向。我们只研究$x,y$空间维度。两点之间的传播时间$T$可以写为
     \begin{align}
         T = \int_{t_P}^{t_Q} dt 
         = \frac{1}{c} \int_{x=x_P, y=y_P}^{x=x_Q, y=y_Q} \sqrt{dx^2 + dy^2}
         = 
         \frac{1}{c} \int_{x_P}^{x_Q} \sqrt{1 + \left(\frac{dy}{dx}\right)^2 } ~ dx ~.    
     \end{align}
-    To find the condition that an extremal path $y(x)$ must satisfy, we vary $y(x)\rightarrow y(x)+\delta y(x)$ and insert it into the above equation. As $d\delta y / dx$ is small, we can consider it as a small parameter and do Taylor expansion:
+    为了找到极限路径$y(x)$必须满足的条件，我们改变 $y(x)\rightarrow y(x)+\delta y(x)$并带入以上等式。因为 $d\delta y / dx$非常小，我们可以当它是一个极小参数并进行泰勒展开：
     \begin{align}
         \label{eq:integrand}
         \sqrt{1 + \left(\frac{d[y(x)+\delta y(x)]}{dx}\right)^2 }
         = \sqrt{1+(y')^2} + 
         \frac{y'}{\sqrt{1+(y')^2}} \frac{d \delta y}{dx} + \mathcal{O}[(\delta y)^2]~, 
       \end{align}
-      where $y'\equiv dy(x)/dx$. Thus
+      这里$y'\equiv dy(x)/dx$。因此
       \begin{align}
         \label{eq:Tvariation}
         \delta T[y] & = \frac{1}{c} \int_{x_P}^{x_Q}
@@ -113,21 +113,21 @@ The above seems dry and empty. Let's consider an example.
         \delta y \frac{d}{dx} \left ( \frac{y'}{\sqrt{1+(y')^2}} \right )  
         ~ dx~,
       \end{align}  
-      where we have dropped the total derivative term because $\delta y=0$ on the boundary. 
+      这里我们完全忽略了导数项因为$\delta y=0$在边界上。
 
-      $\delta T=0$ requires that the above equation vanishes for all $\delta y$. Thus we require
+      $\delta T=0$需要使以上等式对于所有$\delta y$都消失。因此我们需要满足
       \begin{align}
         \label{eq:yvariation}
         \frac{d}{dx} \left ( \frac{y'}{\sqrt{1+(y')^2}} \right) = 0
         \quad\rightarrow\quad
         y'=\mbox{const}~.
       \end{align}
-      We have thus proven that light travels with straight lines from the Fermat's principle.      
+      我们就证明了费马定理中的光沿直线运动。
 }
 
-With more efforts, one can also derive the light trajectory for the reflection and refraction cases using Fermat's principle and variations. But we shall not do it here. 
+通过更多的努力，我们可以通过费马定理及一些变形式推算出反射、折射的光的路径。但是这里我们不会做。
 
-Here we are doing something trivial using complicated methods. But the techniques (math) developed here will be reused in the next section for the action principle. 
+这里我们是在运用很复杂的方法来做一个很简单的事情。但是这里提出的技术（数学）会在关于运动定理的下节被重新运用。
 
 \section{Principle of Extremal Action}
 
