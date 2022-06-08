@@ -129,36 +129,36 @@
 
 这里我们是在运用很复杂的方法来做一个很简单的事情。但是这里提出的技术（数学）会在关于运动定理的下节被重新运用。
 
-\section{Principle of Extremal Action}
+\section{极值作用原理}
 
-One may live a life in two ways: (1) Given the current state, this is what I'd like to do now. And I will evolve with time and see what future will become; and (2) Given the current state, I have a clear dream of my future. And I will find out the master plan where my dream can come true.
+人可以用两种方法来过一生：（一）已知现在的状态，我满足于现在的状态。我会与时俱进来看看未来会怎么样；（二）已知现在的状态，我有一个对未来的清晰的梦想。我会对未来有个总体规划从而让梦想成真。
 
-Interestingly, physics can also be understood in these two ways (and they are equivalent): (1) corresponds to the Cauchy problem -- solving the equation of motion with initial position and velocity; and (2) corresponds to the action principle, which we are now to introduce.
+有趣的是，物理也可以被跟这两种等同的方式被理解：（一）与柯西问题相对应 -- 用初始位置及速率来求运动方程；（二）与作用原理相对应，我们接下来就来介绍它。
 
-\textbox{The action principle \index{action principle}}{
-    A theory is defined by an action $S$. The equation of motion of the theory corresponds to the extremal action $\delta S = 0$.
+\textbox{作用原理\index{作用原理}}{
+    理论由行动$S$定义。这个理论的运动方程与极限运动$\delta S = 0$相对应。
 }
 
-Let us first see how this works in Newtonian mechanics. Later we generalize it to include all known fundamental theories.
+让我们先看看这个在牛顿力学中是怎么应用的。之后我们会概括它到所有已知基础理论。
 
 \marginnote{\includegraphics[width=0.3\textwidth, trim={0 2pt 2pt 0}, clip]{newton}}
-\textbox{Action principle in Newtonian mechanics}{\index{action of Newtonian mechanics}
-    Newtonian mechanics can be formulated as the following question: 
+\textbox{牛顿力学的作用原理}{\index{牛顿力学的运动}
+    牛顿力学可以被以下问题制定：
 
-    Given a potential $V(q)$, where $q(t)$ is the position of the particle, what is the trajectory between a starting point $(q_1, t_1)$ and a final point $(q_2, t_2)$?
+    已知势$V(q)$，粒子从初始点$(q_1, t_1)$到终点$(q_2, t_2)$的行动路径是什么？（$q(t)$为粒子的位置）
 
-    First let us define an action
-    \mtextbox{A remark on integral convention}{Physicists sometimes write $\int dt f(t)$. This is identical to $\int f(t) dt$. It is just a matter of notation. But it reflects that physicists tend to think an integral as a limit of summation: $\lim_{\Delta t\rightarrow 0} \sum_i \Delta t f(t_i) = \int dt f(t)$. Here $\Delta t$ and $f(t_i)$ are just multiplied together and thus the order is not important.}
+    首先我们先定义一个作用
+    \mtextbox{关于积分的表达}{物理学家有时会写$\int dt f(t)$。这与$\int f(t) dt$一样，只是写法的不同而已。但是这也反映了物理学家一般会把积分想成和的极限：$\lim_{\Delta t\rightarrow 0} \sum_i \Delta t f(t_i) = \int dt f(t)$。这里的$\Delta t$和 $f(t_i)$只是被乘在一起，所以顺序就不重要了。}
     \begin{align}
     \label{eq:newtonAction}
     S[q] = \int_{t_1}^{t_2} dt \left [ 
     \frac{1}{2} m \dot q ^2 - V(q)
     \right ]~.
     \end{align} 
-    The action has a form of integrating $K-V$ over time, where $K$ is the kinetic energy and $V$ is the potential energy. This is quite general. Do not ask about the physical meaning at the moment. We just define such a functional (functional of paths $q(t)$) and see what it leads to. We will come back to its physical meaning (and also why the extremal action principle at all) in Section \ref{sec:action-quantum}.
+    这个作用的形式是$K-V$对于时间的积分，$K$为动能、$V$为势能。这个形式很笼统。现在不用对它的物理意义有疑问。我们仅仅定义了一个泛函（路径$q(t)$的泛函）来看它会带我们到哪儿。我们会回到它的物理意义（以及为何极限作用原理成立）在小节 \ref{sec:action-quantum}.
 
-    To derive the equation of motion, similarly to Section \ref{sec:fermat}, we vary $q(t)\rightarrow q(t)+\delta q(t)$, which satisfies $\delta q(t_1)=\delta q(t_2) = 0$, and see how the action changes:
-    \mtextbox{Motion with constraints}{By now, you should be able to solve the motion with constraints, for example, double pendulum in a smarter way than Newtonian analysis of forces. As an exercise, you may use two angles to parameterize $K$ and $V$ of the system and write $S=\int dt (K-V)$. Variation principle gives you much simpler result than what you would have calaulated using forces.}
+    如果要推导运动方程，与小节\ref{sec:fermat}类似，我们改变$q(t)\rightarrow q(t)+\delta q(t)$，从而满足$\delta q(t_1)=\delta q(t_2) = 0$。然后观察作用的变化：
+    \mtextbox{被限制的运动}{现在，你应该已经可以求解被限制的运动了。比如说，运用比牛顿对力的分析更巧妙的方法来求解双摆锤。作为一个练习，你可能会用两个角度来参数化系统的$K$与$V$ 然后写$S=\int dt (K-V)$。变化原理会给你一个比力的计算更简单的答案。}
     \begin{align}
         \label{eq:dSNewton}
         \delta S = \int_{t_1}^{t_2} dt 
@@ -166,7 +166,7 @@ Let us first see how this works in Newtonian mechanics. Later we generalize it t
         = \int_{t_1}^{t_2} dt 
         \left [ \frac{d}{dt}(m\dot q \delta q) - m\ddot q \delta q - \frac{dV}{dq}\delta q  \right ]~.
     \end{align} 
-    Again the first term is a boundary term that vanishes. The last two terms holds for all $\delta q(t)$ and thus we have re-derived Newtonian equation of motion for a particle:
+    这个第一项是一个会消失的边界项。后两项对于所有$\delta q(t)$都成立。因此我们重新推到了牛顿力学的运动方程：
     \begin{align}
         \label{eq:eomNewton}
         m\ddot q + \frac{dV}{dq} =0~.
@@ -174,22 +174,22 @@ Let us first see how this works in Newtonian mechanics. Later we generalize it t
 }
 
 \needspace{0.15\textheight}
-\mtextbox{Math of the Lagrangian}{By writing $L=L(q_i, \dot q_i, t)$, it is in the sense of multi-variable calculus: one can calculate partial derivatives on the three variables ``independently'' assuming the rest two variables do not change. For example, $\partial_t L \equiv \partial L / \partial t$ assumes that $q_i$ and $\dot q_i$ do not change when calculating the partial derivative. This is different from 
+\mtextbox{拉格朗日方程背后的数学}{$L=L(q_i, \dot q_i, t)$在多元微积分的意义是：假设其余两个变量不变，我们可以”独立地“求出每一个变量的偏导数。比如说，求$\partial_t L \equiv \partial L / \partial t$的时候，我们假设$q_i$和$\dot q_i$是不变的。这与 
 \newline$dL/dt$ $= \sum_i (\partial L / \partial q_i)(dq_i/dt)$ 
-\newline$+ \sum_i (\partial L / \partial \dot q_i) (d\dot q_i/dt)$ $+ \partial L / \partial t$. }
-\textbox{A General action and the Euler-Lagrange equation}{\index{Euler-Lagrange equation}
-    In general, consider a ``Lagrangian''\index{Lagrangian} $L=L(q_i, \dot q_i, t)$, where $i=1, 2, \ldots, N$. Here $q_i$ denotes the position of the $i$-th particle. (In fact, in the spirit of general coordinate, the index $i$ can also collectively denote many possible things: different spatial dimensions, different particles, values of fields at a point, and so on. We will not dive into those details.)
-
-    The action is defined as
+\newline$+ \sum_i (\partial L / \partial \dot q_i) (d\dot q_i/dt)$ $+ \partial L / \partial t$是不同的。}
+\textbox{通用作用与欧拉-拉格朗日方程}{\index{欧拉-拉格朗日方程}
+    一般来说，考虑一个“拉格朗日方程”\index{拉格朗日方程} $L=L(q_i, \dot q_i, t)$。$i=1, 2, \ldots, N$。这里的$q_i$代表了第$i$个粒子的位置。（事实上，在广义坐标里，指数$i$可以代表很多东西：不同的空间维度、不同的粒子、在某点的各个场的值…… 我们不会考虑这些细节。）
+    
+    作用被定义为
     \begin{align}
         \label{eq:actionL}
         S = \int L(q_i, \dot q_i, t) dt~.
     \end{align}
-    Here we have not written down the limits of the integral, having in mind that the boundary terms will be dropped. Clearly, this definition includes the Newtonian particle example that we have studied, and is much more general.
+    这里我们还没有写下积分的区间。记住边界项会被消除掉。很显然这里的定义包括了我们前面研究的牛顿粒子的例子也更广义了。
 
-    The equation of motion of such a general system, known as the Euler-Lagrangian equation, can be derived by the variation
-    \mtextbox{Dropping the boundary temrs}{
-        From now on we will assume that the boundary terms $\int \partial_t(\cdots) dt$ can be dropped. The argument is that this term does not modify the EoM. A careful treatment of the boundary terms is beyond the scope of this lecture; but dropping these boundary terms doesn't hurt for all our current purposes. 
+    这个更通用系统的运动方程（又被称为欧拉-拉格朗日方程）可以被这个变形推导出来
+    \mtextbox{消除边界项}{
+        从现在开始我们会假设所有边界项$\int \partial_t(\cdots) dt$都可以被消除掉。原因是这项不会影响运动方程。对边界项的详细处理方式远远超出了我们的学习范围，但是去掉这项不会影响我们现在做的任何事情。
     }
     \begin{align}
     \label{eq:dSEL}
@@ -203,7 +203,7 @@ Let us first see how this works in Newtonian mechanics. Later we generalize it t
         + \frac{\partial L}{\partial q_i} \delta q_i
     \right ] dt~.
     \end{align}
-    Thus the Euler-Lagrangian equation (holds for every $i$) can be read off as
+    因此欧拉-拉格朗日方程（对所有$i$都成立）可以被看成
     \begin{align}
     \label{eq:eomEL}
     \frac{d}{dt} \left ( \frac{\partial L}{\partial\dot q_i} \right)
@@ -211,8 +211,8 @@ Let us first see how this works in Newtonian mechanics. Later we generalize it t
     \end{align}
 }
 
-\textbox{All known fundamental physics in one line}{
-    All known fundamental physics can be written into an action\index{action of the Standard Model}
+\textbox{用一行概括所有已知的基础物理}{
+    所有已知的物理都可以被写成作用\index{标准模型的作用}
         \begin{align}
           \label{eq:SMaction}
           S \sim \int d^4 x \sqrt{-g} \Big\{ 
@@ -223,8 +223,8 @@ Let us first see how this works in Newtonian mechanics. Later we generalize it t
           + h \bar\psi \psi 
           \Big\}~.
         \end{align}
-    This action covers the laws of gravity (the metric $g$), E\&M and their friends (gauge field in $F$), electrons and their friends (spinor fields represented by $\psi$) and origin of mass (the Higgs field $h$). These fields, put together with certain gauge symmetries, is known as the particle physics Standard Model and describes all known fundamental physics.
-    We shall not explain it here (a course of particle physics or quantum field theory needed). Take it as a piece of art at the moment.
+    这个作用包含了引力（$g$）、电磁及他们的好伙伴（规范场$F$）、电子及他们的好伙伴（旋量场$\psi$）、质量的起源（希格斯场$h$）。这些场与一些规范对称性被称为粒子物理的标准模型。它描述了所有已知基础物理。
+    我们不会在这里解释它（需要一门粒子物理或者量子场理论的课）。现在把它当成一个艺术品吧。
     }
 
 \section{Symmetry and Conservation Laws}
