@@ -1,8 +1,7 @@
 \input{structure.tex}
 \graphicspath{{7_fig/}}
 \usepackage{ctex}
-\title{第七章\ 从行为到 \\
-自然法则}
+\title{第七章\ 从作用量到自然法则}
 
 \begin{document}
 
@@ -227,70 +226,69 @@
     我们不会在这里解释它（需要一门粒子物理或者量子场理论的课）。现在把它当成一个艺术品吧。
     }
 
-\section{Symmetry and Conservation Laws}
+\section{对称性与守恒定理}
 
-In the part of special relativity, at relativistic momentum and energy, we have argued why we need conservation laws: (1) physically, allow us to ignore the details happened in the middle; (2) mathematically, reduce 2nd order ODEs into 1st order or 0th order; (3) provide observables for modern physics. 
+在狭义相对论讲相对动量与能量的时候，我们讨论了为什么需要那些守恒定理：（一）物理上，它们允许我们忽略过程中间的细节；（二）数学上，它们允许我们把二次常微分方程降到一次或者零次；（三）为现代物理学提供可观测量。
 
-But the question left is, why there exists conservation laws after all? To ask the question in general, we had better to use a universal framework of physical theories to find the root of conservation laws. Thus the general action \eqref{eq:actionL} is a good starting point.
+那么剩下的问题就是为什么守恒定理存在呢？如果要回答这个问题，我们应该用一个物理理论的通用框架来寻找守恒定理的根源。因此通用作用\eqref{eq:actionL}是一个很好的起点。
 
-Instead of directly asking why anything is conserved in \eqref{eq:actionL}, let's first think about a piece of beauty -- symmetry of a theory.
+与其直接提问为什么\eqref{eq:actionL}中的东西都是守恒的，让我们先考虑这个等式的对称性的美。
 
 \needspace{0.2\textheight}
-\mtextbox{Remarks about symmetry}{
+\mtextbox{备注：对称性}{
     \mtitem{
-        \item The action is a means to derive equations of motion. Thus to examine the change of the action under \eqref{eq:sym-trans-q}, any equation of motion must not be used (to avoid circular arguments). To be explicit, when talking about $\delta S=0$, we may mean one of the two things: (1) a symmetry transformation without using equation of motion; or (2) any transformation (may not be a symmetry) as a variation principle, and use the equation of motion. One should be clear about the difference.
-        \item Again we assume to drop boundary terms $\int \partial_t (\cdots) dt$ when considering the change of the action. This is to say, if the Lagrangian $L(\tilde q_i, \dot {\tilde q}_i, t) \neq L(q_i, \dot q_i, t)$, but rather $L(\tilde q_i, \dot {\tilde q}_i, t) = L(q_i, \dot q_i, t) - \epsilon dg/dt$ for arbitrary $g$, the transformation is still considered a symmetry.
-        \item As $\epsilon$ is infinitesimal, we will ignore the $\mathcal{O}(\epsilon^2)$ terms.
-        \item The type of symmetry \eqref{eq:sym-trans-q} that we study here is a continuous and global symmetry. There are other types of symmetries, namely discrete symmetries and gauge symmetries, which will not be useful to derive nontrivial conservation laws.
+        \item 作用是推导运动方程的一种方式。因此在检查\eqref{eq:sym-trans-q}中作用的变化时，任何运动方程都不应该用（避免循环论证）。更详细地说，在讨论$\delta S=0$的时候，我们是在说以下两件事中的一个：（一）不使用运动方程的对称变化；（二）任何变换（可能不是对称）作为变分原理，并使用运动方程。我们应该清楚它们之间的区别是什么。
+        \item 这里我们仍然会在考虑作用的变化时消掉边界项$\int \partial_t (\cdots) dt$。也就是说如果拉格朗日量$L(\tilde q_i, \dot {\tilde q}_i, t) \neq L(q_i, \dot q_i, t)$，而是$L(\tilde q_i, \dot {\tilde q}_i, t) = L(q_i, \dot q_i, t) - \epsilon dg/dt$（$g$为随机数）。这个变形也是对称的。
+        \item 因为$\epsilon$是无穷小的，我们可以忽略$\mathcal{O}(\epsilon^2)$项。
+        \item 我们学过的这种变形\eqref{eq:sym-trans-q}是连续与全局对称的。还存在有一些其他的对称性，类如离散对称与规范对称，但是它们对推导不简单的守恒定理是没用的。
     }
 }
-\textbox{A symmetry of a theory}{\index{symmetry}
-    A symmetry of a theory is a transformation under which the theory does not change.
+\textbox{理论的对称性}{\index{对称性}
+    理论的对称性是理论在其下不会改变的变换。
     \tcblower
-    In terms of \eqref{eq:actionL}, the above definition of symmetry can be put more explicitly as: 
+    按照\eqref{eq:actionL}，以上对称性的定义可以更详细地说是：
     
-    Consider an infinitesimal transformation\index{transformation}
+    考虑一个无穷小的变换\index{变换}
     \begin{align}
         \label{eq:sym-trans-q}
         q_i \rightarrow \tilde q_i = q_i + \epsilon \delta q_i~,
     \end{align}
-    where $\epsilon$ is an infinitesimal constant. If the action does not change
+    $\epsilon$为一个无穷小的常数。如果作用量是不变的，
     \begin{align}
         \label{eq:sim-trans-s}
         \delta S = \int L(\tilde q_i, \dot {\tilde q}_i, t) dt - \int L(q_i, \dot q_i, t) dt = 0 ~,
     \end{align}
-    then we consider the transformation \eqref{eq:sym-trans-q} a symmetry.
+    那么变换\eqref{eq:sym-trans-q}是对称的。
 }
-The definitions \eqref{eq:sym-trans-q} and \eqref{eq:sim-trans-s} are very abstract. We thus consider a few examples:
-\textbox{Examples of transformations}{
+\eqref{eq:sym-trans-q}和\eqref{eq:sim-trans-s}的定义是非常抽象的。因此让我们考虑以下的例子：
+\textbox{变换的例子}{
     \titem{
-        \item Time translation\index{time translation}, to test if the prediction of a theory is time dependent. The transformation thus relate two situations: doing an experiment now and doing an experiment a bit later (within the same theory) and observe if there is any difference. The time translation can thus be written as
+        \item 时间平移\index{时间平移}来测试一个理论的预测是不是与时间相关的。这个变换关联了两种情况：现在做实验与等会再做实验（用同一理论），然后再看两个的区别。因此时间平移可以被写成
         \begin{align}
             q_i (t) \rightarrow \tilde q_i(t) = q_i (t + \epsilon \delta t) 
             = q_i (t) + \epsilon \dot q_i(t) \delta t~.
         \end{align}
-        We thus extract that for time translation
+        我们可以从中得出
         \begin{align}
             \delta q_i = \dot q_i(t) \delta t~.
         \end{align}
-        We will later study the consequence of time translation in great detail in this section.
+        我们会在此章中更深度地研究时间平移。
         
-        \marginnote{For space translation, is $\delta q_i$ the same for different $i$? We will need to examine what $i$ actually means then: If $i$ stands for diffferent directions in space, then $\delta q_i$ can take different values. If $i$ stands for different particles in the same direction, then $\delta q_i$ must take the same value for different $i$.}
-        \item Space translation, to test if doing an experiment in one place is identical to doing an experiment in a slightly different location. The transformation is thus $q_i(t) \rightarrow q_i (t) + \epsilon \delta q_i$, where $q_i$ is a constant shift. The space translation can be related to momentum conservation.
+        \marginnote{在空间平移中，对于不同的$i$，$\delta q_i$是不是一致的？我们需要想$i$真正代表了什么：如果$i$代表了空间中不同的方向，那么可以是不同的值。如果$i$代表了同方向的不同粒子，那么对于不同的$i$，$\delta q_i$必须是同一个值。 }
+        \item 空间平移，来测试同一个实验在不同地方做会不会有不同。这个变换是$q_i(t) \rightarrow q_i (t) + \epsilon \delta q_i$，$q_i$为常数偏移。空间平移与动量守恒有关。
 
-        \item Lorentz transformation. The boost between $(t_B, x_B)$ and $(t_A, x_A)$ for infinitesimal $\beta$ (or rotation). When $\beta$ is small, $\gamma\approx 1$. Then approximately $t_B \simeq t_A + \epsilon v x_A/c^2$, $x_B \simeq x_A + \epsilon v t_A$. We thus have $q_i(t) \rightarrow q_i (t+ \epsilon v q_i /c^2) + \epsilon v t$ This boost part can be related to (not very interestingly) the initial center of energy. The rotation part of Lorentz transformation can be defined similarly and is related to angular momentum conservation
+        \item 洛伦兹变换。对于无穷小的$\beta$（或者旋转），$(t_B, x_B)$与$(t_A, x_A)$之间的升压。当$\beta$很小，$\gamma\approx 1$。然后大约$t_B \simeq t_A + \epsilon v x_A/c^2$、$x_B \simeq x_A + \epsilon v t_A$。我们可得$q_i(t) \rightarrow q_i (t+ \epsilon v q_i /c^2) + \epsilon v t$这个升压部分与（不是很有意思的）原能量中心有关。洛伦兹转换的旋转部分可以被差不多地定义。它与角动量守恒有关。
 
-        \item Change of phase. If $q_i$ are complex, it makes sense to examine the transformation $q_i \rightarrow e^{i \epsilon \alpha} q_i$. This can be related to charge conservation. 
+        \item 相变。如果$q_i$是复数，我们可以去考虑变换$q_i \rightarrow e^{i \epsilon \alpha} q_i$。这与电荷守恒有关。
     }
 }
 
-We have studied many transformations. Let's move on to explore the requirement for a transformation to be a symmetry. We only take time translation as an example.
-\textbox{When is time translation a symmetry?}{
-    \marginnote{Note that $L=L(q_i, \dot q_i)$ is a sufficient condition of time translation symmetry, but not a necessary condition. We will not explore the necessary condition here.}
-    Intuitively, if the theory as specified by the Lagrangian $L$ does not explicitly depend on $t$ (i.e. $L(q_i, \dot q_i,t)=L(q_i, \dot q_i)$, without explicit $t$ dependence), the theory is time translation invariant. Here we will test that in this case, the time translation is indeed a symmetry.
+我们已经学过很多种变换了。那么让我们来探索一下一个对称转换的前提条件吧。我们会以时间平移为例子。
+\textbox{什么时候时间平移是具有对称性的？}{
+    \marginnote{注意$L=L(q_i, \dot q_i)$是时间平移对称性的充分条件但非必要条件。我们不会在这里探索这个必要条件。}
+    如果由拉格朗日量$L$指定的理论并不明确由$t$而定（i.e. $L(q_i, \dot q_i,t)=L(q_i, \dot q_i)$，没有明确$t$的依赖性）那么很显然这个理论是时间平移不变量。这里我们会测试在这种情况下，时间平移是不是具有对称性。
     \tcblower
-    Under time translation, considering that $\epsilon$ is a constant, we have
-    \begin{align}
+    时间平移下，如果$\epsilon$为常数，我们可以得到    \begin{align}
         \delta q_i = \dot q_i \delta t~, \qquad \delta \dot q_i = \ddot q_i \delta t~.
     \end{align}
     \begin{align}\label{eq:dL-time-translation}
@@ -302,32 +300,32 @@ We have studied many transformations. Let's move on to explore the requirement f
         \right ] \epsilon \delta t
         = \epsilon \frac{d( L \delta t)}{dt} ~.
     \end{align}
-    When $\epsilon$ is a constant (as we already defined), this is indeed a symmetry. To see that, note that a total derivative is a boundary term (which we neglect) in the action. Thus \eqref{eq:sim-trans-s} holds.
+    当$\epsilon$为常数（之前定义的那样）时，这的确是对称的。注意作用中导数是一个边界项（我们会消掉）。因此\eqref{eq:sim-trans-s}成立。
 }
 
-We have inserted examples above to make things not too dry. But now let us back to very general discussions following equations \eqref{eq:sym-trans-q} and \eqref{eq:sim-trans-s}. They are not limited to time translation but in general for any symmetry.
+为了让课程不太枯燥，我们前面插入了一个例子。那么让我们回到最笼统的公式\eqref{eq:sym-trans-q}和\eqref{eq:sim-trans-s}的讨论。它们并不局限于时间平移而可以概括任何对称性。
 
-\mtextbox{When can EoM be used}{
-    We did not allow to use the equations of motion (EoM) when testing if a transformation a symmetry. But now, for requiring a conserved quantity to conserve, the equation of motion can indeed be used. For example, energy conservation indeed needs Newton's 2nd law (or relativistic generalizations) to apply. If a particle accelerates freely as it likes, it does not conserve energy.
+\mtextbox{什么时候运用运动方程}{
+    在测试一个变换是不是对称的时候，我们不能用运动方程。但是现在因为我们需要一个守恒量来守恒，我们可以用运动方程了。比如说，能量守恒需要牛顿第二定律（或者相对论的概括）来应用。如果一个粒子根据它的喜好加速，能量并不守恒。
 }
-\textbox{Conservation laws from symmetries\index{Noether theorem}}{
-    Bear with me a mathematical trick: We have defined $\epsilon$ as a constant. Now, let's vary it: $\epsilon = \epsilon(t)$. A symmetry transformation keeps the action invariant when $\epsilon=$ const. Now how it should change when $\epsilon = \epsilon(t)$? The change of action should now take the form
+\textbox{对称性守恒定律\index{诺特定律}}{
+    允许我先用一个数学技巧：定义$\epsilon$为常数。现在让我们改变它：$\epsilon = \epsilon(t)$。一个对称的变换在$\epsilon=$常数时，使作用为不变量。现在当$\epsilon = \epsilon(t)$时，作用会怎么变呢？作用的变化会是
     \begin{align}\label{eq:var-s-et}
-        \delta S = \int (P \epsilon + Q \dot \epsilon) dt = \int Q \dot \epsilon dt = - \int \dot Q \epsilon dt + \mbox{(neglected boundary terms)}~. 
+        \delta S = \int (P \epsilon + Q \dot \epsilon) dt = \int Q \dot \epsilon dt = - \int \dot Q \epsilon dt + \mbox{（消掉的边界项）}~. 
     \end{align}
-    Here the $P$ term vanishes because a symmetry requires this term to vanish when taking $\epsilon=$ const. There are no terms such as $\ddot \epsilon$ because $L=L(q,\dot q, t)$ and there is no $\ddot q$ to generate $\ddot \epsilon$. At the last step integration by parts is used.
+    这里的$P$项消失了因为当$\epsilon=$常数时，对称性需要这项消失掉。没有像$\ddot \epsilon$这种的项因为$L=L(q,\dot q, t)$然后不存在$\ddot q$来生成$\ddot \epsilon$。最后一步我们运用了分部积分。
 
-    \marginnote{If you really want to be careful about the boundary terms of the action, here you can choose $\epsilon(t)$ being a function that vanishes on the initial and final boundaries and thus we can indeed get rid of boundary terms.}
+    \marginnote{如果你真的想要谨慎地处理作用的边界项，这里你可以选择$\epsilon(t)$为一个在初始边界和最终边界都消失的函数。那么我们一样能消除边界项。}
     \tcblower
-    Now we are ready to interpret the physical meaning of \eqref{eq:var-s-et}. If we allow to use equations of motion, that is to say, $\delta S=0$ for all possible $\epsilon(t)$ (not because of a symmetry, but because of the action principle). Thus we have $\dot Q = 0$. In other words, $Q$ is a conserved quantity when equations of motion are used.
+    现在我们已经可以解释\eqref{eq:var-s-et}的物理意义了。如果我们可以运用运动方程，也就是说对于所有$\epsilon(t)$，$\delta S=0$（不是因为对称性，而是因为最小作用量原理）。因此我们可得$\dot Q = 0$。换句话来说就是在用运动方程时，$Q$为守恒量。
 
-    This correspondence between a symmetry and a conserved quantity is known as the Noether's theorem.
+    这个对称性和守恒量的对应性被称为诺特定律。
 }
 
-In the above, we have shown the existence of a conserved quantity without showing actually what it is. This is not our style (unless you are a mathematician). What is the form of a conserved quantity given $L$ and $\delta q$?
+在上面，我们在不说明那个守恒量代表什么的情况下，证明了一个它是存在的。这并不是我们的风格（除非你是个数学家）。已知$L$和$\delta q$，一个守恒量的构成是什么呢？
 
-\textbox{What is the conserved quantity in general?\index{conserved quantity}}{
-    We have shown that, a symmetry leaves the action invariant and thus change the Lagrangian by at most a total derivative: $\delta L = - \epsilon dg/dt$ for some quantity $g$. When $\epsilon=\epsilon(t)$, we cannot drop this term. Also, the change of allowing $\epsilon = \epsilon(t)$ adds a term in the following step:
+\textbox{大致的来说，什么是守恒量？\index{守恒量}}{
+    我们已经证明了，对称性使作用成为不变量。这也将拉格朗日量改变了最多一个全导数：$\delta L = - \epsilon dg/dt$对于某个数量$g$。当$\epsilon=\epsilon(t)$，我们不可以去掉这项。然后，使$\epsilon = \epsilon(t)$的变化在以下这步加了一项：
     \begin{align}
         \delta L = \sum_i \left[ 
             \frac{\partial L}{\partial q_i} \epsilon \delta q_i 
@@ -336,143 +334,140 @@ In the above, we have shown the existence of a conserved quantity without showin
             \supset
             \sum_i \frac{\partial L}{\partial \dot q_i} \delta q_i \dot\epsilon~. 
     \end{align}
-    They are all the new terms that $\epsilon = \epsilon(t)$ brings and thus
+    这些都是$\epsilon = \epsilon(t)$带来的额外项。因此
     \begin{align}
         \delta S = \int \left ( g +  \sum_i \frac{\partial L}{\partial \dot q_i} \delta q_i \right )
         \dot \epsilon dt ~,
     \end{align}
-    where we have performed an integration by part to the $g$-term. Compare with \eqref{eq:var-s-et}, we have the conserved quantity
+    我们已经对$g$项进行了分部积分。与\eqref{eq:var-s-et}相比，我们有守恒量
     \begin{align}\label{eq:noether-charge}
         Q = g +  \sum_i \frac{\partial L}{\partial \dot q_i} \delta q_i ~.
     \end{align}
-    When the equation of motion is used, $\dot Q = 0$ (conservation law). 
+    当我们在用运动方程时，$\dot Q = 0$ （守恒定理）。
 }
 
-What is \eqref{eq:noether-charge}? It differs symmetry by symmetry. Let's see one example: time translation in Newtonian mechanics.
+什么是\eqref{eq:noether-charge}？它对于不同的对称性都不一样。让我们看一个例子：牛顿力学中的时间平移。
 
-\mtextbox{When is conservation broken?}{The Noether theorem does not only tell what is the conserved quantity, but also tell explicitly the quantity is conserved under which situation. In the past we state that in an isolated system energy is conserved. Now we know that 
+\mtextbox{什么时候会打破守恒定律？}{诺特定律不仅告诉了我们什么是守恒量，也明确的告诉了我们守恒量在什么情况下是守恒的。以前我们说过在孤立系中能量是守恒的。现在我们知道： 
 \mtitem{
-    \item The condition can be relaxed: even the system is not isolated, as long as the time translation symmetry is not broken by the environment, energy is still conserved. (For example, in the case with a fixed gravitational potential, consider the source of gravity, such as the earth to be outside the system.)
-    \item If the system is time-dependent, even if the system is isolated, energy may not be conserved. An example is our expanding universe.
+    \item 条件并没有那么严格：就算这个系统不是孤立的，只要环境并没有打破时间平移对称性，能量仍然守恒。（比如说在引力势不变的情况下，考虑引力的来源，像地球，在系统外面）。
+    \item 如果系统是与时间相关的，就算系统是孤立的，能量也不一定守恒。一个例子是我们在膨胀的宇宙。
 }}
-\textbox{Example: energy conservation as a result of time translation symmetry\index{energy conservation}}{
-    Under time translation, the change of Lagrangian is \eqref{eq:dL-time-translation}. Thus, $g=-L\delta t$. The conserved quantity is the ``Hamiltonian''\index{Hamiltonian}
+\textbox{例子：因为时间平移对称性的能量守恒\index{能量守恒}}{
+    在时间平移下，拉格朗日量的变化是\eqref{eq:dL-time-translation}。因此$g=-L\delta t$。这个守恒量叫做哈密顿量\index{哈密顿量}
     \begin{align}
         H \equiv \frac{Q}{\delta t} = \sum_i \frac{\partial L}{\partial \dot q_i} \dot q_i - L~.
     \end{align}
     
-    What's this? Consider more explicitly
+    这是什么？更明确地考虑
     \begin{align}
         L = \sum_i \frac{1}{2} \dot q_i^2 - V(q_1, \ldots, q_n)~.
     \end{align}
-    The conserved quantity is thus
+    守恒量也就是
     \begin{align}
         H = \sum_i \frac{1}{2} \dot q_i^2 + V~.
     \end{align}
-    This conserved Hamiltonian is indeed the energy of the system.
+    这个守恒的哈密顿量的确是这个系统的能量。
 }
 
 
-\section{The Hidden Quantum Reality} \label{sec:action-quantum}
+\section{隐藏的量子现实} \label{sec:action-quantum}
 
-\textbox{The nature seems ``strange''}{
-   The action principle offers a new way of thinking about how physics works. Take for example the motion of a particle moving from $A$ to $B$ in a force field:
+\textbox{自然有点“奇怪”}{
+   最小作用量原理给我们提供了一种新的对物理的思考方式。以一个在力场中从$A$到$B$的粒子的运动为例子：
    \marginnote{\includegraphics[width=0.35\textwidth]{question_action_newton}}
    \titem{
-       \item Newton's view: The initial position and velocity are given. At each moment, the particle ``feels'' the force and ``adjusts'' its velocity according to the force. The adjusted velocity ``tells'' the particle how to move further.
-       \item The action principle: The starting and end points are fixed, the particle needs to ``find'' its way between these two points based on an extremal action.
+       \item 牛顿视角：已知初始位置和初始速率。在各个时刻，这个粒子“感觉”到了一个力并根据那个力“调整”它的速率。这个调整过的速率“告诉”那个粒子怎么继续走。
+       \item 最小作用量原理：起始点和终点为定点。这个粒子需要基于极限作用量“找到”这两点之间的路径。
    }
-   Do you feel the action way ``stranger''? It's straightforward for a particle to ``adjust'' its velocity in a force field (Newton's view). However, a particle cannot calculate (seriously in the theory of computation, since it may not even carry a bit of information or complicated enough for being even one logical gate). So how a particle can actually ``follow'' the action principle?
+   能体会到作用量更“奇怪”了吗？一个粒子可以很直接的根据力场调整自己的速率（牛顿视角）。但是一个粒子是无法计算的（在计算理论中很重要，因为它甚至可能不携带一点信息或复杂到甚至可以成为一个逻辑门）。那么一个粒子是怎么遵循最小作用量原理的呢？
 
-   Moreover, as we argued the action principle is a more fundamental way to describe all laws of nature. Why nature behaves fundamentally in such a ``strange'' way?
+   此外，我们之前还提出了最小作用量原理是一个解释自然法则的更基础的方式。那么为什么自然最基本的行为是如此“怪异”的呢？
 }
 
-\textbox{The nature is natural but quantum\index{path integral}}{
-    No. 
-    \marginnote{You may think about a similar question: Why in a circuit, the electric current ``knows'' which way to go to minimize power? No, the current doesn't know. Rather, the electric field build up all possible paths until reach a stationary situation. More obvious examples include why flood ``knows'' where to flow, and so on. Definitely they are classical. But a particle can rely on its quantum nature to achieve a similar feature.}
-    The nature is not strange. The nature is natural, but just not classical.
+\textbox{自然是自然的，但量子的\index{路径积分}}{
+    不是。
+    \marginnote{你可能会思考一个相似的问题：为什么在电路中，电流“知道”走哪条路来最小化功率？答案是不，电流是不知道的。其实是电场会建立所有可能的路径，直到达到一个稳定状态。一个更显然的例子是为什么一场洪水“知道”流到哪里。很显然，这些都是经典物理的问题。但是一个粒子需要依靠它的量子性质来达成相似的效果。}
+    自然并不是怪异的。自然是很自然的，只不过不是经典物理的。
     
-    Let's return to the question of the particle motion. Instead of ``calculating'' the extremal action, what the particle actually does is that, it ``tries'' \emph{all possible paths} and ``take'' the extremal one. 
+    让我们回到粒子运动的问题。与其“计算”极限作用力，粒子事实上“试了”\emph{每一种可行的路径}并“选择”了最极限的那个。
 
     \tcblower
 
-    The above words are actually nothing but the path integral formulation of quantum mechanics. In quantum mechanics, the probability $P$ for things to happen (here: particle to propagate from $A$ to $B$) is decomposed as
+    上面的话其实只是量子力学中的路径积分公式。在量子力学中，一件事发生的可能性$P$（这里：粒子从$A$传播到$B$）被分解为
     \begin{align}
         P = |\mathcal{A}|^2~,
     \end{align} 
-    where the complex number $\mathcal{A}$ is known as the probability amplitude. The probability amplitude can be calculated by a weighted average over all paths
+    这里的复数$\mathcal{A}$被称为概率幅度。概率幅度可以通过所有路径的加权平均来计算
     \begin{align}
         \mathcal{A} \propto \sum_{\small \mbox{all paths}} e^{iS/\hbar} ~.
     \end{align}
-    Here by ``all paths'' we mean all possible lines connecting $A$ and $B$, not necessarily satisfy the equation of motion.
+    这里的“所有路径”表示了所有可能的联结$A$和$B$的线。它们不一定满足运动方程。
 }
 
-\mtextbox{What if $S\sim \hbar$?} {What about $S \sim \hbar = 1.05\times 10^{-34}$ $\mbox{m}^2$kg/s? Let us jump into the brave new world of quantum mechanics to answer this question in the next part! But in fact, we will use different but equivalent formulations of quantum mechanics (mainly wave mechanics and a bit of matrix mechanics) instead of the path integral. This is because the path integral, though conceptually simple, is harder in many computations. It will be included in a full quantum mechanics course. }
-\textbox{The action principle explained\index{from quantum to classical}}{
-    In the quantum world, the physical meaning of the action is clear: $e^{iS/\hbar}$ is the phase factor as a weight of the path in the summation of all paths.
+\mtextbox{如果$S\sim \hbar$呢？} {那$S \sim \hbar = 1.05\times 10^{-34}$ $\mbox{m}^2$kg/s时会怎样呢？让我们在下节走进了量子力学的新世界再来回答这个问题！事实上，我们会用一个不一样但是等效的量子力学的表示（主要是波力学与一些方阵力学）来代替路径积分。这是因为路径积分虽然概念很好理解，但是计算起来并不简单。在一个完整的量子力学的课程里会学到它。}
+\textbox{作用量原理的说明\index{从量子到经典}}{
+    在量子的世界里，作用量的物理意义很明确--$e^{iS/\hbar}$是作为所有路径总和中路径的权重的相位因子。
     
-    You may be confused here: in classical mechanics, the particle only select one trajectory. In quantum mechanics (path integral formulation), the particle move along all possible paths together. How to reconcile the difference? How the classical trajectory emerge among the quantum trajectories?
+    你可能会困惑为什么在经典力学中，粒子只会选择一个路径。在量子力学中（路径积分的表述）：这个粒子沿着所有可能的路径移动。如何调和差异？经典路径如何出现在量子路径中？
 
     \tcblower
 
-    Classical mechanics emerges from quantum mechanics when $S\gg \hbar$. In this limit, even a very small change in $S$ (due to choosing a nearby different trajectory) results in a large change in the unit $\hbar$, and thus $e^{iS/\hbar}$ is a fast oscillating function, which cancels contributions of different paths almost for all paths.
+    当$S\gg \hbar$时，经典力学从量子力学中出现了。在这个限制下，即使$S$的微小变化（由于选择附近不同的路径）也会导致单位$\hbar$ 发生很大变化，因此$e^{iS/\hbar}$是一个快速的振荡函数，它消除了几乎所有不同路径的贡献。
 
-    There is only one exception: close to the stationary action $\delta S=0$. Near $\delta S=0$ different paths do not cancel. Thus the classical trajectory is the only trajectory left over when the classical limit $S\gg \hbar$ is taken.
+    不过只有一个例外：接近固定作用量$\delta S=0$时。接近$\delta S=0$的不同路径不会消掉。因此经典路径在取经典极限$S\gg \hbar$时，是唯一剩下的路径。
 }
 
-\section{Epilogue: Summary and What's Next}
+\section{结语：总结和下一步}
 
-\textbox{Further reading about the content}{
+\textbox{额外参考阅读}{
     \titem{
-        \item Similar contents in other textbooks: You can find an extensive discussion of the content here in Part II of \href{https://www.amazon.com/Einstein-Gravity-Nutshell-Zee/dp/069114558X}{Einstein Gravity in a Nutshell} by Zee. You may also read the first section and the final appendix of \href{
-            http://www.damtp.cam.ac.uk/user/db275/concepts/Concepts.pdf}{Lecture Notes on Modern Physics} by Baumann. 
-        \item If you want even more references, I recommend to watch \href{
-            http://theoreticalminimum.com/}{Theoretical Minimum (Video Lectures)}  (Lectures 3 and 4 of Classical Mechanics) by Susskind; or to read Chapter 2 of \href{https://www.amazon.com/Classical-Mechanics-3rd-Herbert-Goldstein/dp/0201657023}{Classical Mechanics} by Goldstein, Poole Jr and Safko. 
+        \item 其他教科书中的类似内容：你可以在泽的\href{https://www.amazon.com/Einstein-Gravity-Nutshell-Zee/dp/069114558X}{《爱因斯坦引力论概论》}第二部分找到对这里内容更深的讨论。你也可以阅读鲍曼的\href{http://www.damtp.cam.ac.uk/user/db275/concepts/Concepts.pdf}{现代物理学的讲义}的第一节和附录。
+        \item 如果你需要更多的参考，我推荐观看苏斯金德的\href{http://theoreticalminimum.com/}{理论最小量（视频讲座）}  (经典力学的讲座3和4）。或者阅读戈尔茨坦、小普尔和萨夫科写的\href{https://www.amazon.com/Classical-Mechanics-3rd-Herbert-Goldstein/dp/0201657023}{《经典力学》}的第二章。 
     }
 }
 
-\textbox{What happens next in a university physics program?}{
+\textbox{在大学物理系中还会学什么？}{
     \titem{
-        \item Classical mechanics. The action principle is closely related to the Lagrangian formulation of classical mechanics. There is also a Hamiltonian formulation. You will see how mechanics are written in these ways. You will learn how Lagrangian mechanics is helpful in solving constrained motion problems.
-        \item Quantum mechanics. The path integral mentioned here will be part of quantum mechanics (or sometimes advanced quantum mechanics). The (quantized) Hamiltonian is also a centural part of quantum mechanics. 
-        \item Quantum field theory. A model in quantum field theory starts with an action. You will fully see there that the action principle is indeed considered as the first principle.
+        \item 经典力学：最小作用量与经典力学中的拉格朗日公式是紧密相连的。还有一个汉密尔顿公式。你会学到如何用这些方式来描述力学。你还会学到拉格朗日力学对求解限制运动的问题是有什么样的帮助。
+        \item 量子力学：这里提到的路径积分会是量子力学（有时候也叫做进阶量子力学）的一部分。（量化的）汉密尔顿量也是量子力学很核心的一部分。
+        \item 量子场论：一个量子场论的模型是从一个作用量开始的。你会在那里看到最小作用量原理是作为第一定律。
     }
 }
 
-\section{Exercises}
+\section{练习}
 
-\textbox{E1.1 Refraction from the Fermat's principle}{
-    Derive the law of refraction from the Fermat's principle.
+\textbox{练习1.1 费马原理的折射}{
+    推导费马原理中的折射定律。
 }
 
-\textbox{E1.2 Extremal but non-minimal paths}{
-    Find examples that light travel along extremal, but not minimal paths.
+\textbox{练习1.2 极限但非最短路径}{
+    找一个光沿极限但不是最短的路径走的例子。
 }
 
-\textbox{E2.1 A cosmological scalar field}{
-    In cosmology, a homogeneous and isotropic scalar field has action
+\textbox{练习2.1 一个宇宙的标量场}{
+    在宇宙学中，一个均匀且相同的标量场有作用量
     \begin{equation}
     S = \int dt ~ a^3(t) \left(
         \frac{1}{2}\dot\phi^2 - V(\phi)
     \right)~, \nonumber
     \end{equation}
-    where $a(t)$ is a function of time, and $V(\phi)$ is a function of $\phi$.
-    Calculate explicitly the Euler-Lagrange equation of $\phi$
-    (i.e.\ relation between $\ddot\phi$, $\dot\phi$ and $\phi$) in two ways: The Euler-Lagrange equation and the variation principle, respectively.
+    $a(t)$是一个时间的函数。$V(\phi)$是$\phi$的函数。
+    用两种方式（欧拉-拉格朗日方程和变换原理）明确的计算$\phi$的欧拉-拉格朗日方程（即$\ddot\phi$、$\dot\phi$和$\phi$之间的关系）。
 }
 
-\textbox{E3.1 From Euler-Lagrange to Newton}{Start from the Euler-Lagrange equation, use the Lagrangian of a particle in Newtonian mechanics, to derive the Newtonian second law for particle motion in a potential.}
+\textbox{练习3.1 从欧拉-拉格朗日到牛顿}{从欧拉-拉格朗日方程开始，用一个牛顿力学中的粒子的拉格朗日量推导出势能中粒子运动的牛顿第二定律。}
 
-\textbox{E3.2 A relativistic free particle\index{action of free relativistic particle}}{
-    The action for a freely moving (i.e. not moving in a force field or interaction with other particles) relativistic particle is
+\textbox{练习3.2 相对论性自由粒子\index{相对论性自由粒子的作用量}}{
+    一个相对论性自由移动的粒子（即并非在力场中或与其他粒子有相互总用）的作用量是
     \begin{align}
         S = \alpha \int d\tau = \alpha \int \sqrt{1-\frac{\dot q^2}{c^2}} ~ dt ~,
     \end{align}
-    where $\alpha$ is a constant.
+    $\alpha$为常数。
     \titem{
-        \item Determine the value of $\alpha$ by taking the Newtonian limit $\dot q \ll c$.
-        \item Show that the system has time translation symmetry.
-        \item Derive the relativistic energy as the conserved quantity of time translation.
+        \item 运用牛顿极限$\dot q \ll c$求$\alpha$的值。
+        \item 证明这个系统具有时间平移对称性。
+        \item 推导相对论能量是时间平移的守恒量。
     }
 }
 

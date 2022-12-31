@@ -1,183 +1,183 @@
 \input{structure.tex}
 \graphicspath{{10_fig/}}
+\usepackage{ctex}
 \title{第十章\ 复杂性}
 
 \begin{document}
 
 \maketitle
 
-There are great complexities in the science of complexity, since our world contains all kinds of complexities. In this part, we take a glance of the complexity world by a few examples.
+复杂性科学有很大的复杂性，因为我们的世界包含各种复杂性。这个章节中我们会用一些例子来走入复杂性的世界。
 
-\textbox{Complexities in simple functions}{
-    Do you understand a complex function $f(z)=z^2+C$? 
-    Do you understand a real function $g(x)=R(x-x^2)$?
-    If you think you do, take a look at the following images:
+\textbox{简易函数中的复杂性}{
+    你理解复数函数$f(z)=z^2+C$吗？
+    你理解实数函数$g(x)=R(x-x^2)$吗？
+    如果你觉得你理解，那么请看以下图像：
 
     \marginnote{\cg{0.382}{BPlt}}
     \cg{1.0}{MBPlt}
 
-    The 4 figures in the left are results of iteratively apply $f(z)$ (at various zoom levels) and the figure in the right is the result of iteratively apply $g(x)$. Did you realize the complexities contained in these functions?
+    左边的四张图像是在不同的缩放程度重复应用$f(z)$的图像。右边的那个图是重复应用$g(x)$的图像。你意识到这些函数中隐藏的复杂性了吗？
 
-    In these figures, there is a hidden number $4.669201609\cdots$. Can you find it out?
+    这些图中藏了一个数字$4.669201609\cdots$。你能找到它吗？
 }
 
 \marginnote{\cg{0.37}{Britain-fractal-coastline-combined}
 Image from Wikipedia, CC BY-SA 3.0}
-\textbox{How to measure the length of a coastline?}{
-    Let's measure the coastline of Britain by a straight and rigid ruler. 
+\textbox{怎么测量海岸线的长度？}{
+    让我们用一个直尺来测量英国的海岸线。
 
-    The length is indicated by the first image to the left.
+    测量出来的结果由左边第一张图显示。
 
-    Let's use a shorter ruler to do the measurement again. Oh, I got a result longer than before. Even shorter ruler? Even longer results. Thanks to the fact that the world is made of atoms, which gives us a short distance cutoff. Otherwise, with infinitely short rulers, I would have measured the coastline of Britain with infinite length!
+    让我们用一个更短的尺子来重新测量。哦，我们得到了一个比上次更大的结果。再短一点的尺子呢？得到了更长的结果。多亏我们世界是由原子组成的，这给了我们一个最短的距离量。不然的话，用无限小的尺子，我们可以测量出英国的海岸线是无限长的！
 
-    The Britain has a coastline with infinite length classically? Are you serious?
+    经典上来说英国的海岸线是无限长的？在开什么玩笑？
 }
 
-\textbox{Four dimensional human beings}{
-    From scientific fictions, you may have heard of beings living in 4 dimensional space (excluding time). They are said to appear and disappear suddenly in our view as 3 dimensional beings.
+\textbox{四维人类}{
+    在科幻作品中，你可能听说过有些人住在四维空间（不包括时间）。他们会在我们作为三维人类的视线里突然出现、消失。
 
-    Do you admire them? What if I tell you that we are actually 4 dimensional beings? Can you imagine in which sense this may be real?
+    你崇拜他们吗？那么如果我告诉你我们就是四维人类呢？你可以想象从哪个角度来看，这是真的吗？
 }
 
  
-\section{Iteration: from Population of Rabbits to Chaos}
+\section{重复：从兔子数量到混乱}
 
-\textbox{The logistic map $R(x-x^2)$ as generations of rabbits}{
-    Let's consider models about the population of rabbits on an island after generations of self-reproduction. 
+\textbox{作为兔子世代的逻辑斯谛映射$R(x-x^2)$}{
+    想象一个关于在数代的自我繁衍下的一个岛上兔子数量的模型。
     
-    In the simplest model, the rabbits has a constant self-reproduction rate $R$, i.e. after a generation, the number of rabbits becomes $n_{k+1} = R n_k$. The number of rabbits then increase or decrease exponentially by $n_1 = R n_0, ~ n_2 = R^2 n_0, $ etc.
+    在最简单的模型里，这些兔子的自我繁殖率是一个常数$R$。这就是说一代之后，$n_{k+1} = R n_k$。兔子数量会根据$n_1 = R n_0, ~ n_2 = R^2 n_0……$指数增长或减少。
 
-    This model is too simple. It did not take into account that if there are too many rabbits, the lack of resource on the island will course massive death of the rabbits and thus the population would decrease. To take this into account in a simple toy model, we let
+    这个模型太简单了。它并没有考虑到如果兔子数量太多了，岛上的资源会紧缺。这会导致兔子大量死亡也就导致兔子数量降低。如果我们用一个简单的模型来考虑进这个，设
     \begin{align}
         n_{k+1} = R (n_k - \frac{n_k^2}{S} )~,
     \end{align}
-    where $S$ is a constant. Now the iteration equation appears to have two parameters $R$ and $S$. An equation with two parameters introduce additional complexity to study. However, without lose of generality, one can redefine $x_k \equiv n_k/S$. Then the iteration equation for $x_k$ is
+    $S$为常数。现在这个迭代方程有两个参数$R$与$S$。一个包含两个参数的方程增加了额外的复杂性。不过，在不失去概论性的情况下，我们也可以重新定义$x_k \equiv n_k/S$。那么$x_k$的迭代方程是
     \begin{align}
         x_{k+1} = R (x_k - x_k^2)~.
     \end{align}
-    This stands for iteratively apply a function $g(x) = R(x-x^2)$, and calculate $g(g(g(\ldots g(x_0)\ldots )))$ with an initial value $x_0$. This function is known as the logistic map.
+    这代表了迭代的用函数$g(x) = R(x-x^2)$，然后用初始值$x_0$来计算$g(g(g(\ldots g(x_0)\ldots )))$。这个函数被称为逻辑斯谛映射。
 }
 
-\marginnote{\cg{0.37}{logisticXk} Plots of $x_k$ for different values of $R$. The black solid curve is for $x_0=0.2$ and the red dashed curve is for $x_0 = 0.205$. The difference is minor for small $R$ but is huge for the chaotic case, indicating a sensitive initial condition dependence.}
-\textbox{Behavior of $R(x-x^2)$ with different values of $R$}{
-    How do iterations of $x_{n+1}=R(x_n-x_n^2)$ behave at large $n$ for different $R$? One can easily write a computer program to test that. And the result for $n\rightarrow \infty$ is as follows:
+\marginnote{\cg{0.37}{logisticXk} 不同R的情况下，$x_k$的图像。 黑色实线指的是$x_0=0.2$；红色虚线指的是$x_0 = 0.205$。对于小的$R$，两个线的区别是很微弱的。不过当$R$是大的，两条线的区别会变得混乱，这就意味着图像更依赖初始值了。}
+\textbox{对于不同$R$的值，$R(x-x^2)$的行为}{
+    对于不同的$R$，在很大的$n$重复$x_{n+1}=R(x_n-x_n^2)$会得到什么结果呢？我们可以轻易地用一个电脑程序来测试这个。以下就是$n\rightarrow \infty$时的结论：
     \begin{itemize}
-        \item For $0<R<1$: $x_\infty =0$. Because the birth rate is too low to compensate the death.
-        \item For $1<R<3$: $x_\infty = (R-1)/R$. This value is known as an attractor since it can be obtained from any $0<x_0<1$. To get it, assuming there is a stationary limit, and solve the equation $x_\infty = R( x_\infty - x_\infty^2 )$.
-        \item For $3<R<3.44949$: there is no unique limit $x_\infty$. Instead, at large $k$, $x_k$ oscillates with two possible values. This can be understood as: for one generation, there are too many rabbits thus many died. The next year, there are more resources and then can support more rabbits.
-        \item For $3.44949 < R < 3.54409$: $x_k$ oscillates with 4 possible values. This is hard to understand, but can be tested easily numerically. Further, for $3.54409 < R < 3.56407$: $x_k$ oscillates with 8 possible values; For $3.56407<R<3.56876$: $x_k$ oscillates with 16 possible values; ... When one increases $R$ a bit, the period doubles. 
-        \item For $R>3.56995$, one can no longer find oscillatory behavior. The behavior of $x_k$ at large $k$ looks random, and is exponentially sensitive to small variation in initial condition $x_0$. This behavior is known as \emph{chaos}.
+        \item 当$0<R<1$：$x_\infty =0$。因为出生率太低了，不足以弥补死亡数。
+        \item 当$1<R<3$：$x_\infty = (R-1)/R$。这个值叫做吸引子，因为它可以用任何$0<x_0<1$之间的取值得到。先假设有一个不变的极限，然后求解方程$x_\infty = R( x_\infty - x_\infty^2 )$。
+        \item 当$3<R<3.44949$：不存在一个独特的极限$x_\infty$。确实，当$k$很大的时候，$x_k$会在两个可能的值中波动。这可以被这么理解：兔子的一代中，生了太多的兔子。因此很多就死掉了。下一年，资源就变多了也就可以支撑更多兔子的生存。
+        \item 当$3.44949 < R < 3.54409$：$x_k$在4个可能的取值中间波动。这很难理解，但是可以很简单地用数字来验证。而且，当$3.54409 < R < 3.56407$：$x_k$在8个可能的取值中间波动；当$3.56407<R<3.56876$：$x_k$在16个可能的取值中间波动……当我们很小的增加$R$时，周期就翻倍了。
+        \item 当$R>3.56995$，我们已经看不出波动行为了。对于大的$k$, $x_k$的行为看上去就很随机了。它对初始值$x_0$的小变动的敏感度也呈指数增长。这种行为就叫做\emph{混乱}。
     \end{itemize}
 }
 
-\textbox{The Bifurcation Plot}{
-    The plot of the logistic map is best known in the form of the below bifurcation plot. Here one clearly note the doubling of periods and eventually the emergence of chaos as $R$ increases.
-    \marginnote{If you zoom in the bifurcation plot, you will find some self-similarities in its substructures.}
+\textbox{分岔图}{
+    这个逻辑斯谛映射的图像就是以下很著名的分岔图。这里我们可以清晰地看出周期的翻倍和当$R$增加时，混乱的诞生。
+    \marginnote{如果你放大这个分岔图，你会发现它的子结构中有自相似。}
     \cg{0.8}{BPltFramed}
 }
 
 \needspace{0.2\textwidth}
-\mtextbox{The Mandelbrot Set}{
-    For the complex function $f(z)=z^2+C$, the Mondelbrot set is a plot about how fast the sequence $f(0), f(f(0)), \cdots$ diverges or converge. The complexities in this iteration in the complex plane of $C$ is plotted at the beginning of this part. Along the real axis, the plot has self-similarity and the period is determined by the Feigenbaum constant. The relation to the logistic map is plotted in the below figure.
-    % Image: Wikipedia released to the public domain
+\mtextbox{曼德勃罗集}{
+    定义复数函数$f(z)=z^2+C$。曼德勃罗集就是一个关于数列$f(0)、f(f(0))\cdots$会发散或收敛的图像。这个迭代在复平面的复杂性在这章的开头就被画出来了。沿着实数轴，这个图像有自相似性。它的周期是根据费根鲍姆常数而定的。它与逻辑斯谛映射的关系在以下图像中被画出来了。
+    % 图：自维基百科
     \cg{0.7}{Verhulst-Mandelbrot-Bifurcation-Wikipedia-public-domain}
-    To study the Mandelbrot set in more details, you will find that at different parts of the Mandelbrot set, iterations converge to different number of points. This is very similar to the logistic map. Also note the self similarities in the Mandelbrot set. We will come back to self similarities later. 
+    如果你更深入地学习曼德勃罗集，你会发现在曼德勃罗集的不同部分，迭代会收敛到很多不一样的点。这跟逻辑斯谛映射很相似。你也会注意到曼德勃罗集的自相似性。我们会在之后再讲自相似性。
     \mnewline
-    You can find on the site \href{https://sites.google.com/site/logicedges/}{logicedges} the zoom of the above connection and more videos about complexity.
+    你可以在这个网站\href{https://sites.google.com/site/logicedges/}{logicedges}上找到以上联系的放大版以及更多关于复杂性的视频。
 }
-% 恒纪元
-\textbox{The orderly era: period doubling and the Feigenbaum constant}{
-    From the above observations, we note that the oscillation has $2^n$ possible values for a range of $R$: $R_n < R < R_{n+1}$. At large $n$:
+
+\textbox{恒纪元：翻倍的周期与费根鲍姆常数}{
+    从以上的观察中，我们可以发现这个波动在范围$R$: $R_n < R < R_{n+1}$里有$2^n$个可能的取值。当n很大时：
     \begin{align}
         \delta \equiv \lim_{n\rightarrow \infty} \frac{R_{n+1}-R_n}{R_{n+2}-R_{n+1}} = 4.669201609\cdots ~.
     \end{align}
-    This number $\delta$ is known as the Feigenbaum constant. Interestingly, the Feigenbaum constant is not only the ratio for rabbit birth rate, but rather it is a universal constant of nature. The periodicity of a broad class of non-linear behaviors has the same limiting behavior. 
+    这个数字$\delta$就是费根鲍姆常数。有趣的是费根鲍姆常数不仅是兔子生育率的比，它还是一个通用的自然的常数。很多非线性的行为的周期都有同样的极限反应。
 }
 
-% 乱纪元
-\textbox{The chaotic era: the classical loss of determinism}{
-    In the framework of classical mechanics, Laplace proposed that if a smart demon knows the initial position and velocity of all particles in the universe, the demon can predict the future. It is known as the Laplace's demon.
+\textbox{乱纪元：决定论经典上的流失}{
+    在经典力学的框架中，拉普拉斯提出了如果一个聪明的恶魔知道了宇宙中所有粒子的初始位置和速率的话，那么这个恶魔就可以预测未来。它被称为拉普拉斯恶魔。
 
-    Now we know that determinism is (at least apparently) lost in quantum mechanics. Thus, Laplace's proposal does not work. However, even in the framework of classical mechanics, due to chaos, Laplace's proposal does not practically work either. This is because a tiny small error in the knowledge of the initial condition will be amplified exponentially fast in a chaotic system. As a result, it is exponentially hard to predict the future even in the classical sense.
+    现在我们知道了决定论在量子力学中是不成立的（至少目前看上去不成立）。因此，拉普拉斯设想并不起作用。不过，就算在经典力学的框架中，拉普拉斯设想也并不在应用上起作用。这是因为在一个混乱的系统中，一个初始位置的细微偏差会被很快的放大。因此就算在经典的角度上，预测未来的难度是呈指数增长的。
 
     \tcblower
 
-    In the 1890s, Poincare studied the 3-body problem and noted that the solutions are exponentially sensitive to initial conditions. This is the starting point of the study of chaos. But for decades, his work was largely forgotten.
+    1890年代，庞加莱研究了三体问题并提出了解对初始条件的敏感度成倍增长。这也是研究混乱的开端。几十年之后，他的研究成果大部分都被忘记了。
 
-    In 1961, Lorenz tried to use 12 nonlinear PDEs to model the change of weather. One day, he wanted to re-run a previous simulation from the middle using data printouts. However, he found that his previous calculation is not reproducible. He struggled and eventually found the reason: the result is exponentially sensitive to the initial condition. This re-discovery is the modern start for chaos study and is later known as the ``butterfly effect'': ``Hurricane formed because a butterfly flapped her wings several weeks earlier''.
+    1961年，洛伦兹尝试用12个非线性偏微分方程来模拟天气的变化。有一天，他想使用数据打印输出从中间重新运行之前的模拟。但是，他发现之前的运算时不可复制的。他在多次尝试后发现了原因：结论对于初始条件的敏感度是成倍增长的。这个重新发现是混乱学的现代开端，之后也被称为“蝴蝶效应”：飓风由几周前的蝴蝶扑棱翅膀引起。
 }
 
-\section{Fractals: Dimensions Reloaded}
+\section{分形：刷新的维度}
 
-To understand how coastlines would have infinite classical length, let us consider a toy model, known as the Koch's snowflake. 
+如果要理解为什么海岸线会有无尽的经典长度，让我们先考虑一个更简单的模型--科赫曲线。
 
 \marginnote{\cg{0.35}{koch_edit}}
-\textbox{Koch's snowflake}{
-    Starting from a straight line, shrink it by $1/3$ and fold it 4 times, as the figure to the right. Do it \emph{infinitely many times}. Then you get the Koch's snowflake. We observe a few features of the Koch's snowflake:
+\textbox{科赫曲线}{
+    从一个线段开始，缩短它到$1/3$然后折四次，如右图。重复做\emph{无数次}。你就得到了科赫曲线。我们可以观察到一些科赫曲线的特性：
     \titem{
-        \item The snowflake is self-similar. Take a part and zoom in, you find the same image as the original whole image. This non-trivial self-similarity is known as a fractal structure. Though coastlines do not have exact fractal structure, they have fractal-like structures that the part ``looks like'' the whole after zooming in. You can try to see this feature yourself by zooming in Google Map.
-        \item What's the length of lines in the snowflake? Let's take the initial straight line to have length $L$. Then the first iteration of shinking-folding procedure gives a length $(4/3)L$, the second iteration gives $(4/3)^2L$, ... and the $n$-th iteration gives $(4/3)^nL$. As $n \rightarrow \infty $, the length diverges. Thus, the Koch's snowflake fits an line with infinite length into a finite width (and height).
-        \item Due to the folding (roughness), the snowflake appears to have a bit of ``thickness'' if you look from far away. Thus, the snowflake appears in some sense like a two-dimensional object instead of a one-dimensional line. However, if you look infinitely close, the snowflake looks one dimensional again. What's the dimension of the slowflake?
+        \item 这个曲线是自相似的。取一部分并放大，你会得到与原图一样的图形。这个不平凡的自相似性也被称为分形结构。虽然海岸线不是精确的分形结构，但是他们有类分形的结构因为放大的地方“看着像”整体。你可以尝试在地图上放大看看这个特性。
+        \item 这个曲线中线段长度的和是什么？设原线段长$L$。第一次进行缩短-折叠做法后长度为$(4/3)L$；第二次之后长度为$(4/3)^2L$……。然后第$n$次之后长度为$(4/3)^nL$。当$n \rightarrow \infty $，长度发散。因此科赫曲线将一个无限长的直线塞入了一个有限高和宽的长方形。
+        \item 因为我们一直在折叠它，所以这个曲线从远处看上去可能有一定的“宽度”。因此这个曲线在某种角度更像一个二维物体而不是一维的线。可是，如果你无限近的看这个曲线，它却又是一维的。那么这个曲线的维度是什么？
     }
 }
-To study the dimension of the Koch's snowflake, let us generalize our definition of spatial dimensions.
-\textbox{The dimension of the snowflake: Hausdorff dimension}{
-    How to formally define spatial dimensions? There are many ways. Among which one is by the scaling behavior of objects. Take a square for example, it has trivial self-similarity. Cut its length of edges by $1/2$, you get 4 self-similar squares.
+在研究科赫曲线的维度之前，让我们先归纳一下我们对于空间维度的定义。
+\textbox{曲线的维度：豪斯多夫维数}{
+    如何正式地定义空间维度呢？有许多的方法。有一种是用物体缩放时的行为。假如说有一个正方形，他有一个平凡的自相似性。对半切它的边长，你就会得到4个自相似的正方形。
     
-    \mtextbox{Sierpinski triangle}{
-        As another example of fractals, the below image is the Sierpinski triangle.
+    \mtextbox{谢尔宾斯基三角形}{
+        它是分形的另一个例子。下图就是一个谢尔宾斯基三角形。
         \cg{0.8}{sierpinski}
-        When you cut edges by 1/2, you get 3 self-similar pieces. Thus $D_H = \log 3 / \log 2$.    
+        当你对半砍它的边长，你会得到3个自相似的部分。因此$D_H = \log 3 / \log 2$。
     }
     \cg{0.5}{square-similar}
-    In general, if you cut its length of edges in $1/M$ intervals, and you get $N$ self-similar squares. What's the relation between $M$ and $N$? Of course, $N = M^2$, and thus
+    普遍来讲，如果你以$1/M$的间隔切割边长，你会得到$N$个自相似的正方形。那么$M$与$N$的联系是啥？当然，$N = M^2$，所以
     \begin{align}
         \frac{\log N}{\log M} = 2~.
     \end{align}
-    Recall that the square is a two-dimensional object. Is this $2$ appearing at the right hand side a coincidence? You can try a 3-dimensional box, or higher dimensional objects. Soon you can be convinced that it's not a coincidence. And in general you have:
+    记得正方形是个二维物体。右侧出现的2仅仅是个巧合吗？你可以尝试一个三维的箱子或者更高维度的物体。你很快就会发现这并不是一个巧合。我们概括一下就可以得到：
     \begin{align}
         D_H \equiv \mbox{(dimension)} = \frac{\log \mbox{(number of self-similar pieces)}}{\log \mbox{(number of subdivision of edges)}}~.
     \end{align}
-    Space dimension defined in this way is known as the Hausdorff dimension.
+    这样定义的空间维度就叫做豪斯多夫维数。
     \tcblower
-    What's the Hausdorff dimension for Koch's snowflake? Cutting the length by 1/3 and we get 4 self-similar pieces. Thus $D_H = \log 4 / \log 3 \simeq 1.26$. It's an object somewhere between dimension 1 and 2. This is a mathematical way of the above argument that roughness turns into line width.
+    那么科赫曲线的豪斯多夫维数是多少呢？以长度的1/3切会得到4个自相似的部分。因此$D_H = \log 4 / \log 3 \simeq 1.26$。这是一个介于一维和二维之间的物体。这就是数学上的来说它的粗糙程度成为了线的宽度。
 
-    You can find a list of beautiful fractals and their Hausdorff dimensions \href{https://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension}{on Wikipedia}.
+    你可以在下 \href{https://en.wikipedia.org/wiki/List_of_fractals_by_Hausdorff_dimension}{维基百科}找到一个美丽分形以及它的豪斯多夫维数的列表。
 }
 
 \marginnote{\cg{0.2}{boxDim}}
-\textbox{Coastlines and other fractal-like objects}{
-    For coastlines, there is no precise self-similarity but at best statistical self-similarity. Nevertheless, one can still count the fractal dimension by scaling properties: Draw grid lines on the map. Count how many boxes cross the coastline. And study how the number of boxes scales when we shrink the intervals between grid lines. One finds that the UK coastline has a box counting dimension of 1.25. The dimension of coastlines of Norway, Australia and South Africa are 1.52, 1.13 and 1.05, respectively. The smaller dimension, the smoother the coastlines.
+\textbox{海岸线以及其他类分形物体}{
+    海岸线其实没有严谨的自相似性。它最多只有统计自相似性。无论如何，我们仍旧可以通过它的缩放属性来确定它的分形维数：在地图上画网格线。先数海岸线横跨了多少个格子，然后再数当我们缩短网格线之间的距离后，海岸线横跨了多少个格子。有人这样做得到了英国海岸线的维数是1.25。挪威、澳大利亚、南非的海岸线分别有维数1.52、1.13、1.05。维数越小，海岸线越平滑。
     \tcblower
-    \twocol{0.7}{0.1}{0.18}{Fractal-like structures are abundant in nature. For example, the fractal dimension of cauliflowers is measured to be about 2.8. This is intuitive since a cauliflower is a 3-dimensional object and has holes in it arising from fractal structures.}{\cg{1}{cauliflowers}}
+    \twocol{0.7}{0.1}{0.18}{类分形结构在自然中还有很多个例子。比如说，花菜的分形维数大约是2.8。这是合理的因为花菜是一个三维物体，但是它有很多由分形结构引起的洞。}{\cg{1}{cauliflowers}}
 }
 
-\textbox{The Kleiber's Law: Metabolic rate for organisms}{
-    Let's change topic to a bit of biology. Guess what's the relation between metabolic rate and mass for organisms? Are they linearly proportional?
+\textbox{克莱伯定律：生物的新陈代谢率}{
+    让我们转移视线到生物学上。猜猜看新陈代谢率和生物的质量的关系是什么？它们是线性比例的吗？
 
     \cg{0.7}{metabolic1}
 
-    \marginnote{\cg{0.35}{WBE} Image from West, Brown, Enquist, Science 276, 122 (1997). See also their paper on Science 284, 1677 (1999).}
+    \marginnote{\cg{0.35}{WBE} 图自West, Brown, Enquist, Science 276, 122 (1997)。见他们的论文Science 284, 1677 (1999)。}
 
-    Here is a plot by Hemmingsen on Reports of the Steno Memorial Hospital (1960). Interestingly, the metabolic rate scale as $M^{3/4}$. This strange power is known as the Kleiber's law. The factor 3 in $3/4$ is intuitive -- this is how mass scales with length. However, where does the factor of 4 come from? Researchers further found that the heart rate and growth rate scales as $-1/4$, and the blood circulation time and life span scales as $1/4$ of animal mass, respectively. Again, the mysterious factor of $4$ arises.
+    这是个黑鸣森做的关于斯诺纪念医院报告的图表（1960）。有趣的是新陈代谢率以$M^{3/4}$增长。这个奇怪的幂被称为克莱伯定律。在$3/4$中的3是很显然易见的--这是质量根据长度的缩放。那么这个4又是哪里来的呢？研究者又发现了心率和生长率以$-1/4$缩放、血液回流时间和寿命以动物质量的$1/4$缩放。同样的，这个神秘的因子4又出现了。
     \tcblower
-    In the 1990s, West, Brown and Enquist noted that fractal-like structure (such as blood vessels) is more efficient in deliver materials in the body of animals. The fractal-like structure in 3-dimension corresponds to 4 dimensions if no fractal-like structure is used. Thus, in the fractal sense, we effectively live in 4 spatial dimensions!
+    20世纪90年代，韦斯特、布朗、恩奎斯特指出了类分形结构（例如血管）在动物体内传输材料是非常有效的。三维中的类分形结构对应了四维中的无分形结构。因此，在分形意义上，我们实际上生活在 4 个空间维度中！
 }
 
-\section{Epilogue: Summary and What's Next}
+\section{结语：总结和下一步}
 
-\textbox{Further reading about the content}{
+\textbox{额外参考阅读}{
     \titem{
-        \item There is an excellent online course \href{https://www.complexityexplorer.org/courses}{``Introduction to Complexity''} by Melanie Mitchell. She also has a book \href{https://www.amazon.com/Complexity-Guided-Tour-Melanie-Mitchell/dp/0199798109}{Complexity: A Guided Tour}.
-        \item For more formal textbooks, see, for example, \href{https://www.amazon.com/Fractal-Geometry-Mathematical-Foundations-Applications/dp/0470848626/ref=pd_cp_b_3}{Fractal Geometry: Mathematical Foundations and Applications} by Falconer.
-        \item Many models here can be simulated in a modeling language \href{https://ccl.northwestern.edu/netlogo/}{``NetLogo''}. The model source code is simple and fun to read thanks to the language features provided by NetLogo.
+        \item 我们推荐一个非常好的在线课程：梅兰妮·米切尔\href{https://www.complexityexplorer.org/courses}{《复杂性的介绍》}。她还写了本书叫做\href{https://www.amazon.com/Complexity-Guided-Tour-Melanie-Mitchell/dp/0199798109}{《Complexity: A Guided Tour》}。
+        \item 如果你要找更正式的教科书，可以见福尔科纳的\href{https://www.amazon.com/Fractal-Geometry-Mathematical-Foundations-Applications/dp/0470848626/ref=pd_cp_b_3}{《Fractal Geometry: Mathematical Foundations and Applications》} 。
+        \item 这里的很多个模型都可以通过编程语言\href{https://ccl.northwestern.edu/netlogo/}{“NetLogo”}来模拟。多亏了NetLogo的功能，这些模型的代码读起来既简单又好玩。
     }
 }
 
-\textbox{What's next?}{
-    You may like to learn about information, emergent behaviors, networks, genetic algorithms and cellular automata in the world of complexity from the suggested further readings.
+\textbox{下一步是什么？}{
+    你可能会想要学习复杂世界中的信息、紧急行为、网络、遗传算法和元胞自动机。这些可以通过推荐阅读来学习。
 
-    Complexity is an interdisciplinary science. You may find your next steps in how to route computer networks, how to recommend goods to customers, how brain works in life science, how birds fly in groups, how to reach a person using your social connections, how to plan the expansion of a city, how to design a algorithm for a robot, how to make more precise weather forecast, and even how a black hole absorbs matter.
+    复杂性是一个跨学科的学问。你可能会发现你的下一步是研究如何路由计算机网络、如何向客户推荐商品、大脑如何在生命科学中工作、鸟类如何成群飞行、如何利用你的社交关系联系到一个人、如何计划扩展一个城市，如何为机器人设计算法，如何做出更精确的天气预报，甚至黑洞如何吸收物质。
 }
 
 
